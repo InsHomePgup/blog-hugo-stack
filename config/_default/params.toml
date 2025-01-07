@@ -18,8 +18,8 @@ subtitle = "Fucking Everything."
 
 [sidebar.avatar]
 enabled = true
-local = true
-src = "img/avatar.png"
+local = false
+src = "https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/CyberpunkAvatar.jpg"
 
 [article]
 headingAnchor = false
