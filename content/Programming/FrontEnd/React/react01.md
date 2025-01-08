@@ -1,6 +1,6 @@
 ---
 title: React01 jsx | tsx的使用 动态添加html属性
-date: 2024/06/06
+date: 2024-06-06
 tags:
   - react
   - tsx

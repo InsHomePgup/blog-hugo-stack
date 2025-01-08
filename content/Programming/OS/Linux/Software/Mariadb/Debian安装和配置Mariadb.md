@@ -4,7 +4,7 @@ categories:
   - mariadb
 tags:
   - mariadb
-date: 2024/05/28
+date: 2024-05-28
 ---
 
 [参考网站](https://mariadb.org/download/?t=repo-config&d=Debian+12+%22Bookworm%22&v=10.11&r_m=xtom_fre)

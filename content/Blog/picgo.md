@@ -1,6 +1,6 @@
 ---
 title: 博客图片的存储-PicGo
-date: 2024/06/08
+date: 2024-06-08
 tags:
   - blog
   - PicGo

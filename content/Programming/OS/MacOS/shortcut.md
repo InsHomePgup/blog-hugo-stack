@@ -1,6 +1,6 @@
 ---
 title: MacOS 常用快捷键记录
-date: 2024/05/28
+date: 2024-05-28
 tags:
   - mac os
 categories:

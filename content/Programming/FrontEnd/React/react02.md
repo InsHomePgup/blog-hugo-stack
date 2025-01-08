@@ -1,6 +1,6 @@
 ---
 title: React02 组件的使用
-date: 2024/06/06
+date: 2024-06-06
 tags:
   - react
 categories:

@@ -1,6 +1,6 @@
 ---
 title: webpack 学习-归纳-整理
-date: 2024/05/28
+date: 2024-05-28
 tags:
   - webpack
 categories:
