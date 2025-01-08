@@ -85,3 +85,12 @@ const eslintObj = antfu(
 export default eslintObj
 
 ```
+
+
+vue eslint 内置规则 所在目录
+```
+src/configs/vue.ts
+```
+
+用的不爽的rule可以用userConfig去覆盖。
+内置规则去这里找源码查看就好了。src/config
