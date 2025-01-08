@@ -6,7 +6,7 @@ date: 2025-01-08
 
 antfu 大佬的eslint项目，非常好用。
 平常前端最烦恼的一个问题是eslint和prettier都包含有format的功能，难以统一。
-比如我碰到过用eslint format以后，爆红了prettier的规则不匹配问题。
+比如我碰到过用eslint format以后，prettier又爆红了，因为两个format规则有冲突。
 这个项目的特性，最重要的一点是
 ```
 Auto fix for formatting (aimed to be used standalone **without** Prettier)
@@ -49,6 +49,7 @@ eslint & auto fix on save
 
 
 ```ts
+// eslint.config.mjs
 import antfu from '@antfu/eslint-config'  
   
 const eslintObj = antfu(  
