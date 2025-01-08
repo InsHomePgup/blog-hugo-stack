@@ -9,5 +9,5 @@ categories:
  - flow
 
 ---
-
-Flow
+我的git 工作流。
+git 是版本控制系统 VCS (Version Control System)。
