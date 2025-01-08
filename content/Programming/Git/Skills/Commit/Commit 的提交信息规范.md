@@ -1,0 +1,13 @@
+---
+title: Commit 的提交信息规范
+---
+- feat: 新增 feature
+- fix: 修复 bug
+- docs: 仅修改了文档，比如 README, CHANGELOG, CONTRIBUTE等等
+- style: 仅修改了空格、格式缩进、逗号等等，不改变代码逻辑
+- refactor: 代码重构，没有加新功能或者修复 bug
+- perf: 优化相关，比如提升性能、体验
+- test: 测试内容变更
+- build: 变更项目构建或者是外部依赖，项目build的相关事项
+- chore: 变更构建流程或辅助工具 自动化项目部署或者是自动化相关的内容
+- revert: 回滚代码

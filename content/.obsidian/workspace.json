@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "post/diary/25-01-07.md",
+                "file": "Programming/OS/Linux/Info/修改主机名.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "25-01-07"
+              "title": "修改主机名"
             }
           }
         ]
@@ -162,16 +162,53 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c27738e3e8539719",
+  "active": "1e6854c1f8b309fe",
   "lastOpenFiles": [
-    "gallery/avatar/index.md~",
-    "gallery/avatar/index.md",
-    "gallery/avatar",
-    "gallery",
-    "post/diary/25-01-07.md~",
-    "post/hello-world/index.md",
-    "post/diary/25-01-07.md",
-    "post/hello-world/cover.jpg",
-    "categories/example-category/_index.md"
+    "Programming/OS/Linux/Command",
+    "Programming/OS/Linux/Info",
+    "Programming/OS/Linux/DD/记录一次远程服务器的dd.md",
+    "Programming/OS/Linux/GPU",
+    "Programming/OS/Linux/CPU",
+    "Programming/OS/Linux/Gitea/01.md",
+    "Programming/OS/Linux/Fetch/Version.md",
+    "Programming/OS/Linux/Software/SSH/SSH Key 连接.md",
+    "Programming/OS/Linux/Command/SCP的使用.md",
+    "Programming/OS/Linux/Schedule.md",
+    "Programming/OS/Linux/Git/Linux 下配置 git 的 ssh key 连接.md",
+    "Programming/OS/Linux/Software/Redis",
+    "Programming/OS/Linux/Software/SSH",
+    "Programming/OS/Linux/Software/Node",
+    "Programming/OS/Linux/Software",
+    "Programming/Ide/VisualStudioCode",
+    "Programming/Ide/SublimeText",
+    "post/English/The 8 Parts of Speech.md",
+    "Post/hello-world/index.md",
+    "Post/math-typesetting/index.md",
+    "Post/shortcodes/index.md",
+    "Post/hello-world/cover.jpg",
+    "Post/shortcodes/cover.jpg",
+    "Post/markdown-syntax/index.md",
+    "Post/hugo-stack/index.md",
+    "Post/image-gallery/2.jpg",
+    "Post/image-gallery/index.md",
+    "Post/image-gallery/1.jpg",
+    "Post/English/The 8 Parts of Speech.md",
+    "Post/diary/25-01-07.md",
+    "Post/English/word.md",
+    "Post/hello-world",
+    "Page/search/index.md",
+    "Page/gallery/index.md",
+    "Page/links/index.md",
+    "Page/archives/index.md",
+    "Gallery/avatar/index.md",
+    "Categories/example-category/_index.md",
+    "Programming/Git/Skills/Tag/01/01.md",
+    "Programming/Git/Commands/Stash/01/img_1.png",
+    "Programming/Git/Commands/Stash/01/img_2.png",
+    "Programming/Git/Commands/Stash/01/img.png",
+    "Programming/Git/Commands/Stash/01/01.md",
+    "Git/Commands/Stash/01/img_2.png",
+    "Git/Commands/Stash/01/img_1.png",
+    "Git/Commands/Stash/01/img.png"
   ]
 }
