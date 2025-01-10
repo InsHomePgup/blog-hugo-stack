@@ -1,6 +1,11 @@
 ---
 title: antfu-eslint-config
 date: 2025-01-08
+tags:
+  - Eslint
+  - Vue
+categories:
+  - Lint
 ---
 ![Owner avatar](https://avatars.githubusercontent.com/u/11247099?s=48&v=4) **[eslint-config](https://github.com/antfu/eslint-config)**
 
