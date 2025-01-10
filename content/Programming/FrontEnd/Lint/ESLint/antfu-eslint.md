@@ -94,3 +94,77 @@ src/configs/vue.ts
 
 用的不爽的rule可以用userConfig去覆盖。
 内置规则去这里找源码查看就好了。src/config
+
+
+#### 一些尝试和理解
+进入源代码来理解一下这个配置应该怎么写。
+github 的readme已经有很详细的配置写法了，不过我一开始用这个项目的时候也没太理解这个配置应该怎么写。
+
+``` ts
+// src/index.ts
+import { antfu } from './factory'  
+  
+export * from './configs'  
+export * from './factory'  
+export * from './globs'  
+export * from './types'  
+export * from './utils'  
+  
+export default antfu
+```
+
+import { antfu } from './factory'  
+进到antfu这个函数来
+
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250110105450564.png)
+有两个参数，一个options一个用展开运算符收集的userConfig
+第一个options，后面收集的对象都是userConfig
+整个项目讲究一个flat。平整。
+第一个options我们去看看都要配置啥。
+options的单项默认都是开关也可以额外进行配置。
+
+这里我用ts的enable作为一个入口去看
+
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250110110038977.png)
+
+解构赋值 + 别名从options里拿出来的内容。
+
+往下看，enableTypeScript又有什么操作呢。
+
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250110110125451.png)
+
+这里去configs里面push了typescript函数，接受一个对象作为参数，一个展开我们在options里面传入的typescript options，剩下三个。
+- typescriptOptions
+options可以是boolean或者是对应的配置项
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250110110513869.png)
+
+- componentExts
+exts，文件后缀集合
+
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250110110838279.png)
+- overrides
+
+	getOverrides函数，获取userConfig里面的覆盖的配置
+
+- type
+
+看了一下上下文，type有两个值，app或者是lib
+
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250110111814705.png)
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250110111857676.png)
+
+与type有关的便是如果type = lib就添加这一段规则。
+
+折叠代码以后来看typescript函数的内容
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250110112406623.png)
+
+
+files: 匹配文件后缀,要么options里面指定了，要么就是ts或者tsx文件 + 用户指定的额外文件后缀
+
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250110112501417.png)
+
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250110112714255.png)
+
+```ts
+const filesTypeAware = options.filesTypeAware ?? [GLOB_TS, GLOB_TSX]
+```
