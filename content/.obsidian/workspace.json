@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Life/myself/2025-01-14.md",
+                "file": "Post/README/展望.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-01-14"
+              "title": "展望"
             }
           }
         ]
@@ -164,6 +164,10 @@
   },
   "active": "edb781aefe7be9de",
   "lastOpenFiles": [
+    "Post/README/你好，欢迎光临寒舍.md",
+    "Post/README/展望.md",
+    "Life/myself/2025-01-14.md",
+    "Post/README",
     "Programming/OS/Linux/Command/tar.md",
     "Programming/OS/Linux/Command/find.md",
     "Programming/OS/Linux/Software/Nano/01.md",
@@ -194,12 +198,8 @@
     "Programming/Git/Skills/Tag/01/01.md",
     "Programming/Git/Skills/Tag/01.md",
     "Programming/Git/Skills/CherryPicker的使用.md",
-    "Programming/Git/Skills/README.md",
-    "Post/English/word.md",
     "Programming/FrontEnd/Lint/StyleLint",
     "Programming/FrontEnd/Lint/ESLint",
-    "Programming/FrontEnd/Lint",
-    "Post/English/The 8 Parts of Speech.md",
     "Post/hello-world/cover.jpg",
     "Post/shortcodes/cover.jpg",
     "Post/image-gallery/2.jpg",

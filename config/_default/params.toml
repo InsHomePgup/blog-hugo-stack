@@ -13,8 +13,8 @@ published = "Jan 02, 2006"
 lastUpdated = "Jan 02, 2006 15:04 MST"
 
 [sidebar]
-emoji = "🍥"
-subtitle = "艰苦卓绝的奋斗，骆驼。"
+#emoji = "🍥"
+subtitle = "艰苦卓绝 力争上游"
 
 [sidebar.avatar]
 enabled = true
