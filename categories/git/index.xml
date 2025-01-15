@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on Abra's Blog</title><link>https://inshomepgup.github.io/blog-hugo-stack/categories/git/</link><description>Recent content in Git on Abra's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 09 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://inshomepgup.github.io/blog-hugo-stack/categories/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Flow</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/flow/flow/</link><pubDate>Thu, 09 May 2024 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/flow/flow/</guid><description>&lt;p>我的git 工作流。
+git 是版本控制系统 VCS (Version Control System)。&lt;/p></description></item><item><title>git gui推荐 - sublime merge</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/gui/sublimemerge/</link><pubDate>Thu, 09 May 2024 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/gui/sublimemerge/</guid><description>&lt;p>最早的时候写前端使用的是sublime text。现在这家的另外一个产品，git gui ，sublime merge也是挺好用的，看了一下许可证要$99，还是白嫖吧哈哈哈。&lt;/p>
+&lt;h2 id="add-commit-push">add commit push
+&lt;/h2>&lt;p>可以很方便的add 和commit,右上角push + pull
+&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/sublime.png"
+loading="lazy"
+>&lt;/p>
+&lt;h2 id="branch-remote-tags">branch remote tags
+&lt;/h2>&lt;p>直接查看分支，其他分支可以控制显示和隐藏。
+还可以管理多远程仓库，直接右键管理tag&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/branch.png"
+loading="lazy"
+>&lt;/p>
+&lt;h2 id="commit">commit
+&lt;/h2>&lt;p>快速查看commit和每次的变动的文件等等
+这里还能看到commit相关的tag，还能看到合并路径，不过我现在的操作太简单，就是一条直线所以也没有这些。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/Snipaste_2024-06-08_17-28-59.png"
+loading="lazy"
+>&lt;/p>
+&lt;h2 id="一个非常好用的功能---filehistory">一个非常好用的功能 - FileHistory
+&lt;/h2>&lt;p>我在Mac端，快捷键 Command + P 打开控制台，输入File直接可以看到FileHistory的选项。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/FileHistoryCmd.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>输入文件名以后就可以直接看到有关这个文件的所有Commit和改动了，这个真的是太香了，用来调试一些奇奇怪怪的bug的时候可以看到是因为什么改动引起的。&lt;/p>
+&lt;h2 id="比较两个commit的改动">比较两个commit的改动
+&lt;/h2>&lt;p>直接Ctrl / Command在Commits的面板里点击两个commit就能查看了。这个也是非常香了。&lt;/p>
+&lt;h2 id="查看执行的具体代码">查看执行的具体代码
+&lt;/h2>&lt;p>菜单里 Tools-show console&lt;/p>
+&lt;h2 id="务必认真学习的cli以及git运行逻辑">务必认真学习的CLI以及Git运行逻辑
+&lt;/h2>&lt;p>GUI主要也就是在diff code，查看commit，简化一些cli的操作比较有用。是在对git以及git命令有一定深度了解以后才能使用的选项。毕竟如果都不知道这些操作背后是在运行什么，也会出现一些不可预料的代码事故。
+另外一个角度来说，git的cli是全端通用的，而GUI客户端也只是在一些有gui的操作系统上使用。
+真正学好Git来加强自己的代码调试是非常有用的。&lt;/p></description></item><item><title>How to use git branch</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/commands/branch/branch/</link><pubDate>Thu, 09 May 2024 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/commands/branch/branch/</guid><description>&lt;p>Git Branch&lt;/p>
+&lt;h5 id="创建与切换分支">创建与切换分支
+&lt;/h5>&lt;p>git checkout 也有一些分支的操作，更推荐使用switch来切换分支。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 切换分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git switch &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git checkout &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建并切换到一个新分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git switch -c &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h5 id="查看本地分支和远程分支">查看本地分支和远程分支
+&lt;/h5>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看本地分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#查看远程分支 -r remote&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -r
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看全部分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h5 id="删除本地分支和删除远程分支">删除本地分支和删除远程分支
+&lt;/h5>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 删除本地分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -d &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 强制删除分支，未合并的分支也会删除&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -D &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 删除远程分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push origin -d &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push origin --delete &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 删除远程已经删除但是本地还存在的分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git remote prune origin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h5 id="重命名分支">重命名分支
+&lt;/h5>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">git sw -c feat/A
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Switched to a new branch &amp;#39;feat/A&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git br -m feat/A feat/B
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># move -m 类似linux下的mv 重命名&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>git config 常见配置</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/01/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/01/</guid><description>&lt;p>在git初始化的时候可以进行一些配置。
+我在用的主要的配置有这两个文件。&lt;/p>
+&lt;h3 id="gitconfig">.gitconfig
+&lt;/h3>&lt;p>git 核心配置的部分。
+下面是我的常用配置,一次配置，以后可以一直使用，这个配置也可以添加到git去管理。
+这样在多设备的时候都可以使用这一套配置。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[core]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ignorecase = false
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> quotepath = false
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> excludesfile=C:/Users/user/.gitignore #指定全局的ignore的配置文件
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[user]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> email = email
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> name = name
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[alias]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ad = add
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> br = branch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> cc = checkout --
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> cf = config
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ck = checkout
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> cm = commit
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> cl = clone
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> df = diff
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> fe = fetch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ps = push
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> me = merge
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> pl = pull
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> sb = submodule
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ss = status
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> sw = switch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> re = remote
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> unstage = reset HEAD
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> last = log -1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> lg = log --color --graph --pretty=format:&amp;#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset&amp;#39; --abbrev-commit
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="gitignore">.gitignore
+&lt;/h3>&lt;p>全局ignore配置
+有些公共的忽略文件可以添加到这里，比如前端常见的dist 和 node_modules&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dist
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">node_modules
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># ide相关的ignore可以全局配置，这样省的到每个项目里都去ignore一遍，不过其实最好还是在项目里有自己的gitignore去配置，毕竟还是要多端多设备配置的嘛，不过也可以把配置都用git进行管理。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">.idea
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">.vscode/*
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">!.vscode/extensions.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>git ignore 文档 &lt;a class="link" href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener"
+>gitignore&lt;/a>&lt;/p>
+&lt;p>初始化必配置的ssh config&lt;/p>
+&lt;h3 id="sshconfig">~/.ssh/config
+&lt;/h3>&lt;p>不算是git的但是很重要一个配置，ssh连接配置,不用账号密码就能拉项目，快乐管理项目。
+用一个ssh key 管理所有的git站点，然后就可以快乐的开始push &amp;amp; pull了。&lt;/p>
+&lt;p>参考配置文件 &lt;a class="link" href="https://www.ssh.com/academy/ssh/config" target="_blank" rel="noopener"
+>ssh client config&lt;/a>&lt;/p>
+&lt;h5 id="github-ssh--config-preview">github ssh config preview
+&lt;/h5>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Host github.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">User git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Hostname github.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">IdentityFile ~/.ssh/[你的ssh_key]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ProxyCommand ncat --verbose --proxy-type socks5 --proxy 127.0.0.1:10808 %h %p
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>不需要代理日志信息的话，移除 &amp;ndash;verbose&lt;/p></description></item></channel></rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>BlueN on Abra's Blog</title><link>https://inshomepgup.github.io/blog-hugo-stack/categories/bluen/</link><description>Recent content in BlueN on Abra's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://inshomepgup.github.io/blog-hugo-stack/categories/bluen/index.xml" rel="self" type="application/rss+xml"/><item><title>BlueN DNSConf</title><link>https://inshomepgup.github.io/blog-hugo-stack/network/proxy/bluen-dnsconf/</link><pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/network/proxy/bluen-dnsconf/</guid><description>&lt;p>{
+&amp;ldquo;hosts&amp;rdquo;: {
+&amp;ldquo;dns.google&amp;rdquo;: &amp;ldquo;8.8.8.8&amp;rdquo;,
+&amp;ldquo;dns.pub&amp;rdquo;: &amp;ldquo;119.29.29.29&amp;rdquo;,
+&amp;ldquo;dns.alidns.com&amp;rdquo;: &amp;ldquo;223.6.6.6&amp;rdquo;,
+&amp;ldquo;geosite:category-ads-all&amp;rdquo;: &amp;ldquo;127.0.0.1&amp;rdquo;,
+&amp;ldquo;dns.cloudflare.com&amp;rdquo;: &amp;ldquo;1.1.1.1&amp;rdquo;,
+&amp;ldquo;aws.amazon.com&amp;rdquo;:&amp;ldquo;169.254.169.253&amp;rdquo;
+},
+&amp;ldquo;servers&amp;rdquo;: [
+&amp;ldquo;localhost&amp;rdquo;,
+{
+&amp;ldquo;address&amp;rdquo;: &amp;ldquo;223.6.6.6&amp;rdquo;,
+&amp;ldquo;domains&amp;rdquo;: [
+&amp;ldquo;geosite:cn&amp;rdquo;
+],
+&amp;ldquo;expectIPs&amp;rdquo;: [
+&amp;ldquo;geoip:cn&amp;rdquo;
+]
+},
+&amp;ldquo;1.1.1.1&amp;rdquo;,
+&amp;ldquo;8.8.8.8&amp;rdquo;,
+&amp;ldquo;https://dns.google/dns-query&amp;rdquo;
+]
+}&lt;/p></description></item></channel></rss>
