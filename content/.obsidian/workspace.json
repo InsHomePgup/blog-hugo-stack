@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "3b2fdcf880e560c3",
+        "id": "a2d59574087e1202",
         "type": "tabs",
         "children": [
           {
-            "id": "81d5b0008ae03a47",
+            "id": "ba4e67203adfb2e5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Network/Proxy/BlueN DNSConf.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "BlueN DNSConf"
+              "title": "New tab"
             }
           }
         ]
@@ -162,12 +158,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "81d5b0008ae03a47",
+  "active": "ba4e67203adfb2e5",
   "lastOpenFiles": [
+    "Programming/FrontEnd/Lint/SimpleGitHook/项目组织.md",
+    "Post/README/你好，欢迎光临寒舍.md",
+    "Programming/FrontEnd/Lint/SimpleGitHook",
+    "Programming/OS/Linux/Software/SSH/ssh 连接v6.md",
+    "Programming/OS/Linux/SSH",
     "Network/Proxy/BlueN DNSConf.md",
     "Network/Proxy",
     "Post/README/展望.md",
-    "Post/README/你好，欢迎光临寒舍.md",
     "Life/myself/2025-01-14.md",
     "Post/README",
     "Programming/OS/Linux/Command/tar.md",
@@ -196,10 +196,6 @@
     "Programming/Git/Skills/Commit/提交到错误的分支.md",
     "Programming/Git/Skills/Branch/01 删除分支，强制删除.md",
     "Programming/Git/Commands/Tag/01.md",
-    "Programming/Git/Commands/Tag",
-    "Programming/Git/Skills/Tag/01/01.md",
-    "Programming/Git/Skills/Tag/01.md",
-    "Programming/FrontEnd/Lint/StyleLint",
     "Post/hello-world/cover.jpg",
     "Post/shortcodes/cover.jpg",
     "Post/image-gallery/2.jpg",
