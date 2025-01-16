@@ -11,10 +11,14 @@
             "id": "ba4e67203adfb2e5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Programming/Language/JavaScript/记录一次平铺树形的代码.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "记录一次平铺树形的代码"
             }
           }
         ]
@@ -160,6 +164,7 @@
   },
   "active": "ba4e67203adfb2e5",
   "lastOpenFiles": [
+    "Programming/Language/JavaScript/记录一次平铺树形的代码.md",
     "Programming/FrontEnd/Lint/SimpleGitHook/项目组织.md",
     "Post/README/你好，欢迎光临寒舍.md",
     "Programming/FrontEnd/Lint/SimpleGitHook",
@@ -195,7 +200,6 @@
     "Programming/Git/Skills/Flow/01.md",
     "Programming/Git/Skills/Commit/提交到错误的分支.md",
     "Programming/Git/Skills/Branch/01 删除分支，强制删除.md",
-    "Programming/Git/Commands/Tag/01.md",
     "Post/hello-world/cover.jpg",
     "Post/shortcodes/cover.jpg",
     "Post/image-gallery/2.jpg",
