@@ -24,3 +24,10 @@ categories:
 
 picgo 已经停更很久了，这里找到了一款还在更新的管理软件。也是fork picgo继续开发的。
 [PicList](https://piclist.cn/app)
+
+他们的使用逻辑是一致的。
+但是在很多功能方面得到了完善。
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250116174927272.png)
+
+
+
