@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "700ebff0e8e80cd6",
+        "id": "ff384b89ee5b3ac6",
         "type": "tabs",
         "children": [
           {
-            "id": "0f30f95eb319fa61",
+            "id": "e601bb2126d01cfc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Programming/OS/Windows/软件推荐-Twinkle Tray.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "软件推荐-Twinkle Tray"
             }
           }
         ]
@@ -158,8 +162,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0f30f95eb319fa61",
+  "active": "e601bb2126d01cfc",
   "lastOpenFiles": [
+    "Pasted image 20250117172152.png",
+    "Programming/FrontEnd/Vue/VueRouter/Hash路由和History路由.md",
+    "Programming/OS/Windows/软件推荐-Twinkle Tray.md",
+    "Programming/FrontEnd/Vue/VueRouter/后端配置的动态Router实现.md",
+    "Pasted image 20250117165258.png",
+    "Programming/OS/Linux/Software/Docker/安装Docker.md",
+    "Programming/FrontEnd/Vue/VueRouter",
+    "Programming/FrontEnd/Sentry/Sentry前端监控.md",
+    "Programming/OS/Linux/Software/Docker",
+    "Programming/OS/Linux/Software/ufw/ufw的使用.md",
+    "Programming/FrontEnd/Sentry",
+    "Programming/OS/Linux/Software/ufw",
+    "Life/code/生活破局.md",
+    "Life/code/code life.md",
+    "Programming/OS/Linux/User&Group/user&groups.md",
+    "Programming/OS/Linux/User&Group",
     "Gallery/avatar/index.md",
     "Categories/example-category/_index.md",
     "Blog/picgo.md",
@@ -178,24 +198,9 @@
     "Programming/FrontEnd/Lint/SimpleGitHook",
     "Programming/OS/Linux/Software/SSH/ssh 连接v6.md",
     "Programming/OS/Linux/SSH",
-    "Network/Proxy/BlueN DNSConf.md",
     "Network/Proxy",
-    "Post/README/展望.md",
-    "Life/myself/2025-01-14.md",
     "Post/README",
-    "Programming/OS/Linux/Command/tar.md",
-    "Programming/OS/Linux/Command/find.md",
-    "Programming/OS/Linux/Software/Nano/01.md",
-    "Network/01.md",
     "Programming/OS/Linux/Software/Nano",
-    "Network/Home",
-    "Network",
-    "Programming/FrontEnd/CSS/UNOCSS/presetAttributify的使用.md",
-    "Programming/FrontEnd/Lint/ESLint/antfu-eslint.md",
-    "Post/my-second-post.md",
-    "posts",
-    "Programming/FrontEnd/CSS/UNOCSS",
-    "Programming/FrontEnd/CSS",
     "Post/hello-world/cover.jpg",
     "Post/shortcodes/cover.jpg",
     "Post/image-gallery/2.jpg",
@@ -204,7 +209,6 @@
     "Programming/Git/Commands/Stash/01/img_2.png",
     "Programming/Git/Commands/Stash/01/img.png",
     "Git/Commands/Stash/01/img_2.png",
-    "Git/Commands/Stash/01/img_1.png",
-    "Git/Commands/Stash/01/img.png"
+    "Git/Commands/Stash/01/img_1.png"
   ]
 }
