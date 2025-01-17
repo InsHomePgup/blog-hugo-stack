@@ -12,6 +12,9 @@ categories:
 
 下载release以后安装。
 ![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250117172214822.png)
-体验是非常好的，UI也是高度适配windows11
+体验是非常好的，开箱即用。UI也是高度适配windows11
+
+### settings
+
+
 ![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250117172246266.png)
-还有一些其他设置。

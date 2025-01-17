@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ff384b89ee5b3ac6",
+        "id": "1514d5e1d050123e",
         "type": "tabs",
         "children": [
           {
-            "id": "e601bb2126d01cfc",
+            "id": "aced546932327b50",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/OS/Windows/软件推荐-Twinkle Tray.md",
+                "file": "Programming/FrontEnd/Vue/VueRouter/后端配置的动态Router实现.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "软件推荐-Twinkle Tray"
+              "title": "后端配置的动态Router实现"
             }
           }
         ]
@@ -162,13 +162,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e601bb2126d01cfc",
+  "active": "aced546932327b50",
   "lastOpenFiles": [
-    "Pasted image 20250117172152.png",
-    "Programming/FrontEnd/Vue/VueRouter/Hash路由和History路由.md",
     "Programming/OS/Windows/软件推荐-Twinkle Tray.md",
+    "Programming/OS/Windows/软件推荐-7zip.md",
+    "Programming/FrontEnd/Vue/VueRouter/Hash路由和History路由.md",
     "Programming/FrontEnd/Vue/VueRouter/后端配置的动态Router实现.md",
     "Pasted image 20250117165258.png",
+    "Pasted image 20250117172152.png",
+    "Pasted image 20250117173621.png",
+    "Pasted image 20250117173802.png",
+    "Pasted image 20250117173821.png",
+    "Pasted image 20250117174221.png",
+    "Pasted image 20250117174233.png",
+    "Pasted image 20250117174027.png",
+    "Programming/OS/Windows/windows 键相关的快捷键记录 win11.md",
+    "Programming/OS/Windows/windows 端口被占用怎么处理？.md",
+    "Programming/OS/Windows/软件推荐-火绒.md",
+    "Programming/OS/Windows/软件推荐-copyQ.md",
+    "Programming/OS/Windows/软件推荐-NeatDownloadManager.md",
+    "Programming/OS/Windows/软件推荐-powertoys.md",
+    "Programming/OS/Windows/软件推荐-snipaste.md",
     "Programming/OS/Linux/Software/Docker/安装Docker.md",
     "Programming/FrontEnd/Vue/VueRouter",
     "Programming/FrontEnd/Sentry/Sentry前端监控.md",
@@ -188,27 +202,12 @@
     "Blog/Obsidian.md",
     "Blog/Obsidian/Plugin/MouseWheel Image zoom.md",
     "Blog/hugo/stack/header.md",
-    "Diary/2025-01-08.md",
-    "Diary/2025-01-07.md",
-    "Programming/FrontEnd/Lint/SimpleGitHook/项目组织.md",
-    "Programming/FrontEnd/React/react03 探索路由.md",
-    "Programming/FrontEnd/React/react02.md",
-    "Programming/FrontEnd/React/react01.md",
-    "Programming/Language/JavaScript/记录一次平铺树形的代码.md",
     "Programming/FrontEnd/Lint/SimpleGitHook",
-    "Programming/OS/Linux/Software/SSH/ssh 连接v6.md",
     "Programming/OS/Linux/SSH",
     "Network/Proxy",
     "Post/README",
     "Programming/OS/Linux/Software/Nano",
     "Post/hello-world/cover.jpg",
-    "Post/shortcodes/cover.jpg",
-    "Post/image-gallery/2.jpg",
-    "Post/image-gallery/1.jpg",
-    "Programming/Git/Commands/Stash/01/img_1.png",
-    "Programming/Git/Commands/Stash/01/img_2.png",
-    "Programming/Git/Commands/Stash/01/img.png",
-    "Git/Commands/Stash/01/img_2.png",
-    "Git/Commands/Stash/01/img_1.png"
+    "Post/shortcodes/cover.jpg"
   ]
 }
