@@ -6,7 +6,16 @@
   margin:0;
   margin-bottom: 10px;
   text-indent: 2em;
-  word-break: break-all;
   letter-spacing: 1px;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
