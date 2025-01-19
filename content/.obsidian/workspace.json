@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/FrontEnd/Vue/VueRouter/后端配置的动态Router实现.md",
+                "file": "Programming/Git/Config/01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "后端配置的动态Router实现"
+              "title": "01"
             }
           }
         ]
@@ -164,10 +164,11 @@
   },
   "active": "aced546932327b50",
   "lastOpenFiles": [
+    "Programming/OS/MacOS/brew 的使用.md",
+    "Programming/FrontEnd/Vue/VueRouter/后端配置的动态Router实现.md",
     "Programming/OS/Windows/软件推荐-Twinkle Tray.md",
     "Programming/OS/Windows/软件推荐-7zip.md",
     "Programming/FrontEnd/Vue/VueRouter/Hash路由和History路由.md",
-    "Programming/FrontEnd/Vue/VueRouter/后端配置的动态Router实现.md",
     "Pasted image 20250117165258.png",
     "Pasted image 20250117172152.png",
     "Pasted image 20250117173621.png",
