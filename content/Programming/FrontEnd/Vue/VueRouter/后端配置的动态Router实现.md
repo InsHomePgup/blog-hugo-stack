@@ -56,3 +56,11 @@ router.addRoute({ name: 'admin', path: '/admin', component: Admin })
 router.addRoute('admin', { path: 'settings', component: AdminSettings })
 ```
 
+查看路由表
+
+```
+import { useRouter } from 'vue-router';
+const router = useRouter();  
+console.log('routes', router.options.routes);
+```
+
