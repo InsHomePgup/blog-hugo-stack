@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/Language/Typescript/Omit的使用.md",
+                "file": "Programming/OS/Linux/Software/Mongodb/开启远程连接.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Omit的使用"
+              "title": "开启远程连接"
             }
           }
         ]
@@ -164,8 +164,10 @@
   },
   "active": "5a6271212e3bc575",
   "lastOpenFiles": [
-    "Programming/OS/Linux/User&Group/user&groups.md",
     "Programming/Language/Typescript/Omit的使用.md",
+    "Programming/OS/Linux/Software/Mongodb/开启远程连接.md",
+    "Programming/OS/Linux/Software/Mongodb",
+    "Programming/OS/Linux/User&Group/user&groups.md",
     "Programming/FrontEnd/Vue/VueRouter/Hash路由和History路由.md",
     "Programming/OS/Linux/User",
     "Programming/FrontEnd/Vue/VueRouter/后端配置的动态Router实现.md",
@@ -206,8 +208,6 @@
     "Life/code/生活破局.md",
     "Life/code/code life.md",
     "Programming/OS/Linux/User&Group",
-    "Gallery/avatar/index.md",
-    "Programming/FrontEnd/Lint/SimpleGitHook",
     "Post/hello-world/cover.jpg",
     "Post/shortcodes/cover.jpg"
   ]
