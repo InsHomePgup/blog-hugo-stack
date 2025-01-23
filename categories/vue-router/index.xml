@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vue-Router on Abra's Blog</title><link>https://inshomepgup.github.io/blog-hugo-stack/categories/vue-router/</link><description>Recent content in Vue-Router on Abra's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 17 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://inshomepgup.github.io/blog-hugo-stack/categories/vue-router/index.xml" rel="self" type="application/rss+xml"/><item><title>Hash路由和History路由</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/vuerouter/hash%E8%B7%AF%E7%94%B1%E5%92%8Chistory%E8%B7%AF%E7%94%B1/</link><pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/vuerouter/hash%E8%B7%AF%E7%94%B1%E5%92%8Chistory%E8%B7%AF%E7%94%B1/</guid><description>&lt;p>监听hash改变的函数
+&lt;a class="link" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event" target="_blank" rel="noopener"
+>onHashChange&lt;/a>&lt;/p>
+&lt;p>hash路由：
+监听hash url 的变化，来渲染内容。&lt;/p>
+&lt;p>history路由：
+使用 History API 控制路由&lt;/p></description></item></channel></rss>

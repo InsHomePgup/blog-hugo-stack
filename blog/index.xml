@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogs on Abra's Blog</title><link>https://inshomepgup.github.io/blog-hugo-stack/blog/</link><description>Recent content in Blogs on Abra's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://inshomepgup.github.io/blog-hugo-stack/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://inshomepgup.github.io/blog-hugo-stack/blog/hugo/stack/hello-world/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/blog/hugo/stack/hello-world/</guid><description>&lt;img src="https://inshomepgup.github.io/blog-hugo-stack/cover.jpg" alt="Featured image of post Hello World" />&lt;p>Welcome to Hugo theme Stack. This is your first post. Edit or delete it, then start writing!&lt;/p>
+&lt;p>For more information about this theme, check the documentation: &lt;a class="link" href="https://stack.jimmycai.com/" target="_blank" rel="noopener"
+>https://stack.jimmycai.com/&lt;/a>&lt;/p>
+&lt;p>Want a site like this? Check out &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack-starter" target="_blank" rel="noopener"
+>hugo-theme-stack-stater&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>Photo by &lt;a class="link" href="https://unsplash.com/@pawel_czerwinski" target="_blank" rel="noopener"
+>Pawel Czerwinski&lt;/a> on &lt;a class="link" href="https://unsplash.com/" target="_blank" rel="noopener"
+>Unsplash&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>Obsidian Plugin 插件推荐缩放图片大小</title><link>https://inshomepgup.github.io/blog-hugo-stack/blog/obsidian/plugin/mousewheel-image-zoom/</link><pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/blog/obsidian/plugin/mousewheel-image-zoom/</guid><description>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20241225153318351.png"
+loading="lazy"
+alt="|625"
+>&lt;/p></description></item><item><title>md编辑器推荐</title><link>https://inshomepgup.github.io/blog-hugo-stack/blog/obsidian/</link><pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/blog/obsidian/</guid><description>&lt;h2 id="一个不错的编辑器">一个不错的编辑器
+&lt;/h2>&lt;p>用Obsidian来写vuepress的文章的话，在头部就有不一样的显示形式，可以选择tag，选择category。&lt;/p>
+&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/obselect.png" width="50%">
+&lt;p>平常我都是用vscode或者是webstorm就md的编辑体验来讲没有那么好哈哈哈&lt;/p>
+&lt;h3 id="add-file-property-就可以快速添加title这些信息">add file property 就可以快速添加title这些信息
+&lt;/h3>&lt;p>快捷键 Ctrl/Cmd + ;&lt;br>
+就很舒服。&lt;/p>
+&lt;p>Ob的功能挺多的，还是需要记忆与学习。
+常用常新。
+浏览一下其他人在用的功能。
+记录一下感觉还不错的功能：&lt;/p>
+&lt;ul>
+&lt;li>日记模板 可以每天使用相同的模板创建文件&lt;/li>
+&lt;li>Git同步，使用Git作为文章同步工具。&lt;/li>
+&lt;li>Obsidian Xmind思维导图&lt;/li>
+&lt;/ul>
+&lt;p>可以先从编辑图文开始，我发现Ob其实也支持直接粘贴剪贴板里面的图片，然后这个图片会直接被存在项目的根目录，就很方便，不过这也只是在OB里面浏览图片很方便，发布到vuepress的话，这个并不能作为相对路径被识别。
+所以还是使用绝对的网络路径作为图片的路径。
+GIthub图床管理。&lt;/p>
+&lt;h3 id="文本操作">文本操作
+&lt;/h3>&lt;p>快速键入一个超链接。&lt;/p>
+&lt;p>Ctrl + K
+&lt;a class="link" href="https://www.google.com" target="_blank" rel="noopener"
+>Google&lt;/a>
+%% 注释 %%&lt;/p></description></item><item><title>博客图片的存储-PicGo</title><link>https://inshomepgup.github.io/blog-hugo-stack/blog/picgo/</link><pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/blog/picgo/</guid><description>&lt;p>写blog的时候，用md + 图文 + 超链接。
+图片也是很重要的一环了，那么直接使用方便快捷的，github可以托管的图床岂不是美滋滋，而且可以直接上传到仓库内，使用URL引用。
+之前就了解到了一个工具PicGo，那么这次打算努力写博客我当然也是直接使用。&lt;/p>
+&lt;h2 id="文档">文档
+&lt;/h2>&lt;p>&lt;a class="link" href="https://picgo.github.io/PicGo-Doc/" target="_blank" rel="noopener"
+>PicGo&lt;/a>&lt;/p>
+&lt;h2 id="存储路径配置">存储路径配置
+&lt;/h2>&lt;p>这里我的做法就是直接把图片上传到和blog一起的仓库直接管理，也就不用分两个仓库了。
+主要就是在配置的时候的存储路径一项选择自己博客仓库内的一个文件夹。
+&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/%e5%9b%be%e5%ba%8aPicGo%e8%ae%be%e7%bd%ae.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>picgo 已经停更很久了，这里找到了一款还在更新的管理软件。也是fork picgo继续开发的。
+&lt;a class="link" href="https://piclist.cn/app" target="_blank" rel="noopener"
+>PicList&lt;/a>&lt;/p>
+&lt;p>他们的使用逻辑是一致的。
+但是在很多功能方面得到了完善。
+&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250116174927272.png"
+loading="lazy"
+>&lt;/p></description></item></channel></rss>

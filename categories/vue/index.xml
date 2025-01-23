@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vue on Abra's Blog</title><link>https://inshomepgup.github.io/blog-hugo-stack/categories/vue/</link><description>Recent content in Vue on Abra's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://inshomepgup.github.io/blog-hugo-stack/categories/vue/index.xml" rel="self" type="application/rss+xml"/><item><title>Vue渲染机制</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/render/vue%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/</link><pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/render/vue%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/</guid><description>&lt;p>&lt;a class="link" href="https://cn.vuejs.org/guide/extras/rendering-mechanism" target="_blank" rel="noopener"
+>渲染机制&lt;/a>&lt;/p>
+&lt;p>虚拟DOM，Virtual DOM&lt;/p></description></item><item><title>Hash路由和History路由</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/vuerouter/hash%E8%B7%AF%E7%94%B1%E5%92%8Chistory%E8%B7%AF%E7%94%B1/</link><pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/vuerouter/hash%E8%B7%AF%E7%94%B1%E5%92%8Chistory%E8%B7%AF%E7%94%B1/</guid><description>&lt;p>监听hash改变的函数
+&lt;a class="link" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event" target="_blank" rel="noopener"
+>onHashChange&lt;/a>&lt;/p>
+&lt;p>hash路由：
+监听hash url 的变化，来渲染内容。&lt;/p>
+&lt;p>history路由：
+使用 History API 控制路由&lt;/p></description></item><item><title>后端配置的动态Router实现</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/vuerouter/%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8A%A8%E6%80%81router%E5%AE%9E%E7%8E%B0/</link><pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/vuerouter/%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8A%A8%E6%80%81router%E5%AE%9E%E7%8E%B0/</guid><description>&lt;p>实现思路来自于 TDesign的项目&lt;/p>
+&lt;h3 id="引用资料">引用资料
+&lt;/h3>&lt;p>&lt;a class="link" href="https://tdesign.tencent.com/starter/docs/vue/get-started" target="_blank" rel="noopener"
+>TDesign-Vue&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://tdesign.tencent.com/starter/vue/dashboard/base" target="_blank" rel="noopener"
+>项目Preview&lt;/a>&lt;/p>
+&lt;p>说明：主要是学习怎么实现的还有思路，所以启动一个空白的项目然后一步步实现。&lt;/p>
+&lt;h3 id="启动项目">启动项目
+&lt;/h3>&lt;p>使用快速开始启动一个普通的模板用来实践整个过程。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250117164524893.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>在脚手架创建项目那里，使用vue3 + vite + lite版本启动。
+升级一下依赖,安装vue-router&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">pnpm add vue-router
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>创建一些简单的用来测试路由的目录,layout下面default.vue
+page下面home + about两个页面。
+通常我们的后台管理系统使用的是通用的layout+切换内部的content&lt;/p>
+&lt;h3 id="计划的实现效果">计划的实现效果
+&lt;/h3>&lt;p>用户A - 登录 - 获取路由表 - 动态插入路由表 - 首页。&lt;/p>
+&lt;h3 id="主要的api">主要的API
+&lt;/h3>&lt;p>&lt;a class="link" href="https://router.vuejs.org/zh/guide/advanced/dynamic-routing" target="_blank" rel="noopener"
+>动态路由&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">// 添加路由
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">router.addRoute({ path: &amp;#39;/about&amp;#39;, component: About })
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">// 删除路由
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">router.removeRoute(&amp;#39;about&amp;#39;)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">router.addRoute({ name: &amp;#39;admin&amp;#39;, path: &amp;#39;/admin&amp;#39;, component: Admin })
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">router.addRoute(&amp;#39;admin&amp;#39;, { path: &amp;#39;settings&amp;#39;, component: AdminSettings })
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看路由表&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">import&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="n">useRouter&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="n">from&lt;/span> &lt;span class="s1">&amp;#39;vue-router&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">const&lt;/span> &lt;span class="n">router&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">useRouter&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">console&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;routes&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">router&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">options&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">routes&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>
