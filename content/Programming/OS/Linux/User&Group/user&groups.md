@@ -25,6 +25,13 @@ adduser git
 
 添加用户到sudo用户组
 
+添加用户test到sudo组
 ```
 adduser test sudo
+```
+
+普通用户使用sudo
+root用户：
+```
+apt install sudo -y
 ```
