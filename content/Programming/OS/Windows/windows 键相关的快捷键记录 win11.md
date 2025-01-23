@@ -2,7 +2,6 @@ win + tab  在高刷屏下还不错的视图形式切换多窗口
 
 win + A 打开快捷设置。
 
-<img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20241230174441060.png" style="width:30%;">
 win + I 设置
 
 win + E 我的电脑
