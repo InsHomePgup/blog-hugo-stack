@@ -26,7 +26,7 @@ pnpm create vite react-starter --template react-ts
 - unocss
 - antfu eslint
 - lodash-es
-![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250106164408392.png)
+![|325x332](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250106164408392.png)
 
 删除多余的内容，仅保留App.tsx和main.tsx
 
