@@ -8,6 +8,11 @@
 <!--    }-->
 <!--</style>-->
 <!--<div class="box">-->
-<!--    <div>content one</div>-->
-<!--    <div>content two</div>-->
+<!--    {{ if (default false .Site.Params.colorScheme.toggle) }}-->
+<!--    <li id="dark-mode-toggle">-->
+<!--        {{ partial "helper/icon" "toggle-left" }}-->
+<!--        {{ partial "helper/icon" "toggle-right" }}-->
+<!--        <span>{{ T "darkMode" }}</span>-->
+<!--    </li>-->
+<!--    {{ end }}-->
 <!--</div>-->
