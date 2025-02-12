@@ -6,7 +6,6 @@ tags:
   - Vue-Router
 categories:
   - Vue
-  - Vue-Router
 ---
 
 监听hash改变的函数
