@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/Ide/Webstorm/我的Webstorm设置与插件.md",
+                "file": "Programming/Git/Guide/代码时光机 - Git.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "我的Webstorm设置与插件"
+              "title": "代码时光机 - Git"
             }
           }
         ]
@@ -166,6 +166,8 @@
   "active": "adce5ece0b64641a",
   "lastOpenFiles": [
     "Programming/Ide/Webstorm/我的Webstorm设置与插件.md",
+    "Programming/Git/Guide/代码时光机 - Git.md",
+    "Programming/Git/Guide",
     "image-4.png",
     "image-3.png",
     "image-2.png",
@@ -208,7 +210,6 @@
     "Programming/FrontEnd/Vue/Render",
     "Programming/FrontEnd/Vue/VueRouter",
     "Programming/OS/Linux/Software/Docker",
-    "Programming/FrontEnd/Sentry",
-    "Programming/OS/Linux/Software/ufw"
+    "Programming/FrontEnd/Sentry"
   ]
 }
