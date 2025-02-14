@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/Git/Guide/代码时光机 - Git.md",
+                "file": "Programming/Git/Guide/Git(1)---仓库-Repo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "代码时光机 - Git"
+              "title": "Git(1)---仓库-Repo"
             }
           }
         ]
@@ -165,8 +165,9 @@
   },
   "active": "adce5ece0b64641a",
   "lastOpenFiles": [
+    "Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
+    "Programming/Git/Guide/Git(1)---仓库-Repo.md",
     "Programming/Ide/Webstorm/我的Webstorm设置与插件.md",
-    "Programming/Git/Guide/代码时光机 - Git.md",
     "Programming/Git/Guide",
     "image-4.png",
     "image-3.png",
@@ -199,7 +200,6 @@
     "Untitled.md",
     "Programming/FrontEnd/Vue/Pinia/Pinia02.md",
     "Programming/FrontEnd/Vue/Pinia/Pinia setup 01.md",
-    "Programming/FrontEnd/Vue/Pinia/Pinia options.md",
     "Programming/FrontEnd/Vue/Pinia/pinia-plugin-persistedstate-2",
     "Page/archives/shortcodes/cover.jpg",
     "Page/archives/image-gallery/2.jpg",
