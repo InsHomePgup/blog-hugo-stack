@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
+                "file": "Programming/Git/Guide/Git(2)--文件追踪与提交-add-commit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Git(0)---代码时光机---AB-Git-Guide"
+              "title": "Git(2)--文件追踪与提交-add-commit"
             }
           }
         ]
@@ -165,9 +165,9 @@
   },
   "active": "760211d69d2227fd",
   "lastOpenFiles": [
+    "Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
     "Programming/Git/Guide/Git(1)---仓库-Repo.md",
     "Programming/Git/Guide/Git(2)--文件追踪与提交-add-commit.md",
-    "Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
     "image-1.png",
     "Programming/Git/Install/Windows.md",
     "image.png",
