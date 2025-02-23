@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/Git/Guide/Git(4)---还原---reset 从暂存区和 commit 还原.md",
+                "file": "Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Git(4)---还原---reset 从暂存区和 commit 还原"
+              "title": "Git(5)---分支与合并---branch+merge"
             }
           }
         ]
@@ -163,15 +163,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "760211d69d2227fd",
+  "active": "1e6854c1f8b309fe",
   "lastOpenFiles": [
     "Programming/Git/Guide/Git(3)---远程仓库与推送--remote + push.md",
     "Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
-    "Programming/Git/Guide/Git(1)---仓库-Repo.md",
     "Programming/Git/Guide/Git(4)---还原---reset 从暂存区和 commit 还原.md",
-    "Programming/Git/Guide/Git(5)---分支---branch.md",
+    "Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md",
     "Programming/Git/Guide/Git(6)---标签---tag.md",
     "Programming/Git/Guide/Git(7)---合并代码---merge.md",
+    "Programming/Git/Guide/Git(1)---仓库-Repo.md",
     "Programming/Git/Config/03.md",
     "Programming/Git/Config/02.md",
     "Programming/Git/Config/01.md",
