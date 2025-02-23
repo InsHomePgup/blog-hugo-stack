@@ -1,9 +1,9 @@
 ---
 title: Git(1)---仓库-Repo
 date: 2025-02-14
-tags:
-  - git
 categories:
+  - git
+tags:
   - git
 ---
 本次Git旅程将在windows 下实践。
