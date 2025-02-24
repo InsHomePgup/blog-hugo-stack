@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "3451b2dbf3a1e61a",
+        "id": "c237bc2d11f5900f",
         "type": "tabs",
         "children": [
           {
-            "id": "760211d69d2227fd",
+            "id": "bb2484de79a4ebcc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Git(0)---代码时光机---AB-Git-Guide"
+              "title": "New tab"
             }
           }
         ]
@@ -163,11 +159,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "760211d69d2227fd",
+  "active": "1e6854c1f8b309fe",
   "lastOpenFiles": [
+    "Programming/FrontEnd/Vue/多语言实现.md",
+    "Programming/FrontEnd/WebApi/浏览器工作原理.md",
+    "Programming/FrontEnd/WebApi/DOM和它的一些事儿。.md",
+    "Programming/FrontEnd/Sentry/Sentry前端监控.md",
+    "Programming/Language/Typescript/Omit的使用.md",
+    "Programming/Language/Typescript/TypeScript Function.md",
+    "Programming/Language/Typescript/TypeScript Class.md",
+    "Programming/Language/Typescript/Satisfies.md",
+    "Programming/Language/Typescript/Enum的使用.md",
+    "Programming/Language/Typescript/(一)常用的ts原始数据类型.md",
+    "Programming/Language/Typescript/（二）对象类型、值类型、联合类型、交叉类型.md",
+    "Programming/Language/JavaScript/Object.defineProperty.md",
+    "Programming/Language/JavaScript/js01.md",
+    "Programming/Language/JavaScript/简易理解bind,apply,call.md",
+    "Programming/Language/JavaScript/记录一次平铺树形的代码.md",
+    "Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
     "Programming/Git/Guide/Git(1)---仓库-Repo.md",
     "Programming/Git/Guide/Git(2)--文件追踪与提交-add-commit.md",
-    "Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
     "image-1.png",
     "Programming/Git/Install/Windows.md",
     "image.png",
@@ -181,26 +192,11 @@
     "Programming/FrontEnd/Lint/SimpleGitHook/项目组织.md",
     "Programming/OS/Linux/Software/Mongodb/开启远程连接.md",
     "Programming/OS/Linux/Software/Mongodb/安装 mongodb.md",
-    "Programming/BackEnd/Mariadb/Mariadb 添加一次用户并且给访问权限.md",
-    "Programming/BackEnd/Mariadb/Mariadb 开启远程连接.md",
-    "Programming/BackEnd/Mariadb/开启隧道连接.md",
-    "Blog/picgo.md",
-    "Programming/Language/Typescript/Omit的使用.md",
     "Programming/OS/Linux/Software/Mongodb",
-    "Programming/OS/Linux/User&Group/user&groups.md",
-    "Programming/FrontEnd/Vue/VueRouter/Hash路由和History路由.md",
     "Programming/OS/Linux/User",
-    "Programming/FrontEnd/Vue/VueRouter/后端配置的动态Router实现.md",
-    "Programming/FrontEnd/NPM/发布一个npm包.md",
-    "Programming/FrontEnd/NPM/package.json.md",
-    "Programming/FrontEnd/WebApi/浏览器工作原理.md",
     "Programming/FrontEnd/NPM",
-    "Programming/OS/MacOS/brew 的使用.md",
-    "Programming/FrontEnd/WebApi/DOM和它的一些事儿。.md",
-    "Programming/FrontEnd/Vue/Render/Vue渲染机制.md",
     "Programming/FrontEnd/WebApi",
     "Programming/FrontEnd/Vue/Render",
-    "Programming/Language/JavaScript/Object.defineProperty.md",
     "Pasted image 20250117165258.png",
     "Pasted image 20250117172152.png",
     "Pasted image 20250117173621.png",
