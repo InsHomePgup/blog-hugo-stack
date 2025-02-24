@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cache on Abra's Blog</title><link>https://inshomepgup.github.io/blog-hugo-stack/tags/cache/</link><description>Recent content in Cache on Abra's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://inshomepgup.github.io/blog-hugo-stack/tags/cache/index.xml" rel="self" type="application/rss+xml"/><item><title>pinia 插件 pinia-plugin-persistedstate-2的使用</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/pinia/pinia-plugin-persistedstate-2/pinia-plugin-persistedstate-2%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/pinia/pinia-plugin-persistedstate-2/pinia-plugin-persistedstate-2%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>&lt;p>pinia-plugin-persistedstate 和 pinia-plugin-persistedstate-2 都是持久化插件。&lt;/p>
+&lt;p>这里选用 -2的这个包，是因为可以自定义持久化使用的set和get方法。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250208153253271.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>这里的默认get set还是使用的 json 的序列化
+如果能自定义序列化函数，那么可以使用另外一个缓存工具&lt;/p>
+&lt;p>&lt;a class="link" href="https://www.npmjs.com/package/localforage" target="_blank" rel="noopener"
+>localforage&lt;/a>&lt;/p>
+&lt;p>这个缓存的特点是支持promise的异步调用。还有降级使用，优先使用更领先的存储方案，indexedDB。如果当前的浏览器不支持的话，再降级使用localStorage&lt;/p>
+&lt;p>&lt;a class="link" href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank" rel="noopener"
+>indexedDB&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-ts" data-lang="ts">&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">pinia&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createPinia&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">pinia&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">use&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">createPersistedStatePlugin&lt;/span>&lt;span class="p">({&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">storage&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">getItem&lt;/span>: &lt;span class="kt">async&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">localforage&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getItem&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">setItem&lt;/span>: &lt;span class="kt">async&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">localforage&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">setItem&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">removeItem&lt;/span>: &lt;span class="kt">async&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">localforage&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">removeItem&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

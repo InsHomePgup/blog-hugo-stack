@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on Abra's Blog</title><link>https://inshomepgup.github.io/blog-hugo-stack/categories/mac/</link><description>Recent content in Mac on Abra's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 19 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://inshomepgup.github.io/blog-hugo-stack/categories/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>brew 的使用</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/os/macos/brew-%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/os/macos/brew-%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>&lt;p>查看版本&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">brew --version
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">brew -v
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看当前安装的包&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">brew list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>更新 brew self&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">brew update
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看可以更新的包&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">brew outdated
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>更新单个包&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">brew upgrade wget
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查询某个包&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">brew search [package_name]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>锁定单个包的版本&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">brew pin &lt;span class="o">[&lt;/span>FORMULA&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 解锁&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">brew unpin &lt;span class="o">[&lt;/span>FORMULA&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>MacOS 常用快捷键记录</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/os/macos/shortcut/</link><pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/os/macos/shortcut/</guid><description>&lt;p>&lt;a class="link" href="https://support.apple.com/zh-cn/102650" target="_blank" rel="noopener"
+>Mac 键盘快捷键大全&lt;/a>&lt;/p>
+&lt;p>在日常Mac的使用中用到了许多快捷键，这里记录一下。&lt;/p>
+&lt;h3 id="窗口">窗口
+&lt;/h3>&lt;p>Control + 方向键上 管理桌面&lt;/p>
+&lt;p>Control + 方向键下 管理当前的应用的多窗口&lt;/p>
+&lt;p>Control + 左 ｜ 右 直接切换桌面&lt;/p>
+&lt;p>Command + table 切换应用&lt;/p>
+&lt;p>Command + M 隐藏当前应用&lt;/p>
+&lt;p>恢复隐藏应用
+Command + table选中以后按住option以后松手，使用神奇效果恢复窗口&lt;/p>
+&lt;h3 id="finder-访达">Finder 访达
+&lt;/h3>&lt;p>直接进入文件夹&lt;/p>
+&lt;p>Command + Shift + G 输入绝对路径进入文件夹&lt;/p>
+&lt;p>Command + Shift + . 显示隐藏文件&lt;/p>
+&lt;p>访达可以安装一个Go2Shell的应用，在finder内快速打开当前目录的terminal&lt;/p>
+&lt;h3 id="综合">综合
+&lt;/h3>&lt;p>Command + 空格 聚焦搜索&lt;/p>
+&lt;p>输入terminal快速打开终端&lt;/p></description></item></channel></rss>

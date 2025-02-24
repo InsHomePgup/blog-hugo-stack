@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mariadb on Abra's Blog</title><link>https://inshomepgup.github.io/blog-hugo-stack/tags/mariadb/</link><description>Recent content in Mariadb on Abra's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 28 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://inshomepgup.github.io/blog-hugo-stack/tags/mariadb/index.xml" rel="self" type="application/rss+xml"/><item><title>Debian安装和配置Mariadb</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/os/linux/software/mariadb/debian%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEmariadb/</link><pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/os/linux/software/mariadb/debian%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEmariadb/</guid><description>&lt;p>&lt;a class="link" href="https://mariadb.org/download/?t=repo-config&amp;amp;d=Debian&amp;#43;12&amp;#43;%22Bookworm%22&amp;amp;v=10.11&amp;amp;r_m=xtom_fre" target="_blank" rel="noopener"
+>参考网站&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 更新一下apt&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">apt update &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> apt upgrade -y
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 初始化内容&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt install apt-transport-https curl
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo mkdir -p /etc/apt/keyrings
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo curl -o /etc/apt/keyrings/mariadb-keyring.pgp &lt;span class="s1">&amp;#39;https://mariadb.org/mariadb_release_signing_key.pgp&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># apt没有自带mariadb需要写入存储库&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">vim /etc/apt/sources.list.d/mariadb.sources
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 写入以下内容&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># MariaDB 10.11 repository list - created 2024-06-15 06:06 UTC&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># [https://mariadb.org/download/](https://mariadb.org/download/)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">X-Repolib-Name: MariaDB
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Types: deb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># deb.mariadb.org is a dynamic mirror if your preferred mirror goes offline. See [https://mariadb.org/mirrorbits/](https://mariadb.org/mirrorbits/) for details.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># URIs: [https://deb.mariadb.org/10.11/debian](https://deb.mariadb.org/10.11/debian)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">URIs: &lt;span class="o">[&lt;/span>https://mirrors.xtom.com/mariadb/repo/10.11/debian&lt;span class="o">](&lt;/span>https://mirrors.xtom.com/mariadb/repo/10.11/debian&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Suites: bookworm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Components: main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Signed-By: /etc/apt/keyrings/mariadb-keyring.pgp
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 阿里云的源&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># MariaDB 10.11 repository list - created 2024-08-01 14:43 UTC&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># [https://mariadb.org/download/](https://mariadb.org/download/)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">X-Repolib-Name: MariaDB
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Types: deb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># deb.mariadb.org is a dynamic mirror if your preferred mirror goes offline. See [https://mariadb.org/mirrorbits/](https://mariadb.org/mirrorbits/) for details.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># URIs: [https://deb.mariadb.org/10.11/debian](https://deb.mariadb.org/10.11/debian)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">URIs: &lt;span class="o">[&lt;/span>https://mirrors.aliyun.com/mariadb/repo/10.11/debian&lt;span class="o">](&lt;/span>https://mirrors.aliyun.com/mariadb/repo/10.11/debian&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Suites: bookworm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Components: main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Signed-By: /etc/apt/keyrings/mariadb-keyring.pgp
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 开始安装:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt update
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt install mariadb-server
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 安装完成以后开始初始化&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mysql_secure_installation
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Enter current password &lt;span class="k">for&lt;/span> root &lt;span class="o">(&lt;/span>enter &lt;span class="k">for&lt;/span> none&lt;span class="o">)&lt;/span>: &lt;span class="c1"># 当前的root 密码 默认root密码为空直接回车即可&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Switch to unix_socket authentication &lt;span class="o">[&lt;/span>Y/n&lt;span class="o">]&lt;/span> &lt;span class="c1">#是否使用unix_socket验证，建议否&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set root password? &lt;span class="o">[&lt;/span>Y/n&lt;span class="o">]&lt;/span> &lt;span class="c1">#是否设置新的root密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">New password: &lt;span class="c1">#输入新密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Re-enter new password: &lt;span class="c1">#确认密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Remove anonymous users? &lt;span class="o">[&lt;/span>Y/n&lt;span class="o">]&lt;/span> &lt;span class="c1">#是否移除匿名用户&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Disallow root login remotely? &lt;span class="o">[&lt;/span>Y/n&lt;span class="o">]&lt;/span> &lt;span class="c1">#是否启用root用户的远程访问&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Remove &lt;span class="nb">test&lt;/span> database and access to it? &lt;span class="o">[&lt;/span>Y/n&lt;span class="o">]&lt;/span> &lt;span class="c1">#是否删除测试数据库&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Reload privilege tables now? &lt;span class="o">[&lt;/span>Y/n&lt;span class="o">]&lt;/span> &lt;span class="c1">#是否立即刷新数据库配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Thanks &lt;span class="k">for&lt;/span> using MariaDB!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="开启远程访问">开启远程访问
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 登录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mysql
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">grant all privileges on *.* to root@&lt;span class="s2">&amp;#34;%&amp;#34;&lt;/span> identified by &lt;span class="s2">&amp;#34;pwd&amp;#34;&lt;/span> with grant option&lt;span class="p">;&lt;/span> flush privileges&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">grant all privileges on *.* to gitea@&lt;span class="s2">&amp;#34;%&amp;#34;&lt;/span> identified by &lt;span class="s2">&amp;#34;123&amp;#34;&lt;/span> with grant option&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="开启配置中的远程连接">开启配置中的远程连接
+&lt;/h3>&lt;p>vim /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/p>
+&lt;p>bind-address = 127.0.0.1&lt;/p>
+&lt;p>修改成&lt;/p>
+&lt;p>bind-address = 0.0.0.0&lt;/p>
+&lt;h2 id="创建一个用户来远程访问">创建一个用户来远程访问
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-mysql" data-lang="mysql">&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">create&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">user&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;username&amp;#39;&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="s1">&amp;#39;%&amp;#39;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">identified&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">by&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;password&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">grant&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">all&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">on&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">database&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">to&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;username&amp;#39;&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="s1">&amp;#39;%&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">grant&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">all&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">on&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">gitea&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">to&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;gitea&amp;#39;&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="s1">&amp;#39;%&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>
