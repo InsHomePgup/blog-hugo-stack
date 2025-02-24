@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "1c9a83f2ce328e72",
+    "id": "e90d075ea9e573c5",
     "type": "split",
     "children": [
       {
-        "id": "c237bc2d11f5900f",
+        "id": "b5c2709f7c718365",
         "type": "tabs",
         "children": [
           {
-            "id": "bb2484de79a4ebcc",
+            "id": "81ba18dc79bf6f17",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -23,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "99c19bc5c8730e97",
+    "id": "53e55246b7c1df2a",
     "type": "split",
     "children": [
       {
-        "id": "ec1522f01d6a06f5",
+        "id": "000214d60a101037",
         "type": "tabs",
         "children": [
           {
-            "id": "1e6854c1f8b309fe",
+            "id": "b6295daeae405c7c",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +44,7 @@
             }
           },
           {
-            "id": "fa8a99c4dd810014",
+            "id": "328ce517576afcc9",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +61,7 @@
             }
           },
           {
-            "id": "4d32e8dd8a67edbd",
+            "id": "5eed568c1b3b76c0",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,20 +77,19 @@
     "width": 300
   },
   "right": {
-    "id": "d5c0e3185cbf9334",
+    "id": "e8a8c8b4d726b006",
     "type": "split",
     "children": [
       {
-        "id": "7855499ad239ffe0",
+        "id": "358117fa3c5a1544",
         "type": "tabs",
         "children": [
           {
-            "id": "d679b9c9a7aebf4d",
+            "id": "444a4490772532b6",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "post/diary/25-01-07.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,46 +99,49 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 25-01-07"
+              "title": "Backlinks"
             }
           },
           {
-            "id": "e9d670d45e7acf46",
+            "id": "86f23bdce1008613",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "post/diary/25-01-07.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 25-01-07"
+              "title": "Outgoing links"
             }
           },
           {
-            "id": "5ece571749bb3e8b",
+            "id": "2d3066ffd54b957e",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Tags"
             }
           },
           {
-            "id": "5b77e214c40b2821",
+            "id": "d2a1d83a3f165c4d",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "post/diary/25-01-07.md"
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 25-01-07"
+              "title": "Outline"
             }
           }
         ]
@@ -159,53 +161,6 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1e6854c1f8b309fe",
-  "lastOpenFiles": [
-    "Programming/FrontEnd/Vue/多语言实现.md",
-    "Programming/FrontEnd/WebApi/浏览器工作原理.md",
-    "Programming/FrontEnd/WebApi/DOM和它的一些事儿。.md",
-    "Programming/FrontEnd/Sentry/Sentry前端监控.md",
-    "Programming/Language/Typescript/Omit的使用.md",
-    "Programming/Language/Typescript/TypeScript Function.md",
-    "Programming/Language/Typescript/TypeScript Class.md",
-    "Programming/Language/Typescript/Satisfies.md",
-    "Programming/Language/Typescript/Enum的使用.md",
-    "Programming/Language/Typescript/(一)常用的ts原始数据类型.md",
-    "Programming/Language/Typescript/（二）对象类型、值类型、联合类型、交叉类型.md",
-    "Programming/Language/JavaScript/Object.defineProperty.md",
-    "Programming/Language/JavaScript/js01.md",
-    "Programming/Language/JavaScript/简易理解bind,apply,call.md",
-    "Programming/Language/JavaScript/记录一次平铺树形的代码.md",
-    "Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
-    "Programming/Git/Guide/Git(1)---仓库-Repo.md",
-    "Programming/Git/Guide/Git(2)--文件追踪与提交-add-commit.md",
-    "image-1.png",
-    "Programming/Git/Install/Windows.md",
-    "image.png",
-    "Programming/Git/Install",
-    "Programming/Ide/Webstorm/我的Webstorm设置与插件.md",
-    "Programming/Git/Guide",
-    "Programming/FrontEnd/Vue/VueRouter/动态Router和权限控制的实现.md",
-    "Programming/FrontEnd/Vue/pinia/pinia-plugin-persistedstate-2/pinia-plugin-persistedstate-2的使用.md",
-    "Programming/FrontEnd/Vue/pinia/pinia-plugin-persistedstate-2",
-    "Programming/FrontEnd/CSS/box-sizing.md",
-    "Programming/FrontEnd/Lint/SimpleGitHook/项目组织.md",
-    "Programming/OS/Linux/Software/Mongodb/开启远程连接.md",
-    "Programming/OS/Linux/Software/Mongodb/安装 mongodb.md",
-    "Programming/OS/Linux/Software/Mongodb",
-    "Programming/OS/Linux/User",
-    "Programming/FrontEnd/NPM",
-    "Programming/FrontEnd/WebApi",
-    "Programming/FrontEnd/Vue/Render",
-    "Pasted image 20250117165258.png",
-    "Pasted image 20250117172152.png",
-    "Pasted image 20250117173621.png",
-    "Pasted image 20250117173802.png",
-    "Pasted image 20250117173821.png",
-    "Pasted image 20250117174221.png",
-    "Pasted image 20250117174233.png",
-    "Pasted image 20250117174027.png",
-    "Programming/FrontEnd/Vue/VueRouter",
-    "Programming/OS/Linux/Software/Docker"
-  ]
+  "active": "81ba18dc79bf6f17",
+  "lastOpenFiles": []
 }
