@@ -21,7 +21,7 @@ remote, 远程
 
 首先参照[这篇](../../config/03)去创建一个 ssh key 连接github
 
-先不关注 http 这个协议
+在github创建一个空的仓库
 
 复制 ssh的仓库地址
 
