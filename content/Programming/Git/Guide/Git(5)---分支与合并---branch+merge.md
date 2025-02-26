@@ -6,9 +6,12 @@ categories:
 tags:
   - git
 ---
+
+git 最无敌屌炸天的功能。  branch 分支。
+
 分支是非常非常重要的，可以说虽然我们的日常丝滑小连招就是 add + commit + push
 
-这些是基础，是一条直线
+这些是基础，是一条直线。
 
 但是我想我们的 git 树能开枝散叶，就会用到分支
 
@@ -22,18 +25,41 @@ tags:
 
 当我想测试合并一些代码而不至于崩溃影响到我的程序
 
-feat/xxx
-
-fix/xxx
-
-hotfix/xxx
-
-chore/buildxxx
-
-merge/20250101
-
-
 那么分支，这就是 git 的核心奥义
 
+说实话一个健康的项目，必然有很多分支来控制版本。
+
+feat/xxx  新特性
+
+fix/xxx 修复
+
+hotfix/xxx 热修复
+
+chore/buildxxx 杂项
+
+merge/20250101  合并测试
+
 与分支相伴的是合并（merge）
+
+``` shell
+# 查看当前我所在的分支
+git branch
+
+# 合并新特性 new-book
+git merge feat/new-book
+
+# 合并 解决345这个issue的代码
+git merge hotfix/#345
+
+```
+
+```shell
+
+git switch -c branchName
+```
+
+
+
+
+
 
