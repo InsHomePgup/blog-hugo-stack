@@ -19,7 +19,7 @@ remote, 远程
 
 还有很多常见的类似的平台,gitee,gitea,gitlab...
 
-首先参照[这篇](../../Config/03)去创建一个 ssh key 连接github
+首先参照[这篇](../../config/03)去创建一个 ssh key 连接github
 
 先不关注 http 这个协议
 
