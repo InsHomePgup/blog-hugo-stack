@@ -11,10 +11,14 @@
             "id": "81ba18dc79bf6f17",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Programming/FrontEnd/Lint/SimpleGitHook/项目组织.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "项目组织"
             }
           }
         ]
@@ -162,5 +166,10 @@
     }
   },
   "active": "81ba18dc79bf6f17",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "Programming/FrontEnd/Storage/localforage.md",
+    "Programming/FrontEnd/Vue/Pinia/pinia-plugin-persistedstate-2/pinia-plugin-persistedstate-2的使用.md",
+    "Programming/FrontEnd/Storage",
+    "about.md"
+  ]
 }
