@@ -1,6 +1,12 @@
 ---
 title: "About Me"
 layout: "about"
+menu:
+  main:
+    name: About
+    weight: 5
+    params:
+      icon: braces
 ---
 
 你好，我是Abra
