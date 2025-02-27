@@ -52,6 +52,7 @@
     }
 }
 .about-container {
+    min-width: 200px;
     width: 100%;
     margin: 0 auto;     /* 上下边距改为0 */
     min-height: calc(100vh - 100px);  /* 添加最小高度，减去头部和底部的空间 */
