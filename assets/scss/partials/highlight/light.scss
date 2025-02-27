@@ -3,12 +3,14 @@
 *   https://xyproto.github.io/splash/docs/monokailight.html
 */
 
-$color: #272822;
-$background-color: #f1f5f9;
-$error-color: #960050;
-$keyword-color: #00a8c8;
-$text-color: #111111;
-$name-color: #75af00;
-$literal-color: #d88200;
+@import "theme";
+
+$color: theme-color(light, color);
+$background-color: theme-color(light, background-color);
+$error-color: theme-color(light, error-color);
+$keyword-color: theme-color(light, keyword-color);
+$text-color: theme-color(light, text-color);
+$name-color: theme-color(light, name-color);
+$literal-color: theme-color(light, literal-color);
 
 @import "common.scss";

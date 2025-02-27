@@ -1,0 +1,26 @@
+// 主题颜色变量
+$themes: (
+  light: (
+    color: #272822,
+    background-color: #f1f5f9,
+    error-color: #960050,
+    keyword-color: #00a8c8,
+    text-color: #111111,
+    name-color: #75af00,
+    literal-color: #d88200
+  ),
+  dark: (
+    color: #f8f8f2,
+    background-color: #272822,
+    error-color: #ff5555,
+    keyword-color: #66d9ef,
+    text-color: #f8f8f2,
+    name-color: #a6e22e,
+    literal-color: #e6db74
+  )
+);
+
+// 获取主题颜色的函数
+@function theme-color($theme, $key) {
+  @return map-get(map-get($themes, $theme), $key);
+}

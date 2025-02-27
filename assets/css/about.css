@@ -46,17 +46,15 @@
         --text-color: #e0e0e0;
         --link-color: #60a5fa;
         --link-hover-bg: #2d2d2d;
-        --gradient-start: rgba(255, 182, 193, 0.05);
-        --gradient-end: rgba(135, 206, 235, 0.05);
+        /* 修改渐变色为黑紫色调 */
+        --gradient-start: rgba(20, 20, 20, 0.95);
+        --gradient-end: rgba(76, 0, 138, 0.85);
         --border-color: rgba(255, 255, 255, 0.1);
     }
 }
+
+/* 确保渐变效果正确应用 */
 .about-container {
-    min-width: 200px;
-    width: 100%;
-    margin: 0 auto;     /* 上下边距改为0 */
-    min-height: calc(100vh - 100px);  /* 添加最小高度，减去头部和底部的空间 */
-    padding: 2rem 3rem; /* 增加内边距 */
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     background-color: var(--bg-color);
     color: var(--text-color);
