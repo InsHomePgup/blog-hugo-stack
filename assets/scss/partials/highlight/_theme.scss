@@ -7,7 +7,11 @@ $themes: (
     keyword-color: #00a8c8,
     text-color: #111111,
     name-color: #75af00,
-    literal-color: #d88200
+    literal-color: #d88200,
+    
+    // About 页面渐变色
+    about-gradient-start: rgba(255, 182, 193, 0.1),
+    about-gradient-end: rgba(135, 206, 235, 0.1)
   ),
   dark: (
     color: #f8f8f2,
@@ -16,7 +20,11 @@ $themes: (
     keyword-color: #66d9ef,
     text-color: #f8f8f2,
     name-color: #a6e22e,
-    literal-color: #e6db74
+    literal-color: #e6db74,
+    
+    // About 页面渐变色
+    about-gradient-start: #c850c0,
+    about-gradient-end: #4158d0 
   )
 );
 

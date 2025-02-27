@@ -1,9 +1,8 @@
 {{ define "main" }}
-{{ $style := resources.Get "css/about.css" | minify }}
+{{ $style := resources.Get "scss/about.scss" | css.Sass | resources.Minify }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 <div class="about-container">
-    <!-- 原有内容保持不变 -->
     <div class="about-header">
         <h1 class="about-title">{{ .Title }}</h1>
     </div>
@@ -11,15 +10,5 @@
     <div class="about-content">
         {{ .Content }}
     </div>
-
-    {{ with .Params.social }}
-    <div class="social-links">
-        {{ range . }}
-        <a href="{{ .url }}" target="_blank" rel="noopener">
-            <span>{{ .name }}</span>
-        </a>
-        {{ end }}
-    </div>
-    {{ end }}
 </div>
 {{ end }}
