@@ -1,13 +1,7 @@
 ---
-menu:
-  main:
-    name: About
-    weight: 5
-    params:
-      icon: braces
+title: "About Me"
+layout: "about"
 ---
-
-# About Me
 
 你好，我是Abra
 

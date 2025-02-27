@@ -1,0 +1,125 @@
+.about-header {
+    margin-bottom: 3rem;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.about-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* 亮色模式 */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #2c3e50;
+    --link-color: #3498db;
+    --link-hover-bg: #f0f0f0;
+    --gradient-start: rgba(255, 182, 193, 0.1);  /* 淡粉色 */
+    --gradient-end: rgba(135, 206, 235, 0.1);    /* 淡蓝色 */
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 暗色模式 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #e0e0e0;
+        --link-color: #60a5fa;
+        --link-hover-bg: #2d2d2d;
+        --gradient-start: rgba(255, 182, 193, 0.05);
+        --gradient-end: rgba(135, 206, 235, 0.05);
+        --border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+.about-container {
+    width: 100%;
+    margin: 0 auto;     /* 上下边距改为0 */
+    min-height: calc(100vh - 100px);  /* 添加最小高度，减去头部和底部的空间 */
+    padding: 2rem 3rem; /* 增加内边距 */
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* 调整内容区域的宽度 */
+.about-content {
+    max-width: 900px;   /* 内容区域可以设置得稍窄一些，提高可读性 */
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+/* 社交链接样式 */
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: var(--link-color);
+    border: 1px solid var(--link-color);
+}
+
+.social-links a:hover {
+    background-color: var(--link-hover-bg);
+    transform: translateY(-2px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 1.5rem;
+        margin: 0;
+        border-radius: 0;  /* 在移动端移除圆角 */
+        min-height: 100vh;
+    }
+
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-content {
+        font-size: 1rem;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-links a {
+        width: 100%;
+        text-align: center;
+    }
+}

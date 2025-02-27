@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "about.md",
+                "file": "Blog/hugo/template/01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "about"
+              "title": "01"
             }
           }
         ]
@@ -165,8 +165,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b6295daeae405c7c",
+  "active": "3264ff5bf45f6e12",
   "lastOpenFiles": [
+    "test.html",
+    "Blog/hugo/stack/header.md",
+    "Blog/hugo/template/01.md",
+    "Blog/hugo/template",
+    "about.md",
     "Life/work/Resume.md",
     "Life/work",
     "Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md",
@@ -180,7 +185,6 @@
     "Programming/FrontEnd/Lint/SimpleGitHook/项目组织.md",
     "Programming/FrontEnd/Storage/localforage.md",
     "Programming/FrontEnd/Vue/Pinia/pinia-plugin-persistedstate-2/pinia-plugin-persistedstate-2的使用.md",
-    "Programming/FrontEnd/Storage",
-    "about.md"
+    "Programming/FrontEnd/Storage"
   ]
 }
