@@ -1,22 +1,20 @@
 {
   "main": {
-    "id": "e90d075ea9e573c5",
+    "id": "03a4f15898907e48",
     "type": "split",
     "children": [
       {
-        "id": "d028a8a6d92ddd0b",
+        "id": "a1b0fec2e6520799",
         "type": "tabs",
         "children": [
           {
-            "id": "0f071c95f21eac2c",
+            "id": "0a7a2a44c1b7ad98",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.9"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.9"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -25,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "53e55246b7c1df2a",
+    "id": "17afd88acaf9c766",
     "type": "split",
     "children": [
       {
-        "id": "000214d60a101037",
+        "id": "0a0769000d58d1fc",
         "type": "tabs",
         "children": [
           {
-            "id": "b6295daeae405c7c",
+            "id": "411bcab6ba500395",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -46,7 +44,7 @@
             }
           },
           {
-            "id": "328ce517576afcc9",
+            "id": "e897881b5938d69e",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -63,7 +61,7 @@
             }
           },
           {
-            "id": "5eed568c1b3b76c0",
+            "id": "7754ce943adf0ef7",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -79,15 +77,15 @@
     "width": 300
   },
   "right": {
-    "id": "e8a8c8b4d726b006",
+    "id": "1397558302270535",
     "type": "split",
     "children": [
       {
-        "id": "358117fa3c5a1544",
+        "id": "6f36e8f018cd0a84",
         "type": "tabs",
         "children": [
           {
-            "id": "444a4490772532b6",
+            "id": "3e8feaa70448dc7e",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -105,7 +103,7 @@
             }
           },
           {
-            "id": "86f23bdce1008613",
+            "id": "00569cd18db3d396",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -118,7 +116,7 @@
             }
           },
           {
-            "id": "2d3066ffd54b957e",
+            "id": "e895c43f5b7767c1",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -133,7 +131,7 @@
             }
           },
           {
-            "id": "d2a1d83a3f165c4d",
+            "id": "eba5e759b9dbdbcc",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -163,30 +161,6 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0f071c95f21eac2c",
-  "lastOpenFiles": [
-    "Post/README/你好，欢迎光临寒舍.md",
-    "Post/README/展望.md",
-    "Programming/Git/Guide/Git 番外篇 - 核心的四个区域.md",
-    "Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
-    "Programming/Git/Guide/Git(1)---仓库-Repo.md",
-    "Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
-    "about.md",
-    "Blog/hugo/template/01.md",
-    "test.html",
-    "Blog/hugo/stack/header.md",
-    "Blog/hugo/template",
-    "Life/work/Resume.md",
-    "Life/work",
-    "Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md",
-    "Programming/Git/Guide/Git(6)---标签---tag.md",
-    "Programming/Git/Guide/Git(4)---还原---reset 从暂存区和 commit 还原.md",
-    "Programming/Git/Guide/Git(3)---远程仓库与推送--remote + push.md",
-    "Programming/Git/Config/03.md",
-    "().md",
-    "Programming/FrontEnd/Lint/SimpleGitHook/项目组织.md",
-    "Programming/FrontEnd/Storage/localforage.md",
-    "Programming/FrontEnd/Vue/Pinia/pinia-plugin-persistedstate-2/pinia-plugin-persistedstate-2的使用.md",
-    "Programming/FrontEnd/Storage"
-  ]
+  "active": "411bcab6ba500395",
+  "lastOpenFiles": []
 }
