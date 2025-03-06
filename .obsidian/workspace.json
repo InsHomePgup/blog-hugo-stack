@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6b7972c25ac27b33",
+        "id": "c7432f600f33c52b",
         "type": "tabs",
         "children": [
           {
-            "id": "ba52712b2fbb70f1",
+            "id": "be170c9de02d6568",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -162,9 +162,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ba52712b2fbb70f1",
+  "active": "411bcab6ba500395",
   "lastOpenFiles": [
-    "Untitled.md",
-    "README.md"
+    "content/Blog/Obsidian/Plugin/Git.md",
+    "README.md",
+    "content/Blog/Obsidian/Plugin/MouseWheel Image zoom.md",
+    "Untitled.md"
   ]
 }
