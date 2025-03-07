@@ -90,6 +90,35 @@ function App() {
 export default App
 ```
 
+##### 总结
+
+动态绑定class和style
+
+``` tsx
+export default function page() {
+  const name = 'foo'
+  const classList = 'w-10 h-10'
+  const styleObj = {
+    backgroundColor: 'red',
+  }
+  const active = true
+  const activeClass = `${active ? 'active' : ''}`
+
+  return (
+    <>
+      <div className={classList}>{name}</div>
+      <div className="bg-blue-5 w-10 h-10"></div>
+      <div style={{ background: 'red' }}></div>
+      <div style={styleObj}></div>
+      <div className={activeClass}></div>
+      <div className={`${active}?'active':''`}></div>
+      <div className={['test'].join(' ')}></div>
+    </>
+  )
+}
+
+```
+
 
 
 ##### 事件操作，获取事件对象event
