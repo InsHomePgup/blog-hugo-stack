@@ -168,8 +168,10 @@
   },
   "active": "be170c9de02d6568",
   "lastOpenFiles": [
-    "content/Programming/Git/Guide/Git(6)---标签---tag.md",
+    "content/Programming/Git/Guide/Git(3)---远程仓库与推送--remote + push.md",
     "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
+    "content/Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md",
+    "content/Programming/Git/Guide/Git(6)---标签---tag.md",
     "content/Programming/Git/Guide/Git(1)---仓库-Repo.md",
     "content/Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
     "content/Programming/Git/Guide/Git 番外篇 - 核心的四个区域.md",
