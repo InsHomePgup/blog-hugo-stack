@@ -13,4 +13,3 @@ Every 20 mins for pull
 After file stoping edit.
 
 脑阔疼，目前看上去没法自动commit & sync
-
