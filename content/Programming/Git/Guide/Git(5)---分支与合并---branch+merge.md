@@ -69,3 +69,19 @@ git branch -d branchName
 ```
 
 ### 场景实践
+
+为了帮助理解branch 的应用，简单模拟一下branch 的使用场景。
+
+```
+
+git switch -c develop
+
+git switch -c prod
+
+git switch -c feat/new-card
+
+git switch -c fix/33
+
+git switch -c test/new-lint
+```
+
