@@ -11,10 +11,14 @@
             "id": "be170c9de02d6568",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "content/Blog/Obsidian/Plugin/Git.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Git"
             }
           }
         ]
@@ -162,7 +166,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "411bcab6ba500395",
+  "active": "be170c9de02d6568",
   "lastOpenFiles": [
     "content/Blog/Obsidian/Plugin/Git.md",
     "README.md",
