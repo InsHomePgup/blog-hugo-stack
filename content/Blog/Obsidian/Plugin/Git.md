@@ -13,3 +13,8 @@ Every 20 mins for pull
 After file stoping edit.
 
 脑阔疼，目前看上去没法自动commit & sync
+
+好家伙，在重启了Obsidina以后突然这个自动同步就生效了。
+
+之前关闭的时候我还用的是1分钟，然后我随便做了一点修改就提交了两次。
+
