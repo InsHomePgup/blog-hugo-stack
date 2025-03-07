@@ -25,7 +25,7 @@ git 最无敌屌炸天的功能。  branch 分支。
 
 当我想测试合并一些代码而不至于崩溃影响到我的程序
 
-那么分支，这就是 git 的核心奥义
+那么分支，git 的核心奥义
 
 说实话一个健康的项目，必然有很多分支来控制版本。
 
@@ -45,18 +45,29 @@ merge/20250101  合并测试
 # 查看当前我所在的分支
 git branch
 
+# 查看全部分支
+git branch -a
+
 # 合并新特性 new-book
 git merge feat/new-book
 
 # 合并 解决345这个issue的代码
-git merge hotfix/#345
+git merge hotfix/345
 
 ```
 
 ```shell
-
+# 创建并切换到新分支
 git switch -c branchName
+
+# 修改分支名称
+git branch -m old new 
+
+# 删除本地分支
+git branch -d branchName
+
 ```
+
 
 
 
