@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/FrontEnd/React/react01.md",
+                "file": "content/Life/food/卤牛肉，酱牛肉.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "react01"
+              "title": "卤牛肉，酱牛肉"
             }
           }
         ]
@@ -168,6 +168,7 @@
   },
   "active": "b7c087f396e037b5",
   "lastOpenFiles": [
+    "content/Programming/FrontEnd/React/react01.md",
     "content/Programming/OS/Windows/软件推荐-Twinkle Tray-亮度调节.md",
     "content/Programming/OS/Windows/QRScan.md",
     "content/Programming/OS/Windows/ScreenToGif.md",
@@ -185,7 +186,6 @@
     "content/Programming/Language/Typescript/记录一次vscode没有ts静态检查的事情.md",
     "content/Programming/Language/Typescript/(一)常用的ts原始数据类型.md",
     "content/Programming/Language/Typescript/（二）对象类型、值类型、联合类型、交叉类型.md",
-    "content/Programming/FrontEnd/React/react01.md",
     "content/Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md",
     "content/Programming/Git/Guide/Git(3)---远程仓库与推送--remote + push.md",
     "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
