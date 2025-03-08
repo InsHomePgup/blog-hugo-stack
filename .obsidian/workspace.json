@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "dcef8b19c4fe5e14",
+        "id": "8b7f58560ce19dbf",
         "type": "tabs",
         "children": [
           {
-            "id": "e51ff1299b45060a",
+            "id": "250ad1782acdbea7",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "content/about.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "about"
             }
           }
         ]
@@ -162,8 +166,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e51ff1299b45060a",
+  "active": "250ad1782acdbea7",
   "lastOpenFiles": [
+    "README.md",
+    "content/about.md",
+    "content/Life/work/Resume.md",
     "content/Programming/FrontEnd/React/react01.md",
     "content/Programming/FrontEnd/React/react02.md",
     "content/Programming/FrontEnd/React/react03 探索路由.md",
@@ -186,9 +193,6 @@
     "content/Programming/Language/Typescript/记录一次vscode没有ts静态检查的事情.md",
     "content/Programming/Language/Typescript/(一)常用的ts原始数据类型.md",
     "content/Programming/Language/Typescript/（二）对象类型、值类型、联合类型、交叉类型.md",
-    "content/Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md",
-    "content/Programming/Git/Guide/Git(3)---远程仓库与推送--remote + push.md",
-    "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
-    "content/Programming/Git/Guide/Git(6)---标签---tag.md"
+    "content/Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md"
   ]
 }
