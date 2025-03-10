@@ -1,5 +1,5 @@
 ---
-title: Git 番外篇 - 核心的四个区域
+title: Git 核心概念 - 四个区域
 date: 2025-03-06
 categories:
   - git

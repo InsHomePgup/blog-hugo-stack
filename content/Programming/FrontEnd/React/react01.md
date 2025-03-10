@@ -1,5 +1,5 @@
 ---
-title: React01 jsx | tsx的使用 动态添加html属性
+title: React01  组件和jsx
 date: 2024-06-06
 tags:
   - react
@@ -29,6 +29,83 @@ pnpm create vite react-starter --template react-ts
 ![|325x332](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250106164408392.png)
 
 删除多余的内容，仅保留App.tsx和main.tsx
+
+### 组件
+
+#### 组件声明
+
+``` tsx
+export default function Page() {
+    return (
+        <>
+            <h1>Home</h1>
+        </>
+    )
+}
+```
+
+导出，用ES6语法，导出一个函数返回一个JSX片段。
+
+注意：不要在组件内部再去申明一个组件。
+
+注意：react组件的使用需要开头大写，这样来区分原生的html标签。
+
+```tsx
+export default function Gallery() {
+  // 🔴 Never define a component inside another component!
+  function Profile() {
+    // ...
+  }
+  // ...
+}
+```
+
+#### 导出和导入组件
+
+可以先看这篇熟悉一下导入导出，是一样的。
+
+[ES导入导出语法](../../Rollup/rollup-module-syntax)
+
+##### 具名导出
+```tsx
+// 导出
+export function MyCard(props: { name: string }) {  // 接收props
+  return <div>{props.name}</div>;
+}
+
+// 在page里导入和使用
+import {MyCard} from '../components/MyCard';
+export default function Page() {
+    return (
+        <>
+            <MyCard name="Hello" />
+        </>
+    )
+}
+
+```
+
+##### 默认导出
+
+```tsx
+// 默认导出
+export default function MyButton(props: { text: string }) {
+    return <button>{props.text}</button>
+}
+
+// 默认导入
+import MyButton from "../components/MyButton.tsx";
+export default function Page() {
+    return (
+        <>
+            <MyButton text="click" />
+        </>
+    )
+}
+
+```
+
+
 
 ####  JSX|TSX 动态插入内容、属性
 
