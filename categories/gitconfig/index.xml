@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GitConfig on Abra's Blog</title><link>https://inshomepgup.github.io/blog-hugo-stack/categories/gitconfig/</link><description>Recent content in GitConfig on Abra's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://inshomepgup.github.io/blog-hugo-stack/categories/gitconfig/index.xml" rel="self" type="application/rss+xml"/><item><title>git config 常见配置</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/01/</link><pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/01/</guid><description>&lt;p>在git初始化的时候可以进行一些配置。
+我在用的主要的配置有这两个文件。&lt;/p>
+&lt;h3 id="gitconfig">.gitconfig
+&lt;/h3>&lt;p>git 核心配置的部分。
+下面是我的常用配置,一次配置，以后可以一直使用，这个配置也可以添加到git去管理。
+这样在多设备的时候都可以使用这一套配置。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[core]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ignorecase = false
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> quotepath = false
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> excludesfile=C:/Users/user/.gitignore #指定全局的ignore的配置文件
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[user]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> email = email
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> name = name
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[alias]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ad = add
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> br = branch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> cc = checkout --
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> cf = config
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ck = checkout
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> cm = commit
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> cl = clone
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> df = diff
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> fe = fetch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ps = push
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> me = merge
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> pl = pull
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> sb = submodule
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ss = status
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> sw = switch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> re = remote
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> unstage = reset HEAD
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> last = log -1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> lg = log --color --graph --pretty=format:&amp;#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset&amp;#39; --abbrev-commit
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="gitignore">.gitignore
+&lt;/h3>&lt;p>全局ignore配置
+有些公共的忽略文件可以添加到这里，比如前端常见的dist 和 node_modules&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dist
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">node_modules
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># ide相关的ignore可以全局配置，这样省的到每个项目里都去ignore一遍，不过其实最好还是在项目里有自己的gitignore去配置，毕竟还是要多端多设备配置的嘛，不过也可以把配置都用git进行管理。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">.idea
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">.vscode/*
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">!.vscode/extensions.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>git ignore 文档 &lt;a class="link" href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener"
+>gitignore&lt;/a>&lt;/p>
+&lt;p>初始化必配置的ssh config&lt;/p>
+&lt;h3 id="sshconfig">~/.ssh/config
+&lt;/h3>&lt;p>不算是git的但是很重要一个配置，ssh连接配置,不用账号密码就能拉项目，快乐管理项目。
+用一个ssh key 管理所有的git站点，然后就可以快乐的开始push &amp;amp; pull了。&lt;/p>
+&lt;p>参考配置文件 &lt;a class="link" href="https://www.ssh.com/academy/ssh/config" target="_blank" rel="noopener"
+>ssh client config&lt;/a>&lt;/p>
+&lt;h5 id="github-ssh--config-preview">github ssh config preview
+&lt;/h5>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Host github.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">User git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Hostname github.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">IdentityFile ~/.ssh/[你的ssh_key]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ProxyCommand ncat --verbose --proxy-type socks5 --proxy 127.0.0.1:10808 %h %p
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>不需要代理日志信息的话，移除 &amp;ndash;verbose&lt;/p></description></item><item><title>git 初始化的一些配置</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/02/</link><pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/02/</guid><description>&lt;h4 id="跨平台-crlf的问题">跨平台 CRLF的问题
+&lt;/h4>&lt;p>&lt;a class="link" href="https://kuanghy.github.io/2017/03/19/git-lf-or-crlf" target="_blank" rel="noopener"
+>参考&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/cssmagic/blog/issues/22" target="_blank" rel="noopener"
+>参考2&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">git config --global core.autocrlf input
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git config --global core.safecrlf &lt;span class="nb">true&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>git ssh key 配置</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/03/</link><pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/03/</guid><description>&lt;h3 id="参考文章">参考文章
+&lt;/h3>&lt;p>&lt;a class="link" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank" rel="noopener"
+>github adding a new ssh key&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://manpages.debian.org/unstable/openssh-client/ssh_config.5.en.html" target="_blank" rel="noopener"
+>ssh key config &lt;/a>&lt;/p>
+&lt;h3 id="方法">方法
+&lt;/h3>&lt;p>与远程仓库的交互推荐通过 ssh 协议。还有一种token方式也可以，自行研究一下。&lt;/p>
+&lt;p>sshkey的方式是一个 public key 一个 private key。&lt;/p>
+&lt;p>一个在你的本地，一个在远程服务器上。&lt;/p>
+&lt;p>一个锁，一个钥匙。&lt;/p>
+&lt;p>一个钥匙打开你在互联网上所有的锁。&lt;/p>
+&lt;p>创建一个 ed25519 的 ssh key。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ssh-keygen -t ed25519 -C &lt;span class="s2">&amp;#34;your_email@example.com&amp;#34;&lt;/span> -f &lt;span class="s2">&amp;#34;key_file_name&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 一个示例&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh-keygen -t ed25519 -C &lt;span class="s2">&amp;#34;test@example.com&amp;#34;&lt;/span> -f &lt;span class="s2">&amp;#34;my_github_ed25519_key&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250226132710015.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>如果不要密码就一直回车。&lt;/p>
+&lt;p>要密码就是执行命令以后输入两遍。&lt;/p>
+&lt;p>一般生成两个key，一个没有密码一个有密码，生成两次，取不用的文件名称。&lt;/p>
+&lt;p>带密码的话，就是你每次用这个钥匙都要输入这个密码。&lt;/p>
+&lt;p>这里的没有pub的就是private key 就是你的钥匙。&lt;/p>
+&lt;p>这里的有pub 的就是public key，他们是一对，你把public提交到github的网站上，private放在你的本地验证。这么个逻辑。&lt;/p>
+&lt;p>保存到你认为安全的位置，不管多少设备都可以用同一套key。&lt;/p>
+&lt;p>但是别公开到公网上。&lt;/p>
+&lt;p>放到公网上就是谁都有你的钥匙，害不害怕。你的代码可以随意被人读取和修改。&lt;/p>
+&lt;p>把public key 的文本内容复制到&lt;/p>
+&lt;p>github/settings/SSH and GPG keys - New SSH key&lt;/p>
+&lt;p>这个就是远程的配置。&lt;/p>
+&lt;p>非常重要的一个本地核心配置就是
+~/.ssh/config&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Host github.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">User git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">HostName github.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">IdentityFile ~/.ssh/your_private_key # 这里放你的private key
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ProxyCommand ncat --proxy-type socks5 --proxy host:port %h %p # 配个代理
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>验证测试方法&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ssh -T git@github.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 输出内容可以看到你有没有成功连接。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="总结">总结
+&lt;/h3>&lt;ol>
+&lt;li>生成一个ed25519的key&lt;/li>
+&lt;li>把public key放到github，private放到本地&lt;/li>
+&lt;li>写ssh config&lt;/li>
+&lt;li>使用ssh -T 测试&lt;/li>
+&lt;/ol></description></item></channel></rss>

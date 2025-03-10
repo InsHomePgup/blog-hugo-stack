@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on Abra's Blog</title><link>https://inshomepgup.github.io/blog-hugo-stack/tags/git/</link><description>Recent content in Git on Abra's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://inshomepgup.github.io/blog-hugo-stack/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>git config 常见配置</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/01/</link><pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/01/</guid><description>&lt;p>在git初始化的时候可以进行一些配置。
+我在用的主要的配置有这两个文件。&lt;/p>
+&lt;h3 id="gitconfig">.gitconfig
+&lt;/h3>&lt;p>git 核心配置的部分。
+下面是我的常用配置,一次配置，以后可以一直使用，这个配置也可以添加到git去管理。
+这样在多设备的时候都可以使用这一套配置。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[core]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ignorecase = false
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> quotepath = false
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> excludesfile=C:/Users/user/.gitignore #指定全局的ignore的配置文件
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[user]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> email = email
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> name = name
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[alias]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ad = add
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> br = branch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> cc = checkout --
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> cf = config
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ck = checkout
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> cm = commit
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> cl = clone
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> df = diff
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> fe = fetch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ps = push
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> me = merge
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> pl = pull
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> sb = submodule
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ss = status
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> sw = switch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> re = remote
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> unstage = reset HEAD
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> last = log -1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> lg = log --color --graph --pretty=format:&amp;#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset&amp;#39; --abbrev-commit
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="gitignore">.gitignore
+&lt;/h3>&lt;p>全局ignore配置
+有些公共的忽略文件可以添加到这里，比如前端常见的dist 和 node_modules&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dist
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">node_modules
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># ide相关的ignore可以全局配置，这样省的到每个项目里都去ignore一遍，不过其实最好还是在项目里有自己的gitignore去配置，毕竟还是要多端多设备配置的嘛，不过也可以把配置都用git进行管理。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">.idea
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">.vscode/*
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">!.vscode/extensions.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>git ignore 文档 &lt;a class="link" href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener"
+>gitignore&lt;/a>&lt;/p>
+&lt;p>初始化必配置的ssh config&lt;/p>
+&lt;h3 id="sshconfig">~/.ssh/config
+&lt;/h3>&lt;p>不算是git的但是很重要一个配置，ssh连接配置,不用账号密码就能拉项目，快乐管理项目。
+用一个ssh key 管理所有的git站点，然后就可以快乐的开始push &amp;amp; pull了。&lt;/p>
+&lt;p>参考配置文件 &lt;a class="link" href="https://www.ssh.com/academy/ssh/config" target="_blank" rel="noopener"
+>ssh client config&lt;/a>&lt;/p>
+&lt;h5 id="github-ssh--config-preview">github ssh config preview
+&lt;/h5>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Host github.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">User git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Hostname github.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">IdentityFile ~/.ssh/[你的ssh_key]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ProxyCommand ncat --verbose --proxy-type socks5 --proxy 127.0.0.1:10808 %h %p
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>不需要代理日志信息的话，移除 &amp;ndash;verbose&lt;/p></description></item><item><title>Git(0)---代码时光机---AB-Git-Guide</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git0---%E4%BB%A3%E7%A0%81%E6%97%B6%E5%85%89%E6%9C%BA---ab-git-guide/</link><pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git0---%E4%BB%A3%E7%A0%81%E6%97%B6%E5%85%89%E6%9C%BA---ab-git-guide/</guid><description>&lt;h3 id="前言">前言
+&lt;/h3>&lt;p>&lt;a class="link" href="https://git-scm.com/" target="_blank" rel="noopener"
+>Git 官网&lt;/a>&lt;/p>
+&lt;p>Git是非常重要的工具，可惜我大概编码两三年的时候才会基本的使用。&lt;/p>
+&lt;p>如果一开始我就能使用Git而放弃文件夹复制，zip压缩这种模式的代码保存的话，能大大提高我的编码学习效率。&lt;/p>
+&lt;p>随着深入的使用我想写一些贴合实际开发的git使用方法，来帮助编程新手可以用Git来管理自己的Project。&lt;/p>
+&lt;p>这是一趟git之旅，从init开始到能在github clone代码以及提交PR(Pull Request)。&lt;/p>
+&lt;p>什么是clone和PR？那不重要，一切都是从新开始的。后面这些概念会非常简单。&lt;/p>
+&lt;p>首先我们需要的是扎实的git cli （命令行）的基本功。&lt;/p>
+&lt;p>任何概念都在操作实践中学习，不需要太多的文字。&lt;/p>
+&lt;p>从重复的git操作中去理解。&lt;/p>
+&lt;p>add commit branch tag switch remote push pull checkout reset stash &amp;hellip;&amp;hellip;&lt;/p>
+&lt;p>Let&amp;rsquo;s go.&lt;/p></description></item><item><title>git 初始化的一些配置</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/02/</link><pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/02/</guid><description>&lt;h4 id="跨平台-crlf的问题">跨平台 CRLF的问题
+&lt;/h4>&lt;p>&lt;a class="link" href="https://kuanghy.github.io/2017/03/19/git-lf-or-crlf" target="_blank" rel="noopener"
+>参考&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/cssmagic/blog/issues/22" target="_blank" rel="noopener"
+>参考2&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">git config --global core.autocrlf input
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git config --global core.safecrlf &lt;span class="nb">true&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Git(1)---仓库-Repo</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git1---%E4%BB%93%E5%BA%93-repo/</link><pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git1---%E4%BB%93%E5%BA%93-repo/</guid><description>&lt;p>本次Git旅程将在windows 下实践。&lt;/p>
+&lt;p>不过其实旅途中也不需要太多有关操作系统的操作。&lt;/p>
+&lt;h3 id="git-bash">Git Bash
+&lt;/h3>&lt;p>我们所有的操作都在这里完成。&lt;/p>
+&lt;h3 id="explorer">Explorer
+&lt;/h3>&lt;p>Windows资源管理器。&lt;/p>
+&lt;h3 id="git-repository">Git Repository
+&lt;/h3>&lt;p>Git Repo&lt;/p>
+&lt;p>git 仓库，所有的 git 命令都在这里面完成。&lt;/p>
+&lt;p>git 仓库一般就是一个文件夹，进行 git init 初始化以后。&lt;/p>
+&lt;p>项目目录下会生成一个 .git 文件夹。&lt;/p>
+&lt;p>那么这个文件夹便是一个 git 仓库。&lt;/p>
+&lt;h3 id="创建一个仓库">创建一个仓库
+&lt;/h3>&lt;p>到你喜欢的目录下面新建文件夹。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216213139449.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>进入文件夹&lt;/p>
+&lt;p>打开右键菜单后点击 Open Git Bash here&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216221044191.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>或者就是右键 + 键盘 s&lt;/p>
+&lt;p>这个就是 windows 下 git bash 的主界面了，所有的 cli 都在这里完成。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216221118051.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>查看一下当前的 git 状态。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">git status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这个命令可以看到当前git 仓库的状态。&lt;/p>
+&lt;p>可以随意使用，没有任何需要注意的。&lt;/p>
+&lt;p>随着旅程的深入，status 会有很多我们值得关注的信息。&lt;/p>
+&lt;p>初始化一个 git 仓库，git 仓库目前就是一个文件夹。&lt;/p>
+&lt;p>初始化完成以后，我们继续执行 status，可以看到我们当前所在的分支（branch）是 ==main==。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">git init
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216221517074.png"
+loading="lazy"
+alt="|601x305"
+>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">On branch main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">No commits yet
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nothing to commit (create/copy files and use &amp;#34;git add&amp;#34; to track)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>当前分支：main&lt;/p>
+&lt;p>没有历史 commit&lt;/p>
+&lt;p>没有东西可以 commit&lt;/p>
+&lt;p>OK，我们需要 git 帮我们做到管理我们的代码,但是现在我们仓库还是空空的。&lt;/p>
+&lt;p>其实在完成 init 命令以后，我们的仓库里多了一个隐藏文件夹 .git&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216223221041.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>创建一个 git 仓库的方式就是一个文件夹 + git init 就可以。&lt;/p>
+&lt;p>本节的两个 Git 命令是&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看当前 git 状态&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git status
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 初始化一个 git 仓库&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="总结">总结
+&lt;/h3>&lt;p>本节主要就是初始化一个 git 仓库，后续的操作都会在仓库内完成。&lt;/p>
+&lt;p>创建仓库会在目录下创建生成一个.git 的文件夹。目前我们不需要关注这个文件夹。&lt;/p>
+&lt;p>使用 git status 随时查看仓库的状态，仔细阅读提示的信息。&lt;/p></description></item><item><title>git ssh key 配置</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/03/</link><pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/config/03/</guid><description>&lt;h3 id="参考文章">参考文章
+&lt;/h3>&lt;p>&lt;a class="link" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank" rel="noopener"
+>github adding a new ssh key&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://manpages.debian.org/unstable/openssh-client/ssh_config.5.en.html" target="_blank" rel="noopener"
+>ssh key config &lt;/a>&lt;/p>
+&lt;h3 id="方法">方法
+&lt;/h3>&lt;p>与远程仓库的交互推荐通过 ssh 协议。还有一种token方式也可以，自行研究一下。&lt;/p>
+&lt;p>sshkey的方式是一个 public key 一个 private key。&lt;/p>
+&lt;p>一个在你的本地，一个在远程服务器上。&lt;/p>
+&lt;p>一个锁，一个钥匙。&lt;/p>
+&lt;p>一个钥匙打开你在互联网上所有的锁。&lt;/p>
+&lt;p>创建一个 ed25519 的 ssh key。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ssh-keygen -t ed25519 -C &lt;span class="s2">&amp;#34;your_email@example.com&amp;#34;&lt;/span> -f &lt;span class="s2">&amp;#34;key_file_name&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 一个示例&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh-keygen -t ed25519 -C &lt;span class="s2">&amp;#34;test@example.com&amp;#34;&lt;/span> -f &lt;span class="s2">&amp;#34;my_github_ed25519_key&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250226132710015.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>如果不要密码就一直回车。&lt;/p>
+&lt;p>要密码就是执行命令以后输入两遍。&lt;/p>
+&lt;p>一般生成两个key，一个没有密码一个有密码，生成两次，取不用的文件名称。&lt;/p>
+&lt;p>带密码的话，就是你每次用这个钥匙都要输入这个密码。&lt;/p>
+&lt;p>这里的没有pub的就是private key 就是你的钥匙。&lt;/p>
+&lt;p>这里的有pub 的就是public key，他们是一对，你把public提交到github的网站上，private放在你的本地验证。这么个逻辑。&lt;/p>
+&lt;p>保存到你认为安全的位置，不管多少设备都可以用同一套key。&lt;/p>
+&lt;p>但是别公开到公网上。&lt;/p>
+&lt;p>放到公网上就是谁都有你的钥匙，害不害怕。你的代码可以随意被人读取和修改。&lt;/p>
+&lt;p>把public key 的文本内容复制到&lt;/p>
+&lt;p>github/settings/SSH and GPG keys - New SSH key&lt;/p>
+&lt;p>这个就是远程的配置。&lt;/p>
+&lt;p>非常重要的一个本地核心配置就是
+~/.ssh/config&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Host github.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">User git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">HostName github.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">IdentityFile ~/.ssh/your_private_key # 这里放你的private key
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ProxyCommand ncat --proxy-type socks5 --proxy host:port %h %p # 配个代理
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>验证测试方法&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ssh -T git@github.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 输出内容可以看到你有没有成功连接。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="总结">总结
+&lt;/h3>&lt;ol>
+&lt;li>生成一个ed25519的key&lt;/li>
+&lt;li>把public key放到github，private放到本地&lt;/li>
+&lt;li>写ssh config&lt;/li>
+&lt;li>使用ssh -T 测试&lt;/li>
+&lt;/ol></description></item><item><title>Git(2)--文件追踪与提交-add-commit</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git2---%E6%96%87%E4%BB%B6%E8%BF%BD%E8%B8%AA%E4%B8%8E%E6%8F%90%E4%BA%A4-add-commit/</link><pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git2---%E6%96%87%E4%BB%B6%E8%BF%BD%E8%B8%AA%E4%B8%8E%E6%8F%90%E4%BA%A4-add-commit/</guid><description>&lt;p>status + add + commit 是单机版git 最重要的三个命令。&lt;/p>
+&lt;p>在前面一节 Repo 当中，我们已经创建了一个 git仓库。&lt;/p>
+&lt;p>接下去我们让 git 来追踪我们的文件。&lt;/p>
+&lt;p>在目录下新建一个 abc.txt 文件模拟我们的代码文件。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216223437670.png"
+loading="lazy"
+alt="|597x282"
+>&lt;/p>
+&lt;p>在 bash 中使用 git status&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">git status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216223557755.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>当前分支：main&lt;/p>
+&lt;p>没有历史 commit&lt;/p>
+&lt;p>未追踪的文件
+abc.txt&lt;/p>
+&lt;p>没有可以提交的文件但是有未添加到追踪的文件（使用 git add 去添加）&lt;/p>
+&lt;p>执行 add + commit 的丝滑小连招。&lt;/p>
+&lt;p>添加文件追踪的方式 git add&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 单文件添加 &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add &lt;span class="o">[&lt;/span>文件名&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 添加当前目录下所有没有被追踪的文件 . = 当前目录 .. = 上级目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>添加时间节点的方式 : git commit&lt;/p>
+&lt;p>创建一个 commit&lt;/p>
+&lt;p>-m 后面跟上提交的信息，也就是本次 commit 的具体改动。&lt;/p>
+&lt;p>信息使用单引号或者双引号包裹&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git commit -m &amp;#39;信息&amp;#39;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -m &amp;#34;信息&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216223811212.png"
+loading="lazy"
+alt="|526x250"
+>&lt;/p>
+&lt;p>不知道作者的 id 信息&lt;/p>
+&lt;p>请告诉我你是谁&lt;/p>
+&lt;p>执行：
+xxxxxx&lt;/p>
+&lt;p>去设置你的账户的默认 id&lt;/p>
+&lt;p>去掉 &amp;ndash;global 去设置你的 id 信息只属于当前的仓库&lt;/p>
+&lt;p>fatal:严重故障！！！&lt;/p>
+&lt;p>没有自动获取到 email信息&lt;/p>
+&lt;blockquote>
+&lt;p>在第一次 commit 之前我们是需要设置 user + email 用户 + 邮箱信息&lt;/p>&lt;/blockquote>
+&lt;p>&amp;ndash;global = 添加到 git 设置，作为其他仓库的配置。
+不添加&amp;ndash;global = 只在当前仓库使用这个配置。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl"> git config --global user.email &lt;span class="s2">&amp;#34;hello@example.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> git config --global user.name &lt;span class="s2">&amp;#34;Abra&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216224651766.png"
+loading="lazy"
+>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[main (root-commit) hash值] commit 信息
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">一个文件改变，没有增加代码，没有删除代码
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">create.... 文件名
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>设置完user + email 以后我们继续执行 commit&lt;/p>
+&lt;p>得到这样的提示信息代表我们已经成功创建了这次 commit&lt;/p>
+&lt;p>commit 内需要关注的信息是 hash 值，这是每次 commit 的唯一 id，后续操作 commit 基本都是围绕这个 hash code。&lt;/p>
+&lt;p>记住这是一个id 就可以。&lt;/p>
+&lt;p>commit = 时间节点，记录这一刻所有被追踪的代码的完整代码，可以随时回到这个节点来查看这个节点的代码。&lt;/p>
+&lt;p>当前只需要关注我们提交 commit 就可以了。&lt;/p>
+&lt;p>那么，到此为止，git 日常操作的 66.7% 已经完成了。&lt;/p>
+&lt;p>剩余的一个操作是推送到远程仓库（git push）不过目前我们还是单机版本，等到联机版本时候我们再来使用 git push。&lt;/p>
+&lt;p>本节的两个 Git 命令是&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 添加文件追踪 添加文件到 git 仓库&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add abc.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建一个 commit &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>在完成 add + commit 的丝滑小连招以后我们再来 status 查看一下我们当前 git 仓库的状态。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">git status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216225332021.png"
+loading="lazy"
+>
+当前分支：main&lt;/p>
+&lt;p>没有东西可以提交，工作树是干净的&lt;/p>
+&lt;p>好的，非常的爽，这也就是 git 最爽的状态。&lt;/p>
+&lt;h3 id="任务">任务
+&lt;/h3>&lt;p>请创建一个 def.txt 文件，并且使用 add + commit 丝滑小连招把def.txt 收拾了。&lt;/p>
+&lt;p>同时创建 x.txt y.txt z.txt 用 git add . 把所有的文件加入追踪&lt;/p>
+&lt;p>编辑任意 txt 文件，使用 git status 查看状态，同时执行丝滑小连招。&lt;/p>
+&lt;p>重复修改文件，新增，删除，同时进行丝滑小连招。&lt;/p>
+&lt;h3 id="总结">总结
+&lt;/h3>&lt;p>使用 git add 来追踪文件&lt;/p>
+&lt;p>使用 git commit 来创建commit&lt;/p>
+&lt;p>鼓励大量 commit，这会有助于代码调试和代码回溯&lt;/p>
+&lt;p>鼓励描述清晰的 commit message，不过这个问题不大，我们可以在开源的项目中去学习怎么输入合适的 commit message&lt;/p>
+&lt;p>在第一次commit 之前需要配置添加 用户名 + 邮箱&lt;/p>
+&lt;p>配置的内容会写入到 ~/.gitconfig 跨平台或者跨设备的时候可以直接复制这个文件。&lt;/p>
+&lt;p>后面我们还会有更多的配置加入到这个文件。&lt;/p>
+&lt;p>随时使用 git status 来查看当前的仓库状态。&lt;/p>
+&lt;p>流程&lt;/p>
+&lt;p>未追踪文件 &amp;mdash;add&amp;mdash;追踪&amp;mdash;commit &amp;mdash; 归档一次代码&lt;/p>
+&lt;p>commit 相当于快照，节点，等等&amp;hellip;随着操作的深入我们会理解 commit&lt;/p>
+&lt;p>add 添加到暂存区。&lt;/p>
+&lt;h3 id="拓展">拓展
+&lt;/h3>&lt;h4 id="为什么需要有add和commit直接commit不行吗">为什么需要有add和commit，直接commit不行吗？
+&lt;/h4>&lt;p>有add和暂存区可以更灵活的提交commit，比如修改了10个文件，那么可以选择其中4个文件作为一次commit提交。&lt;/p></description></item><item><title>Git(3)--远程仓库与推送--remote + push</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git3---%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E6%8E%A8%E9%80%81--remote-+-push/</link><pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git3---%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E6%8E%A8%E9%80%81--remote-+-push/</guid><description>&lt;p>remote, 远程&lt;/p>
+&lt;p>之前 add、commit，都是单机操作&lt;/p>
+&lt;p>如果一个人一个设备，多人协作的话，我们需要一个远程仓库，作为我们的数据交换&lt;/p>
+&lt;p>远程仓库其实也是一个 git 仓库，它是在服务器上，也和我们本地的仓库有一点儿不一样的地方&lt;/p>
+&lt;p>这里用 github平台来创建远程仓库&lt;/p>
+&lt;p>还有很多常见的类似的平台,gitee,gitea,gitlab&amp;hellip;&lt;/p>
+&lt;p>首先参照&lt;a class="link" href="../../config/03" >这篇&lt;/a>去创建一个 ssh key 连接github&lt;/p>
+&lt;p>在github创建一个空的仓库&lt;/p>
+&lt;p>复制 ssh的仓库地址&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git status
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git remote add origin [仓库地址]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git remote -v
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push -u origin main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这又是一套丝滑小连招，连接远程仓库并且推送代码&lt;/p>
+&lt;p>add 远程仓库的名称 远程仓库的地址&lt;/p>
+&lt;p>remote -v 去查看当前项目的远程仓库地址&lt;/p>
+&lt;p>push -u 目标仓库 目标分支&lt;/p>
+&lt;p>-u = upsteam&lt;/p>
+&lt;p>意思是设置上流分支&lt;/p>
+&lt;p>一个本地分支对应一个远程仓库的远程分支&lt;/p>
+&lt;p>push 与 pull 都是操作当前本地仓库的上流分支&lt;/p>
+&lt;p>所以我们也可以把自己本地的 main 分支的上流分支 设置成 master 或者其他之类的&lt;/p>
+&lt;p>但是名称一般都是一致的，不然也容易搞错&lt;/p>
+&lt;h3 id="任务">任务
+&lt;/h3>&lt;p>重复 add - commit - push&lt;/p>
+&lt;p>流程&lt;/p>
+&lt;p>修改或者创建文件，模拟代码修改&lt;/p>
+&lt;p>使用 add + commit 生成本地 commit&lt;/p>
+&lt;p>使用 push 将commit 推送到远程仓库&lt;/p>
+&lt;p>尝试创建多个 commit 一起推送&lt;/p></description></item><item><title>Git(4)---还原---reset 从暂存区和 commit 还原</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git4---%E8%BF%98%E5%8E%9F---reset-%E4%BB%8E%E6%9A%82%E5%AD%98%E5%8C%BA%E5%92%8C-commit-%E8%BF%98%E5%8E%9F/</link><pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git4---%E8%BF%98%E5%8E%9F---reset-%E4%BB%8E%E6%9A%82%E5%AD%98%E5%8C%BA%E5%92%8C-commit-%E8%BF%98%E5%8E%9F/</guid><description>&lt;p>之前我们一直都在将代码添加到我们的仓库&lt;/p>
+&lt;p>丝滑小连招 add - commit - push&lt;/p>
+&lt;p>那么程序的 CURD 来说，光有 create 也是不合理的&lt;/p>
+&lt;p>Git - 还原&lt;/p>
+&lt;p>还原的场景&lt;/p>
+&lt;p>从暂存区还原&lt;/p>
+&lt;p>从本地 commit 还原&lt;/p>
+&lt;p>还原远程仓库到指定 commit&lt;/p>
+&lt;p>编辑 abc.txt&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 添加abc.txt到暂存区&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add abc.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 把abc.txt恢复到工作区&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git restore --staged abc.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 把abc从以追踪的状态撤回到未追踪的状态&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git rm abc.txt --cached
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 软回退，代码还会回到工作区&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git reset HEAD^ --soft
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 硬回退，丢弃commit的代码&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git reset HEAD^ --hard
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>HEAD^ = 当前的最近的一次commit&lt;/p>
+&lt;p>HEAD^^ = 当前的最近的第二次commit&lt;/p>
+&lt;p>HEAD^^^ = 当前的最近的第三次commit&lt;/p>
+&lt;p>HEAD^^^^ = 当前的最近的第四次commit&lt;/p>
+&lt;p>HEAD^^^^^ = 当前的最近的第五次commit&lt;/p>
+&lt;p>这个 ^ 就是英文模式下的数字6上面的那个符号&lt;/p>
+&lt;p>&amp;hellip;.&lt;/p>
+&lt;p>？&lt;/p>
+&lt;p>git reset hashcode &amp;hellip;.&lt;/p>
+&lt;p>add&lt;/p>
+&lt;p>commit&lt;/p>
+&lt;p>reset&lt;/p>
+&lt;p>这些都是在几个git的区域之间工作的代码&lt;/p>
+&lt;p>工作区&lt;/p>
+&lt;p>暂存区&lt;/p>
+&lt;p>本地仓库&lt;/p>
+&lt;p>远程仓库&lt;/p>
+&lt;p>这是我们能操作的几个区域。&lt;/p>
+&lt;p>不同的git区域有不同的操作。&lt;/p>
+&lt;p>工作区就是我们的项目目录，包含追踪了的和未追踪的文件。&lt;/p>
+&lt;p>暂存区，add添加以后的区域&lt;/p>
+&lt;p>本地仓库 ，add以后并且commit 以后的区域&lt;/p>
+&lt;p>远程仓库，add并且commit并且 push以后的区域。&lt;/p>
+&lt;p>本地仓库的操作还算可以理解，远程操作将会复杂的多，因为你的同事那里也有你的版本。&lt;/p></description></item><item><title>Git(5)---分支---branch</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git5---%E5%88%86%E6%94%AF%E4%B8%8E%E5%90%88%E5%B9%B6---branch+merge/</link><pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git5---%E5%88%86%E6%94%AF%E4%B8%8E%E5%90%88%E5%B9%B6---branch+merge/</guid><description>&lt;p>git 最无敌屌炸天的功能。 branch 分支。&lt;/p>
+&lt;p>分支是非常非常重要的，可以说虽然我们的日常丝滑小连招就是 add + commit + push&lt;/p>
+&lt;p>这些是基础，是一条直线。&lt;/p>
+&lt;p>但是我想我们的 git 树能开枝散叶，就会用到分支&lt;/p>
+&lt;p>分支的存在让我们代码操作变得非常的自由，不再拘谨&lt;/p>
+&lt;p>当我想创建一些实验性的代码的时候&lt;/p>
+&lt;p>当我当前的工作没完成但是我要去修复另外一个功能的时候&lt;/p>
+&lt;p>当我想添加一些可能会出意外的依赖的时候&lt;/p>
+&lt;p>当我想测试合并一些代码而不至于崩溃影响到我的程序&lt;/p>
+&lt;p>那么分支，git 的核心奥义&lt;/p>
+&lt;p>说实话一个健康的项目，必然有很多分支来控制版本。&lt;/p>
+&lt;p>feat/xxx 新特性&lt;/p>
+&lt;p>fix/xxx 修复&lt;/p>
+&lt;p>hotfix/xxx 热修复&lt;/p>
+&lt;p>chore/buildxxx 杂项&lt;/p>
+&lt;p>merge/20250101 合并测试&lt;/p>
+&lt;p>与分支相伴的是合并（merge）&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看当前我所在的分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看全部分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -a
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 合并新特性 new-book&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git merge feat/new-book
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 合并 解决345这个issue的代码&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git merge hotfix/345
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建并切换到新分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git switch -c branchName
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 修改分支名称&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -m old new
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 删除本地分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -d branchName
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="场景实践">场景实践
+&lt;/h3>&lt;p>为了帮助理解branch 的应用，简单模拟一下branch 的使用场景。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git switch -c develop
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git switch -c prod
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git switch -c feat/new-card
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git switch -c fix/33
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git switch -c test/new-lint
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Git(6)---标签---tag</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git6---%E6%A0%87%E7%AD%BE---tag/</link><pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git6---%E6%A0%87%E7%AD%BE---tag/</guid><description/></item><item><title>Git 番外篇 - 核心的四个区域</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git-%E7%95%AA%E5%A4%96%E7%AF%87---%E6%A0%B8%E5%BF%83%E7%9A%84%E5%9B%9B%E4%B8%AA%E5%8C%BA%E5%9F%9F/</link><pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/guide/git-%E7%95%AA%E5%A4%96%E7%AF%87---%E6%A0%B8%E5%BF%83%E7%9A%84%E5%9B%9B%E4%B8%AA%E5%8C%BA%E5%9F%9F/</guid><description>&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>工作区（Working Directory）​&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>​&lt;strong>作用&lt;/strong>：你正在编辑的文件夹，直接看到文件内容。&lt;/li>
+&lt;li>​&lt;strong>对应状态&lt;/strong>：&lt;code>Untracked&lt;/code>、&lt;code>Modified&lt;/code>。&lt;/li>
+&lt;li>​&lt;strong>操作&lt;/strong>：直接修改文件（如用编辑器保存代码）。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>​&lt;strong>暂存区（Staging Area / Index）​&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>​&lt;strong>作用&lt;/strong>：临时存放准备提交的变更，类似“打包区”。&lt;/li>
+&lt;li>​&lt;strong>对应状态&lt;/strong>：&lt;code>Staged&lt;/code>。&lt;/li>
+&lt;li>​&lt;strong>操作&lt;/strong>：通过 &lt;code>git add&lt;/code> 将工作区的变更加入暂存区。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>​&lt;strong>本地仓库（Local Repository）​&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>​&lt;strong>作用&lt;/strong>：存储所有提交的版本记录（&lt;code>.git&lt;/code> 目录）。&lt;/li>
+&lt;li>​&lt;strong>对应状态&lt;/strong>：&lt;code>Unmodified&lt;/code>。&lt;/li>
+&lt;li>​&lt;strong>操作&lt;/strong>：通过 &lt;code>git commit&lt;/code> 将暂存区的内容永久保存到仓库。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>​&lt;strong>远程仓库（Remote Repository）​&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>​&lt;strong>作用&lt;/strong>：托管在服务器上的代码仓库（如 GitHub、GitLab）。&lt;/li>
+&lt;li>​&lt;strong>操作&lt;/strong>：
+&lt;ul>
+&lt;li>&lt;code>git push&lt;/code>：将本地提交推送到远程。&lt;/li>
+&lt;li>&lt;code>git pull&lt;/code>：从远程拉取最新代码。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Flow</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/flow/flow/</link><pubDate>Thu, 09 May 2024 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/flow/flow/</guid><description>&lt;p>我的git 工作流。
+git 是版本控制系统 VCS (Version Control System)。&lt;/p></description></item><item><title>git gui推荐 - sublime merge</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/gui/sublimemerge/</link><pubDate>Thu, 09 May 2024 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/gui/sublimemerge/</guid><description>&lt;p>最早的时候写前端使用的是sublime text。现在这家的另外一个产品，git gui ，sublime merge也是挺好用的，看了一下许可证要$99，还是白嫖吧哈哈哈。&lt;/p>
+&lt;h2 id="add-commit-push">add commit push
+&lt;/h2>&lt;p>可以很方便的add 和commit,右上角push + pull
+&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/sublime.png"
+loading="lazy"
+>&lt;/p>
+&lt;h2 id="branch-remote-tags">branch remote tags
+&lt;/h2>&lt;p>直接查看分支，其他分支可以控制显示和隐藏。
+还可以管理多远程仓库，直接右键管理tag&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/branch.png"
+loading="lazy"
+>&lt;/p>
+&lt;h2 id="commit">commit
+&lt;/h2>&lt;p>快速查看commit和每次的变动的文件等等
+这里还能看到commit相关的tag，还能看到合并路径，不过我现在的操作太简单，就是一条直线所以也没有这些。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/Snipaste_2024-06-08_17-28-59.png"
+loading="lazy"
+>&lt;/p>
+&lt;h2 id="一个非常好用的功能---filehistory">一个非常好用的功能 - FileHistory
+&lt;/h2>&lt;p>我在Mac端，快捷键 Command + P 打开控制台，输入File直接可以看到FileHistory的选项。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/FileHistoryCmd.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>输入文件名以后就可以直接看到有关这个文件的所有Commit和改动了，这个真的是太香了，用来调试一些奇奇怪怪的bug的时候可以看到是因为什么改动引起的。&lt;/p>
+&lt;h2 id="比较两个commit的改动">比较两个commit的改动
+&lt;/h2>&lt;p>直接Ctrl / Command在Commits的面板里点击两个commit就能查看了。这个也是非常香了。&lt;/p>
+&lt;h2 id="查看执行的具体代码">查看执行的具体代码
+&lt;/h2>&lt;p>菜单里 Tools-show console&lt;/p>
+&lt;h2 id="务必认真学习的cli以及git运行逻辑">务必认真学习的CLI以及Git运行逻辑
+&lt;/h2>&lt;p>GUI主要也就是在diff code，查看commit，简化一些cli的操作比较有用。是在对git以及git命令有一定深度了解以后才能使用的选项。毕竟如果都不知道这些操作背后是在运行什么，也会出现一些不可预料的代码事故。
+另外一个角度来说，git的cli是全端通用的，而GUI客户端也只是在一些有gui的操作系统上使用。
+真正学好Git来加强自己的代码调试是非常有用的。&lt;/p></description></item><item><title>How to use git branch</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/git/commands/branch/branch/</link><pubDate>Thu, 09 May 2024 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/git/commands/branch/branch/</guid><description>&lt;p>Git Branch&lt;/p>
+&lt;h5 id="创建与切换分支">创建与切换分支
+&lt;/h5>&lt;p>git checkout 也有一些分支的操作，更推荐使用switch来切换分支。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 切换分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git switch &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git checkout &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建并切换到一个新分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git switch -c &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h5 id="查看本地分支和远程分支">查看本地分支和远程分支
+&lt;/h5>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看本地分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#查看远程分支 -r remote&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -r
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看全部分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h5 id="删除本地分支和删除远程分支">删除本地分支和删除远程分支
+&lt;/h5>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 删除本地分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -d &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 强制删除分支，未合并的分支也会删除&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -D &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 删除远程分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push origin -d &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push origin --delete &lt;span class="o">[&lt;/span>branchName&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 删除远程已经删除但是本地还存在的分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git remote prune origin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h5 id="重命名分支">重命名分支
+&lt;/h5>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">git sw -c feat/A
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Switched to a new branch &amp;#39;feat/A&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git br -m feat/A feat/B
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># move -m 类似linux下的mv 重命名&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>
