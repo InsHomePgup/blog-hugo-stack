@@ -246,7 +246,7 @@ export function mapTest2() {
 }
 ```
 
-#### 实现选择性渲染
+#### 条件渲染
 
 v-if 渲染
 
