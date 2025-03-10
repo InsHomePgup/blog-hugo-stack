@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "a91d8b121a99c933",
+        "id": "2c371dd472000266",
         "type": "tabs",
         "children": [
           {
-            "id": "a0edeca504f34c84",
+            "id": "7c08b0a6809b3dd2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/Blog/article.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "article"
+              "title": "New tab"
             }
           }
         ]
@@ -166,8 +162,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a0edeca504f34c84",
+  "active": "7c08b0a6809b3dd2",
   "lastOpenFiles": [
+    "content/Post/编程学习的核心思想.md",
+    "content/Post/README/展望.md",
+    "content/Post/README/你好，欢迎光临寒舍.md",
+    "content/Blog/markdown.md",
+    "content/Blog/article.md",
     "content/Blog/hugo/template/01.md",
     "content/Blog/hugo/stack/header.md",
     "content/Programming/FrontEnd/Rollup/(二)Rollup添加typescript插件来编译ts文件.md",
@@ -178,9 +179,7 @@
     "content/Programming/FrontEnd/React/react02-1.md",
     "content/Programming/FrontEnd/React/react02-2.md",
     "content/Programming/FrontEnd/React/react03 探索路由.md",
-    "content/Blog/markdown.md",
     "content/Page/archives/markdown-syntax/index.md",
-    "content/Blog/article.md",
     "content/Blog/Obsidian.md",
     "content/Blog/picgo.md",
     "extensions.txt",
@@ -200,9 +199,6 @@
     "public/categories/gitconfig/page/1",
     "content/Programming/Git/Guide/Git(1)---仓库-Repo.md",
     "content/Programming/Git/Guide/Git(6)---标签---tag.md",
-    "content/Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md",
-    "content/Programming/Git/Guide/Git(4)---还原---reset 从暂存区和 commit 还原.md",
-    "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
-    "content/Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md"
+    "content/Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md"
   ]
 }
