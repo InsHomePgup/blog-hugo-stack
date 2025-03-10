@@ -152,56 +152,121 @@ function App() {
 export default App
 ```
 
-## 实现html循环遍历
+#### 实现html循环遍历
 
 使用map来返回jsx片段
 
 
 ``` jsx
+export function mapRender() {
+  const arr = [1, 2, 3]
 
-// v-for的react实现，遍历html   v
-  
-const arr = [1, 2, 3]  
-  
-const persons = [  
-    {  
-        name: 'foo'  
-    },  
-    {  
-        name: 'egg'  
-    }  
-]  
-  
-function App() {  
-    return (  
-        <div>  
-            <div>  
-                {  
-                    arr.map((item, index) => {  
-                        return <div key={index}>  
-                            {item}  
-                        </div>  
-                    })  
-                }  
-            </div>  
-            <div>  
-                {  
-                    persons.map((item, index) => {  
-                        return <div key={index}>  
-                            {item.name}  
-                        </div>  
-                    })  
-                }  
-            </div>  
-        </div>  
-    )  
-}  
-  
-export default App
+  const users: userDto[] = [
+    {
+      name: 'foo',
+      age: 18,
+    },
+    {
+      name: 'bar',
+      age: 19,
+    },
+    {
+      name: 'zhang san',
+      age: 20,
+    },
+  ]
+  interface userDto { name: string, age: number }
+  function UserCard({ user }: { user: userDto }) {
+    return (
+      <>
+        <div>
+          <h3>
+            name:
+            {user.name}
+          </h3>
+          <h4>
+            age:
+            {user.age}
+          </h4>
+        </div>
+      </>
+    )
+  }
+
+  return (
+    <>
+      <div>
+        {arr.map((item) => {
+          return <div key={item}>{item}</div>
+        })}
+      </div>
+
+      <div>
+        <ul>
+          {users.map(user => (
+            <li key={user.name}>{user.name}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <ul>
+          {users.map(user => (
+            <UserCard key={user.name} user={user} />
+          ))}
+        </ul>
+      </div>
+
+    </>
+  )
+}
+```
+
+
+##### 动态添加item
+
+```tsx
+export function mapTest2() {
+  const [items, setItems] = useState(['React', 'Vue', 'Angular'])
+
+  const addItem = () => {
+    setItems([...items, `New Item ${items.length + 1}`])
+  }
+
+  return (
+    <div>
+      <button onClick={addItem}>添加项</button>
+      <ul>
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+```
+
+#### 实现选择性渲染
+
+v-if 渲染
+
+```tsx
+
+export function ifTest() {
+  const [show, setShow] = useState(true)
+
+  return (
+    <div>
+      <button onClick={() => setShow(!show)}>toggle</button>
+      {show && <div>show</div>}
+    </div>
+  )
+}
+
 
 ```
 
-## 添加内联样式
+#### 添加内联样式
 
 ``` jsx
 // 添加内联样式  
@@ -232,7 +297,7 @@ function App() {
 export default App
 ```
 
-## 添加外部css文件
+#### 添加外部css文件
 
 ``` js
 import './index.css'
