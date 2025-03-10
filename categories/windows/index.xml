@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on Abra's Blog</title><link>https://inshomepgup.github.io/blog-hugo-stack/categories/windows/</link><description>Recent content in Windows on Abra's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://inshomepgup.github.io/blog-hugo-stack/categories/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>WIndows下的亮度调节软件-Twinkle Tray</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/os/windows/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90-twinkle-tray-%E4%BA%AE%E5%BA%A6%E8%B0%83%E8%8A%82/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/os/windows/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90-twinkle-tray-%E4%BA%AE%E5%BA%A6%E8%B0%83%E8%8A%82/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/xanderfrangos/twinkle-tray" target="_blank" rel="noopener"
+>github地址&lt;/a>&lt;/p>
+&lt;p>下载release以后安装。&lt;/p>
+&lt;p>体验是非常好的，开箱即用。UI也是高度适配windows11&lt;/p>
+&lt;h3 id="settings">settings
+&lt;/h3>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250117172246266.png"
+loading="lazy"
+>&lt;/p></description></item><item><title>软件推荐-7zip</title><link>https://inshomepgup.github.io/blog-hugo-stack/programming/os/windows/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90-7zip/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://inshomepgup.github.io/blog-hugo-stack/programming/os/windows/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90-7zip/</guid><description>&lt;p>官网： &lt;a class="link" href="https://www.7-zip.org/" target="_blank" rel="noopener"
+>https://www.7-zip.org/&lt;/a>&lt;/p>
+&lt;p>windows下我必装的解压和压缩软件。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/Pasted%20image%2020250117173621.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>默认安装位置下。
+C:\Program Files\7-Zip&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250117174026844.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250117174131351.png"
+loading="lazy"
+>&lt;/p>
+&lt;h3 id="我的配置">我的配置
+&lt;/h3>&lt;h4 id="使用7zip打开zip压缩包">使用7zip打开zip压缩包
+&lt;/h4>&lt;p>设置7zip作为压缩包的默认打开方式。&lt;/p>
+&lt;h3 id="常用功能">常用功能
+&lt;/h3>&lt;h4 id="加密压缩文件">加密压缩文件
+&lt;/h4>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/Pasted%20image%2020250117173802.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/Pasted%20image%2020250117173821.png"
+loading="lazy"
+>&lt;/p>
+&lt;h4 id="解压到当前目录或者解压到一个文件夹内">解压到当前目录或者解压到一个文件夹内
+&lt;/h4>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/Pasted%20image%2020250117174233.png"
+loading="lazy"
+>&lt;/p></description></item></channel></rss>
