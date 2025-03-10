@@ -11,10 +11,14 @@
             "id": "081f54fca0a8204a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "content/Programming/FrontEnd/Rollup/(二)Rollup添加typescript插件来编译ts文件.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "(二)Rollup添加typescript插件来编译ts文件"
             }
           }
         ]
@@ -164,15 +168,22 @@
   },
   "active": "411bcab6ba500395",
   "lastOpenFiles": [
-    "content/Programming/FrontEnd/React/react02-2.md",
-    "content/Programming/FrontEnd/React/react02-1.md",
+    "content/Programming/FrontEnd/Rollup/(一)记录一次rollup的tutorial.md",
+    "content/Programming/FrontEnd/Rollup/rollup-module-syntax.md",
+    "content/Programming/FrontEnd/Rollup/rollup番外篇  输出指定模块化的.md",
+    "content/Programming/FrontEnd/Rollup/(二)Rollup添加typescript插件来编译ts文件.md",
     "content/Programming/FrontEnd/React/react01.md",
+    "content/Programming/FrontEnd/React/react02-1.md",
+    "content/Programming/FrontEnd/React/react02-2.md",
     "content/Programming/FrontEnd/React/react03 探索路由.md",
+    "content/Blog/markdown.md",
+    "content/Page/archives/markdown-syntax/index.md",
+    "content/Blog/article.md",
+    "content/Blog/Obsidian.md",
+    "content/Blog/picgo.md",
     "extensions.txt",
     "public/programming/frontend/rollup/rollup-module-syntax/index.html",
     "public/programming/frontend/rollup/rollup-module-syntax",
-    "content/Programming/FrontEnd/Rollup/rollup-module-syntax.md",
-    "content/Programming/FrontEnd/Rollup/rollup番外篇  输出指定模块化的.md",
     "public/programming/Git/guide/git-核心概念---四个区域/index.html",
     "public/programming/Git/guide/git-核心概念---四个区域",
     "content/Programming/Git/Guide/Git 核心概念 - 四个区域.md",
@@ -192,13 +203,6 @@
     "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
     "content/Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
     "content/about.md",
-    "README.md",
-    "content/Life/work/Resume.md",
-    "content/Life/read/为什么精英都是时间控.md",
-    "content/Life/food/卤牛肉，酱牛肉.md",
-    "content/Programming/OS/Windows/软件推荐-Twinkle Tray-亮度调节.md",
-    "content/Programming/OS/Windows/QRScan.md",
-    "content/Programming/OS/Windows/ScreenToGif.md",
-    "content/Programming/OS/Windows/软件推荐-snipaste.md"
+    "README.md"
   ]
 }
