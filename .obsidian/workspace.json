@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/FrontEnd/React/react01.md",
+                "file": "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "react01"
+              "title": "Git(2)---文件追踪与提交-add-commit"
             }
           }
         ]
@@ -168,10 +168,12 @@
   },
   "active": "e8e663c6172dd10a",
   "lastOpenFiles": [
-    "content/Programming/FrontEnd/React/react02.md",
-    "content/Programming/FrontEnd/React/react01.md",
-    "content/Programming/FrontEnd/React/react03 探索路由.md",
+    "content/Programming/Git/Guide/Git(1)---仓库-Repo.md",
+    "content/Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
     "content/about.md",
+    "content/Programming/FrontEnd/React/react01.md",
+    "content/Programming/FrontEnd/React/react02.md",
+    "content/Programming/FrontEnd/React/react03 探索路由.md",
     "README.md",
     "content/Life/work/Resume.md",
     "content/Life/read/为什么精英都是时间控.md",
@@ -191,8 +193,6 @@
     "content/Programming/Language/Typescript/Enum的使用.md",
     "content/Programming/Language/Typescript/Omit的使用.md",
     "content/Programming/Language/Typescript/记录一次vscode没有ts静态检查的事情.md",
-    "content/Programming/Language/Typescript/(一)常用的ts原始数据类型.md",
-    "content/Programming/Language/Typescript/（二）对象类型、值类型、联合类型、交叉类型.md",
-    "content/Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md"
+    "content/Programming/Language/Typescript/(一)常用的ts原始数据类型.md"
   ]
 }

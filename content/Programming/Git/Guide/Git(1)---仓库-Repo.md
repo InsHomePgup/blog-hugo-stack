@@ -5,6 +5,7 @@ categories:
   - git
 tags:
   - git
+weight: 1
 ---
 本次Git旅程将在windows 下实践。
 
