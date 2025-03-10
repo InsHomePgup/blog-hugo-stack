@@ -1,22 +1,27 @@
 ---
-title: React02 组件的使用
+title: 组件的使用
 date: 2024-06-06
 tags:
   - react
 categories:
   - react
+weight: 200
 ---
 
 ## 组件
 
 React 的组件
+
 区分react组件和普通html元素的方式就是
-react组件的首字母大写。
+
+react组件的首字母大写
 
 
 ### 创建组件
 
 > 函数组件
+
+根入口组件 App
 
 ```tsx
 
@@ -32,6 +37,8 @@ export default App
 
 
 > 类组件
+
+不咋用，不弄也没事儿
 
 ``` tsx
 /** 
@@ -183,7 +190,7 @@ export default App
 ```
 
 ### props 设置默认值
-\
+
 
 > 函数组件默认值以及参数校验
 

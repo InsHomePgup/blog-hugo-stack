@@ -1,11 +1,12 @@
 ---
-title: React01  组件和jsx
+title: 组件声明和jsx
 date: 2024-06-06
 tags:
   - react
   - tsx
 categories:
   - react
+weight: 1
 ---
 
 ### React学习
@@ -33,6 +34,22 @@ pnpm create vite react-starter --template react-ts
 ### 组件
 
 #### 组件声明
+
+JSX必须有一个根节点
+
+可以是 <></>  // 这是一个 _[Fragment](https://react.dev/reference/react/Fragment)_
+
+所有html标签必须结束
+
+不管是单标签还是双标签都必须结束
+
+>JSX requires tags to be explicitly closed: self-closing tags like `<img>` must become `<img />`, and wrapping tags like `<li>oranges` must be written as `<li>oranges</li>`.
+
+大部分react 的东西都使用 驼峰。
+
+比如绑定事件 onClick
+
+比如添加class  = className
 
 ``` tsx
 export default function Page() {
@@ -402,4 +419,47 @@ function App() {
   
 export default App
 
+```
+
+
+### 总结
+
+单个花括号和两个花括号
+
+{}
+{{}}
+
+##### 单个花括号
+
+使用场景：
+
+单个花括号的使用场景有且只有在 tag里面的属性或者是tag包裹的内容
+
+在单个花括号里面开启js的内容。
+```tsx
+export function test(){
+    const testClass = 'input-wrapper'
+    const content = <div>123</div>
+    return (
+        <>
+            <input type="text" className={testClass}/>
+            <div>{content}</div>
+        </>
+    )
+}
+
+```
+
+##### 两个花括号
+
+绑定内联css
+
+style 绑定一个对象。
+
+所以其实两个花括号 = jsx的js域然后里面放一个对象
+
+等同于我创建一个obj然后用单个花括号绑定进去
+
+```tsx
+<div style={{width:"100px", height:"100px",backgroundColor:"red" }}></div>
 ```
