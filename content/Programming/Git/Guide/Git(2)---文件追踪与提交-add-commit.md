@@ -5,7 +5,7 @@ categories:
   - git
 tags:
   - git
-weight: 2
+weight: 3
 ---
 status + add + commit 是单机版git 最重要的三个命令。
 

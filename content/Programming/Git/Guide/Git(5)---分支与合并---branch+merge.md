@@ -5,6 +5,7 @@ categories:
   - git
 tags:
   - git
+weight: 6
 ---
 
 git 最无敌屌炸天的功能。  branch 分支。
