@@ -101,3 +101,46 @@ export function conditionRender() {
 }
 
 ```
+
+返回null = 不渲染
+
+```tsx
+if (isPacked) {  
+  return null  
+}
+```
+
+三元表达式条件渲染
+
+```tsx
+export function ListItem({ title, isPacked }: { title: string, isPacked: boolean }) {
+  return <li>{isPacked ? title : ''}</li>
+}
+```
+
+与(&&) 运算符
+
+```tsx
+export function ListItem({ title, isPacked }: { title: string, isPacked: boolean }) {
+  return <li>{isPacked && title}</li>
+}
+```
+
+### 列表渲染
+
+```tsx
+const people = [
+  'Creola Katherine Johnson: mathematician',
+  'Mario José Molina-Pasquel Henríquez: chemist',
+  'Mohammad Abdus Salam: physicist',
+  'Percy Lavon Julian: chemist',
+  'Subrahmanyan Chandrasekhar: astrophysicist',
+]
+
+export function ListRender() {
+  const listItems = people.map(person =>
+    <li>{person}</li>,
+  )
+  return <ul>{listItems}</ul>
+}
+```
