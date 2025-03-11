@@ -6,9 +6,10 @@
     <div class="about-header">
         <h1 class="about-title">{{ .Title }}</h1>
     </div>
-    
+
     <div class="about-content">
         {{ .Content }}
     </div>
 </div>
+{{ partialCached "footer/footer" . }}
 {{ end }}
