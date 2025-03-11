@@ -76,3 +76,28 @@ export function CCard(){
     )
 }
 ```
+
+### 条件渲染
+
+```tsx
+export function ListItem({ title, isPacked }: { title: string, isPacked: boolean }) {
+  if (isPacked) {
+    return <li>packed</li>
+  }
+  else {
+    return <li>{title}</li>
+  }
+}
+
+export function conditionRender() {
+  return (
+    <>
+      <ul>
+        <ListItem isPacked={true} title="hello"></ListItem>
+        <ListItem isPacked={false} title="hello"></ListItem>
+      </ul>
+    </>
+  )
+}
+
+```

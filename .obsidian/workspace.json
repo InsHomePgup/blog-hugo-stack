@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "2c371dd472000266",
+        "id": "8aeda1cba4fc0731",
         "type": "tabs",
         "children": [
           {
-            "id": "7c08b0a6809b3dd2",
+            "id": "084b4fbbb5a28d86",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Blog/hugo/内容畅想.md",
+                "file": "content/Programming/FrontEnd/React/react02-2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "内容畅想"
+              "title": "react02-2"
             }
           }
         ]
@@ -166,13 +166,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7c08b0a6809b3dd2",
+  "active": "084b4fbbb5a28d86",
   "lastOpenFiles": [
+    "content/Programming/FrontEnd/React/react02-1.md",
+    "content/Blog/hugo/内容畅想.md",
     "public/blog/hugo/内容畅想/index.html",
     "public/blog/hugo/内容畅想",
     "public/blog/hugo/untitled/index.html",
     "public/blog/hugo/untitled",
-    "content/Blog/hugo/内容畅想.md",
     "content/Post/编程学习的核心思想.md",
     "content/Post/README/展望.md",
     "content/Post/README/你好，欢迎光临寒舍.md",
@@ -185,7 +186,6 @@
     "content/Programming/FrontEnd/Rollup/rollup-module-syntax.md",
     "content/Programming/FrontEnd/Rollup/rollup番外篇  输出指定模块化的.md",
     "content/Programming/FrontEnd/React/react01.md",
-    "content/Programming/FrontEnd/React/react02-1.md",
     "content/Programming/FrontEnd/React/react02-2.md",
     "content/Programming/FrontEnd/React/react03 探索路由.md",
     "content/Page/archives/markdown-syntax/index.md",
@@ -202,7 +202,6 @@
     "content/Programming/Git/Config/01.md",
     "content/Programming/Git/Config/02.md",
     "public/blog/page/2/index.html",
-    "public/blog/page/2",
     "content/Programming/Git/Guide/Git(1)---仓库-Repo.md"
   ]
 }
