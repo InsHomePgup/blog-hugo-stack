@@ -1,3 +1,15 @@
+
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('/blog-hugo-stack/fonts/LXGWWenKai-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'LXGW WenKai', sans-serif !important;
+}
+
 /*
     You can add your own custom styles here.
 */
