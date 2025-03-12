@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8aeda1cba4fc0731",
+        "id": "73425cef8f0f72ac",
         "type": "tabs",
         "children": [
           {
-            "id": "084b4fbbb5a28d86",
+            "id": "d18bd01f83f789ed",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/FrontEnd/React/react02-2.md",
+                "file": "content/Blog/hugo/内容畅想.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "react02-2"
+              "title": "内容畅想"
             }
           }
         ]
@@ -166,8 +166,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "084b4fbbb5a28d86",
+  "active": "d18bd01f83f789ed",
   "lastOpenFiles": [
+    "content/Programming/FrontEnd/React/react02-2.md",
     "content/Programming/FrontEnd/React/react02-1.md",
     "content/Blog/hugo/内容畅想.md",
     "public/blog/hugo/内容畅想/index.html",
@@ -186,7 +187,6 @@
     "content/Programming/FrontEnd/Rollup/rollup-module-syntax.md",
     "content/Programming/FrontEnd/Rollup/rollup番外篇  输出指定模块化的.md",
     "content/Programming/FrontEnd/React/react01.md",
-    "content/Programming/FrontEnd/React/react02-2.md",
     "content/Programming/FrontEnd/React/react03 探索路由.md",
     "content/Page/archives/markdown-syntax/index.md",
     "content/Blog/Obsidian.md",
