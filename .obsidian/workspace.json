@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "内容畅想"
             }
-          },
-          {
-            "id": "fce0c74de310c4a7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -181,10 +166,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fce0c74de310c4a7",
+  "active": "d18bd01f83f789ed",
   "lastOpenFiles": [
-    "content/Blog/hugo/内容畅想.md",
+    "config/_default/config.toml~",
+    "public/scss/style.min.820db54e8a7b90289ae6c3370c634d47217c45c4c294db504dfc55ef333ec219.css",
+    "public/fonts/LXGWWenKai-Regular.ttf",
+    "public/fonts",
+    "assets/scss/custom.scss~",
     "conflict-files-obsidian-git.md",
+    "content/Blog/hugo/内容畅想.md",
     "static/fonts/LXGWWenKai-Regular.ttf",
     "static/fonts",
     "assets/font",
@@ -193,7 +183,6 @@
     "public/blog/hugo/内容畅想/index.html",
     "public/blog/hugo/内容畅想",
     "public/blog/hugo/untitled/index.html",
-    "public/blog/hugo/untitled",
     "content/Post/编程学习的核心思想.md",
     "content/Post/README/展望.md",
     "content/Post/README/你好，欢迎光临寒舍.md",
@@ -210,14 +199,10 @@
     "content/Page/archives/markdown-syntax/index.md",
     "content/Blog/Obsidian.md",
     "content/Blog/picgo.md",
-    "extensions.txt",
-    "public/programming/frontend/rollup/rollup-module-syntax/index.html",
-    "public/programming/frontend/rollup/rollup-module-syntax",
     "content/Programming/Git/Guide/Git 核心概念 - 四个区域.md",
     "content/Programming/Git/Guide/Git(3)---远程仓库与推送--remote + push.md",
     "content/Programming/Git/Config/03.md",
     "content/Programming/Git/Config/01.md",
-    "content/Programming/Git/Config/02.md",
-    "content/Programming/Git/Guide/Git(1)---仓库-Repo.md"
+    "content/Programming/Git/Config/02.md"
   ]
 }
