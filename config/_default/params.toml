@@ -152,3 +152,9 @@ clientSecret = ""
 [comments.cusdis]
 host = ""
 id = ""
+
+
+# 在文件末尾添加以下内容
+
+[fonts]
+customFonts = true
