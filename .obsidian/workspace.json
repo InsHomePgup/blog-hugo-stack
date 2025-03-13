@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "内容畅想"
             }
+          },
+          {
+            "id": "fce0c74de310c4a7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "conflict-files-obsidian-git"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -166,12 +181,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d18bd01f83f789ed",
+  "active": "fce0c74de310c4a7",
   "lastOpenFiles": [
+    "content/Blog/hugo/内容畅想.md",
+    "conflict-files-obsidian-git.md",
+    "static/fonts/LXGWWenKai-Regular.ttf",
+    "static/fonts",
     "assets/font",
     "content/Programming/FrontEnd/React/react02-2.md",
     "content/Programming/FrontEnd/React/react02-1.md",
-    "content/Blog/hugo/内容畅想.md",
     "public/blog/hugo/内容畅想/index.html",
     "public/blog/hugo/内容畅想",
     "public/blog/hugo/untitled/index.html",
@@ -195,14 +213,11 @@
     "extensions.txt",
     "public/programming/frontend/rollup/rollup-module-syntax/index.html",
     "public/programming/frontend/rollup/rollup-module-syntax",
-    "public/programming/Git/guide/git-核心概念---四个区域/index.html",
-    "public/programming/Git/guide/git-核心概念---四个区域",
     "content/Programming/Git/Guide/Git 核心概念 - 四个区域.md",
     "content/Programming/Git/Guide/Git(3)---远程仓库与推送--remote + push.md",
     "content/Programming/Git/Config/03.md",
     "content/Programming/Git/Config/01.md",
     "content/Programming/Git/Config/02.md",
-    "public/blog/page/2/index.html",
     "content/Programming/Git/Guide/Git(1)---仓库-Repo.md"
   ]
 }
