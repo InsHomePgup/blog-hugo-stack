@@ -1,24 +1,25 @@
-<!--<style>-->
-<!--    .box{-->
-<!--        width:100%;-->
-<!--        display: flex;-->
-<!--        flex-direction: row;-->
-<!--        justify-content: center;-->
-<!--        align-items: center;-->
-<!--    }-->
-<!--</style>-->
-<!--<div class="box">-->
-<!--    {{ if (default false .Site.Params.colorScheme.toggle) }}-->
-<!--    <li id="dark-mode-toggle">-->
-<!--        {{ partial "helper/icon" "toggle-left" }}-->
-<!--        {{ partial "helper/icon" "toggle-right" }}-->
-<!--        <span>{{ T "darkMode" }}</span>-->
-<!--    </li>-->
-<!--    {{ end }}-->
-<!--</div>-->
+<style>
+    @import url('https://fonts.googleapis.com') {display: none !important;}
+    @import url('https://fonts.gstatic.com') {display: none !important;}
+    /* Overwrite CSS variable */
+    :root {
+        --article-font-family: "LXGW WenKai", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    @font-face {
+        font-family: 'Lato';
+        font-display: swap;
+        src: none !important;
+    }
+</style>
 
-
-<!--<div>-->
-<!--    {{ $val1 := 6 }}-->
-<!--    <p>{{ $val1 }}</p>-->
-<!--</div>-->
+<script>
+    // (function () {
+    //     const customFont = document.createElement('link');
+    //     customFont.href = "https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap";
+    //
+    //     customFont.type = "text/css";
+    //     customFont.rel = "stylesheet";
+    //
+    //     document.head.appendChild(customFont);
+    // }());
+</script>
