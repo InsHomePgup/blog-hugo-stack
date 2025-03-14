@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/FrontEnd/css 变量的使用.md",
+                "file": "content/Programming/BackEnd/Go/go入门.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "css 变量的使用"
+              "title": "go入门"
             }
           }
         ]
@@ -168,8 +168,10 @@
   },
   "active": "71f9059832934d13",
   "lastOpenFiles": [
-    "content/Programming/FrontEnd/CSS/box-sizing.md",
     "content/Programming/FrontEnd/css 变量的使用.md",
+    "content/Programming/BackEnd/Go/go入门.md",
+    "content/Programming/BackEnd/Go",
+    "content/Programming/FrontEnd/CSS/box-sizing.md",
     "Untitled.md",
     "content/Programming/FrontEnd/CSS/LESS/01.md",
     "content/Programming/FrontEnd/CSS/SCSS/01.md",
@@ -184,7 +186,6 @@
     "layouts/partials/footer",
     "layouts/partials/head/custom.html~",
     "public/scss/style.min.fe90c2495fca2e5000ca1532441e8c2e630e8c3aaa61b4b639e7a74a6d3b8306.css",
-    "public/scss/style.min.a145afd1cfcd711428b4166240fa3c0f7e3381332038071fd9ecbe254bb77edd.css",
     "conflict-files-obsidian-git.md",
     "content/Programming/FrontEnd/React/react02-2.md",
     "content/Programming/FrontEnd/React/react02-1.md",
@@ -202,7 +203,6 @@
     "content/Programming/FrontEnd/React/react01.md",
     "content/Programming/FrontEnd/React/react03 探索路由.md",
     "content/Page/archives/markdown-syntax/index.md",
-    "content/Blog/Obsidian.md",
-    "content/Blog/picgo.md"
+    "content/Blog/Obsidian.md"
   ]
 }
