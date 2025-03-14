@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8d8be33940543ffb",
+        "id": "39ef748fdb76aacd",
         "type": "tabs",
         "children": [
           {
-            "id": "3945de2f1e745e56",
+            "id": "6d866a937ca21ef6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Untitled.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Untitled"
             }
           }
         ]
@@ -162,8 +166,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3945de2f1e745e56",
+  "active": "6d866a937ca21ef6",
   "lastOpenFiles": [
+    "Untitled.md",
     "static/fonts/LXGWWenKai-Regular.woff2",
     "content/Blog/hugo/内容畅想.md",
     "layouts/partials/footer/components/custom-font.html~",
@@ -175,7 +180,6 @@
     "public/scss/style.min.a145afd1cfcd711428b4166240fa3c0f7e3381332038071fd9ecbe254bb77edd.css",
     "assets/scss/variables.scss",
     "public/scss/style.min.054e742eb46509e481c81e4afad872d245b3b375cbedaa12258e858462c13d00.css",
-    "public/scss/style.min.6160fb6b21eef2f5a14aa5737b066d482cea955fe4770cb8eda12d9f3004e37b.css",
     "conflict-files-obsidian-git.md",
     "content/Programming/FrontEnd/React/react02-2.md",
     "content/Programming/FrontEnd/React/react02-1.md",
