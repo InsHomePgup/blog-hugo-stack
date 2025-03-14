@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/FrontEnd/CSS/UNOCSS/presetAttributify的使用.md",
+                "file": "content/Programming/FrontEnd/CSS/LESS/01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "presetAttributify的使用"
+              "title": "01"
             }
           }
         ]
@@ -166,8 +166,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "411bcab6ba500395",
+  "active": "cf648b1a054fc2ef",
   "lastOpenFiles": [
+    "content/Programming/FrontEnd/CSS/SCSS/01.md",
+    "content/Programming/FrontEnd/CSS/LESS/01.md",
+    "content/Programming/FrontEnd/CSS/UNOCSS/presetAttributify的使用.md",
+    "content/Programming/FrontEnd/CSS/LESS",
+    "content/Programming/FrontEnd/CSS/SCSS",
     "Untitled.md",
     "static/fonts/LXGWWenKai-Regular.woff2",
     "content/Blog/hugo/内容畅想.md",
@@ -178,8 +183,6 @@
     "layouts/partials/head/custom.html~",
     "public/scss/style.min.fe90c2495fca2e5000ca1532441e8c2e630e8c3aaa61b4b639e7a74a6d3b8306.css",
     "public/scss/style.min.a145afd1cfcd711428b4166240fa3c0f7e3381332038071fd9ecbe254bb77edd.css",
-    "assets/scss/variables.scss",
-    "public/scss/style.min.054e742eb46509e481c81e4afad872d245b3b375cbedaa12258e858462c13d00.css",
     "conflict-files-obsidian-git.md",
     "content/Programming/FrontEnd/React/react02-2.md",
     "content/Programming/FrontEnd/React/react02-1.md",
@@ -200,9 +203,6 @@
     "content/Blog/Obsidian.md",
     "content/Blog/picgo.md",
     "content/Programming/Git/Guide/Git 核心概念 - 四个区域.md",
-    "content/Programming/Git/Guide/Git(3)---远程仓库与推送--remote + push.md",
-    "content/Programming/Git/Config/03.md",
-    "content/Programming/Git/Config/01.md",
-    "content/Programming/Git/Config/02.md"
+    "content/Programming/Git/Guide/Git(3)---远程仓库与推送--remote + push.md"
   ]
 }
