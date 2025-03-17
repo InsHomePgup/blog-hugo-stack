@@ -13,6 +13,21 @@
 </style>
 
 <script>
+      (function() {
+    // 获取保存的主题模式
+    const savedTheme = localStorage.getItem('StackColorScheme');
+    // 获取系统偏好
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // 确定要使用的主题
+    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    
+    // 立即应用主题，防止闪烁
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-scheme', 'dark');
+      document.documentElement.style.colorScheme = 'dark';
+    }
+  })();
     // (function () {
     //     const customFont = document.createElement('link');
     //     customFont.href = "https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap";
