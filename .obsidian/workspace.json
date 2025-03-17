@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/BackEnd/Go/go入门.md",
+                "file": "content/Programming/OS/Linux/初始化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "go入门"
+              "title": "初始化"
             }
           }
         ]
@@ -168,8 +168,10 @@
   },
   "active": "71f9059832934d13",
   "lastOpenFiles": [
-    "content/Programming/FrontEnd/css 变量的使用.md",
+    "content/Programming/OS/Linux/Schedule.md",
+    "content/Programming/OS/Linux/初始化.md",
     "content/Programming/BackEnd/Go/go入门.md",
+    "content/Programming/FrontEnd/css 变量的使用.md",
     "content/Programming/BackEnd/Go",
     "content/Programming/FrontEnd/CSS/box-sizing.md",
     "Untitled.md",
@@ -201,8 +203,6 @@
     "content/Programming/FrontEnd/Rollup/rollup-module-syntax.md",
     "content/Programming/FrontEnd/Rollup/rollup番外篇  输出指定模块化的.md",
     "content/Programming/FrontEnd/React/react01.md",
-    "content/Programming/FrontEnd/React/react03 探索路由.md",
-    "content/Page/archives/markdown-syntax/index.md",
-    "content/Blog/Obsidian.md"
+    "content/Programming/FrontEnd/React/react03 探索路由.md"
   ]
 }
