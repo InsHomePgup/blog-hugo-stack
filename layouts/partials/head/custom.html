@@ -1,6 +1,6 @@
+{{ $customAnimations := resources.Get "scss/custom-animations.scss" | css.Sass | resources.Minify }}
+<link rel="stylesheet" href="{{ $customAnimations.RelPermalink }}">
 <style>
-    @import url('https://fonts.googleapis.com') {display: none !important;}
-    @import url('https://fonts.gstatic.com') {display: none !important;}
     /* Overwrite CSS variable */
     :root {
         --article-font-family: "LXGW WenKai", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
