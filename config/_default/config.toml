@@ -20,3 +20,7 @@ disqusShortname = "hugo-theme-stack"
 
 [pagination]
 pagerSize = 7
+
+[services]
+[services.rss]
+limit = 5

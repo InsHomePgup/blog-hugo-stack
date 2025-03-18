@@ -14,3 +14,13 @@ url = "https://github.com/InsHomePgup/blog-hugo-stack"
 
 [social.params]
 icon = "brand-github"
+
+# 添加 RSS 订阅按钮
+[[social]]
+identifier = "rss"
+name = "RSS"
+url = "/index.xml"
+weight = 40
+
+[social.params]
+icon = "rss"
