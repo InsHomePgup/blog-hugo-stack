@@ -11,10 +11,14 @@
             "id": "63421fc00060d012",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "content/Programming/Git/Guide/Git 核心概念 - 四个区域.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Git 核心概念 - 四个区域"
             }
           }
         ]
@@ -164,6 +168,12 @@
   },
   "active": "63421fc00060d012",
   "lastOpenFiles": [
+    "content/Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
+    "content/Programming/Git/Guide/Git(1)---仓库-Repo.md",
+    "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
+    "content/Programming/Git/Guide/Git(4)---还原---reset 从暂存区和 commit 还原.md",
+    "content/Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md",
+    "content/Programming/Git/Guide/Git(6)---标签---tag.md",
     "content/Programming/OS/Linux/初始化.md",
     "content/Programming/OS/Linux/Schedule.md",
     "content/Programming/BackEnd/Go/go入门.md",
@@ -193,12 +203,6 @@
     "content/Blog/markdown.md",
     "content/Blog/article.md",
     "content/Blog/hugo/template/01.md",
-    "content/Blog/hugo/stack/header.md",
-    "content/Programming/FrontEnd/Rollup/(二)Rollup添加typescript插件来编译ts文件.md",
-    "content/Programming/FrontEnd/Rollup/(一)记录一次rollup的tutorial.md",
-    "content/Programming/FrontEnd/Rollup/rollup-module-syntax.md",
-    "content/Programming/FrontEnd/Rollup/rollup番外篇  输出指定模块化的.md",
-    "content/Programming/FrontEnd/React/react01.md",
-    "content/Programming/FrontEnd/React/react03 探索路由.md"
+    "content/Blog/hugo/stack/header.md"
   ]
 }
