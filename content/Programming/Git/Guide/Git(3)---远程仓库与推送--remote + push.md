@@ -27,10 +27,13 @@ remote, 远程
 复制 ssh的仓库地址
 
 ```
+# 查看git状态
 git status
 
+# 添加远程仓库，origin仓库名称
 git remote add origin [仓库地址]
 
+# 查看所有仓库信息
 git remote -v
 
 git push -u origin main
