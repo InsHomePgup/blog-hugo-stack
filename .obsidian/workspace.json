@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e56d1e36f45cc1d0",
+        "id": "7f8ee63d5d12316a",
         "type": "tabs",
         "children": [
           {
-            "id": "493bbdfec462bb27",
+            "id": "5273e94510784614",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/Programming/Git/Commands/Revert/revert.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "revert"
+              "title": "New tab"
             }
           }
         ]
@@ -166,10 +162,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "493bbdfec462bb27",
+  "active": "5273e94510784614",
   "lastOpenFiles": [
-    "content/Programming/Git/Commands/Reset/reset,适合本地的soft & hard回退.md",
     "content/Programming/Git/Commands/Revert/revert.md",
+    "content/Programming/Git/Commands/Reset/reset,适合本地的soft & hard回退.md",
     "content/Programming/Git/Commands/Rebase/01.md",
     "content/Programming/Git/Commands/Revert",
     "content/Programming/Git/Commands/Reset",
