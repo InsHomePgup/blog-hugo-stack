@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ab55e7cea4a3c551",
+        "id": "7f0bcfca4892af85",
         "type": "tabs",
         "children": [
           {
-            "id": "860dc825ea1357a6",
+            "id": "82ef1e9200f8337e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/Git/Commands/Tag/01.md",
+                "file": "content/Programming/Language/JavaScript/Try catch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01"
+              "title": "Try catch"
             }
           }
         ]
@@ -166,8 +166,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "860dc825ea1357a6",
+  "active": "82ef1e9200f8337e",
   "lastOpenFiles": [
+    "content/Programming/Language/JavaScript/Try catch.md",
     "content/Programming/Git/Commands/Tag/01.md",
     "content/Programming/Git/Guide/Git(6)---标签---tag.md",
     "content/Programming/Git/Guide/Git(7)---远程协作模拟---合并冲突.md",
@@ -202,7 +203,6 @@
     "content/Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md",
     "content/Programming/Git/Guide/Git(4)---还原---reset 从暂存区和 commit 还原.md",
     "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
-    "content/Programming/Git/Guide/Git(1)---仓库-Repo.md",
-    "content/Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md"
+    "content/Programming/Git/Guide/Git(1)---仓库-Repo.md"
   ]
 }
