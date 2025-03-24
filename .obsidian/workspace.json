@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/Language/JavaScript/Try catch.md",
+                "file": "content/Programming/Language/JavaScript/Promise.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Try catch"
+              "title": "Promise"
             }
           }
         ]
@@ -169,6 +169,7 @@
   "active": "82ef1e9200f8337e",
   "lastOpenFiles": [
     "content/Programming/Language/JavaScript/Try catch.md",
+    "content/Programming/Language/JavaScript/Promise.md",
     "content/Programming/Git/Commands/Tag/01.md",
     "content/Programming/Git/Guide/Git(6)---标签---tag.md",
     "content/Programming/Git/Guide/Git(7)---远程协作模拟---合并冲突.md",
@@ -202,7 +203,6 @@
     "content/Programming/Git/Guide/Dir/目录设置.md",
     "content/Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md",
     "content/Programming/Git/Guide/Git(4)---还原---reset 从暂存区和 commit 还原.md",
-    "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
-    "content/Programming/Git/Guide/Git(1)---仓库-Repo.md"
+    "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md"
   ]
 }
