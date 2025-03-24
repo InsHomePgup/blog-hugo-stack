@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "7f8ee63d5d12316a",
+        "id": "ab55e7cea4a3c551",
         "type": "tabs",
         "children": [
           {
-            "id": "5273e94510784614",
+            "id": "860dc825ea1357a6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -166,8 +166,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5273e94510784614",
+  "active": "860dc825ea1357a6",
   "lastOpenFiles": [
+    "content/Programming/Git/Commands/Tag/01.md",
     "content/Programming/Git/Guide/Git(6)---标签---tag.md",
     "content/Programming/Git/Guide/Git(7)---远程协作模拟---合并冲突.md",
     "content/Programming/Git/Guide/Git 核心概念 - 四个区域.md",
@@ -202,7 +203,6 @@
     "content/Programming/Git/Guide/Git(4)---还原---reset 从暂存区和 commit 还原.md",
     "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
     "content/Programming/Git/Guide/Git(1)---仓库-Repo.md",
-    "content/Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
-    "content/Programming/OS/Linux/初始化.md"
+    "content/Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md"
   ]
 }
