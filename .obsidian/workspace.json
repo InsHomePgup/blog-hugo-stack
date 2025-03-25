@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Diary/2025-03-25.md",
+                "file": "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-03-25"
+              "title": "Git(2)---文件追踪与提交-add-commit"
             }
           }
         ]
@@ -166,17 +166,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a0eccaf139b8deb1",
+  "active": "411bcab6ba500395",
   "lastOpenFiles": [
+    "content/Programming/Git/Guide/Git(1)---仓库-Repo.md",
+    "content/Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
+    "content/Programming/Git/Guide/Git-文件状态.md",
+    "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
+    "content/Programming/Git/Guide/编撰计划.md",
+    "content/Programming/Git/Project/01规范项目的提交.md",
+    "content/Programming/Git/Guide/Git 核心概念 - 四个区域.md",
+    "content/Diary/2025-03-25.md",
     "content/Diary/2025-01-08.md",
     "content/Diary/2025-01-07.md",
-    "content/Diary/2025-03-25.md",
     "content/Programming/Language/JavaScript/Promise.md",
     "content/Programming/Language/JavaScript/Try catch.md",
     "content/Programming/Git/Commands/Tag/01.md",
     "content/Programming/Git/Guide/Git(6)---标签---tag.md",
     "content/Programming/Git/Guide/Git(7)---远程协作模拟---合并冲突.md",
-    "content/Programming/Git/Guide/Git 核心概念 - 四个区域.md",
     "content/Programming/OS/Windows/win11初始化.md",
     "content/Programming/Git/Commands/Diff/(一)diff.md",
     "content/Programming/Git/Commands/Revert/revert.md",
@@ -197,12 +203,6 @@
     "content/Post/闲谈",
     "content/Programming/OS/Linux/内存/使用zRAM代替swap（未完成）.md",
     "content/Programming/OS/Linux/内存/mbw内存测试.md",
-    "content/Programming/OS/Linux/硬盘/FIO的磁盘测试.md",
-    "content/Programming/OS/Linux/Command/tar.md",
-    "content/Programming/OS/Linux/Command/SCP的使用.md",
-    "content/Programming/OS/Linux/Command/find.md",
-    "content/Programming/OS/Linux/Info/修改主机名.md",
-    "content/Programming/Git/Guide/Git(3)---远程仓库与推送--remote + push.md",
-    "content/Programming/Git/Guide/Dir/目录设置.md"
+    "content/Programming/OS/Linux/硬盘/FIO的磁盘测试.md"
   ]
 }
