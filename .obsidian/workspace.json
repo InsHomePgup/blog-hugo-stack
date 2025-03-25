@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
+                "file": "content/Programming/Git/Config/03.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Git(2)---文件追踪与提交-add-commit"
+              "title": "03"
             }
           }
         ]
@@ -166,13 +166,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "411bcab6ba500395",
+  "active": "a0eccaf139b8deb1",
   "lastOpenFiles": [
+    "content/Programming/Git/Config/02.md",
+    "content/Programming/Git/Config/01.md",
+    "content/Programming/Git/Guide/编撰计划.md",
+    "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
     "content/Programming/Git/Guide/Git(1)---仓库-Repo.md",
     "content/Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
     "content/Programming/Git/Guide/Git-文件状态.md",
-    "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
-    "content/Programming/Git/Guide/编撰计划.md",
     "content/Programming/Git/Project/01规范项目的提交.md",
     "content/Programming/Git/Guide/Git 核心概念 - 四个区域.md",
     "content/Diary/2025-03-25.md",
@@ -201,8 +203,6 @@
     "public/p/一些无意义的事情",
     "content/Programming/OS/Linux/Info/查看系统信息.md",
     "content/Post/闲谈",
-    "content/Programming/OS/Linux/内存/使用zRAM代替swap（未完成）.md",
-    "content/Programming/OS/Linux/内存/mbw内存测试.md",
-    "content/Programming/OS/Linux/硬盘/FIO的磁盘测试.md"
+    "content/Programming/OS/Linux/内存/使用zRAM代替swap（未完成）.md"
   ]
 }
