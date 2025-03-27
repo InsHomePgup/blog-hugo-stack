@@ -1,0 +1,567 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="React学习 快速创建一个项目 首先用vite + react启动一个react-ts项目\n1 2 3 pnpm create vite [项目名称] --template react-ts pnpm create vite react-starter --template react-ts 添加一些依赖 unocss antfu eslint lodash-es 删除多余的内容，仅保留App.tsx和main.tsx\n组件 组件声明 JSX必须有一个根节点\n可以是 <></> // 这是一个 Fragment\n所有html标签必须结束\n不管是单标签还是双标签都必须结束\nJSX requires tags to be explicitly closed: self-closing tags like <img> must become <img />, and wrapping tags like <li>oranges must be written as <li>oranges</li>.\n大部分react 的东西都使用 驼峰。\n比如绑定事件 onClick\n"><title>组件声明和jsx</title>
+<link rel=canonical href=https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/react/react01/><link rel=stylesheet href=/blog-hugo-stack/scss/style.min.054e742eb46509e481c81e4afad872d245b3b375cbedaa12258e858462c13d00.css><meta property='og:title' content="组件声明和jsx"><meta property='og:description' content="React学习 快速创建一个项目 首先用vite + react启动一个react-ts项目\n1 2 3 pnpm create vite [项目名称] --template react-ts pnpm create vite react-starter --template react-ts 添加一些依赖 unocss antfu eslint lodash-es 删除多余的内容，仅保留App.tsx和main.tsx\n组件 组件声明 JSX必须有一个根节点\n可以是 <></> // 这是一个 Fragment\n所有html标签必须结束\n不管是单标签还是双标签都必须结束\nJSX requires tags to be explicitly closed: self-closing tags like <img> must become <img />, and wrapping tags like <li>oranges must be written as <li>oranges</li>.\n大部分react 的东西都使用 驼峰。\n比如绑定事件 onClick\n"><meta property='og:url' content='https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/react/react01/'><meta property='og:site_name' content="Abra's Blog"><meta property='og:type' content='article'><meta property='article:section' content='Programming'><meta property='article:tag' content='react'><meta property='article:tag' content='tsx'><meta property='article:published_time' content='2024-06-06T00:00:00+00:00'><meta property='article:modified_time' content='2024-06-06T00:00:00+00:00'><meta name=twitter:title content="组件声明和jsx"><meta name=twitter:description content="React学习 快速创建一个项目 首先用vite + react启动一个react-ts项目\n1 2 3 pnpm create vite [项目名称] --template react-ts pnpm create vite react-starter --template react-ts 添加一些依赖 unocss antfu eslint lodash-es 删除多余的内容，仅保留App.tsx和main.tsx\n组件 组件声明 JSX必须有一个根节点\n可以是 <></> // 这是一个 Fragment\n所有html标签必须结束\n不管是单标签还是双标签都必须结束\nJSX requires tags to be explicitly closed: self-closing tags like <img> must become <img />, and wrapping tags like <li>oranges must be written as <li>oranges</li>.\n大部分react 的东西都使用 驼峰。\n比如绑定事件 onClick\n"><link rel="shortcut icon" href=/blog-hugo-stack/favicon.ico><link rel=stylesheet href=/blog-hugo-stack/scss/custom-animations.min.css><style>:root{--article-font-family:"LXGW WenKai", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif}@font-face{font-family:lato;font-display:swap;src:none!important}</style><script>(function(){const e=localStorage.getItem("StackColorScheme"),t=window.matchMedia("(prefers-color-scheme: dark)").matches,n=e||(t?"dark":"light");n==="dark"&&(document.documentElement.setAttribute("data-scheme","dark"),document.documentElement.style.colorScheme="dark")})()</script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/blog-hugo-stack/><div><img src=https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/CyberpunkAvatar.jpg width=300 height=300 class=site-logo alt=Avatar></div></a></figure><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span></li><div class=site-meta><h1 class=site-name><a href=/blog-hugo-stack>Abra's Blog</a></h1><h2 class=site-description>艰苦卓绝 力争上游</h2></div></header><ol class=menu-social><li><a href=/blog-hugo-stack/index.xml target=_blank title=RSS rel=me><svg class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg></a></li><li><a href=https://github.com/InsHomePgup/blog-hugo-stack target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/blog-hugo-stack/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span></a></li><li><a href=/blog-hugo-stack/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li><a href=/blog-hugo-stack/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li><a href=/blog-hugo-stack/links/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Links</span></a></li><li><a href=/blog-hugo-stack/about/><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-braces"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 4A2 2 0 005 6v3a2 3 0 01-2 3 2 3 0 012 3v3a2 2 0 002 2"/><path d="M17 4a2 2 0 012 2v3a2 3 0 002 3 2 3 0 00-2 3v3a2 2 0 01-2 2"/></svg>
+<span>About</span></a></li><li class=menu-bottom-section><ol class=menu></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ol><li><ol><li><a href=#react学习>React学习</a><ol><li><a href=#快速创建一个项目>快速创建一个项目</a></li></ol></li><li><a href=#组件>组件</a><ol><li><a href=#组件声明>组件声明</a></li><li><a href=#导出和导入组件>导出和导入组件</a></li><li><a href=#jsxtsx-动态插入内容属性>JSX|TSX 动态插入内容、属性</a></li><li><a href=#实现html循环遍历>实现html循环遍历</a></li><li><a href=#条件渲染>条件渲染</a></li><li><a href=#添加内联样式>添加内联样式</a></li><li><a href=#添加外部css文件>添加外部css文件</a></li></ol></li><li><a href=#总结-1>总结</a><ol><li></li></ol></li></ol></li></ol></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/blog-hugo-stack/categories/react/>React</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/blog-hugo-stack/programming/frontend/react/react01/>组件声明和jsx</a></h2></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Jun 06, 2024</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>5 minute read</time></div></footer></div></header><section class=article-content><h3 id=react学习>React学习</h3><h4 id=快速创建一个项目>快速创建一个项目</h4><p>首先用vite + react启动一个react-ts项目</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>pnpm create vite <span class=o>[</span>项目名称<span class=o>]</span> --template react-ts
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>pnpm create vite react-starter --template react-ts
+</span></span></code></pre></td></tr></table></div></div><h5 id=添加一些依赖>添加一些依赖</h5><ul><li>unocss</li><li>antfu eslint</li><li>lodash-es
+<img src=https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250106164408392.png loading=lazy alt=|325x332></li></ul><p>删除多余的内容，仅保留App.tsx和main.tsx</p><h3 id=组件>组件</h3><h4 id=组件声明>组件声明</h4><p>JSX必须有一个根节点</p><p>可以是 &lt;>&lt;/> // 这是一个 <em><a class=link href=https://react.dev/reference/react/Fragment target=_blank rel=noopener>Fragment</a></em></p><p>所有html标签必须结束</p><p>不管是单标签还是双标签都必须结束</p><blockquote><p>JSX requires tags to be explicitly closed: self-closing tags like <code>&lt;img></code> must become <code>&lt;img /></code>, and wrapping tags like <code>&lt;li>oranges</code> must be written as <code>&lt;li>oranges&lt;/li></code>.</p></blockquote><p>大部分react 的东西都使用 驼峰。</p><p>比如绑定事件 onClick</p><p>比如添加class = className</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-tsx data-lang=tsx><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=kd>function</span> <span class=nx>Page() {</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>h1</span><span class=p>&gt;</span><span class=nx>Home</span><span class=p>&lt;/</span><span class=nt>h1</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>导出，用ES6语法，导出一个函数返回一个JSX片段。</p><p>注意：不要在组件内部再去申明一个组件。</p><p>注意：react组件的使用需要开头大写，这样来区分原生的html标签。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-tsx data-lang=tsx><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=kd>function</span> <span class=nx>Gallery() {</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// 🔴 Never define a component inside another component!
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>function</span> <span class=nx>Profile() {</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// ...
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// ...
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=导出和导入组件>导出和导入组件</h4><p>可以先看这篇熟悉一下导入导出，是一样的。</p><p><a class=link href=../../Rollup/rollup-module-syntax>ES导入导出语法</a></p><h5 id=具名导出>具名导出</h5><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-tsx data-lang=tsx><span class=line><span class=cl><span class=c1>// 导出
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>export</span> <span class=kd>function</span> <span class=nx>MyCard</span><span class=p>(</span><span class=nx>props</span><span class=o>:</span> <span class=p>{</span> <span class=nx>name</span>: <span class=kt>string</span> <span class=p>})</span> <span class=p>{</span>  <span class=c1>// 接收props
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=k>return</span> <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;{</span><span class=nx>props</span><span class=p>.</span><span class=nx>name</span><span class=p>}&lt;/</span><span class=nt>div</span><span class=p>&gt;;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 在page里导入和使用
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>import</span> <span class=p>{</span><span class=nx>MyCard</span><span class=p>}</span> <span class=kr>from</span> <span class=s1>&#39;../components/MyCard&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=kd>function</span> <span class=nx>Page() {</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>MyCard</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;Hello&#34;</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h5 id=默认导出>默认导出</h5><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-tsx data-lang=tsx><span class=line><span class=cl><span class=c1>// 默认导出
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>export</span> <span class=k>default</span> <span class=kd>function</span> <span class=nx>MyButton</span><span class=p>(</span><span class=nx>props</span><span class=o>:</span> <span class=p>{</span> <span class=nx>text</span>: <span class=kt>string</span> <span class=p>})</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;{</span><span class=nx>props</span><span class=p>.</span><span class=nx>text</span><span class=p>}&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 默认导入
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>import</span> <span class=nx>MyButton</span> <span class=kr>from</span> <span class=s2>&#34;../components/MyButton.tsx&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=kd>function</span> <span class=nx>Page() {</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>MyButton</span> <span class=na>text</span><span class=o>=</span><span class=s>&#34;click&#34;</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=jsxtsx-动态插入内容属性>JSX|TSX 动态插入内容、属性</h4><h5 id=绑定变量属性>绑定变量属性</h5><p>title={name}的这种形式去给一个标签添加动态的属性</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-jsx data-lang=jsx><span class=line><span class=cl><span class=kd>function</span> <span class=nx>App</span><span class=p>()</span>  <span class=p>{</span>  
+</span></span><span class=line><span class=cl>	<span class=kr>const</span> <span class=nx>name</span> <span class=o>=</span> <span class=s1>&#39;foo&#39;</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>		 <span class=p>&lt;</span><span class=nt>div</span> <span class=na>title</span><span class=o>=</span><span class=p>{</span><span class=nx>name</span><span class=p>}&gt;</span> <span class=cm>/** 使用属性*/</span>
+</span></span><span class=line><span class=cl>			<span class=p>{</span><span class=nx>name</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=c1>// 一个花括号里面输入来使用js表达式和变量
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// 导出组件
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>export</span> <span class=k>default</span> <span class=nx>App</span>
+</span></span></code></pre></td></tr></table></div></div><h5 id=绑定class>绑定class</h5><p>直接添加class和绑定class的变量</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-jsx data-lang=jsx><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>App</span><span class=p>()</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>myClassName</span><span class=o>:</span> <span class=nx>string</span> <span class=o>=</span> <span class=s1>&#39;w-10 h-10 bg-blue-6&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=p>(</span>  
+</span></span><span class=line><span class=cl>    <span class=p>&lt;&gt;</span>      <span class=cm>/** 这里使用了一对空标签当成根标签*/</span>
+</span></span><span class=line><span class=cl>	    <span class=cm>/** 直接绑定class */</span>
+</span></span><span class=line><span class=cl>     <span class=p>&lt;</span><span class=nt>div</span> <span class=na>className</span><span class=o>=</span><span class=s>&#34;w-2&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>	    <span class=cm>/** 绑定class变量 */</span>
+</span></span><span class=line><span class=cl>     <span class=p>&lt;</span><span class=nt>div</span> <span class=na>className</span><span class=o>=</span><span class=p>{</span><span class=nx>myClassName</span><span class=p>}&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/&gt;</span>  
+</span></span><span class=line><span class=cl><span class=p>)}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=nx>App</span>
+</span></span></code></pre></td></tr></table></div></div><h5 id=绑定style>绑定style</h5><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-tsx data-lang=tsx><span class=line><span class=cl><span class=kd>function</span> <span class=nx>App() {</span>  
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>styleObj</span> <span class=o>=</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>    <span class=nx>backgroundColor</span><span class=o>:</span> <span class=s1>&#39;red&#39;</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl>  <span class=p>}</span>  <span class=k>return</span> <span class=p>(</span>  
+</span></span><span class=line><span class=cl>    <span class=p>&lt;&gt;</span>      <span class=p>&lt;</span><span class=nt>div</span> <span class=na>style</span><span class=o>=</span><span class=p>{</span><span class=nx>styleObj</span><span class=p>}&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span> <span class=na>style</span><span class=o>=</span><span class=p>{{</span> <span class=nx>color</span><span class=o>:</span> <span class=s1>&#39;red&#39;</span> <span class=p>}}&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/&gt;</span>  <span class=p>)}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=nx>App</span>
+</span></span></code></pre></td></tr></table></div></div><h5 id=总结>总结</h5><p>动态绑定class和style</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-tsx data-lang=tsx><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=kd>function</span> <span class=nx>page() {</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>name</span> <span class=o>=</span> <span class=s1>&#39;foo&#39;</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>classList</span> <span class=o>=</span> <span class=s1>&#39;w-10 h-10&#39;</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>styleObj</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>backgroundColor</span><span class=o>:</span> <span class=s1>&#39;red&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>active</span> <span class=o>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>activeClass</span> <span class=o>=</span> <span class=sb>`</span><span class=si>${</span><span class=nx>active</span> <span class=o>?</span> <span class=s1>&#39;active&#39;</span> <span class=o>:</span> <span class=s1>&#39;&#39;</span><span class=si>}</span><span class=sb>`</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span> <span class=na>className</span><span class=o>=</span><span class=p>{</span><span class=nx>classList</span><span class=p>}&gt;{</span><span class=nx>name</span><span class=p>}&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span> <span class=na>className</span><span class=o>=</span><span class=s>&#34;bg-blue-5 w-10 h-10&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span> <span class=na>style</span><span class=o>=</span><span class=p>{{</span> <span class=nx>background</span><span class=o>:</span> <span class=s1>&#39;red&#39;</span> <span class=p>}}&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span> <span class=na>style</span><span class=o>=</span><span class=p>{</span><span class=nx>styleObj</span><span class=p>}&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span> <span class=na>className</span><span class=o>=</span><span class=p>{</span><span class=nx>activeClass</span><span class=p>}&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span> <span class=na>className</span><span class=o>=</span><span class=p>{</span><span class=sb>`</span><span class=si>${</span><span class=nx>active</span><span class=si>}</span><span class=sb>?&#39;active&#39;:&#39;&#39;`</span><span class=p>}&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span> <span class=na>className</span><span class=o>=</span><span class=p>{[</span><span class=s1>&#39;test&#39;</span><span class=p>].</span><span class=nx>join</span><span class=p>(</span><span class=s1>&#39; &#39;</span><span class=p>)}&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h5 id=事件操作获取事件对象event>事件操作，获取事件对象event</h5><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-jsx data-lang=jsx><span class=line><span class=cl><span class=c1>// 事件操作
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>function</span> <span class=nx>App</span><span class=p>()</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>function</span> <span class=nx>test</span><span class=p>(</span><span class=nx>number1</span><span class=o>?:</span> <span class=nx>number</span><span class=p>,</span> <span class=nx>event</span><span class=o>?:</span> <span class=nx>React</span><span class=p>.</span><span class=nx>FormEvent</span><span class=p>&lt;</span><span class=nt>HTMLButtonElement</span><span class=p>&gt;)</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>number1</span><span class=p>,</span> <span class=nx>event</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>    <span class=p>}</span>  
+</span></span><span class=line><span class=cl>  <span class=cm>/** React.FormEvent&lt;HTMLButtonElement&gt; react的一些ts类型 */</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>(</span>  
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>            <span class=p>{</span><span class=cm>/*调用方式1*/</span><span class=p>}</span>  
+</span></span><span class=line><span class=cl>            <span class=p>{</span><span class=cm>/*bind方式拿到event，默认最后一个参数就是event*/</span><span class=p>}</span>  
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>button</span> <span class=na>onClick</span><span class=o>=</span><span class=p>{</span><span class=nx>test</span><span class=p>.</span><span class=nx>bind</span><span class=p>(</span><span class=kc>null</span><span class=p>,</span> <span class=mi>123</span><span class=p>)}&gt;</span>  
+</span></span><span class=line><span class=cl>            <span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>            <span class=p>{</span><span class=cm>/*调用方式2*/</span><span class=p>}</span>  
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>button</span> <span class=na>onClick</span><span class=o>=</span><span class=p>{()</span> <span class=p>=&gt;</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>                <span class=nx>test</span><span class=p>(</span><span class=mi>123</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>            <span class=p>}}&gt;&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>            <span class=p>{</span><span class=cm>/* 箭头函数拿到click事件对象，箭头函数传参就是event*/</span><span class=p>}</span>  
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>button</span> <span class=na>onClick</span><span class=o>=</span><span class=p>{(</span><span class=nx>event</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>                <span class=nx>test</span><span class=p>(</span><span class=mi>123</span><span class=p>,</span> <span class=nx>event</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>            <span class=p>}}&gt;&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>    <span class=p>)</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=nx>App</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=实现html循环遍历>实现html循环遍历</h4><p>使用map来返回jsx片段</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-jsx data-lang=jsx><span class=line><span class=cl><span class=kr>export</span> <span class=kd>function</span> <span class=nx>mapRender</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>users</span><span class=o>:</span> <span class=nx>userDto</span><span class=p>[]</span> <span class=o>=</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>name</span><span class=o>:</span> <span class=s1>&#39;foo&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nx>age</span><span class=o>:</span> <span class=mi>18</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>name</span><span class=o>:</span> <span class=s1>&#39;bar&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nx>age</span><span class=o>:</span> <span class=mi>19</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>name</span><span class=o>:</span> <span class=s1>&#39;zhang san&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nx>age</span><span class=o>:</span> <span class=mi>20</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=kr>interface</span> <span class=nx>userDto</span> <span class=p>{</span> <span class=nx>name</span><span class=o>:</span> <span class=nx>string</span><span class=p>,</span> <span class=nx>age</span><span class=o>:</span> <span class=nx>number</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=kd>function</span> <span class=nx>UserCard</span><span class=p>({</span> <span class=nx>user</span> <span class=p>}</span><span class=o>:</span> <span class=p>{</span> <span class=nx>user</span><span class=o>:</span> <span class=nx>userDto</span> <span class=p>})</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>          <span class=p>&lt;</span><span class=nt>h3</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nx>name</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>            <span class=p>{</span><span class=nx>user</span><span class=p>.</span><span class=nx>name</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>          <span class=p>&lt;/</span><span class=nt>h3</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>          <span class=p>&lt;</span><span class=nt>h4</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nx>age</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>            <span class=p>{</span><span class=nx>user</span><span class=p>.</span><span class=nx>age</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>          <span class=p>&lt;/</span><span class=nt>h4</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span><span class=nx>arr</span><span class=p>.</span><span class=nx>map</span><span class=p>((</span><span class=nx>item</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>          <span class=k>return</span> <span class=p>&lt;</span><span class=nt>div</span> <span class=na>key</span><span class=o>=</span><span class=p>{</span><span class=nx>item</span><span class=p>}&gt;{</span><span class=nx>item</span><span class=p>}&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>})}</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>ul</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>          <span class=p>{</span><span class=nx>users</span><span class=p>.</span><span class=nx>map</span><span class=p>(</span><span class=nx>user</span> <span class=p>=&gt;</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>li</span> <span class=na>key</span><span class=o>=</span><span class=p>{</span><span class=nx>user</span><span class=p>.</span><span class=nx>name</span><span class=p>}&gt;{</span><span class=nx>user</span><span class=p>.</span><span class=nx>name</span><span class=p>}&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>          <span class=p>))}</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/</span><span class=nt>ul</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>ul</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>          <span class=p>{</span><span class=nx>users</span><span class=p>.</span><span class=nx>map</span><span class=p>(</span><span class=nx>user</span> <span class=p>=&gt;</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>UserCard</span> <span class=na>key</span><span class=o>=</span><span class=p>{</span><span class=nx>user</span><span class=p>.</span><span class=nx>name</span><span class=p>}</span> <span class=na>user</span><span class=o>=</span><span class=p>{</span><span class=nx>user</span><span class=p>}</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>          <span class=p>))}</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/</span><span class=nt>ul</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h5 id=动态添加item>动态添加item</h5><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-tsx data-lang=tsx><span class=line><span class=cl><span class=kr>export</span> <span class=kd>function</span> <span class=nx>mapTest2() {</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=p>[</span><span class=nx>items</span><span class=p>,</span> <span class=nx>setItems</span><span class=p>]</span> <span class=o>=</span> <span class=nx>useState</span><span class=p>([</span><span class=s1>&#39;React&#39;</span><span class=p>,</span> <span class=s1>&#39;Vue&#39;</span><span class=p>,</span> <span class=s1>&#39;Angular&#39;</span><span class=p>])</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>addItem</span> <span class=o>=</span> <span class=p>()</span> <span class=o>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>setItems</span><span class=p>([...</span><span class=nx>items</span><span class=p>,</span> <span class=sb>`New Item </span><span class=si>${</span><span class=nx>items</span><span class=p>.</span><span class=nx>length</span> <span class=o>+</span> <span class=mi>1</span><span class=si>}</span><span class=sb>`</span><span class=p>])</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>button</span> <span class=na>onClick</span><span class=o>=</span><span class=p>{</span><span class=nx>addItem</span><span class=p>}&gt;</span><span class=err>添加项</span><span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>ul</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span><span class=nx>items</span><span class=p>.</span><span class=nx>map</span><span class=p>((</span><span class=nx>item</span><span class=p>,</span> <span class=nx>index</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>          <span class=p>&lt;</span><span class=nt>li</span> <span class=na>key</span><span class=o>=</span><span class=p>{</span><span class=nx>index</span><span class=p>}&gt;{</span><span class=nx>item</span><span class=p>}&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>))}</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;/</span><span class=nt>ul</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=条件渲染>条件渲染</h4><p>v-if 渲染</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-tsx data-lang=tsx><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=kd>function</span> <span class=nx>ifTest() {</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=p>[</span><span class=nx>show</span><span class=p>,</span> <span class=nx>setShow</span><span class=p>]</span> <span class=o>=</span> <span class=nx>useState</span><span class=p>(</span><span class=kc>true</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>button</span> <span class=na>onClick</span><span class=o>=</span><span class=p>{()</span> <span class=o>=&gt;</span> <span class=nx>setShow</span><span class=p>(</span><span class=o>!</span><span class=nx>show</span><span class=p>)}&gt;</span><span class=nx>toggle</span><span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>{</span><span class=nx>show</span> <span class=o>&amp;&amp;</span> <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span><span class=nx>show</span><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;}</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=添加内联样式>添加内联样式</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-jsx data-lang=jsx><span class=line><span class=cl><span class=c1>// 添加内联样式  
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>const</span> <span class=nx>style1</span> <span class=o>=</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>    <span class=nx>width</span><span class=o>:</span> <span class=s1>&#39;100px&#39;</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl>    <span class=nx>height</span><span class=o>:</span> <span class=s1>&#39;100px&#39;</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl>    <span class=nx>backgroundColor</span><span class=o>:</span> <span class=s1>&#39;lightskyblue&#39;</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>style2</span> <span class=o>=</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>    <span class=nx>width</span><span class=o>:</span> <span class=mi>200</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=cm>/**  
+</span></span></span><span class=line><span class=cl><span class=cm> * 媒体查询 + 伪类使用 radium包裹  
+</span></span></span><span class=line><span class=cl><span class=cm> */</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>App</span><span class=p>()</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>(</span>  
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>div</span> <span class=na>style</span><span class=o>=</span><span class=p>{{</span><span class=nx>backgroundColor</span><span class=o>:</span> <span class=s1>&#39;lightskyblue&#39;</span><span class=p>,</span> <span class=nx>width</span><span class=o>:</span> <span class=s1>&#39;100px&#39;</span><span class=p>,</span> <span class=nx>height</span><span class=o>:</span> <span class=s1>&#39;50px&#39;</span><span class=p>}}&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>div</span> <span class=na>style</span><span class=o>=</span><span class=p>{</span><span class=nx>style1</span><span class=p>}&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>div</span> <span class=na>style</span><span class=o>=</span><span class=p>{{...</span><span class=nx>style1</span><span class=p>,...</span><span class=nx>style2</span><span class=p>}}&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>    <span class=p>)</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=nx>App</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=添加外部css文件>添加外部css文件</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>import</span> <span class=s1>&#39;./index.css&#39;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>/** index.css**/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>box1</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl>    <span class=k>height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl>    <span class=k>background-color</span><span class=p>:</span> <span class=kc>lightskyblue</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-jsx data-lang=jsx><span class=line><span class=cl><span class=c1>// 外源css的使用
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>function</span> <span class=nx>App</span><span class=p>()</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>(</span>  
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>div</span> <span class=na>className</span><span class=o>=</span><span class=p>{</span> <span class=s1>&#39;box1&#39;</span> <span class=p>}&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>    <span class=p>)</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=nx>App</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=总结-1>总结</h3><p>单个花括号和两个花括号</p><p>{}
+{{}}</p><h5 id=单个花括号>单个花括号</h5><p>使用场景：</p><p>单个花括号的使用场景有且只有在 tag里面的属性或者是tag包裹的内容</p><p>在单个花括号里面开启js的内容。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-tsx data-lang=tsx><span class=line><span class=cl><span class=kr>export</span> <span class=kd>function</span> <span class=nx>test</span><span class=p>(){</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>testClass</span> <span class=o>=</span> <span class=s1>&#39;input-wrapper&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>content</span> <span class=o>=</span> <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span><span class=mi>123</span><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;text&#34;</span> <span class=na>className</span><span class=o>=</span><span class=p>{</span><span class=nx>testClass</span><span class=p>}/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;{</span><span class=nx>content</span><span class=p>}&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h5 id=两个花括号>两个花括号</h5><p>绑定内联css</p><p>style 绑定一个对象。</p><p>所以其实两个花括号 = jsx的js域然后里面放一个对象</p><p>等同于我创建一个obj然后用单个花括号绑定进去</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-tsx data-lang=tsx><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>style</span><span class=o>=</span><span class=p>{{</span><span class=nx>width</span><span class=o>:</span><span class=s2>&#34;100px&#34;</span><span class=p>,</span> <span class=nx>height</span><span class=o>:</span><span class=s2>&#34;100px&#34;</span><span class=p>,</span><span class=nx>backgroundColor</span><span class=o>:</span><span class=s2>&#34;red&#34;</span> <span class=p>}}&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div></section><footer class=article-footer><section class=article-tags><a href=/blog-hugo-stack/tags/react/>React</a>
+<a href=/blog-hugo-stack/tags/tsx/>Tsx</a></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>Related content</h2><div class=related-content><div class="flex article-list--tile"><article><a href=/blog-hugo-stack/programming/frontend/react/react02-1/><div class=article-details><h2 class=article-title>组件的使用</h2></div></a></article><article><a href=/blog-hugo-stack/programming/frontend/react/react02-2/><div class=article-details><h2 class=article-title>探索组件</h2></div></a></article></div></div></aside><footer class=site-footer><section class=copyright>&copy;
+2020 -
+2025 Abra's Blog</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.30.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/blog-hugo-stack/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js defer></script><script></script></body></html>
