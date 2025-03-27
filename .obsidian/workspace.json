@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "36437555e58cd750",
+        "id": "3a11205a4749d8ea",
         "type": "tabs",
         "children": [
           {
-            "id": "5ac43341fea8824f",
+            "id": "e0bf03b334682cfc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/Programming/FrontEnd/CSS/flex.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "flex"
+              "title": "New tab"
             }
           }
         ]
@@ -166,10 +162,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "411bcab6ba500395",
+  "active": "e0bf03b334682cfc",
   "lastOpenFiles": [
-    "content/Programming/FrontEnd/CSS/box-sizing.md",
     "content/Programming/FrontEnd/CSS/flex.md",
+    "content/Programming/FrontEnd/CSS/box-sizing.md",
     "content/Programming/FrontEnd/CSS/UNOCSS/presetAttributify的使用.md",
     "content/Programming/FrontEnd/CSS/SCSS/01-多分辨率的自适应方案.md",
     "content/Programming/FrontEnd/CSS/PostCss",

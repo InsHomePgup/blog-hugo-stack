@@ -21,6 +21,12 @@ display: flex | inline-flex;
 }
 ```
 
+flex = display:block + display:flex
+
+inline-flex = display:inline + display flex
+
+这个值控制这是一个flex容器，其次就是默认呈现block元素的特性，如果设置inline-flex那么就是行内 + flex。
+
 #### 主轴概念
 
 主轴方向 (flex-direction)
