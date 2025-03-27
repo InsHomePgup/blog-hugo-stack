@@ -27,11 +27,32 @@ display: flex | inline-flex;
 
 ```css
 .container {
-    flex-direction: row;           
-    flex-direction: row-reverse;    /* 水平排列，起点在右端 */
-    flex-direction: column;         /* 垂直排列，起点在上沿 */
-    flex-direction: column-reverse; /* 垂直排列，起点在下沿 */
+    flex-direction: row;
+    flex-direction: row-reverse;
+    flex-direction: column;
+    flex-direction: column-reverse;
 }
 ```
 
 主轴方向上 子项 的对齐方式
+
+```css
+.container {
+    justify-content: flex-start;    /* 起点对齐（默认） */
+    justify-content: flex-end;      /* 终点对齐 */
+    justify-content: center;        /* 居中对齐 */
+    justify-content: space-between; /* 两端对齐，项目间隔相等 */
+    justify-content: space-around;  /* 项目两侧间隔相等 */
+    justify-content: space-evenly;  /* 项目间隔完全相等 */
+}
+```
+
+主轴内容超出换行设置
+
+```css
+.container {
+    flex-wrap: nowrap; /* 默认值，不换行 */
+    flex-wrap: wrap;  /* 正常换行，第一行在上方 */
+    flex-wrap: wrap-reverse; /* 反向换行，第一行在下方 */
+}
+```
