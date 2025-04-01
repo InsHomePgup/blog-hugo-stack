@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/English/word.md",
+                "file": "content/Programming/FrontEnd/Version/01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "word"
+              "title": "01"
             }
           }
         ]
@@ -166,8 +166,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "411bcab6ba500395",
+  "active": "3e80e7ebc817c775",
   "lastOpenFiles": [
+    "content/English/word.md",
+    "content/Programming/FrontEnd/Version/01.md",
+    "content/Programming/FrontEnd/Version",
     "content/English/The 8 Parts of Speech.md",
     "content/English/Talk to AI.md",
     "content/English/Word/apple.md",
@@ -195,14 +198,11 @@
     "content/Programming/Git/Guide/编撰计划.md",
     "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
     "content/Programming/Git/Guide/Git(1)---仓库-Repo.md",
-    "content/Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
-    "content/Programming/Git/Guide/Git-文件状态.md",
     "content/Programming/Git/Commands/Revert",
     "content/Programming/Git/Commands/Reset",
     "content/Programming/Git/Commands/Rebase",
     "public/p/一些有趣但是没有收益的事情/index.html",
     "public/p/一些有趣但是没有收益的事情",
-    "public/p/一些的事情/index.html",
-    "public/p/一些的事情"
+    "public/p/一些的事情/index.html"
   ]
 }
