@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/Git/Commands/Diff/(一)diff.md",
+                "file": "content/English/word.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "(一)diff"
+              "title": "word"
             }
           }
         ]
@@ -166,8 +166,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3e80e7ebc817c775",
+  "active": "411bcab6ba500395",
   "lastOpenFiles": [
+    "content/English/The 8 Parts of Speech.md",
+    "content/English/Talk to AI.md",
+    "content/English/Word/apple.md",
+    "content/Programming/Git/Commands/Diff/(一)diff.md",
     "content/Programming/Git/Commands/Checkout/01.md",
     "content/Programming/Git/Commands/Branch/branch.md",
     "content/Programming/Git/Commands/Fetch/01.md",
@@ -193,10 +197,6 @@
     "content/Programming/Git/Guide/Git(1)---仓库-Repo.md",
     "content/Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
     "content/Programming/Git/Guide/Git-文件状态.md",
-    "content/Programming/Git/Project/01规范项目的提交.md",
-    "content/Programming/Git/Guide/Git 核心概念 - 四个区域.md",
-    "content/Diary/2025-03-25.md",
-    "content/Diary/2025-01-08.md",
     "content/Programming/Git/Commands/Revert",
     "content/Programming/Git/Commands/Reset",
     "content/Programming/Git/Commands/Rebase",
