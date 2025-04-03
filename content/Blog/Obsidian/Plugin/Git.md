@@ -22,3 +22,9 @@ After file stoping edit.
 
 这个时间还是需要自己琢磨一下，设定到一个比较正常的值。
 
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250403102955086.png)
+
+	最后的方案，设置120分钟自动pull，60分钟自动sync，然后手动sync
+	手动sync的方式就是ctrl + p 打开快捷控制台以后输入 git sync有一个git commit & sync的选项
+
+

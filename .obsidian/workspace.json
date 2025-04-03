@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/FrontEnd/Github/配置github的自动升级依赖机器人.md",
+                "file": "content/Blog/Obsidian/Plugin/Git.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "配置github的自动升级依赖机器人"
+              "title": "Git"
             }
           }
         ]
@@ -168,8 +168,8 @@
   },
   "active": "c883b7535ae0c0d4",
   "lastOpenFiles": [
-    "content/Programming/OS/Linux/Git/Linux 下配置 git 的 ssh key 连接.md",
     "content/Programming/FrontEnd/Github/配置github的自动升级依赖机器人.md",
+    "content/Programming/OS/Linux/Git/Linux 下配置 git 的 ssh key 连接.md",
     "content/Programming/FrontEnd/Github",
     "Untitled.md",
     "content/Programming/FrontEnd/Version/01.md",
