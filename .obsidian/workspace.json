@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6e87da85aa9b600f",
+        "id": "5ebedd3f3072b4a0",
         "type": "tabs",
         "children": [
           {
-            "id": "09a4b064afc701bb",
+            "id": "4f7ff4951e07c54b",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -162,8 +162,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "09a4b064afc701bb",
+  "active": "4f7ff4951e07c54b",
   "lastOpenFiles": [
+    "content/Programming/FrontEnd/CSS/css 变量的使用.md",
+    "content/Programming/FrontEnd/CSS/box-sizing.md",
+    "content/Programming/FrontEnd/CSS/LESS/01.md",
+    "content/Programming/FrontEnd/CSS/UNOCSS/presetAttributify的使用.md",
+    "content/Programming/FrontEnd/CSS/PostCss/01-多分辨率的自适应方案.md",
+    "content/Programming/FrontEnd/CSS/PostCss/pxtorem.md",
+    "content/Programming/FrontEnd/CSS/SCSS/01.md",
+    "content/Programming/FrontEnd/css 变量的使用.md",
     "content/Programming/Language/Typescript/tsconfig.json.md",
     "content/Programming/Language/Typescript/（二）对象类型、值类型、联合类型、交叉类型.md",
     "content/Programming/Language/Typescript/(一)常用的ts原始数据类型.md",
@@ -183,15 +191,7 @@
     "content/Programming/OS/Linux/Git/Linux 下配置 git 的 ssh key 连接.md",
     "content/Programming/FrontEnd/Github",
     "Untitled.md",
-    "content/Programming/FrontEnd/Version/01.md",
-    "content/English/word.md",
     "content/Programming/FrontEnd/Version",
-    "content/English/The 8 Parts of Speech.md",
-    "content/English/Talk to AI.md",
-    "content/English/Word/apple.md",
-    "content/Programming/Git/Commands/Diff/(一)diff.md",
-    "content/Programming/Git/Commands/Checkout/01.md",
-    "content/Programming/Git/Commands/Branch/branch.md",
     "content/Programming/Git/Commands/Fetch",
     "content/Programming/FrontEnd/CSS/PostCss",
     "content/Programming/FrontEnd/Nuxt",

@@ -13,11 +13,15 @@ clone 此项目快速使用特性。
 [# Attributify preset](https://unocss.dev/presets/attributify)
 
 场景：
+
 平常在写原子化css的时候，写一个border，特别的麻烦。
+
 因为border的声明比较多。
+
 ```
 rounded border-2 border-blue-200 border-solid
 ```
+
 border-radius，border-width，border-color  border-style
 
 ```
