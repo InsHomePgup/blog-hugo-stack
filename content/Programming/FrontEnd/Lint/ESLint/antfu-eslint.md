@@ -92,13 +92,17 @@ export default eslintObj
 ```
 
 
-vue eslint 内置规则 所在目录
+vue eslint 内置规则在源码的目录
+
+在这里可以看到antfu-eslint对vue项目的一些eslint规则
+
 ```
 src/configs/vue.ts
 ```
 
 用的不爽的rule可以用userConfig去覆盖。
-内置规则去这里找源码查看就好了。src/config
+
+其他规则去源码查看就好了。目录：src/config
 
 
 #### 一些尝试和理解
@@ -161,6 +165,7 @@ exts，文件后缀集合
 与type有关的便是如果type = lib就添加这一段规则。
 
 折叠代码以后来看typescript函数的内容
+
 ![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250110112406623.png)
 
 
