@@ -63,11 +63,62 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/InsHomePgup/vue3-ts-api-demos.git
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/用户名/仓库名.git
           git commit -m "chore: auto update dependencies"
           git push origin main
+
 
 ```
 
 片段讲解:
 
+```yml
+# 安装pnpm
+- uses: pnpm/action-setup@v4  
+  name: Install pnpm  
+  with:  
+    version: 10  
+    run_install: false
+
+#安装nodejs
+- name: Setup Node.js  
+  uses: actions/setup-node@v4  
+  with:  
+    node-version: 22  
+    cache: pnpm
+
+# 安装依赖
+- name: Install dependencies  
+  run: pnpm install
+
+# 更新依赖
+- name: Update dependencies  
+  run: pnpm up --latest
+
+# 检查依赖是否更新
+
+- name: Check for changes  
+  id: git-check  
+ ...具体代码
+
+# 配置提交参数
+
+- name: Commit and push changes  
+  if: env.has_changes == 'true'  
+  run: |  
+    git config --global user.name "github-actions[bot]"    git config --global user.email "github-actions[bot]@users.noreply.github.com"    git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/用户名/仓库名.git  
+    git commit -m "chore: auto update dependencies"    git push origin main
+
+```
+
+最后一个是让git的自动更新依赖机器人把更新提交推送到库
+
+这里需要注意的配置就是
+
+推送需要一个token所以用到了一个变量
+
+后面跟的就是仓库的地址其实
+
+替换用户名 + 仓库名然后就能让机器人自己推送了。
+
+``
