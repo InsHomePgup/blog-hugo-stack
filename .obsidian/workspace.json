@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "0f1d6677f5cc4d6d",
+        "id": "6e87da85aa9b600f",
         "type": "tabs",
         "children": [
           {
-            "id": "51eaf129249e8cd2",
+            "id": "09a4b064afc701bb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/Programming/Language/Typescript/tsconfig.json.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "tsconfig.json"
+              "title": "New tab"
             }
           }
         ]
@@ -166,10 +162,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "51eaf129249e8cd2",
+  "active": "09a4b064afc701bb",
   "lastOpenFiles": [
-    "content/Programming/Language/Typescript/（二）对象类型、值类型、联合类型、交叉类型.md",
     "content/Programming/Language/Typescript/tsconfig.json.md",
+    "content/Programming/Language/Typescript/（二）对象类型、值类型、联合类型、交叉类型.md",
     "content/Programming/Language/Typescript/(一)常用的ts原始数据类型.md",
     "content/Programming/Language/Typescript/记录一次vscode没有ts静态检查的事情.md",
     "content/Programming/Language/Typescript/Enum的使用.md",
