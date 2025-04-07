@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/Git/Commands/Tag/01.md",
+                "file": "content/Programming/Language/Typescript/ReturnType的使用.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01"
+              "title": "ReturnType的使用"
             }
           }
         ]
@@ -168,6 +168,10 @@
   },
   "active": "4f7ff4951e07c54b",
   "lastOpenFiles": [
+    "public/programming/language/typescript/returntype的使用/index.html",
+    "public/programming/language/typescript/returntype的使用",
+    "content/Programming/Git/Commands/Tag/01.md",
+    "content/Programming/Language/Typescript/ReturnType的使用.md",
     "public/programming/frontend/github/配置github的自动升级依赖机器人/index.html",
     "public/programming/frontend/github/配置github的自动升级依赖机器人",
     "public/programming/frontend/github",
@@ -177,8 +181,6 @@
     "public/programming/os/windows/win11初始化",
     "public/programming/language/javascript/try-catch/index.html",
     "public/programming/language/javascript/try-catch",
-    "public/programming/language/javascript/promise/index.html",
-    "public/programming/language/javascript/promise",
     "content/Programming/FrontEnd/CSS/css 变量的使用.md",
     "content/Programming/FrontEnd/CSS/box-sizing.md",
     "content/Programming/FrontEnd/CSS/LESS/01.md",
@@ -201,8 +203,6 @@
     "content/Programming/FrontEnd/Github/配置github的自动升级依赖机器人.md",
     "content/Programming/FrontEnd/Lint/ESLint/antfu-eslint.md",
     "Untitled 1.md",
-    "content/Programming/BackEnd/Go/go入门.md",
-    "content/Blog/Obsidian/Plugin/Git.md",
-    "content/Programming/OS/Linux/Git/Linux 下配置 git 的 ssh key 连接.md"
+    "content/Programming/BackEnd/Go/go入门.md"
   ]
 }
