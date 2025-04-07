@@ -6,6 +6,9 @@ categories:
 tags:
   - git
 weight: 1
+series:
+  - name: git
+    index: 1
 ---
 ### 前言
 

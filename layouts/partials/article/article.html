@@ -1,0 +1,14 @@
+<article class="{{ if .Params.image }}has-image {{ end }}main-article">
+    {{ partial "article/components/header" . }}
+    
+    {{ partial "article/components/content" . }}
+    
+    {{ partial "article/components/footer" . }}
+    
+    <!-- 添加系列导航 -->
+    {{ partial "article/components/series-navigation" . }}
+    
+    {{ if or .Params.math .Site.Params.article.math }}
+        {{ partial "article/components/math" . }}
+    {{ end }}
+</article>

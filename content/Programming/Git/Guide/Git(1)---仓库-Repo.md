@@ -6,6 +6,9 @@ categories:
 tags:
   - git
 weight: 2
+series:
+  - name: git
+    index: 2
 ---
 本次Git教程将在windows 下实践。
 

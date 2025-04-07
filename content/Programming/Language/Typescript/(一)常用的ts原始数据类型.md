@@ -1,5 +1,10 @@
 ---
 title: ts常用的原始数据类型
+date: 2023-01-01
+categories:
+  - Typescript
+tags:
+  - ts
 ---
 
 ```ts

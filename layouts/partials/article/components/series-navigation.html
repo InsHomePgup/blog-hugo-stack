@@ -1,0 +1,63 @@
+{{ if .Params.series }}
+    {{ $series := index .Params.series 0 }}
+    {{ $seriesName := $series.name }}
+    {{ $seriesIndex := $series.index }}
+    
+    {{ $seriesPages := where .Site.RegularPages "Params.series" "ne" nil }}
+    {{ $seen := dict }}
+    {{ $filteredPages := slice }}
+    {{ range $seriesPages }}
+        {{ $page := . }}
+        {{ with .Params.series }}
+            {{ $pageSeries := index . 0 }}
+            {{ if eq (lower $pageSeries.name) (lower $seriesName) }}
+                {{ $key := $page.RelPermalink }}
+                {{ if not (isset $seen $key) }}
+                    {{ $filteredPages = $filteredPages | append $page }}
+                    {{ $seen = merge $seen (dict $key true) }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    {{ $seriesPages = sort $filteredPages "Params.series.0.index" "asc" }}
+    
+    <div class="article-series">
+        <h3>《{{ $seriesName }}》系列文章</h3>
+        <div class="series-list">
+            <ol>
+                {{ range $seriesPages }}
+                    {{ $currentIndex := index .Params.series 0 }}
+                    <li {{ if eq $currentIndex.index $seriesIndex }}class="active"{{ end }}>
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </li>
+                {{ end }}
+            </ol>
+        </div>
+        
+        <div class="series-pagination">
+            {{ $prevPage := false }}
+            {{ $nextPage := false }}
+            {{ range $seriesPages }}
+                {{ $pageIndex := index .Params.series 0 }}
+                <!-- 将字符串转换为整数进行比较 -->
+                {{ if eq (int $pageIndex.index) (int (add $seriesIndex 1)) }}
+                    {{ $nextPage = . }}
+                {{ end }}
+                {{ if eq (int $pageIndex.index) (int (sub $seriesIndex 1)) }}
+                    {{ $prevPage = . }}
+                {{ end }}
+            {{ end }}
+            
+            {{ if $prevPage }}
+                <a href="{{ $prevPage.RelPermalink }}" class="prev-post">← 上一篇: {{ $prevPage.Title }}</a>
+            {{ else }}
+                <span class="prev-post disabled">← 上一篇: 无</span>
+            {{ end }}
+            {{ if $nextPage }}
+                <a href="{{ $nextPage.RelPermalink }}" class="next-post">下一篇: {{ $nextPage.Title }} →</a>
+            {{ else }}
+                <span class="next-post disabled">下一篇: 无 →</span>
+            {{ end }}
+        </div>
+    </div>
+{{ end }}
