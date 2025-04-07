@@ -22,7 +22,7 @@
     {{ $seriesPages = sort $filteredPages "Params.series.0.index" "asc" }}
     
     <div class="article-series">
-        <h3>《{{ $seriesName }}》系列文章</h3>
+        <!-- <h3>《{{ $seriesName }}》系列文章</h3>
         <div class="series-list">
             <ol>
                 {{ range $seriesPages }}
@@ -32,14 +32,13 @@
                     </li>
                 {{ end }}
             </ol>
-        </div>
+        </div> -->
         
         <div class="series-pagination">
             {{ $prevPage := false }}
             {{ $nextPage := false }}
             {{ range $seriesPages }}
                 {{ $pageIndex := index .Params.series 0 }}
-                <!-- 将字符串转换为整数进行比较 -->
                 {{ if eq (int $pageIndex.index) (int (add $seriesIndex 1)) }}
                     {{ $nextPage = . }}
                 {{ end }}
@@ -48,16 +47,43 @@
                 {{ end }}
             {{ end }}
             
-            {{ if $prevPage }}
-                <a href="{{ $prevPage.RelPermalink }}" class="prev-post">← 上一篇: {{ $prevPage.Title }}</a>
-            {{ else }}
-                <span class="prev-post disabled">← 上一篇: 无</span>
-            {{ end }}
-            {{ if $nextPage }}
-                <a href="{{ $nextPage.RelPermalink }}" class="next-post">下一篇: {{ $nextPage.Title }} →</a>
-            {{ else }}
-                <span class="next-post disabled">下一篇: 无 →</span>
-            {{ end }}
+            <div class="series-nav-buttons">
+                {{ if $prevPage }}
+                    <a href="{{ $prevPage.RelPermalink }}" class="series-nav-button prev-post">
+                        <span class="nav-arrow">←</span>
+                        <div class="nav-details">
+                            <span class="nav-label">上一篇</span>
+                            <span class="nav-title">{{ $prevPage.Title }}</span>
+                        </div>
+                    </a>
+                {{ else }}
+                    <span class="series-nav-button prev-post disabled">
+                        <span class="nav-arrow">←</span>
+                        <div class="nav-details">
+                            <span class="nav-label">上一篇</span>
+                            <span class="nav-title">无</span>
+                        </div>
+                    </span>
+                {{ end }}
+                
+                {{ if $nextPage }}
+                    <a href="{{ $nextPage.RelPermalink }}" class="series-nav-button next-post">
+                        <div class="nav-details">
+                            <span class="nav-label">下一篇</span>
+                            <span class="nav-title">{{ $nextPage.Title }}</span>
+                        </div>
+                        <span class="nav-arrow">→</span>
+                    </a>
+                {{ else }}
+                    <span class="series-nav-button next-post disabled">
+                        <div class="nav-details">
+                            <span class="nav-label">下一篇</span>
+                            <span class="nav-title">无</span>
+                        </div>
+                        <span class="nav-arrow">→</span>
+                    </span>
+                {{ end }}
+            </div>
         </div>
     </div>
 {{ end }}

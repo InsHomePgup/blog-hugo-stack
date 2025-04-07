@@ -59,55 +59,83 @@ a.link:hover{
 }
 
 
-// 系列导航样式
-.article-series {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    border-radius: var(--card-border-radius);
+/* 系列导航样式 */
+.series-pagination {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.series-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.series-nav-button {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    border-radius: 10px;
     background-color: var(--card-background);
-    box-shadow: var(--shadow-l1);
-    
-    h3 {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        font-size: 1.2rem;
-    }
-    
-    .series-list {
-        margin-bottom: 1rem;
-        
-        ol {
-            padding-left: 1.5rem;
-            margin: 0;
-        }
-        
-        li {
-            margin-bottom: 0.5rem;
-            
-            &.active {
-                font-weight: bold;
-                
-                a {
-                    color: var(--accent-color);
-                }
-            }
-        }
-    }
-    
-    .series-pagination {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1.5rem;
-        
-        .prev-post, .next-post {
-            padding: 0.5rem 1rem;
-            border-radius: var(--tag-border-radius);
-            background: var(--card-background-selected);
-            font-size: 0.9rem;
-            
-            &:hover {
-                background: var(--card-background-hover);
-            }
-        }
-    }
+    transition: all 0.3s ease;
+    flex: 1;
+    text-decoration: none;
+    color: var(--body-text-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--card-border-color, #e5e5e5);
+}
+
+.series-nav-button:hover {
+    background-color: var(--card-background-hover, #f8f8f8);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent-color, #3273dc);
+}
+
+.series-nav-button.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.series-nav-button .nav-arrow {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 0.8rem;
+}
+
+.series-nav-button .nav-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.series-nav-button .nav-label {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 0.3rem;
+}
+
+.series-nav-button .nav-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.prev-post {
+    text-align: left;
+}
+
+.next-post {
+    text-align: right;
+}
+
+/* 暗色模式适配 */
+[data-scheme="dark"] .series-nav-button {
+    border-color: var(--card-border-color, #333);
+}
+
+[data-scheme="dark"] .series-nav-button:hover {
+    border-color: var(--accent-color, #3273dc);
 }
