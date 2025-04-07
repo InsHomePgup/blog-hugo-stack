@@ -11,10 +11,14 @@
             "id": "4f7ff4951e07c54b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "content/Programming/Git/Commands/Tag/01.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "01"
             }
           }
         ]
