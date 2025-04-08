@@ -3,6 +3,9 @@ baseurl = "https://inshomepgup.github.io/blog-hugo-stack/"
 languageCode = "en-us"
 title = "Abra's Blog"
 
+# 添加buildFuture配置，允许发布未来日期的文章
+buildFuture = true
+
 [author]
 name = "Abraham"
 email = "BlueWhaleDesigner@outlook.com"
