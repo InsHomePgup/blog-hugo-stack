@@ -6,4 +6,10 @@ categories:
 tags:
   - git
 weight: 7
+series:
+  - name: git
+    index: 7
 ---
+
+
+7

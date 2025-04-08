@@ -6,6 +6,9 @@ categories:
 tags:
   - git
 weight: 3
+series:
+  - name: git
+    index: 3
 ---
 
 ## 前沿

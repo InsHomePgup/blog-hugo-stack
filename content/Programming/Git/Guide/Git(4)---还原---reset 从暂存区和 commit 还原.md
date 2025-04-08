@@ -6,6 +6,9 @@ categories:
 tags:
   - git
 weight: 5
+series:
+  - name: git
+    index: 5
 ---
 之前我们一直都在将代码添加到我们的仓库
 

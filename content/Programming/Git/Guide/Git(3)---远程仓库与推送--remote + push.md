@@ -6,6 +6,9 @@ categories:
 tags:
   - git
 weight: 4
+series:
+  - name: git
+    index: 4
 ---
 
 remote, 远程

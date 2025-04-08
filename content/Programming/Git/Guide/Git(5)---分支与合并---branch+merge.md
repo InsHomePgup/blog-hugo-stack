@@ -6,6 +6,9 @@ categories:
 tags:
   - git
 weight: 6
+series:
+  - name: git
+    index: 6
 ---
 
 git 最无敌屌炸天的功能。  branch 分支。
