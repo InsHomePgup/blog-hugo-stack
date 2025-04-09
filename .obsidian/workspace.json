@@ -11,10 +11,14 @@
             "id": "11c09767c8c967d1",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "content/Programming/Git/Commands/Merge/merge01.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "merge01"
             }
           }
         ]
@@ -163,8 +167,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "411bcab6ba500395",
+  "active": "11c09767c8c967d1",
   "lastOpenFiles": [
+    "content/Programming/Git/Commands/Merge/merge01.md",
+    "content/Programming/Git/Commands/Merge",
     "README.md",
     "template/temp1.md",
     "Untitled.md",
@@ -179,7 +185,6 @@
     "public/post/page/1",
     "public/post/page",
     "public/post/index.xml",
-    "public/post/index.html",
     "public/archives/shortcodes/cover.jpg",
     "public/archives/image-gallery/1.jpg",
     "public/archives/image-gallery/2.jpg",
@@ -207,7 +212,6 @@
     "content/Programming/Git/Guide/Git(7)---远程协作模拟---合并冲突.md",
     "content/Programming/Language/Typescript/（二）对象类型、值类型、联合类型、交叉类型.md",
     "content/Programming/Language/Typescript/(一)常用的ts原始数据类型.md",
-    "content/Programming/Git/Guide/Git-文件状态.md",
-    "content/Programming/Language/Typescript/记录一次vscode没有ts静态检查的事情.md"
+    "content/Programming/Git/Guide/Git-文件状态.md"
   ]
 }
