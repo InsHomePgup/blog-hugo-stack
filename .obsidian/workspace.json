@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/Git/Commands/Merge/merge01.md",
+                "file": "content/Programming/FrontEnd/CSS/伪类和伪元素.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "merge01"
+              "title": "伪类和伪元素"
             }
           }
         ]
@@ -170,6 +170,7 @@
   "active": "11c09767c8c967d1",
   "lastOpenFiles": [
     "content/Programming/Git/Commands/Merge/merge01.md",
+    "content/Programming/FrontEnd/CSS/伪类和伪元素.md",
     "content/Programming/Git/Commands/Merge",
     "README.md",
     "template/temp1.md",
@@ -211,7 +212,6 @@
     "content/Programming/Git/Guide/Git(6)---标签---tag.md",
     "content/Programming/Git/Guide/Git(7)---远程协作模拟---合并冲突.md",
     "content/Programming/Language/Typescript/（二）对象类型、值类型、联合类型、交叉类型.md",
-    "content/Programming/Language/Typescript/(一)常用的ts原始数据类型.md",
-    "content/Programming/Git/Guide/Git-文件状态.md"
+    "content/Programming/Language/Typescript/(一)常用的ts原始数据类型.md"
   ]
 }
