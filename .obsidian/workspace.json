@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1fba3ffea4b69e83",
+        "id": "3b2bf1fbfb2c90ae",
         "type": "tabs",
         "children": [
           {
-            "id": "11c09767c8c967d1",
+            "id": "9611e1105cf20a8f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/FrontEnd/CSS/伪类和伪元素.md",
+                "file": "content/Programming/FrontEnd/WebApi/浏览器工作原理.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "伪类和伪元素"
+              "title": "浏览器工作原理"
             }
           }
         ]
@@ -167,10 +167,17 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "11c09767c8c967d1",
+  "active": "9611e1105cf20a8f",
   "lastOpenFiles": [
-    "content/Programming/Git/Commands/Merge/merge01.md",
+    "content/Programming/FrontEnd/WebApi/cookie可以实现不同域的共享吗？.md",
+    "content/Programming/FrontEnd/WebApi/浏览器工作原理.md",
+    "content/Programming/FrontEnd/WebApi/DOM和它的一些事儿。.md",
+    "content/Programming/FrontEnd/Repo/Axios/axios01-取消请求.md",
+    "content/Programming/FrontEnd/React/react01.md",
+    "content/Programming/FrontEnd/Repo/Axios",
+    "content/Programming/FrontEnd/React/react02-1.md",
     "content/Programming/FrontEnd/CSS/伪类和伪元素.md",
+    "content/Programming/Git/Commands/Merge/merge01.md",
     "content/Programming/Git/Commands/Merge",
     "README.md",
     "template/temp1.md",
@@ -185,7 +192,6 @@
     "public/post/page/1/index.html",
     "public/post/page/1",
     "public/post/page",
-    "public/post/index.xml",
     "public/archives/shortcodes/cover.jpg",
     "public/archives/image-gallery/1.jpg",
     "public/archives/image-gallery/2.jpg",
@@ -206,12 +212,6 @@
     "content/Programming/Git/Guide/Git(1)---仓库-Repo.md",
     "content/Programming/Git/Guide/Git(0)---代码时光机---AB-Git-Guide.md",
     "content/Programming/Git/Guide/编撰计划.md",
-    "content/Programming/Git/Guide/Git 核心概念 - 四个区域.md",
-    "content/Programming/Git/Guide/Git(4)---还原---reset 从暂存区和 commit 还原.md",
-    "content/Programming/Git/Guide/Git(5)---分支与合并---branch+merge.md",
-    "content/Programming/Git/Guide/Git(6)---标签---tag.md",
-    "content/Programming/Git/Guide/Git(7)---远程协作模拟---合并冲突.md",
-    "content/Programming/Language/Typescript/（二）对象类型、值类型、联合类型、交叉类型.md",
-    "content/Programming/Language/Typescript/(一)常用的ts原始数据类型.md"
+    "content/Programming/Git/Guide/Git 核心概念 - 四个区域.md"
   ]
 }
