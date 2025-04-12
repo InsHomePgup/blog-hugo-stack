@@ -38,7 +38,7 @@ export default App
 
 > 类组件
 
-不咋用，不弄也没事儿
+暂时跳过
 
 ``` tsx
 /** 

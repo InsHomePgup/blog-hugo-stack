@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "d4832debcf67b83a",
+        "id": "adc33ed1af30fb5e",
         "type": "tabs",
         "children": [
           {
-            "id": "00bb82ed726ac2d9",
+            "id": "7f6ccb64bcca8d14",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/Programming/FrontEnd/React/react01.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "react01"
+              "title": "New tab"
             }
           }
         ]
@@ -163,31 +159,34 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false,
-      "templater-obsidian:Templater": false
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "00bb82ed726ac2d9",
+  "active": "7f6ccb64bcca8d14",
   "lastOpenFiles": [
+    "content/Post/闲谈/无意义的事情.md",
+    "content/Post/闲谈/钱和赚钱.md",
+    "public/p/钱和赚钱/index.html",
+    "public/p/钱和赚钱",
+    "public/p/index.html",
+    "content/Programming/FrontEnd/React/react04-hooks.md",
+    "content/Programming/FrontEnd/React/react02-2.md",
+    "content/Programming/FrontEnd/React/react03 探索路由.md",
+    "public/programming/frontend/react/untitled/index.html",
+    "public/programming/frontend/react/untitled",
+    "public/programming/frontend/react/react04-hooks/index.html",
+    "public/programming/frontend/react/react04-hooks",
+    "content/Programming/FrontEnd/React/react02-1.md",
+    "public/programming/frontend/react/react01jsx语法组件声明/index.html",
+    "public/programming/frontend/react/react01jsx语法组件声明",
+    "content/Programming/FrontEnd/React/react01jsx语法，组件声明.md",
     "public/programming/frontend/webapi/cookie可以实现不同域的共享吗/index.html",
-    "public/programming/frontend/webapi/cookie可以实现不同域的共享吗",
-    "public/programming/frontend/webapi/xmlhttprequest/index.html",
-    "public/programming/frontend/webapi/xmlhttprequest",
-    "public/programming/frontend/vue/vue-sfc-css-features/index.html",
-    "public/programming/frontend/vue/vue-sfc-css-features",
-    "public/programming/Git/Commands/merge/merge01/index.html",
-    "public/programming/Git/Commands/merge/merge01",
-    "public/programming/Git/Commands/merge",
-    "public/programming/frontend/repo/axios/axios01-取消请求/index.html",
-    "public/programming/frontend/repo/axios/axios01-取消请求",
     "content/Programming/FrontEnd/Vue/vue SFC CSS Features.md",
     "content/Programming/FrontEnd/WebApi/XMLHttpRequest.md",
     "content/Programming/FrontEnd/WebApi/浏览器工作原理.md",
     "content/Programming/FrontEnd/WebApi/cookie可以实现不同域的共享吗？.md",
     "content/Programming/FrontEnd/WebApi/DOM和它的一些事儿。.md",
     "content/Programming/FrontEnd/Repo/Axios/axios01-取消请求.md",
-    "content/Programming/FrontEnd/React/react01.md",
-    "content/Programming/FrontEnd/React/react02-1.md",
     "content/Programming/FrontEnd/CSS/伪类和伪元素.md",
     "content/Programming/Git/Commands/Merge/merge01.md",
     "README.md",
@@ -207,11 +206,6 @@
     "content/Blog/Obsidian.md",
     "content/Blog/article.md",
     "content/Blog/Obsidian/Plugin/MouseWheel Image zoom.md",
-    "content/Blog/Obsidian/Plugin/Git.md",
-    "content/Blog/hugo/template/01.md",
-    "content/Blog/hugo/stack/header.md",
-    "content/Programming/Git/Guide/Git(3)---远程仓库与推送--remote + push.md",
-    "content/Programming/Git/Guide/Git(2)---文件追踪与提交-add-commit.md",
-    "content/Programming/Git/Guide/Git(1)---仓库-Repo.md"
+    "content/Blog/Obsidian/Plugin/Git.md"
   ]
 }
