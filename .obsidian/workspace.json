@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "54d57a408405a99a",
+        "id": "a9f448415eb48049",
         "type": "tabs",
         "children": [
           {
-            "id": "43193b50775e6b48",
+            "id": "59c3e76898e37f55",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -74,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 374.5
   },
   "right": {
     "id": "1397558302270535",
@@ -162,8 +162,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "43193b50775e6b48",
+  "active": "59c3e76898e37f55",
   "lastOpenFiles": [
+    "content/Programming/FrontEnd/React/react学习路线.md",
     "content/Life/减肥/减肥01.md",
     "content/Life/read/中国居民膳食指南.md",
     "content/Life/减肥",
@@ -206,7 +207,6 @@
     "public/programming/Git/Commands/Stash/01/img_2.png",
     "public/programming/Git/Commands/Stash/01/img_1.png",
     "public/programming/Git/Commands/Stash/01/img.png",
-    "public/favicon.png",
-    "content/Blog/picgo.md"
+    "public/favicon.png"
   ]
 }
