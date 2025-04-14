@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "adc33ed1af30fb5e",
+        "id": "54d57a408405a99a",
         "type": "tabs",
         "children": [
           {
-            "id": "7f6ccb64bcca8d14",
+            "id": "43193b50775e6b48",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -162,16 +162,22 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7f6ccb64bcca8d14",
+  "active": "43193b50775e6b48",
   "lastOpenFiles": [
+    "content/Life/减肥/减肥01.md",
+    "content/Life/read/中国居民膳食指南.md",
+    "content/Life/减肥",
+    "content/Life/food/卤牛肉，酱牛肉.md",
+    "content/Life/food/盐酥鸡.md",
+    "content/Programming/FrontEnd/React/react05-useState.md",
+    "content/Programming/FrontEnd/React/react04-hooks.md",
+    "content/Programming/FrontEnd/React/react03 探索路由.md",
     "content/Post/闲谈/无意义的事情.md",
     "content/Post/闲谈/钱和赚钱.md",
     "public/p/钱和赚钱/index.html",
     "public/p/钱和赚钱",
     "public/p/index.html",
-    "content/Programming/FrontEnd/React/react04-hooks.md",
     "content/Programming/FrontEnd/React/react02-2.md",
-    "content/Programming/FrontEnd/React/react03 探索路由.md",
     "public/programming/frontend/react/untitled/index.html",
     "public/programming/frontend/react/untitled",
     "public/programming/frontend/react/react04-hooks/index.html",
@@ -180,7 +186,6 @@
     "public/programming/frontend/react/react01jsx语法组件声明/index.html",
     "public/programming/frontend/react/react01jsx语法组件声明",
     "content/Programming/FrontEnd/React/react01jsx语法，组件声明.md",
-    "public/programming/frontend/webapi/cookie可以实现不同域的共享吗/index.html",
     "content/Programming/FrontEnd/Vue/vue SFC CSS Features.md",
     "content/Programming/FrontEnd/WebApi/XMLHttpRequest.md",
     "content/Programming/FrontEnd/WebApi/浏览器工作原理.md",
@@ -202,10 +207,6 @@
     "public/programming/Git/Commands/Stash/01/img_1.png",
     "public/programming/Git/Commands/Stash/01/img.png",
     "public/favicon.png",
-    "content/Blog/picgo.md",
-    "content/Blog/Obsidian.md",
-    "content/Blog/article.md",
-    "content/Blog/Obsidian/Plugin/MouseWheel Image zoom.md",
-    "content/Blog/Obsidian/Plugin/Git.md"
+    "content/Blog/picgo.md"
   ]
 }
