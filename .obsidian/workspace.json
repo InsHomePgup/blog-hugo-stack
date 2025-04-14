@@ -11,10 +11,14 @@
             "id": "59c3e76898e37f55",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "content/Programming/FrontEnd/React/react学习路线.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "react学习路线"
             }
           }
         ]
