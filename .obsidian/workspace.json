@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "98da80cb2019f466",
+        "id": "26a10b8b14e217ba",
         "type": "tabs",
         "children": [
           {
-            "id": "c0f03c4c3fac9223",
+            "id": "85740168064e88e7",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/Life/减肥/减肥01.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "减肥01"
+              "title": "New tab"
             }
           }
         ]
@@ -166,13 +162,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c0f03c4c3fac9223",
+  "active": "85740168064e88e7",
   "lastOpenFiles": [
+    "content/Life/减肥/减肥01.md",
     "content/Programming/FrontEnd/React/react学习路线.md",
     "content/Programming/Language/JavaScript/Typeof和instanceof的使用.md",
     "content/Programming/Language/JavaScript/Promise.md",
     "content/Programming/FrontEnd/React/react01jsx语法，组件声明.md",
-    "content/Life/减肥/减肥01.md",
     "content/Life/read/中国居民膳食指南.md",
     "content/Life/减肥",
     "content/Life/food/卤牛肉，酱牛肉.md",
