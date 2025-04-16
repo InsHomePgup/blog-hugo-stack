@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "97c4f82aa1f66715",
+        "id": "98da80cb2019f466",
         "type": "tabs",
         "children": [
           {
-            "id": "8ade9c60ab05234b",
+            "id": "c0f03c4c3fac9223",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/Programming/Language/JavaScript/Typeof和instanceof的使用.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Typeof和instanceof的使用"
+              "title": "New tab"
             }
           }
         ]
@@ -166,12 +162,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8ade9c60ab05234b",
+  "active": "c0f03c4c3fac9223",
   "lastOpenFiles": [
-    "content/Programming/Language/JavaScript/Promise.md",
-    "content/Programming/Language/JavaScript/Typeof和instanceof的使用.md",
-    "content/Programming/FrontEnd/React/react01jsx语法，组件声明.md",
     "content/Programming/FrontEnd/React/react学习路线.md",
+    "content/Programming/Language/JavaScript/Typeof和instanceof的使用.md",
+    "content/Programming/Language/JavaScript/Promise.md",
+    "content/Programming/FrontEnd/React/react01jsx语法，组件声明.md",
     "content/Life/减肥/减肥01.md",
     "content/Life/read/中国居民膳食指南.md",
     "content/Life/减肥",
