@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "26a10b8b14e217ba",
+        "id": "2740d17212347d35",
         "type": "tabs",
         "children": [
           {
-            "id": "85740168064e88e7",
+            "id": "b5aaccf1be5f60e9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Programming/FrontEnd/Vue/VueRouter/router特性学习.md",
+                "file": "content/Life/减肥/减肥01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "router特性学习"
+              "title": "减肥01"
             }
           }
         ]
@@ -166,10 +166,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "85740168064e88e7",
+  "active": "411bcab6ba500395",
   "lastOpenFiles": [
-    "content/Programming/FrontEnd/Vue/VueRouter/动态Router和权限控制的实现.md",
     "content/Programming/FrontEnd/Vue/VueRouter/router特性学习.md",
+    "content/Programming/FrontEnd/Vue/VueRouter/动态Router和权限控制的实现.md",
     "content/Programming/FrontEnd/Vue/VueRouter/Hash路由和History路由.md",
     "content/Life/减肥/减肥01.md",
     "content/Programming/FrontEnd/React/react学习路线.md",
