@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a713a4f96dea03ad",
+        "id": "85611fe7049619ba",
         "type": "tabs",
         "children": [
           {
-            "id": "72482c18c8bb0d76",
+            "id": "f749710a041f0a5d",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -162,8 +162,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "72482c18c8bb0d76",
+  "active": "f749710a041f0a5d",
   "lastOpenFiles": [
+    "content/about.md",
+    "content/_index.md",
+    "content/Programming/Git/Skills/还原单个文件到指定的版本.md",
     "content/Programming/FrontEnd/NPM/package.json.md",
     "content/Programming/FrontEnd/NPM/发布一个npm包.md",
     "content/Programming/FrontEnd/Github/配置github的自动升级依赖机器人.md",
@@ -195,11 +198,8 @@
     "public/programming/frontend/react/untitled",
     "public/programming/frontend/react/react04-hooks/index.html",
     "public/programming/frontend/react/react04-hooks",
-    "content/Programming/FrontEnd/React/react02-1.md",
     "public/programming/frontend/react/react01jsx语法组件声明/index.html",
     "public/programming/frontend/react/react01jsx语法组件声明",
-    "content/Programming/FrontEnd/Vue/vue SFC CSS Features.md",
-    "content/Programming/FrontEnd/WebApi/XMLHttpRequest.md",
     "public/archives/shortcodes/cover.jpg",
     "public/archives/image-gallery/1.jpg",
     "public/archives/image-gallery/2.jpg",
