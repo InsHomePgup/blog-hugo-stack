@@ -11,10 +11,14 @@
             "id": "5089f919597f69e6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "content/Programming/Git/Skills/Git版本自动化，changeLog自动化.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Git版本自动化，changeLog自动化"
             }
           }
         ]
@@ -164,6 +168,7 @@
   },
   "active": "5089f919597f69e6",
   "lastOpenFiles": [
+    "content/Programming/Git/Skills/Git版本自动化，changeLog自动化.md",
     "content/Programming/FrontEnd/Vue/VueRouter/router特性学习.md",
     "content/Programming/FrontEnd/Vue/VueRouter/Hash路由和History路由.md",
     "content/Programming/FrontEnd/Vue/VueRouter/动态Router和权限控制的实现.md",
@@ -193,7 +198,6 @@
     "public/p/钱和赚钱/index.html",
     "public/p/钱和赚钱",
     "public/p/index.html",
-    "content/Programming/FrontEnd/React/react02-2.md",
     "public/programming/frontend/react/untitled/index.html",
     "public/programming/frontend/react/untitled",
     "public/programming/frontend/react/react04-hooks/index.html",
