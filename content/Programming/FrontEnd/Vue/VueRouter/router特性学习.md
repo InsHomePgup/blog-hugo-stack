@@ -146,3 +146,11 @@ onMounted(() => {
     console.log(route.query);  
 })
 ```
+
+### 嵌套路由
+
+比较常见的我们前端的布局方式使用的就是Layout + router-view来完成页面。
+
+为了实践嵌套路由的特性，我们这里来一个最简单的layout。
+
+

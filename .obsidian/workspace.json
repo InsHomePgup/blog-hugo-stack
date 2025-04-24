@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "85611fe7049619ba",
+        "id": "99830f520fff6941",
         "type": "tabs",
         "children": [
           {
-            "id": "f749710a041f0a5d",
+            "id": "ca21fc647333e667",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -166,8 +166,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f749710a041f0a5d",
+  "active": "ca21fc647333e667",
   "lastOpenFiles": [
+    "content/Programming/FrontEnd/Vue/VueRouter/router特性学习.md",
     "content/Programming/FrontEnd/Vue/VueRouter/Hash路由和History路由.md",
     "content/Programming/FrontEnd/Vue/VueRouter/动态Router和权限控制的实现.md",
     "content/about.md",
@@ -179,7 +180,6 @@
     "content/Programming/FrontEnd/Lint/ESLint/antfu-eslint.md",
     "content/Programming/FrontEnd/Vue/Vue3/Vue3 Emit的几种使用方式.md",
     "content/Programming/FrontEnd/Vue/Vue3/Vue3 ref的一些知识点.md",
-    "content/Programming/FrontEnd/Vue/VueRouter/router特性学习.md",
     "content/Life/减肥/减肥01.md",
     "content/Programming/FrontEnd/React/react学习路线.md",
     "content/Programming/Language/JavaScript/Typeof和instanceof的使用.md",
