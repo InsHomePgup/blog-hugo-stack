@@ -11,10 +11,14 @@
             "id": "eae1044a41b8358c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "content/Post/闲谈/无意义的事情.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "无意义的事情"
             }
           }
         ]
@@ -164,6 +168,7 @@
   },
   "active": "eae1044a41b8358c",
   "lastOpenFiles": [
+    "content/Post/闲谈/钱和赚钱.md",
     "content/Programming/Git/Skills/Git版本自动化，changeLog自动化.md",
     "content/Programming/Git/Skills/CherryPicker的使用.md",
     "content/Programming/Git/Skills/使用B分支的单个文件覆盖A分支的单个文件.md",
@@ -179,7 +184,6 @@
     "content/Programming/Git/Skills/README.md",
     "content/Programming/OS/Windows/winget的使用.md",
     "content/Post/闲谈/无意义的事情.md",
-    "content/Post/闲谈/钱和赚钱.md",
     "content/Programming/FrontEnd/Vue/VueRouter/router特性学习.md",
     "content/Programming/FrontEnd/Vue/VueRouter/Hash路由和History路由.md",
     "content/Programming/FrontEnd/Vue/VueRouter/动态Router和权限控制的实现.md",
