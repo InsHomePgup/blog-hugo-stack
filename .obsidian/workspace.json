@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "9e8a154f55e28899",
+        "id": "a0b6e806b1aa2bca",
         "type": "tabs",
         "children": [
           {
-            "id": "e77af8f80c9efecd",
+            "id": "eae1044a41b8358c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/Programming/Git/Skills/Git版本自动化，changeLog自动化.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Git版本自动化，changeLog自动化"
+              "title": "New tab"
             }
           }
         ]
@@ -166,8 +162,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e77af8f80c9efecd",
+  "active": "eae1044a41b8358c",
   "lastOpenFiles": [
+    "content/Programming/Git/Skills/Git版本自动化，changeLog自动化.md",
     "content/Programming/Git/Skills/CherryPicker的使用.md",
     "content/Programming/Git/Skills/使用B分支的单个文件覆盖A分支的单个文件.md",
     "content/Programming/Git/Skills/还原单个文件到指定的版本.md",
@@ -180,7 +177,6 @@
     "content/Programming/FrontEnd/Vue/一些全局的api.md",
     "content/Programming/FrontEnd/Vue/vue SFC CSS Features.md",
     "content/Programming/Git/Skills/README.md",
-    "content/Programming/Git/Skills/Git版本自动化，changeLog自动化.md",
     "content/Programming/OS/Windows/winget的使用.md",
     "content/Post/闲谈/无意义的事情.md",
     "content/Post/闲谈/钱和赚钱.md",
