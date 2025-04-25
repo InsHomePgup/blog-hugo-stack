@@ -1,5 +1,8 @@
 ---
 title: Git版本自动化，changeLog自动化
+date: 2025-04-25
+categories:
+  - git
 ---
 1. 安装工具
 
