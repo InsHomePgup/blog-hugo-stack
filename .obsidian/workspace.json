@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Post/闲谈/拥有一些东西以后带来的空虚.md",
+                "file": "content/draft/Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "拥有一些东西以后带来的空虚"
+              "title": "Untitled"
             }
           }
         ]
@@ -166,10 +166,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "411bcab6ba500395",
+  "active": "983444529dffe46f",
   "lastOpenFiles": [
-    "content/draft",
     "content/Post/闲谈/拥有一些东西以后带来的空虚.md",
+    "content/draft/Untitled.md",
+    "content/draft",
     "content/Post/闲谈/无意义的事情.md",
     "content/Post/闲谈/钱和赚钱.md",
     "content/Programming/Git/Skills/Git版本自动化，changeLog自动化.md",
@@ -203,7 +204,6 @@
     "public/programming/frontend/react/react04-hooks/index.html",
     "public/programming/frontend/react/react04-hooks",
     "public/programming/frontend/react/react01jsx语法组件声明/index.html",
-    "public/programming/frontend/react/react01jsx语法组件声明",
     "public/archives/shortcodes/cover.jpg",
     "public/archives/image-gallery/1.jpg",
     "public/archives/image-gallery/2.jpg",
