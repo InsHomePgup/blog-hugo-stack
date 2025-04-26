@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d5c23139371e82f9",
+        "id": "6aeb3bda638782f7",
         "type": "tabs",
         "children": [
           {
-            "id": "983444529dffe46f",
+            "id": "2ddbddffdcaa6d9f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/draft/Untitled.md",
+                "file": "content/Programming/Git/Skills/Git版本自动化，changeLog自动化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Git版本自动化，changeLog自动化"
             }
           }
         ]
@@ -166,10 +166,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "983444529dffe46f",
+  "active": "2ddbddffdcaa6d9f",
   "lastOpenFiles": [
-    "content/Post/闲谈/拥有一些东西以后带来的空虚.md",
     "content/draft/Untitled.md",
+    "content/Post/闲谈/拥有一些东西以后带来的空虚.md",
     "content/draft",
     "content/Post/闲谈/无意义的事情.md",
     "content/Post/闲谈/钱和赚钱.md",
