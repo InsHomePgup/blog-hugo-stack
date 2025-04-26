@@ -10,6 +10,10 @@ tags:
 ---
 ### 规范提交的代码
 
+直接看成品的配置的demo
+
+请查看我的模板 [vue3-ts](git@github.com:InsHomePgup/vue3-ts.git)
+
 我们这里实现一下用husky + lint-staged来管理代码提交
 
 simple-git-hooks可以使用pre-commit的钩子，这里我们用更主流的husky实现一次。
@@ -47,10 +51,8 @@ prepare是npm lifecycle script 生命周期脚本，在执行pnpm install的时�
 
 创建文件 .husky/pre-commit   
 添加以下内容
-``` script
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
 
+``` script
 npx lint-staged
 ```
 
@@ -60,11 +62,15 @@ npx lint-staged
 ```bash
 npx husky init
 ```
+
+>在2025年04/26的这个节点，husky的最新版本执行init会重置pre-commit内的脚本。已反馈github issue
+
+
 #### 添加lint-staged的配置
 
 ```json
 "lint-staged": {  
-  "**/*.{js,jsx,ts,tsx}": [  
+  "**/*.{js,ts,vue,json,css,scss,md,less}": [  
     "eslint --fix"  
   ]  
 }
@@ -72,10 +78,11 @@ npx husky init
 
 对stage的什么类型的文件进行什么样的脚本
 
-对 **js,jsx,ts,tsx** 这些后缀的文件执行eslint --fix
+对 **js,ts,vue,json,css,scss,md,less**这些后缀的文件执行eslint --fix
 
 到这里 husky + lint-staged的在提交前使用eslint规范代码就完成了。
 
+### 扩展
 
 配合使用standard-version 来完成规范commit和自动发版的时候的script注意调用跳过husky的eslint
 
