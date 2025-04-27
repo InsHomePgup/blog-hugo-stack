@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "减肥01"
             }
+          },
+          {
+            "id": "46e02fccc604ca3a",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.10"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.10"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -166,7 +179,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "411bcab6ba500395",
+  "active": "46e02fccc604ca3a",
   "lastOpenFiles": [
     "content/Programming/FrontEnd/Vue/VueRouter/router特性学习.md",
     "content/Programming/FrontEnd/Vue/VueRouter/动态Router和权限控制的实现.md",
