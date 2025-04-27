@@ -4,37 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "2740d17212347d35",
+        "id": "b5b991b2cc24808a",
         "type": "tabs",
         "children": [
           {
-            "id": "b5aaccf1be5f60e9",
+            "id": "69a54209038b033b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/Life/减肥/减肥01.md",
+                "file": "content/Programming/FrontEnd/Lint/git-hooks/项目组织-用husky+lint-staged来规范代码提交.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "减肥01"
-            }
-          },
-          {
-            "id": "46e02fccc604ca3a",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.10"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.10"
+              "title": "项目组织-用husky+lint-staged来规范代码提交"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -179,44 +166,44 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "46e02fccc604ca3a",
+  "active": "69a54209038b033b",
   "lastOpenFiles": [
-    "content/Programming/FrontEnd/Vue/VueRouter/router特性学习.md",
-    "content/Programming/FrontEnd/Vue/VueRouter/动态Router和权限控制的实现.md",
-    "content/Programming/FrontEnd/Vue/VueRouter/Hash路由和History路由.md",
-    "content/Life/减肥/减肥01.md",
-    "content/Programming/FrontEnd/React/react学习路线.md",
-    "content/Programming/Language/JavaScript/Typeof和instanceof的使用.md",
-    "content/Programming/Language/JavaScript/Promise.md",
-    "content/Programming/FrontEnd/React/react01jsx语法，组件声明.md",
-    "content/Life/read/中国居民膳食指南.md",
-    "content/Life/减肥",
-    "content/Life/food/卤牛肉，酱牛肉.md",
-    "content/Life/food/盐酥鸡.md",
-    "content/Programming/FrontEnd/React/react05-useState.md",
-    "content/Programming/FrontEnd/React/react04-hooks.md",
-    "content/Programming/FrontEnd/React/react03 探索路由.md",
+    "content/Programming/FrontEnd/Lint/git-hooks/项目组织-用simple-git-hooks + lint-staged来整理代码.md",
+    "content/Programming/FrontEnd/Lint/git-hooks/项目组织-用husky+lint-staged来规范代码提交.md",
+    "content/Programming/Git/Skills/Git版本自动化，changeLog自动化.md",
+    "content/Programming/FrontEnd/Lint/ESLint/antfu-eslint.md",
+    "content/draft/Untitled.md",
+    "content/Post/闲谈/拥有一些东西以后带来的空虚.md",
+    "content/draft",
     "content/Post/闲谈/无意义的事情.md",
     "content/Post/闲谈/钱和赚钱.md",
+    "content/Programming/Git/Skills/CherryPicker的使用.md",
+    "content/Programming/Git/Skills/使用B分支的单个文件覆盖A分支的单个文件.md",
+    "content/Programming/Git/Skills/还原单个文件到指定的版本.md",
+    "content/Programming/FrontEnd/WebApi/XMLHttpRequest.md",
+    "content/Programming/FrontEnd/WebApi/DOM和它的一些事儿。.md",
+    "content/Programming/FrontEnd/WebApi/cookie可以实现不同域的共享吗？.md",
+    "content/Programming/FrontEnd/WebApi/浏览器工作原理.md",
+    "content/Programming/FrontEnd/Vue/多语言实现.md",
+    "content/Programming/FrontEnd/Vue/记录一次奇怪的vue-router的白屏.md",
+    "content/Programming/FrontEnd/Vue/一些全局的api.md",
+    "content/Programming/FrontEnd/Vue/vue SFC CSS Features.md",
+    "content/Programming/Git/Skills/README.md",
+    "content/Programming/OS/Windows/winget的使用.md",
+    "content/Programming/FrontEnd/Vue/VueRouter/router特性学习.md",
+    "content/Programming/FrontEnd/Vue/VueRouter/Hash路由和History路由.md",
+    "content/Programming/FrontEnd/Vue/VueRouter/动态Router和权限控制的实现.md",
+    "content/about.md",
+    "content/_index.md",
+    "content/Life/减肥",
     "public/p/钱和赚钱/index.html",
     "public/p/钱和赚钱",
     "public/p/index.html",
-    "content/Programming/FrontEnd/React/react02-2.md",
     "public/programming/frontend/react/untitled/index.html",
     "public/programming/frontend/react/untitled",
     "public/programming/frontend/react/react04-hooks/index.html",
     "public/programming/frontend/react/react04-hooks",
-    "content/Programming/FrontEnd/React/react02-1.md",
     "public/programming/frontend/react/react01jsx语法组件声明/index.html",
-    "public/programming/frontend/react/react01jsx语法组件声明",
-    "content/Programming/FrontEnd/Vue/vue SFC CSS Features.md",
-    "content/Programming/FrontEnd/WebApi/XMLHttpRequest.md",
-    "content/Programming/FrontEnd/WebApi/浏览器工作原理.md",
-    "content/Programming/FrontEnd/WebApi/cookie可以实现不同域的共享吗？.md",
-    "content/Programming/FrontEnd/WebApi/DOM和它的一些事儿。.md",
-    "content/Programming/FrontEnd/Repo/Axios/axios01-取消请求.md",
-    "content/Programming/FrontEnd/CSS/伪类和伪元素.md",
-    "content/Programming/Git/Commands/Merge/merge01.md",
     "public/archives/shortcodes/cover.jpg",
     "public/archives/image-gallery/1.jpg",
     "public/archives/image-gallery/2.jpg",

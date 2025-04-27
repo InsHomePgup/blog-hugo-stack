@@ -2,7 +2,11 @@
 title: 用simple-git-hooks + lint-staged来整理代码
 date: 2025-01-16
 categories:
-  - Lint
+  - font-end
+tags:
+  - simple-git-hooks
+  - lint-staged
+  - Eslint
 ---
 
 
