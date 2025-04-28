@@ -60,12 +60,14 @@ npm publish   # 如果你要发 npm
 ```
 
 
-### 番外：完全自动化
+### 番外：完全自动化升级版本
+
+自动 bump 版本 + 自动更新 changelog + 自动 add + 自动 commit，减少人工手动步骤。
 
 在package.json 再添加一块配置
 
 ```json
-"standard-version": {  
+"standard-version": {
   "scripts": {  
     "postbump": "git add package.json CHANGELOG.md",  
     "postchangelog": "git commit -m \"chore(release): update changelog\""  
