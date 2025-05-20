@@ -4,6 +4,34 @@ date: 2025-04-25
 categories:
   - git
 ---
+
+## 发版困难的问题
+
+随着项目的不断迭代和版本更新，版本号和更新日志的问题人工手动有点烦了。
+
+遂采用下面的方案，标准自动化commit + release
+
+使用下面的方案以后，发布版本被分解成 日常的详细commit + 自动语义化控制版本。
+
+### 使用方案后
+#### 日常
+
+```
+pnpm run commit
+```
+
+执行commit script来编写项目commit
+
+#### 发版
+
+```
+pnpm run release
+```
+
+自动化升级版本 以及完善changelog
+
+### 行动
+
 1. 安装工具
 
 ```bash
@@ -60,12 +88,14 @@ npm publish   # 如果你要发 npm
 ```
 
 
-### 番外：完全自动化
+### 番外：完全自动化升级版本
+
+自动 bump 版本 + 自动更新 changelog + 自动 add + 自动 commit，减少人工手动步骤。
 
 在package.json 再添加一块配置
 
 ```json
-"standard-version": {  
+"standard-version": {
   "scripts": {  
     "postbump": "git add package.json CHANGELOG.md",  
     "postchangelog": "git commit -m \"chore(release): update changelog\""  
@@ -93,11 +123,11 @@ MAJOR.MINOR.PATCH
 
 🔹 各部分代表什么？
 
-|名称|举例|意义简述|
-|---|---|---|
-|`MAJOR`|`1.x.x` → `2.0.0`|💥 有**破坏性变更**，以前写的代码可能不能用了|
-|`MINOR`|`1.2.x` → `1.3.0`|✨ 新增功能，但还是**兼容旧代码**|
-|`PATCH`|`1.2.3` → `1.2.4`|🐞 只修复 bug，不加新功能|
+| 名称      | 举例                | 意义简述                       |
+| ------- | ----------------- | -------------------------- |
+| `MAJOR` | `1.x.x` → `2.0.0` | 💥 有**破坏性变更**，以前写的代码可能不能用了 |
+| `MINOR` | `1.2.x` → `1.3.0` | ✨ 新增功能，但还是**兼容旧代码**        |
+| `PATCH` | `1.2.3` → `1.2.4` | 🐞 只修复 bug，不加新功能           |
 
 ### 📌 举个例子理解
 
@@ -156,7 +186,7 @@ GET /user/info → GET /user/profile
 	Beta、Alpha、RC 是给「预发布」做准备的
  
 
-### 完整语义化发布的脚本
+### 完整语义化发布的Scripts
 
 ```json
 "scripts": {
