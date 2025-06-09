@@ -1,6 +1,12 @@
 ---
 title: 发布一个NPM包
 date: 2025-01-20
+tags:
+  - npm
+  - publish
+  - release
+categories:
+  - npm
 ---
 ### 前沿
 
