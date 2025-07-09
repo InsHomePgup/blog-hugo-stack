@@ -33,8 +33,17 @@ vscode那边也有的代码片段功能。
 
 根据这个文档来配置自己的代码片段，这个可以根据文件名去生成文件的基础模板，可以配置大小写。
 ![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250214103729151.png)
+#### 4. 使用powershell当做默认的终端。
 
+pwsh还是很好用的，如果能直接在ws就用pwsh就很舒服。
 
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250709142648652.png)
+
+搜索terminal进入到这个设置界面。
+
+引擎用这个classic
+
+然后下面选择shell的path。
 
 ### 插件
 
@@ -51,6 +60,12 @@ vscode那边也有的代码片段功能。
 Material Sandy Beach 
 ![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250214102855782.png)
 再设置第二颜色。
+
+最近用了Trae，感觉白色的这款也很好看。
+
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250709142834425.png)
+
+我的新宠主题
 
 #### 3. TONGYI Lingma
 
