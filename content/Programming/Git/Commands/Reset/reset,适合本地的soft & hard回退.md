@@ -23,3 +23,4 @@ git reset --soft HEAD^
 ```
 get reset --hard HEAD^
 ```
+
