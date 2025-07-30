@@ -61,6 +61,13 @@ pnpm install --save-dev commitizen cz-conventional-changelog standard-version
 }
 
 ```
+> 如果用了eslint的git pre commit检查的话，命令可以修改成先执行eslint再执行commit
+
+```json
+{
+	"commit": "git add . && eslint . --fix && git add . && cz --no-verify",
+}
+```
 
 4. 日常的commit怎么提交？
 
