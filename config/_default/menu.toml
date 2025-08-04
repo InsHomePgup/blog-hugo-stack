@@ -23,6 +23,13 @@
         icon = "archives"
 
 [[main]]
+    name = "All Posts"
+    url = "/blog/"
+    weight = 35
+    [main.params]
+        icon = "book"
+
+[[main]]
     name = "Links"
     url = "/links/"
     weight = 40
