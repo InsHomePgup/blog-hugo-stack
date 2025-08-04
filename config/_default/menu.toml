@@ -24,7 +24,7 @@
 
 [[main]]
     name = "Links"
-    url = "/page/links/"
+    url = "/links/"
     weight = 40
     [main.params]
         icon = "link"
