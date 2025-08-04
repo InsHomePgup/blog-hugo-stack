@@ -1,0 +1,29 @@
+{{ define "main" }}
+    <header class="page-header">
+        <h1 class="page-title">{{ .Title }}</h1>
+    </header>
+
+    {{ $pages := where .Site.RegularPages "Type" "!=" "page" }}
+    {{ $paginator := .Paginate $pages.ByDate.Reverse 20 }}
+
+    <div class="list">
+        {{ range $paginator.Pages }}
+            {{/* 将整个卡片包裹在 a 标签中，使其可点击 */}}
+            <a href="{{ .Permalink }}" class="post-entry-link">
+                <article class="post-entry card">
+                    <header class="entry-header">
+                        <h2>{{ .Title }}</h2>
+                    </header>
+                    <div class="entry-content">
+                        <p>{{ .Content | plainify | truncate 150 }}</p>
+                    </div>
+                    <footer class="entry-footer">
+                        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                    </footer>
+                </article>
+            </a>
+        {{ end }}
+    </div>
+
+    {{ partial "pagination.html" . }}
+{{ end }}

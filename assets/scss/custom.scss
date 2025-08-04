@@ -141,3 +141,76 @@ a.link:hover{
 [data-scheme="dark"] .series-nav-button:hover {
     border-color: var(--accent-color, #3273dc);
 }
+
+/* --- 归档页卡片样式 --- */
+.list .post-entry.card {
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--card-background);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.list .post-entry.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.list .post-entry.card .entry-header h2 {
+    margin-bottom: 0.75rem; /* 标题和正文之间的间距 */
+}
+
+.post-entry-link {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+/* --- Pagination Styles --- */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    font-family: var(--body-font-family);
+}
+
+.pagination-item {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 8px; /* Rounded corners */
+    background-color: var(--card-background);
+    color: var(--body-text-color);
+    text-decoration: none;
+    border: 1px solid var(--card-border-color);
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.pagination-item:hover:not(.disabled):not(.active) {
+    background-color: var(--accent-color);
+    color: var(--accent-color-text);
+    border-color: var(--accent-color);
+}
+
+.pagination-item.active {
+    background-color: var(--accent-color);
+    color: var(--accent-color-text);
+    border-color: var(--accent-color);
+    font-weight: bold;
+}
+
+.pagination-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-arrow {
+    font-weight: 600;
+}
+
+.pagination-numbers {
+    display: flex;
+    align-items: center;
+}

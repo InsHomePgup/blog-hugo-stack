@@ -7,6 +7,13 @@
 #icon = "home"
 #newtab = true
 
+[[main]]
+    name = "archives"
+    url = "/archives/"
+    weight = -110
+    [main.params]
+        icon = "archives"
+
 [[social]]
 identifier = "github"
 name = "GitHub"
