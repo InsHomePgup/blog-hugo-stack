@@ -1,18 +1,41 @@
 # Configure main menu and social menu
-#[[main]]
-#identifier = "about"
-#name = "About"
-#url = "/about"
-#[main.params]
-#icon = "home"
-#newtab = true
+# All items are explicitly defined here to control the order.
 
 [[main]]
-    name = "archives"
+    name = "Home"
+    url = "/"
+    weight = 10
+    [main.params]
+        icon = "home"
+
+[[main]]
+    name = "Search"
+    url = "/search/"
+    weight = 20
+    [main.params]
+        icon = "search"
+
+[[main]]
+    name = "Archives"
     url = "/archives/"
-    weight = -110
+    weight = 30
     [main.params]
         icon = "archives"
+
+[[main]]
+    name = "Links"
+    url = "/page/links/"
+    weight = 40
+    [main.params]
+        icon = "link"
+
+[[main]]
+    name = "About"
+    url = "/about/"
+    weight = 50
+    [main.params]
+        icon = "braces"
+
 
 [[social]]
 identifier = "github"

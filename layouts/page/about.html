@@ -1,7 +1,4 @@
 {{ define "main" }}
-{{ $style := resources.Get "scss/about.scss" | css.Sass | resources.Minify }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}">
-
 <div class="about-container">
     <div class="about-header">
         <h1 class="about-title">{{ .Title }}</h1>
