@@ -50,7 +50,7 @@ icon = "brand-github"
 identifier = "rss"
 name = "RSS"
 url = "/index.xml"
-weight = 40
+weight = 35
 
 [social.params]
 icon = "rss"
