@@ -4,7 +4,11 @@
       "Bash(python:*)",
       "Bash(rm:*)",
       "Bash(powershell:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(go mod:*)",
+      "Bash(hugo env:*)",
+      "Bash(hugo:*)",
+      "Bash(where hugo)"
     ],
     "deny": [],
     "ask": []
