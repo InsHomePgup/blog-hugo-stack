@@ -1,5 +1,9 @@
 {{ $customAnimations := resources.Get "scss/custom-animations.scss" | css.Sass | resources.Minify }}
 <link rel="stylesheet" href="{{ $customAnimations.RelPermalink }}">
+
+{{ $aboutStyles := resources.Get "scss/about.scss" | css.Sass | resources.Minify }}
+<link rel="stylesheet" href="{{ $aboutStyles.RelPermalink }}">
+
 <style>
     /* Overwrite CSS variable */
     :root {

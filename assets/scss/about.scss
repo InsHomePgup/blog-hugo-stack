@@ -1,37 +1,42 @@
-// 移除 theme 导入
-// @import "partials/highlight/theme";
-
-// 直接定义变量
+// About 页面样式
 
 *{
     font-size: 16px;
 }
 
 :root {
-    --gradient-start: rgba(255, 182, 193, 0.1);
-    --gradient-end: rgba(135, 206, 235, 0.1);
-    --about-text: var(--text-color);
+    --about-gradient-start: #ffb6c1;
+    --about-gradient-end: #87ceeb;
+    --about-text-color: #333;
+    --about-card-shadow: rgba(0, 0, 0, 0.1);
 }
 
-:root[data-theme='dark'] {
-    --gradient-start: rgba(200, 80, 192, 0.3);
-    --gradient-end: rgba(65, 88, 208, 0.3);
-    --about-text: #ffffff;
+[data-scheme="dark"] {
+    --about-gradient-start: #c850c0;
+    --about-gradient-end: #4158d0;
+    --about-text-color: #ffffff;
+    --about-card-shadow: rgba(0, 0, 0, 0.3);
 }
 
 .about-container {
-    width: 100%;
-    min-width: 240px;
-    margin: 0 auto;
-    padding: 2rem 3rem;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    color: var(--card-text-color-main);
-    border-radius: 16px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 2rem 0 2rem 2rem; /* 左侧对齐，留出右侧空间 */
+    padding: 3rem;
+    background: linear-gradient(135deg, var(--about-gradient-start), var(--about-gradient-end));
+    border-radius: 20px;
+    box-shadow: 0 8px 32px var(--about-card-shadow);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px var(--about-card-shadow);
 }
 
 .about-header {
+    text-align: left;
     margin-bottom: 3rem;
 }
 
@@ -39,57 +44,83 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--about-text);
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .about-content {
-    margin: 0 auto;
     font-size: 1.1rem;
     line-height: 1.8;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    text-align: left;
     margin-bottom: 2rem;
-    color: var(--about-text);
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.about-content hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), transparent);
+    margin: 2rem 0;
+    max-width: 200px;
 }
 
 .social-links {
     display: flex;
-    gap: 1.5rem;
-    margin-top: 3rem;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 2rem;
     flex-wrap: wrap;
 }
 
 .social-links a {
     padding: 0.8rem 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     text-decoration: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
     transition: all 0.3s ease;
-    color: var(--about-text);
-    border: 1px solid var(--border-color);
-    
-    &:hover {
-        background-color: var(--background-color);
-        transform: translateY(-2px);
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    font-size: 0.9rem;
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 平板适配 */
+@media (max-width: 1024px) {
+    .about-container {
+        max-width: 550px;
+        margin: 2rem auto; /* 平板上居中显示 */
+        padding: 2.5rem;
     }
 }
 
-// 主题变量
-// :root {
-//     &[data-theme="light"] {
-//         --gradient-start: #{theme-color(light, about-gradient-start)};
-//         --gradient-end: #{theme-color(light, about-gradient-end)};
-//     }
-    
-//     &[data-theme="dark"] {
-//         --gradient-start: #{theme-color(dark, about-gradient-start)};
-//         --gradient-end: #{theme-color(dark, about-gradient-end)};
-//     }
-// }
-
-/* 响应式设计 */
+/* 手机横屏和小平板 */
 @media (max-width: 768px) {
     .about-container {
-        padding: 1.5rem;
-        margin: 0;
-        border-radius: 0;
+        max-width: 100%;
+        margin: 1.5rem;
+        padding: 2rem;
         border-radius: 16px;
     }
 
@@ -101,13 +132,66 @@
         font-size: 1rem;
     }
 
+    .about-content p {
+        padding: 0.8rem 1.2rem;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .social-links a {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* 手机竖屏 */
+@media (max-width: 480px) {
+    .about-container {
+        margin: 1rem;
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .about-title {
+        font-size: 1.8rem;
+    }
+
+    .about-content {
+        font-size: 0.95rem;
+    }
+
+    .about-content p {
+        padding: 0.8rem 1rem;
+    }
+
     .social-links {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 0.8rem;
     }
 
     .social-links a {
         width: 100%;
         text-align: center;
+        padding: 0.8rem;
+    }
+}
+
+/* 超小屏幕 */
+@media (max-width: 320px) {
+    .about-container {
+        margin: 0.5rem;
+        padding: 1.2rem;
+    }
+
+    .about-title {
+        font-size: 1.6rem;
+    }
+
+    .about-content {
+        font-size: 0.9rem;
     }
 }
