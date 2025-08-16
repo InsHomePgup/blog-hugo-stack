@@ -1,3 +1,11 @@
+---
+title: "记录一次 mariadb 在 Debian12 的安装"
+date: 2024-12-01
+categories:
+  - operating-system
+  - linux
+---
+
 ``` bash
 apt update && apt upgrade -y
 

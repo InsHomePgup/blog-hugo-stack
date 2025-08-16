@@ -1,3 +1,14 @@
+---
+title: "Pinia Setup API 使用方式"
+date: 2024-12-01
+categories:
+  - frontend
+  - vue
+tags:
+  - pinia
+  - vue
+  - composition-api
+---
 
 ### 使用composition api 的形式
 

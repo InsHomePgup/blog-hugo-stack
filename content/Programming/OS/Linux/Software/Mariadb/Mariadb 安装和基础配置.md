@@ -1,3 +1,11 @@
+---
+title: "Mariadb 安装和基础配置"
+date: 2024-12-01
+categories:
+  - operating-system
+  - linux
+---
+
 
 ARMBian安装
 

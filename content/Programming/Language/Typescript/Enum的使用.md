@@ -1,4 +1,12 @@
 
+---
+title: "Enum的使用"
+date: 2024-12-01
+categories:
+  - programming
+  - typescript
+---
+
 ### Enum的基础使用
 
 枚举，固定数量，固定值的一个数据类型

@@ -1,3 +1,11 @@
+---
+title: "find"
+date: 2024-12-01
+categories:
+  - operating-system
+  - linux
+---
+
 查找文件
 
 ```

@@ -1,8 +1,9 @@
 ---
-title: font-size
+title: "font-size"
+date: 2024-12-01
 categories:
+  - frontend
   - css
-date: 2025-05-27
 ---
 思考font-size是字体的高度还是宽度的一些延伸。
 

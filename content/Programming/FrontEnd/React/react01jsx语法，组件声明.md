@@ -1,10 +1,11 @@
 ---
-title: 组件声明和jsx
-date: 2024-06-06
+title: "组件声明和jsx"
+date: 2024-12-01
 tags:
   - react
   - tsx
 categories:
+  - frontend
   - react
 weight: 1
 ---

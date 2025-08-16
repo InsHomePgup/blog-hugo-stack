@@ -1,3 +1,13 @@
+---
+title: "Rollup 教程 - 构建工具入门"
+date: 2024-12-01
+categories:
+  - frontend
+  - build-tools
+tags:
+  - rollup
+  - bundler
+---
 
 rollup真的是非常重要的技能了。
 ![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/Pasted%20image%2020240830171530.png)

@@ -1,3 +1,11 @@
+---
+title: "Rollup添加typescript插件来编译ts文件"
+date: 2024-12-01
+categories:
+  - frontend
+  - build-tools
+---
+
 在官网的教程里演示的是添加json的plugin。
 那么作为举一反三的能力，我选择添加ts的plugin
 # @rollup/plugin-typescript

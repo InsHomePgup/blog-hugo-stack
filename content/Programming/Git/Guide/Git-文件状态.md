@@ -1,3 +1,10 @@
+---
+title: "Git-文件状态"
+date: 2024-12-01
+categories:
+  - git
+---
+
 在 Git 中，文件的状态主要包括以下几种：
 
 1. **Untracked（未跟踪）**

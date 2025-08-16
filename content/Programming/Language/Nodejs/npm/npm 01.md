@@ -1,3 +1,11 @@
+---
+title: "npm 01"
+date: 2024-12-01
+categories:
+  - programming
+  - nodejs
+---
+
 换源
 
 ```bash

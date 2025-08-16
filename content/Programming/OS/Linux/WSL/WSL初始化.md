@@ -1,3 +1,11 @@
+---
+title: "WSL初始化"
+date: 2024-12-01
+categories:
+  - operating-system
+  - linux
+---
+
 (链接)[https://learn.microsoft.com/en-us/windows/wsl/install]
 wsl --install -d debian
 安装

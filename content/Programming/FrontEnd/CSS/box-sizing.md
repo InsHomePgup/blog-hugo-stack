@@ -1,7 +1,8 @@
 ---
-title: box-sizing
-date: 2025-02-06
+title: "box-sizing"
+date: 2024-12-01
 categories:
+  - frontend
   - css
 ---
 来看一下一直有点模糊的box-sizing属性。

@@ -1,3 +1,11 @@
+---
+title: "记录一次vscode没有ts静态检查的事情"
+date: 2024-12-01
+categories:
+  - programming
+  - typescript
+---
+
 
 ![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/Pasted%20image%2020240723154005.png)
 

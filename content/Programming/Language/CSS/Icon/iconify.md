@@ -1,3 +1,10 @@
+---
+title: "iconify"
+date: 2024-12-01
+categories:
+  - programming
+---
+
 记录iconify的一次使用
 
 引入

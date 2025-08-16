@@ -1,6 +1,9 @@
 ---
-title: presetAttributify的使用
-date: 2025-01-09
+title: "presetAttributify的使用"
+date: 2024-12-01
+categories:
+  - frontend
+  - css
 ---
 
 unocss预设 - Attributify

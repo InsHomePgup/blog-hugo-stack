@@ -1,4 +1,12 @@
 
+---
+title: "Mariadb 添加用户并且给访问权限"
+date: 2024-12-01
+categories:
+  - backend
+  - mariadb
+---
+
 ### 创建用户
 
 > 方括号里的内容代表变量

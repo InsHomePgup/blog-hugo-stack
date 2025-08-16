@@ -1,3 +1,10 @@
+---
+title: "pull 和fetch + merge"
+date: 2024-12-01
+categories:
+  - git
+---
+
 pull，拉取，用来同步本地仓库和远程仓库。
 
 pull = fetch + merge?

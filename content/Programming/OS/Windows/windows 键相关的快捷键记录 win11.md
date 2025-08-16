@@ -1,3 +1,11 @@
+---
+title: "windows 键相关的快捷键记录 win11"
+date: 2024-12-01
+categories:
+  - operating-system
+  - windows
+---
+
 win + tab  在高刷屏下还不错的视图形式切换多窗口
 
 win + A 打开快捷设置。

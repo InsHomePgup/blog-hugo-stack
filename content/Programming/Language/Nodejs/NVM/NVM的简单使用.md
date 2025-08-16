@@ -1,3 +1,14 @@
+---
+title: "NVM 的简单使用"
+date: 2024-12-01
+categories:
+  - backend
+  - nodejs
+tags:
+  - nvm
+  - nodejs
+---
+
 配置好了 nvm 以及对应的 node 源以后可以快乐的使用各个版本的 nodejs 了。
 nvm 在不同的平台上表现还是不一样的。
 Windows use 以后在后续的终端里也是会维持之前的版本。

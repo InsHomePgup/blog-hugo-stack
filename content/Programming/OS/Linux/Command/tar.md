@@ -1,3 +1,11 @@
+---
+title: "tar"
+date: 2024-12-01
+categories:
+  - operating-system
+  - linux
+---
+
 
 打包
 ```shell

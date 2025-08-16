@@ -1,3 +1,11 @@
+---
+title: "记录一次远程服务器的dd"
+date: 2024-12-01
+categories:
+  - operating-system
+  - linux
+---
+
 https://github.com/leitbogioro/Tools
 
 https://gitee.com/mb9e8j2/Tools/raw/master/Linux_reinstall/InstallNET.sh

@@ -1,8 +1,9 @@
 ---
-title: Object.defineProperty
-date: 2025-01-18
+title: "Object.defineProperty"
+date: 2024-12-01
 categories:
-  - JavaScript
+  - programming
+  - javascript
 tags:
   - JavaScript
   - Vue

@@ -1,6 +1,9 @@
 ---
-title: react05-useState
-date: 2025-04-14
+title: "useState"
+date: 2024-12-01
+categories:
+  - frontend
+  - react
 ---
 [https://react.dev/reference/react/useState](https://react.dev/reference/react/useState)
 

@@ -1,3 +1,11 @@
+---
+title: "SSH Key 连接"
+date: 2024-12-01
+categories:
+  - operating-system
+  - linux
+---
+
 
 [root@host .ssh]$ chmod 600 authorized_keys
 [root@host .ssh]$ chmod 700 ~/.ssh

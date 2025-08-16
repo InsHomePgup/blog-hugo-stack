@@ -1,3 +1,11 @@
+---
+title: "安装 mongodb"
+date: 2024-12-01
+categories:
+  - operating-system
+  - linux
+---
+
 
 创建一个普通用户
 ins

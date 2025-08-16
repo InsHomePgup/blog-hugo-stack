@@ -1,3 +1,14 @@
+---
+title: "NVM 在 Windows 端的使用（Nodejs 环境配置）"
+date: 2024-12-01
+categories:
+  - backend
+  - nodejs
+tags:
+  - nvm
+  - nodejs
+  - windows
+---
 
 记录一下我的日常
 从官网下载nodejs 并安装

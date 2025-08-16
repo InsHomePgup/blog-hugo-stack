@@ -1,9 +1,10 @@
 ---
-title: 组件的使用
-date: 2024-06-06
+title: "组件的使用"
+date: 2024-12-01
 tags:
   - react
 categories:
+  - frontend
   - react
 weight: 200
 ---

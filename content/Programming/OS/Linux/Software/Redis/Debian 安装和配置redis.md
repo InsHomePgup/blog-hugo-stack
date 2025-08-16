@@ -1,3 +1,11 @@
+---
+title: "Debian 安装和配置redis"
+date: 2024-12-01
+categories:
+  - operating-system
+  - linux
+---
+
 
 
 

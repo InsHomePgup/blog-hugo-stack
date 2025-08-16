@@ -1,7 +1,8 @@
 ---
-title: flex 布局的全部属性
-date: 2025-03-27
+title: "flex 布局的全部属性"
+date: 2024-12-01
 categories:
+  - frontend
   - css
 ---
 ### Base

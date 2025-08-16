@@ -1,3 +1,14 @@
+---
+title: "Pinia Options API 使用方式"
+date: 2024-12-01
+categories:
+  - frontend
+  - vue
+tags:
+  - pinia
+  - vue
+---
+
 记录一次使用
 
 options使用方式

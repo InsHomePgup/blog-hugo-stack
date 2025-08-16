@@ -1,3 +1,10 @@
+---
+title: "DOM和它的一些事儿。"
+date: 2024-12-01
+categories:
+  - frontend
+---
+
 Document Object Model
 
 GPT：DOM（文档对象模型，Document Object Model）是用于表示和操作HTML和XML文档的一种编程接口。它以树形结构的形式表示文档的内容，使得开发者可以通过编程语言（如JavaScript）来动态地修改、删除或添加文档的内容和结构。

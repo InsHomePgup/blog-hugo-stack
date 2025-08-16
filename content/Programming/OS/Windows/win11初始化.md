@@ -1,6 +1,9 @@
 ---
-title: win11初始化
-date: 2025-03-22
+title: "Win11初始化"
+date: 2024-12-01
+categories:
+  - operating-system
+  - windows
 ---
 
 ### windows 11 初始化设置

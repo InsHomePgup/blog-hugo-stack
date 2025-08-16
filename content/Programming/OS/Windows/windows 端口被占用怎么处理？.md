@@ -1,3 +1,11 @@
+---
+title: "windows 端口被占用怎么处理？"
+date: 2024-12-01
+categories:
+  - operating-system
+  - windows
+---
+
 
 [引用站点](https://www.cnblogs.com/xyzdw/articles/2108149.html)
 

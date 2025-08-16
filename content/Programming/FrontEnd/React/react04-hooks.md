@@ -1,6 +1,9 @@
 ---
-title: react04-hooks
-date: 2025-04-12
+title: "React Hooks"
+date: 2024-12-01
+categories:
+  - frontend
+  - react
 ---
 简单说，**Hooks 是一些函数**，可以让函数组件也拥有原本只有类组件才能用的功能。
 
