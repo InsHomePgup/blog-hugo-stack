@@ -1,6 +1,7 @@
 ---
 title: "About Me"
 layout: "about"
+type: "page"
 ---
 
 你好，我是Abraham，可以叫我Abra。
