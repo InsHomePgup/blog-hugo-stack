@@ -28,6 +28,12 @@ brew update
 brew outdated
 ```
 
+更新全部的包
+
+```
+brew upgrade
+```
+
 更新单个包
 
 ```
