@@ -87,6 +87,12 @@ mysql
 
 grant all privileges on *.* to root@"%" identified by "pwd" with grant option; flush privileges;
 
+
+CREATE USER 'admin'@'%' IDENTIFIED BY '~B-?[rKYCy-iJIx*$FZc';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+
 grant all privileges on *.* to gitea@"%" identified by "123" with grant option; 
 
 ```
@@ -100,6 +106,10 @@ bind-address = 127.0.0.1
 修改成
 
 bind-address = 0.0.0.0  
+
+重启数据库生效
+
+systemctl restart mariadb
 
 ## 创建一个用户来远程访问
 
