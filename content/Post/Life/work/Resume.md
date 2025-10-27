@@ -7,23 +7,23 @@ date: 2021-01-21
 最后更新: 2025/02/27 10:00 UTC +08:00
 
 - 名字/性别/出生年
-- 学历
-- 籍贯
+- 学历：
+- 籍贯：
 - 工作年限：
-- GitHub:
-- 期望职位:前端（Vue方向）
-- 当前状态: 在职/离职
+- GitHub：
+- 期望职位：前端（Vue方向）
+- 当前状态：在职/离职
 
-### 联系方式(公开的话不加上，一对一可以发)
+### 联系方式(请自行选择是否加入此模块 公开/隐藏)
 
-- 手机 13xxx 浙江 杭州
-- Email:   xxx@gmail.com
-- QQ/微信: ...
+- 手机：13xxx 浙江 杭州
+- Email：  xxx@gmail.com
+- QQ/微信： ...
 
 ### 技能
 
 - Web: HTML5,CSS3,JavaScript,TypeScript,Scss,Less,Unocss,Vue2,Vue3,Uniapp,Webpack,Vite,Rollup,Echarts(先写核心技能，再写一些前端常用的框架，组件等等)
-- Server: (如果有的话，比如你可以换成移动端)
+- Server:  Midwayjs、Expressjs
 - OS: Windows,Debian
 - IDE:vscode,sublime text,webstorm...
 - VCS: Git,SVN
