@@ -63,6 +63,8 @@ pnpm install --save-dev commitizen cz-conventional-changelog standard-version
 ```
 > 如果用了eslint的git pre commit检查的话，命令可以修改成先执行eslint再执行commit
 
+请根据自己需要来编辑这行命令
+
 ```json
 {
 	"commit": "git add . && eslint . --fix && git add . && cz --no-verify",
@@ -90,7 +92,7 @@ pnpm run release:beta
 6. 推送
 
 ```bash
-git push --follow-tags
+git push --follow-tags # 同时推送版本的tags
 npm publish   # 如果你要发 npm
 ```
 
