@@ -9,66 +9,66 @@ categories:
   - react
 weight: 1
 ---
-  
-### React学习
 
-#### 快速创建一个项目
+## React 学习
 
-首先用vite + react启动一个react-ts项目
+### 快速创建一个项目
 
-``` shell
+首先用 vite + react 启动一个 react-ts 项目：
+
+```bash
 pnpm create vite [项目名称] --template react-ts
 
 pnpm create vite react-starter --template react-ts
-
 ```
 
-##### 添加一些依赖
+#### 添加一些依赖
 
-看自己的喜欢添加一些依赖。
+看自己的喜欢添加一些依赖：
 
 - unocss
 - antfu eslint
 - lodash-es
-![|325x332](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250106164408392.png)
 
-删除多余的内容，仅保留App.tsx和main.tsx
+![项目结构|325x332](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250106164408392.png)
 
-### 组件
+删除多余的内容，仅保留 App.tsx 和 main.tsx
 
-#### 组件声明
+## 组件
 
-##### JSX必须有一个根节点
+### 组件声明
 
-可以是 <></>  // 这是一个 _[Fragment](https://react.dev/reference/react/Fragment)_
+#### JSX 必须有一个根节点
 
-##### 所有html标签必须结束
+可以是 `<></>`，这是一个 [Fragment](https://react.dev/reference/react/Fragment)
 
-不管是单标签还是双标签都必须结束
+#### 所有 HTML 标签必须结束
 
->JSX requires tags to be explicitly closed: self-closing tags like `<img>` must become `<img />`, and wrapping tags like `<li>oranges` must be written as `<li>oranges</li>`.
+不管是单标签还是双标签都必须结束：
 
-##### 大部分react 的东西都使用 驼峰。
+> JSX requires tags to be explicitly closed: self-closing tags like `<img>` must become `<img />`, and wrapping tags like `<li>oranges` must be written as `<li>oranges</li>`.
 
-比如绑定事件 onClick
+#### 大部分 React 的东西都使用驼峰
 
-比如添加class  = className
+比如绑定事件：`onClick`
 
-``` tsx
+比如添加 class：`className`
+
+```tsx
 export default function Page() {
-    return (
-        <>
-            <h1>Home</h1>
-        </>
-    )
+  return (
+    <>
+      <h1>Home</h1>
+    </>
+  )
 }
 ```
 
-导出，用ES6语法，导出一个函数返回一个JSX片段。
+导出，用 ES6 语法，导出一个函数返回一个 JSX 片段。
 
 > 注意：不要在组件内部再去申明一个组件。
 
-> 注意：react组件的使用需要开头大写，这样来区分原生的html标签。
+> 注意：React 组件的使用需要开头大写，这样来区分原生的 HTML 标签。
 
 ```tsx
 export default function Gallery() {
@@ -80,118 +80,119 @@ export default function Gallery() {
 }
 ```
 
-#### 导出和导入组件
+### 导出和导入组件
 
-可以先看这篇熟悉一下导入导出，是一样的。
+可以先看这篇熟悉一下导入导出，是一样的：
 
-[ES导入导出语法](../../Rollup/rollup-module-syntax)
+[ES 导入导出语法](../../Rollup/rollup-module-syntax)
 
-##### 具名导出
+#### 具名导出
+
 ```tsx
 // 导出
-export function MyCard(props: { name: string }) {  // 接收props
-  return <div>{props.name}</div>;
+export function MyCard(props: { name: string }) {  // 接收 props
+  return <div>{props.name}</div>
 }
 
-// 在page里导入和使用
-import {MyCard} from '../components/MyCard';
+// 在 page 里导入和使用
+import { MyCard } from '../components/MyCard'
+
 export default function Page() {
-    return (
-        <>
-            <MyCard name="Hello" />
-        </>
-    )
+  return (
+    <>
+      <MyCard name="Hello" />
+    </>
+  )
 }
-
 ```
 
-##### 默认导出
+#### 默认导出
 
 ```tsx
 // 默认导出
 export default function MyButton(props: { text: string }) {
-    return <button>{props.text}</button>
+  return <button>{props.text}</button>
 }
 
 // 默认导入
-import MyButton from "../components/MyButton.tsx";
-export default function Page() {
-    return (
-        <>
-            <MyButton text="click" />
-        </>
-    )
-}
+import MyButton from "../components/MyButton.tsx"
 
+export default function Page() {
+  return (
+    <>
+      <MyButton text="click" />
+    </>
+  )
+}
 ```
 
+### JSX/TSX 动态插入内容、属性
 
+#### 绑定变量属性
 
-####  JSX|TSX 动态插入内容、属性
+使用 `title={name}` 的这种形式去给一个标签添加动态的属性：
 
-
-
-##### 绑定变量属性
-title={name}的这种形式去给一个标签添加动态的属性
-
-``` jsx
-function App()  {  
-	const name = 'foo'
-	return(
-		 <div title={name}> /** 使用属性*/
-			{name}
-		</div>
-	)
+```tsx
+function App() {
+  const name = 'foo'
+  return (
+    <div title={name}> {/* 使用属性 */}
+      {name}
+    </div>
+  )
 }
-// 一个花括号里面输入来使用js表达式和变量
+
+// 一个花括号里面输入来使用 JS 表达式和变量
 
 // 导出组件
 export default App
-
 ```
 
-##### 绑定class
+#### 绑定 class
 
-直接添加class和绑定class的变量
+直接添加 class 和绑定 class 的变量：
 
-```jsx
+```tsx
+function App() {
+  const myClassName: string = 'w-10 h-10 bg-blue-6'
 
-function App() {  
+  return (
+    <> {/* 这里使用了一对空标签当成根标签 */}
+      {/* 直接绑定 class */}
+      <div className="w-2"></div>
+      {/* 绑定 class 变量 */}
+      <div className={myClassName}></div>
+    </>
+  )
+}
 
-const myClassName: string = 'w-10 h-10 bg-blue-6'
-
-  return (  
-    <>      /** 这里使用了一对空标签当成根标签*/
-	    /** 直接绑定class */
-     <div className="w-2"></div>  
-	    /** 绑定class变量 */
-     <div className={myClassName}></div>
-    </>  
-)}  
-  
-export default App
-
-```
-
-##### 绑定style
-
-``` tsx
-function App() {  
-  const styleObj = {  
-    backgroundColor: 'red',  
-  }  return (  
-    <>      <div style={styleObj}></div>  
-      <div style={{ color: 'red' }}></div>  
-    </>  )}  
-  
 export default App
 ```
 
-##### 总结
+#### 绑定 style
 
-动态绑定class和style
+```tsx
+function App() {
+  const styleObj = {
+    backgroundColor: 'red',
+  }
 
-``` tsx
+  return (
+    <>
+      <div style={styleObj}></div>
+      <div style={{ color: 'red' }}></div>
+    </>
+  )
+}
+
+export default App
+```
+
+#### 总结
+
+动态绑定 class 和 style：
+
+```tsx
 export default function page() {
   const name = 'foo'
   const classList = 'w-10 h-10'
@@ -213,47 +214,45 @@ export default function page() {
     </>
   )
 }
-
 ```
 
+#### 事件操作，获取事件对象 event
 
-
-##### 事件操作，获取事件对象event
-
-
-``` jsx
+```tsx
 // 事件操作
-function App() {  
-    function test(number1?: number, event?: React.FormEvent<HTMLButtonElement>) {  
-        console.log(number1, event)  
-    }  
-  /** React.FormEvent<HTMLButtonElement> react的一些ts类型 */
-    return (  
-        <div>  
-            {/*调用方式1*/}  
-            {/*bind方式拿到event，默认最后一个参数就是event*/}  
-            <button onClick={test.bind(null, 123)}>  
-            </button>  
-            {/*调用方式2*/}  
-            <button onClick={() => {  
-                test(123)  
-            }}></button>  
-            {/* 箭头函数拿到click事件对象，箭头函数传参就是event*/}  
-            <button onClick={(event) => {  
-                test(123, event)  
-            }}></button>  
-        </div>  
-    )  
-}  
-  
+function App() {
+  function test(number1?: number, event?: React.FormEvent<HTMLButtonElement>) {
+    console.log(number1, event)
+  }
+
+  // React.FormEvent<HTMLButtonElement> 是 React 的一些 TS 类型
+  return (
+    <div>
+      {/* 调用方式1 */}
+      {/* bind 方式拿到 event，默认最后一个参数就是 event */}
+      <button onClick={test.bind(null, 123)}></button>
+
+      {/* 调用方式2 */}
+      <button onClick={() => {
+        test(123)
+      }}></button>
+
+      {/* 箭头函数拿到 click 事件对象，箭头函数传参就是 event */}
+      <button onClick={(event) => {
+        test(123, event)
+      }}></button>
+    </div>
+  )
+}
+
 export default App
 ```
 
-#### 实现html循环遍历
+### 实现 HTML 循环遍历
 
-使用map来返回jsx片段
+使用 map 来返回 JSX 片段：
 
-``` jsx
+```tsx
 export function mapRender() {
   const arr = [1, 2, 3]
 
@@ -271,7 +270,12 @@ export function mapRender() {
       age: 20,
     },
   ]
-  interface userDto { name: string, age: number }
+
+  interface userDto {
+    name: string
+    age: number
+  }
+
   function UserCard({ user }: { user: userDto }) {
     return (
       <>
@@ -312,14 +316,12 @@ export function mapRender() {
           ))}
         </ul>
       </div>
-
     </>
   )
 }
 ```
 
-
-##### 动态添加item
+#### 动态添加 item
 
 ```tsx
 export function mapTest2() {
@@ -342,12 +344,11 @@ export function mapTest2() {
 }
 ```
 
-#### 条件渲染
+### 条件渲染
 
-v-if 渲染
+类似 Vue 的 v-if 渲染：
 
 ```tsx
-
 export function ifTest() {
   const [show, setShow] = useState(true)
 
@@ -358,110 +359,103 @@ export function ifTest() {
     </div>
   )
 }
-
-
 ```
 
-#### 添加内联样式
+### 添加内联样式
 
-``` jsx
-// 添加内联样式  
-const style1 = {  
-    width: '100px',  
-    height: '100px',  
-    backgroundColor: 'lightskyblue'  
-}  
-  
-const style2 = {  
-    width: 200  
-}  
-  
-/**  
- * 媒体查询 + 伪类使用 radium包裹  
- */  
-  
-function App() {  
-    return (  
-        <div>  
-            <div style={{backgroundColor: 'lightskyblue', width: '100px', height: '50px'}}></div>  
-            <div style={style1}></div>  
-            <div style={{...style1,...style2}}></div>  
-        </div>  
-    )  
-}  
-  
+```tsx
+// 添加内联样式
+const style1 = {
+  width: '100px',
+  height: '100px',
+  backgroundColor: 'lightskyblue'
+}
+
+const style2 = {
+  width: 200
+}
+
+/**
+ * 媒体查询 + 伪类使用 radium 包裹
+ */
+function App() {
+  return (
+    <div>
+      <div style={{ backgroundColor: 'lightskyblue', width: '100px', height: '50px' }}></div>
+      <div style={style1}></div>
+      <div style={{ ...style1, ...style2 }}></div>
+    </div>
+  )
+}
+
 export default App
 ```
 
-#### 添加外部css文件
+### 添加外部 CSS 文件
 
-``` js
+```javascript
 import './index.css'
 ```
 
 ```css
+/* index.css */
 
-/** index.css**/
+.box1 {
+  width: 100px;
+  height: 100px;
+  background-color: lightskyblue;
+}
+```
 
-.box1 {  
-    width: 100px;  
-    height: 100px;  
-    background-color: lightskyblue;  
+```tsx
+// 外源 CSS 的使用
+function App() {
+  return (
+    <div className="box1"></div>
+  )
 }
 
-```
-
-```jsx
-// 外源css的使用
-function App() {  
-    return (  
-        <div className={ 'box1' }></div>  
-    )  
-}  
-  
 export default App
-
 ```
 
+## 总结
 
-### 总结
+### 单个花括号和两个花括号
 
-单个花括号和两个花括号
+`{}`、`{{}}`
 
-{}
-{{}}
-
-##### 单个花括号
+#### 单个花括号
 
 使用场景：
 
-单个花括号的使用场景有且只有在 tag里面的属性或者是tag包裹的内容
+单个花括号的使用场景有且只有在 tag 里面的属性或者是 tag 包裹的内容。
 
-在单个花括号里面开启js的内容。
+在单个花括号里面开启 JS 的内容：
+
 ```tsx
-export function test(){
-    const testClass = 'input-wrapper'
-    const content = <div>123</div>
-    return (
-        <>
-            <input type="text" className={testClass}/>
-            <div>{content}</div>
-        </>
-    )
-}
+export function test() {
+  const testClass = 'input-wrapper'
+  const content = <div>123</div>
 
+  return (
+    <>
+      <input type="text" className={testClass} />
+      <div>{content}</div>
+    </>
+  )
+}
 ```
 
-##### 两个花括号
+#### 两个花括号
 
-绑定内联css
+绑定内联 CSS：
 
 style 绑定一个对象。
 
-所以其实两个花括号 = jsx的js域然后里面放一个对象
+所以其实两个花括号 = JSX 的 JS 域然后里面放一个对象。
 
-等同于我创建一个obj然后用单个花括号绑定进去
+等同于我创建一个 obj 然后用单个花括号绑定进去：
 
 ```tsx
-<div style={{width:"100px", height:"100px",backgroundColor:"red" }}></div>
+<div style={{ width: "100px", height: "100px", backgroundColor: "red" }}></div>
 ```
