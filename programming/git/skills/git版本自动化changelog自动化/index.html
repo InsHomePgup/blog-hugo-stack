@@ -1,0 +1,458 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content='发版困难的问题 随着项目的不断迭代和版本更新，版本号和更新日志的问题人工手动有点烦了。\n遂采用下面的方案，标准自动化commit + release\n使用下面的方案以后，发布版本被分解成 日常的详细commit + 自动语义化控制版本。\n使用方案后 日常 1 pnpm run commit 执行commit script来编写项目commit\n发版 1 pnpm run release 自动化升级版本 以及完善changelog\n行动 安装工具 1 pnpm install --save-dev commitizen cz-conventional-changelog standard-version 配置package.json 1 2 3 4 5 "config": { "commitizen": { "path": "cz-conventional-changelog" } } 添加一些scripts 方便使用 1 2 3 4 5 6 7 8 "scripts": { "commit": "cz", "release": "standard-version", "release:beta": "standard-version --prerelease beta", "release:minor": "standard-version --release-as minor", "release:major": "standard-version --release-as major", "release:patch": "standard-version --release-as patch" } 如果用了eslint的git pre commit检查的话，命令可以修改成先执行eslint再执行commit\n'><title>Git版本自动化，changeLog自动化</title><link rel=canonical href=https://inshomepgup.github.io/blog-hugo-stack/programming/git/skills/git%E7%89%88%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%8C%96changelog%E8%87%AA%E5%8A%A8%E5%8C%96/><link rel=stylesheet href=/blog-hugo-stack/scss/style.min.f68b832f31a512af1b27ab2ef1b295c4c74bbca7a399de24c16151b56cd3fff1.css><meta property='og:title' content="Git版本自动化，changeLog自动化"><meta property='og:description' content='发版困难的问题 随着项目的不断迭代和版本更新，版本号和更新日志的问题人工手动有点烦了。\n遂采用下面的方案，标准自动化commit + release\n使用下面的方案以后，发布版本被分解成 日常的详细commit + 自动语义化控制版本。\n使用方案后 日常 1 pnpm run commit 执行commit script来编写项目commit\n发版 1 pnpm run release 自动化升级版本 以及完善changelog\n行动 安装工具 1 pnpm install --save-dev commitizen cz-conventional-changelog standard-version 配置package.json 1 2 3 4 5 "config": { "commitizen": { "path": "cz-conventional-changelog" } } 添加一些scripts 方便使用 1 2 3 4 5 6 7 8 "scripts": { "commit": "cz", "release": "standard-version", "release:beta": "standard-version --prerelease beta", "release:minor": "standard-version --release-as minor", "release:major": "standard-version --release-as major", "release:patch": "standard-version --release-as patch" } 如果用了eslint的git pre commit检查的话，命令可以修改成先执行eslint再执行commit\n'><meta property='og:url' content='https://inshomepgup.github.io/blog-hugo-stack/programming/git/skills/git%E7%89%88%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%8C%96changelog%E8%87%AA%E5%8A%A8%E5%8C%96/'><meta property='og:site_name' content="Abra's Blog"><meta property='og:type' content='article'><meta property='article:section' content='Programming'><meta property='article:published_time' content='2025-04-25T00:00:00+00:00'><meta property='article:modified_time' content='2025-04-25T00:00:00+00:00'><meta name=twitter:title content="Git版本自动化，changeLog自动化"><meta name=twitter:description content='发版困难的问题 随着项目的不断迭代和版本更新，版本号和更新日志的问题人工手动有点烦了。\n遂采用下面的方案，标准自动化commit + release\n使用下面的方案以后，发布版本被分解成 日常的详细commit + 自动语义化控制版本。\n使用方案后 日常 1 pnpm run commit 执行commit script来编写项目commit\n发版 1 pnpm run release 自动化升级版本 以及完善changelog\n行动 安装工具 1 pnpm install --save-dev commitizen cz-conventional-changelog standard-version 配置package.json 1 2 3 4 5 "config": { "commitizen": { "path": "cz-conventional-changelog" } } 添加一些scripts 方便使用 1 2 3 4 5 6 7 8 "scripts": { "commit": "cz", "release": "standard-version", "release:beta": "standard-version --prerelease beta", "release:minor": "standard-version --release-as minor", "release:major": "standard-version --release-as major", "release:patch": "standard-version --release-as patch" } 如果用了eslint的git pre commit检查的话，命令可以修改成先执行eslint再执行commit\n'><link rel="shortcut icon" href=/blog-hugo-stack/favicon.ico><link rel=stylesheet href=/blog-hugo-stack/scss/custom-animations.min.css><link rel=stylesheet href=/blog-hugo-stack/scss/about.min.css><style>:root{--article-font-family:"LXGW WenKai", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif}@font-face{font-family:lato;font-display:swap;src:none!important}</style><script>(function(){const e=localStorage.getItem("StackColorScheme"),t=window.matchMedia("(prefers-color-scheme: dark)").matches,n=e||(t?"dark":"light");n==="dark"&&(document.documentElement.setAttribute("data-scheme","dark"),document.documentElement.style.colorScheme="dark")})()</script><script src=/blog-hugo-stack/js/custom.js></script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/blog-hugo-stack/><div><img src=https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/CyberpunkAvatar.jpg width=300 height=300 class=site-logo alt=Avatar></div></a></figure><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span></li><div class=site-meta><h1 class=site-name><a href=/blog-hugo-stack>Abra's Blog</a></h1><h2 class=site-description>艰苦卓绝 力争上游</h2></div></header><ol class=menu-social><li><a href=/blog-hugo-stack/index.xml target=_blank title=RSS rel=me><svg class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg></a></li><li><a href=https://github.com/InsHomePgup/blog-hugo-stack target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/blog-hugo-stack/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span></a></li><li><a href=/blog-hugo-stack/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li><a href=/blog-hugo-stack/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li><a href=/blog-hugo-stack/links/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Links</span></a></li><li><a href=/blog-hugo-stack/about/><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-braces"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 4A2 2 0 005 6v3a2 3 0 01-2 3 2 3 0 012 3v3a2 2 0 002 2"/><path d="M17 4a2 2 0 012 2v3a2 3 0 002 3 2 3 0 00-2 3v3a2 2 0 01-2 2"/></svg>
+<span>About</span></a></li><li class=menu-bottom-section><ol class=menu></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#发版困难的问题>发版困难的问题</a><ol><li><a href=#使用方案后>使用方案后</a><ol><li><a href=#日常>日常</a></li><li><a href=#发版>发版</a></li></ol></li><li><a href=#行动>行动</a></li><li><a href=#番外完全自动化升级版本>番外：完全自动化升级版本</a></li><li><a href=#语义化版本>语义化版本</a></li></ol></li><li><a href=#-语义化版本semver>🎯 语义化版本（SemVer）</a><ol><li><a href=#-举个例子理解>📌 举个例子理解</a><ol><li><a href=#-minor-更新>🟡 MINOR 更新</a></li><li><a href=#-major-更新>🔴 MAJOR 更新</a></li></ol></li><li><a href=#完整语义化发布的scripts>完整语义化发布的Scripts</a></li></ol></li><li><a href=#-实际项目发布场景模拟>🎬 实际项目发布场景模拟</a><ol><li><a href=#场景一日常功能迭代>场景一:日常功能迭代</a><ol><li><a href=#第-1-周日常开发>第 1 周:日常开发</a></li><li><a href=#第-2-周准备发版>第 2 周:准备发版</a></li></ol></li><li><a href=#场景二紧急修复生产-bug>场景二:紧急修复生产 Bug</a></li><li><a href=#场景三大版本重构>场景三:大版本重构</a><ol><li><a href=#阶段-1-alpha-内部测试1-2-周>阶段 1: Alpha 内部测试(1-2 周)</a></li><li><a href=#阶段-2-beta-公开测试2-3-周>阶段 2: Beta 公开测试(2-3 周)</a></li><li><a href=#阶段-3-rc-候选版本1-周>阶段 3: RC 候选版本(1 周)</a></li><li><a href=#阶段-4-正式发布>阶段 4: 正式发布</a></li></ol></li><li><a href=#场景四持续集成与自动发布>场景四:持续集成与自动发布</a><ol><li><a href=#github-actions-配置示例>GitHub Actions 配置示例</a></li><li><a href=#日常工作流>日常工作流</a></li></ol></li><li><a href=#场景五monorepo-多包管理>场景五:Monorepo 多包管理</a><ol><li><a href=#独立版本管理>独立版本管理</a></li><li><a href=#统一版本管理>统一版本管理</a></li></ol></li><li><a href=#-开发发布场景总结>🎯 开发发布场景总结</a><ol><li><a href=#-日常开发>✅ 日常开发</a></li><li><a href=#-版本发布>✅ 版本发布</a></li><li><a href=#-cicd-集成>✅ CI/CD 集成</a></li><li><a href=#-注意事项>⚠️ 注意事项</a></li></ol></li></ol></li></ol></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/blog-hugo-stack/categories/git/>Git</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/blog-hugo-stack/programming/git/skills/git%E7%89%88%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%8C%96changelog%E8%87%AA%E5%8A%A8%E5%8C%96/>Git版本自动化，changeLog自动化</a></h2></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published datetime=2025-04-25T00:00:00Z>Apr 25, 2025</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>6 minute read</time></div></footer></div></header><section class=article-content><h2 id=发版困难的问题>发版困难的问题</h2><p>随着项目的不断迭代和版本更新，版本号和更新日志的问题人工手动有点烦了。</p><p>遂采用下面的方案，标准自动化commit + release</p><p>使用下面的方案以后，发布版本被分解成 日常的详细commit + 自动语义化控制版本。</p><h3 id=使用方案后>使用方案后</h3><h4 id=日常>日常</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>pnpm run commit
+</span></span></code></pre></td></tr></table></div></div><p>执行commit script来编写项目commit</p><h4 id=发版>发版</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>pnpm run release
+</span></span></code></pre></td></tr></table></div></div><p>自动化升级版本 以及完善changelog</p><h3 id=行动>行动</h3><ol><li>安装工具</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pnpm install --save-dev commitizen cz-conventional-changelog standard-version
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>配置package.json</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=s2>&#34;config&#34;</span><span class=err>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;commitizen&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;path&#34;</span><span class=p>:</span> <span class=s2>&#34;cz-conventional-changelog&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>添加一些scripts 方便使用</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=s2>&#34;scripts&#34;</span><span class=err>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;commit&#34;</span><span class=p>:</span> <span class=s2>&#34;cz&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;release&#34;</span><span class=p>:</span> <span class=s2>&#34;standard-version&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;release:beta&#34;</span><span class=p>:</span> <span class=s2>&#34;standard-version --prerelease beta&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;release:minor&#34;</span><span class=p>:</span> <span class=s2>&#34;standard-version --release-as minor&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;release:major&#34;</span><span class=p>:</span> <span class=s2>&#34;standard-version --release-as major&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;release:patch&#34;</span><span class=p>:</span> <span class=s2>&#34;standard-version --release-as patch&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><blockquote><p>如果用了eslint的git pre commit检查的话，命令可以修改成先执行eslint再执行commit</p></blockquote><p>请根据自己需要来编辑这行命令</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;commit&#34;</span><span class=p>:</span> <span class=s2>&#34;git add . &amp;&amp; eslint . --fix &amp;&amp; git add . &amp;&amp; cz --no-verify&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>日常的commit怎么提交？</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pnpm run commit
+</span></span></code></pre></td></tr></table></div></div><p>根据提示完成提交。</p><ol start=5><li>发布版本</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>pnpm run release
+</span></span><span class=line><span class=cl># 或
+</span></span><span class=line><span class=cl>pnpm run release:minor
+</span></span><span class=line><span class=cl># 或
+</span></span><span class=line><span class=cl>pnpm run release:beta
+</span></span></code></pre></td></tr></table></div></div><ol start=6><li>推送</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git push --follow-tags <span class=c1># 同时推送版本的tags</span>
+</span></span><span class=line><span class=cl>npm publish   <span class=c1># 如果你要发 npm</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=番外完全自动化升级版本>番外：完全自动化升级版本</h3><p>自动 bump 版本 + 自动更新 changelog + 自动 add + 自动 commit，减少人工手动步骤。</p><p>在package.json 再添加一块配置</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=s2>&#34;standard-version&#34;</span><span class=err>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;scripts&#34;</span><span class=p>:</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;postbump&#34;</span><span class=p>:</span> <span class=s2>&#34;git add package.json CHANGELOG.md&#34;</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;postchangelog&#34;</span><span class=p>:</span> <span class=s2>&#34;git commit -m \&#34;chore(release): update changelog\&#34;&#34;</span>  
+</span></span><span class=line><span class=cl>  <span class=p>}</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span><span class=err>,</span>
+</span></span></code></pre></td></tr></table></div></div><p>现在只需要</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pnpm run release
+</span></span></code></pre></td></tr></table></div></div><p>就可以开始快乐的更新新的版本了。</p><h3 id=语义化版本>语义化版本</h3><h2 id=-语义化版本semver>🎯 语义化版本（SemVer）</h2><p>标准的版本号格式是这样的：</p><p>MAJOR.MINOR.PATCH
+比如：1.4.2</p><p>🔹 各部分代表什么？</p><div class=table-wrapper><table><thead><tr><th>名称</th><th>举例</th><th>意义简述</th></tr></thead><tbody><tr><td><code>MAJOR</code></td><td><code>1.x.x</code> → <code>2.0.0</code></td><td>💥 有<strong>破坏性变更</strong>，以前写的代码可能不能用了</td></tr><tr><td><code>MINOR</code></td><td><code>1.2.x</code> → <code>1.3.0</code></td><td>✨ 新增功能，但还是<strong>兼容旧代码</strong></td></tr><tr><td><code>PATCH</code></td><td><code>1.2.3</code> → <code>1.2.4</code></td><td>🐞 只修复 bug，不加新功能</td></tr></tbody></table></div><h3 id=-举个例子理解>📌 举个例子理解</h3><p>假设你有一个后端 API：</p><p>GET /user/info</p><p>🟢 PATCH 更新
+修了个 bug：某些 userId 会返回 500。</p><ul><li><p>版本从 <code>1.2.3</code> → <code>1.2.4</code></p></li><li><p>对别人来说，接口功能没变，只是更稳定了</p></li></ul><h4 id=-minor-更新>🟡 MINOR 更新</h4><p>加了一个新接口：</p><p>POST /user/follow</p><ul><li><p>版本从 <code>1.2.3</code> → <code>1.3.0</code></p></li><li><p>老接口都还在，新功能只是锦上添花，兼容的</p></li></ul><h4 id=-major-更新>🔴 MAJOR 更新</h4><p>你把原来的接口改名了：
+GET /user/info → GET /user/profile</p><ul><li><p>版本从 <code>1.2.3</code> → <code>2.0.0</code></p></li><li><p>以前调用 <code>/user/info</code> 的代码直接炸了，<strong>破坏性变更</strong></p></li></ul><p>🔸 预发布版本：Beta / Alpha / RC</p><p>语义版本还支持后缀，比如：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-matlab data-lang=matlab><span class=line><span class=cl><span class=mf>1.3</span><span class=p>.</span><span class=mi>0</span><span class=o>-</span><span class=nb>beta</span><span class=p>.</span><span class=mi>0</span>
+</span></span><span class=line><span class=cl><span class=mf>1.3</span><span class=p>.</span><span class=mi>0</span><span class=o>-</span><span class=n>alpha</span><span class=p>.</span><span class=mi>2</span>
+</span></span><span class=line><span class=cl><span class=mf>1.3</span><span class=p>.</span><span class=mi>0</span><span class=o>-</span><span class=n>rc</span><span class=p>.</span><span class=mi>1</span>
+</span></span></code></pre></td></tr></table></div></div><div class=table-wrapper><table><thead><tr><th>名称</th><th>意义</th><th>典型用法</th></tr></thead><tbody><tr><td><code>alpha</code></td><td>初步预览，功能未完成</td><td>内部开发阶段</td></tr><tr><td><code>beta</code></td><td>功能基本完成，开始测试</td><td>给测试人员用</td></tr><tr><td><code>rc</code></td><td>候选发布版（Release Candidate）</td><td>准备上线前的版本</td></tr><tr><td>这些版本不会覆盖正式版，是用于「提前发布但不影响稳定用户」。</td><td></td><td></td></tr></tbody></table></div><p>🧠 总结一句话：</p><blockquote><p><strong>Patch 是修 bug，Minor 是加功能，Major 是搞大事（破坏兼容性）</strong><br>Beta、Alpha、RC 是给「预发布」做准备的</p></blockquote><h3 id=完整语义化发布的scripts>完整语义化发布的Scripts</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=s2>&#34;scripts&#34;</span><span class=err>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;commit&#34;</span><span class=p>:</span> <span class=s2>&#34;cz&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;release&#34;</span><span class=p>:</span> <span class=s2>&#34;standard-version&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;release:patch&#34;</span><span class=p>:</span> <span class=s2>&#34;standard-version --release-as patch&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;release:minor&#34;</span><span class=p>:</span> <span class=s2>&#34;standard-version --release-as minor&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;release:major&#34;</span><span class=p>:</span> <span class=s2>&#34;standard-version --release-as major&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;release:alpha&#34;</span><span class=p>:</span> <span class=s2>&#34;standard-version --prerelease alpha&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;release:beta&#34;</span><span class=p>:</span> <span class=s2>&#34;standard-version --prerelease beta&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;release:rc&#34;</span><span class=p>:</span> <span class=s2>&#34;standard-version --prerelease rc&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;release:canary&#34;</span><span class=p>:</span> <span class=s2>&#34;standard-version --prerelease canary --skip.tag=true --skip.commit=true&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=table-wrapper><table><thead><tr><th>脚本命令</th><th>作用描述</th><th>示例版本变更</th></tr></thead><tbody><tr><td>release</td><td>自动根据提交信息生成版本（常规升级）</td><td>1.0.0 → 1.1.0 或 1.0.0 → 2.0.0（依据提交类型）</td></tr><tr><td>release:patch</td><td>仅发布一个补丁版本（修复 bug，无破坏性更改）</td><td>1.0.0 → 1.0.1</td></tr><tr><td>release:minor</td><td>发布一个次版本（添加功能，兼容旧版本）</td><td>1.0.0 → 1.1.0</td></tr><tr><td>release:major</td><td>发布一个主版本（不兼容的 API 更改）</td><td>1.0.0 → 2.0.0</td></tr><tr><td>release:alpha</td><td>发布 alpha 测试版本（先行版，不稳定，仅供测试）</td><td>1.0.0 → 1.0.1-alpha.0</td></tr><tr><td>release:beta</td><td>发布 beta 测试版本（功能相对稳定，但仍在验证）</td><td>1.0.0 → 1.0.1-beta.0</td></tr><tr><td>release:rc</td><td>发布候选版本（Release Candidate，接近最终发布）</td><td>1.0.0 → 1.0.1-rc.0</td></tr><tr><td>release:canary</td><td>发布 canary 版本（每日构建或预发布，跳过打 tag 和 commit）</td><td>1.0.0 → 1.0.1-canary.0（不生成 Git 标签与提交）</td></tr></tbody></table></div><h2 id=-实际项目发布场景模拟>🎬 实际项目发布场景模拟</h2><p>下面通过几个真实的开发场景,来演示如何在日常工作中使用这套自动化版本管理方案。</p><h3 id=场景一日常功能迭代>场景一:日常功能迭代</h3><p><strong>背景</strong>: 你正在开发一个 Vue3 组件库,当前版本是 <code>1.2.3</code></p><h4 id=第-1-周日常开发>第 1 周:日常开发</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 周一:修复了一个按钮组件的样式问题</span>
+</span></span><span class=line><span class=cl>pnpm run commit
+</span></span><span class=line><span class=cl><span class=c1># 选择: fix</span>
+</span></span><span class=line><span class=cl><span class=c1># 输入: 修复 Button 组件在暗色模式下的边框显示问题</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>git push
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 周三:新增了一个 Tooltip 组件</span>
+</span></span><span class=line><span class=cl>pnpm run commit
+</span></span><span class=line><span class=cl><span class=c1># 选择: feat</span>
+</span></span><span class=line><span class=cl><span class=c1># 输入: 新增 Tooltip 组件,支持四个方向的提示</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>git push
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 周五:优化了打包配置</span>
+</span></span><span class=line><span class=cl>pnpm run commit
+</span></span><span class=line><span class=cl><span class=c1># 选择: perf</span>
+</span></span><span class=line><span class=cl><span class=c1># 输入: 优化 Rollup 打包配置,减少 30% 的包体积</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>git push
+</span></span></code></pre></td></tr></table></div></div><h4 id=第-2-周准备发版>第 2 周:准备发版</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 查看本周的提交记录</span>
+</span></span><span class=line><span class=cl>git log --oneline
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 发现有新功能(feat),决定发布 minor 版本</span>
+</span></span><span class=line><span class=cl>pnpm run release:minor
+</span></span><span class=line><span class=cl><span class=c1># 自动升级: 1.2.3 → 1.3.0</span>
+</span></span><span class=line><span class=cl><span class=c1># 自动生成 CHANGELOG.md</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 推送版本和标签</span>
+</span></span><span class=line><span class=cl>git push --follow-tags
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 如果是 npm 包,发布到 npm</span>
+</span></span><span class=line><span class=cl>npm publish
+</span></span></code></pre></td></tr></table></div></div><p><strong>结果</strong>: 版本从 <code>1.2.3</code> → <code>1.3.0</code>,CHANGELOG 自动包含了这周的所有改动</p><hr><h3 id=场景二紧急修复生产-bug>场景二:紧急修复生产 Bug</h3><p><strong>背景</strong>: 线上版本 <code>2.1.0</code> 发现严重 bug,需要紧急修复</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 1. 基于当前 master 创建修复分支</span>
+</span></span><span class=line><span class=cl>git checkout -b hotfix/critical-bug
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 2. 修复代码后提交</span>
+</span></span><span class=line><span class=cl>pnpm run commit
+</span></span><span class=line><span class=cl><span class=c1># 选择: fix</span>
+</span></span><span class=line><span class=cl><span class=c1># 输入: 修复用户登录时 token 过期未刷新的问题</span>
+</span></span><span class=line><span class=cl><span class=c1># 标记 BREAKING CHANGE? No</span>
+</span></span><span class=line><span class=cl><span class=c1># 关联 issue: #234</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 3. 合并回 master</span>
+</span></span><span class=line><span class=cl>git checkout master
+</span></span><span class=line><span class=cl>git merge hotfix/critical-bug
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 4. 立即发布补丁版本</span>
+</span></span><span class=line><span class=cl>pnpm run release:patch
+</span></span><span class=line><span class=cl><span class=c1># 自动升级: 2.1.0 → 2.1.1</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 5. 推送并发布</span>
+</span></span><span class=line><span class=cl>git push --follow-tags
+</span></span><span class=line><span class=cl>npm publish
+</span></span></code></pre></td></tr></table></div></div><p><strong>时间线</strong>:</p><ul><li>14:00 发现 bug</li><li>14:30 修复完成并提交</li><li>14:45 版本 <code>2.1.1</code> 发布上线</li></ul><hr><h3 id=场景三大版本重构>场景三:大版本重构</h3><p><strong>背景</strong>: 项目从 Vue2 迁移到 Vue3,API 有破坏性变更,当前版本 <code>1.8.5</code></p><h4 id=阶段-1-alpha-内部测试1-2-周>阶段 1: Alpha 内部测试(1-2 周)</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 每天完成一部分迁移工作</span>
+</span></span><span class=line><span class=cl>pnpm run commit
+</span></span><span class=line><span class=cl><span class=c1># feat: 迁移核心组件到 Vue3 Composition API</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>pnpm run commit
+</span></span><span class=line><span class=cl><span class=c1># refactor: 重写状态管理,使用 Pinia 替代 Vuex</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 发布 alpha 版本供团队内部测试</span>
+</span></span><span class=line><span class=cl>pnpm run release:alpha
+</span></span><span class=line><span class=cl><span class=c1># 1.8.5 → 2.0.0-alpha.0</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>git push --follow-tags
+</span></span><span class=line><span class=cl>npm publish --tag alpha  <span class=c1># 使用 alpha 标签,不影响 latest</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=阶段-2-beta-公开测试2-3-周>阶段 2: Beta 公开测试(2-3 周)</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 修复 alpha 阶段发现的问题</span>
+</span></span><span class=line><span class=cl>pnpm run commit
+</span></span><span class=line><span class=cl><span class=c1># fix: 修复 Composition API 下响应式丢失问题</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 发布 beta 版本供更多用户测试</span>
+</span></span><span class=line><span class=cl>pnpm run release:beta
+</span></span><span class=line><span class=cl><span class=c1># 2.0.0-alpha.3 → 2.0.0-beta.0</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>git push --follow-tags
+</span></span><span class=line><span class=cl>npm publish --tag beta
+</span></span></code></pre></td></tr></table></div></div><h4 id=阶段-3-rc-候选版本1-周>阶段 3: RC 候选版本(1 周)</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 最后的打磨</span>
+</span></span><span class=line><span class=cl>pnpm run commit
+</span></span><span class=line><span class=cl><span class=c1># docs: 更新迁移指南文档</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 发布候选版本</span>
+</span></span><span class=line><span class=cl>pnpm run release:rc
+</span></span><span class=line><span class=cl><span class=c1># 2.0.0-beta.2 → 2.0.0-rc.0</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>git push --follow-tags
+</span></span><span class=line><span class=cl>npm publish --tag rc
+</span></span></code></pre></td></tr></table></div></div><h4 id=阶段-4-正式发布>阶段 4: 正式发布</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 一切就绪,发布正式版本</span>
+</span></span><span class=line><span class=cl>pnpm run release:major
+</span></span><span class=line><span class=cl><span class=c1># 2.0.0-rc.0 → 2.0.0</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>git push --follow-tags
+</span></span><span class=line><span class=cl>npm publish  <span class=c1># 发布到 latest 标签</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>完整时间线</strong>:</p><ul><li>第 1-2 周: <code>2.0.0-alpha.0</code> ~ <code>alpha.3</code> (内部测试)</li><li>第 3-5 周: <code>2.0.0-beta.0</code> ~ <code>beta.2</code> (公开测试)</li><li>第 6 周: <code>2.0.0-rc.0</code> ~ <code>rc.1</code> (发布候选)</li><li>第 7 周: <code>2.0.0</code> 正式发布</li></ul><hr><h3 id=场景四持续集成与自动发布>场景四:持续集成与自动发布</h3><p><strong>背景</strong>: 团队使用 GitHub Actions 实现自动化发布</p><h4 id=github-actions-配置示例>GitHub Actions 配置示例</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># .github/workflows/release.yml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Release</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>push</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>branches</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>master</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>release</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>fetch-depth</span><span class=p>:</span><span class=w> </span><span class=m>0</span><span class=w>  </span><span class=c># 获取完整历史用于生成 changelog</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/setup-node@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>node-version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;18&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install dependencies</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>pnpm install</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Build</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>pnpm run build</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Run tests</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>pnpm run test</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Release</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>env</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>GITHUB_TOKEN</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.GITHUB_TOKEN }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>NPM_TOKEN</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.NPM_TOKEN }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          git config user.name &#34;github-actions[bot]&#34;
+</span></span></span><span class=line><span class=cl><span class=sd>          git config user.email &#34;github-actions[bot]@users.noreply.github.com&#34;
+</span></span></span><span class=line><span class=cl><span class=sd>          pnpm run release
+</span></span></span><span class=line><span class=cl><span class=sd>          git push --follow-tags
+</span></span></span><span class=line><span class=cl><span class=sd>          npm publish</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h4 id=日常工作流>日常工作流</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 开发者只需要:</span>
+</span></span><span class=line><span class=cl><span class=c1># 1. 写代码</span>
+</span></span><span class=line><span class=cl><span class=c1># 2. 规范提交</span>
+</span></span><span class=line><span class=cl>pnpm run commit
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 3. 推送到 main 主分支</span>
+</span></span><span class=line><span class=cl>git push
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 剩下的事情 CI 自动完成:</span>
+</span></span><span class=line><span class=cl><span class=c1># ✅ 运行测试</span>
+</span></span><span class=line><span class=cl><span class=c1># ✅ 打包构建</span>
+</span></span><span class=line><span class=cl><span class=c1># ✅ 自动升级版本</span>
+</span></span><span class=line><span class=cl><span class=c1># ✅ 生成 CHANGELOG</span>
+</span></span><span class=line><span class=cl><span class=c1># ✅ 创建 Git Tag</span>
+</span></span><span class=line><span class=cl><span class=c1># ✅ 发布到 npm(如果是发布npm包)</span>
+</span></span><span class=line><span class=cl><span class=c1># ✅ 创建 GitHub Release</span>
+</span></span></code></pre></td></tr></table></div></div><hr><h3 id=场景五monorepo-多包管理>场景五:Monorepo 多包管理</h3><p><strong>背景</strong>: 使用 pnpm workspace 管理多个包,如 <code>@myapp/core</code>、<code>@myapp/ui</code>、<code>@myapp/utils</code></p><h4 id=独立版本管理>独立版本管理</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 只更新 core 包</span>
+</span></span><span class=line><span class=cl><span class=nb>cd</span> packages/core
+</span></span><span class=line><span class=cl>pnpm run commit
+</span></span><span class=line><span class=cl><span class=c1># feat: 添加新的数据校验方法</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>pnpm run release:minor
+</span></span><span class=line><span class=cl><span class=c1># @myapp/core: 1.2.0 → 1.3.0</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 只更新 ui 包</span>
+</span></span><span class=line><span class=cl><span class=nb>cd</span> packages/ui
+</span></span><span class=line><span class=cl>pnpm run commit
+</span></span><span class=line><span class=cl><span class=c1># fix: 修复表格组件的排序问题</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>pnpm run release:patch
+</span></span><span class=line><span class=cl><span class=c1># @myapp/ui: 2.1.3 → 2.1.4</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=统一版本管理>统一版本管理</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 根目录配置 script</span>
+</span></span><span class=line><span class=cl><span class=s2>&#34;scripts&#34;</span>: <span class=o>{</span>
+</span></span><span class=line><span class=cl>  <span class=s2>&#34;release:all&#34;</span>: <span class=s2>&#34;lerna version --conventional-commits &amp;&amp; lerna publish from-git&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 一次性发布所有有变更的包</span>
+</span></span><span class=line><span class=cl>pnpm run release:all
+</span></span></code></pre></td></tr></table></div></div><hr><h3 id=-开发发布场景总结>🎯 开发发布场景总结</h3><h4 id=-日常开发>✅ 日常开发</h4><ol><li><strong>每个功能/修复都要单独提交</strong>,不要攒一堆一起提交</li><li><strong>使用 <code>pnpm run commit</code></strong> 强制规范化提交信息</li><li><strong>及时推送</strong>,避免本地积累太多 commit</li></ol><h4 id=-版本发布>✅ 版本发布</h4><ol><li><strong>小版本(patch)</strong>: 每周或每两周一次,累积的 bug 修复</li><li><strong>中版本(minor)</strong>: 每月一次,新功能比较稳定时</li><li><strong>大版本(major)</strong>: 每季度或每半年,重大重构或 API 变更</li><li><strong>预发布版本</strong>:<ul><li><code>alpha</code>: 内部开发团队使用</li><li><code>beta</code>: 小范围用户测试</li><li><code>rc</code>: 准备正式发布前的最后验证</li></ul></li></ol><h4 id=-cicd-集成>✅ CI/CD 集成</h4><ol><li>在 CI 中自动运行测试</li><li>测试通过后才允许发布</li><li>自动推送 tag 和创建 GitHub Release</li><li>生产环境只部署正式版本,测试环境可以用 beta/rc</li></ol><h4 id=-注意事项>⚠️ 注意事项</h4><ol><li><strong>发布前检查</strong>: <code>git log</code> 确认要包含的改动</li><li><strong>不要手动改版本号</strong>: 完全交给 <code>standard-version</code></li><li><strong>CHANGELOG 不要手动编辑</strong>: 自动生成的才能保证一致性</li><li><strong>预发布不要覆盖 latest</strong>: 使用 <code>npm publish --tag beta</code></li><li><strong>重要版本打 tag 后不要删除</strong>: tag 是版本的永久标记</li></ol></section><footer class=article-footer><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>Related content</h2><div class=related-content><div class="flex article-list--tile"><article><a href=/blog-hugo-stack/programming/git/commands/tag/01/><div class=article-details><h2 class=article-title>git tag</h2></div></a></article><article><a href=/blog-hugo-stack/programming/git/guide/git3---%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E6%8E%A8%E9%80%81--remote-+-push/><div class=article-details><h2 class=article-title>Git(3)--远程仓库与推送--remote + push</h2></div></a></article><article><a href=/blog-hugo-stack/programming/git/guide/git4---%E8%BF%98%E5%8E%9F---reset-%E4%BB%8E%E6%9A%82%E5%AD%98%E5%8C%BA%E5%92%8C-commit-%E8%BF%98%E5%8E%9F/><div class=article-details><h2 class=article-title>Git(4)---还原---reset 从暂存区和 commit 还原</h2></div></a></article><article><a href=/blog-hugo-stack/programming/git/guide/git5---%E5%88%86%E6%94%AF%E4%B8%8E%E5%90%88%E5%B9%B6---branch+merge/><div class=article-details><h2 class=article-title>Git(5)---分支---branch</h2></div></a></article><article><a href=/blog-hugo-stack/programming/git/guide/git6---%E6%A0%87%E7%AD%BE---tag/><div class=article-details><h2 class=article-title>Git(6)---标签---tag</h2></div></a></article></div></div></aside><footer class=site-footer><section class=copyright>&copy;
+2020 -
+2025 Abra's Blog</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.32.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/blog-hugo-stack/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js defer></script><script></script></body></html>
