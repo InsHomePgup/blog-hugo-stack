@@ -25,6 +25,8 @@ pnpm create vite react-starter --template react-ts
 
 ##### 添加一些依赖
 
+看自己的喜欢添加一些依赖。
+
 - unocss
 - antfu eslint
 - lodash-es
@@ -36,17 +38,17 @@ pnpm create vite react-starter --template react-ts
 
 #### 组件声明
 
-JSX必须有一个根节点
+##### JSX必须有一个根节点
 
 可以是 <></>  // 这是一个 _[Fragment](https://react.dev/reference/react/Fragment)_
 
-所有html标签必须结束
+##### 所有html标签必须结束
 
 不管是单标签还是双标签都必须结束
 
 >JSX requires tags to be explicitly closed: self-closing tags like `<img>` must become `<img />`, and wrapping tags like `<li>oranges` must be written as `<li>oranges</li>`.
 
-大部分react 的东西都使用 驼峰。
+##### 大部分react 的东西都使用 驼峰。
 
 比如绑定事件 onClick
 
@@ -64,9 +66,9 @@ export default function Page() {
 
 导出，用ES6语法，导出一个函数返回一个JSX片段。
 
-注意：不要在组件内部再去申明一个组件。
+> 注意：不要在组件内部再去申明一个组件。
 
-注意：react组件的使用需要开头大写，这样来区分原生的html标签。
+> 注意：react组件的使用需要开头大写，这样来区分原生的html标签。
 
 ```tsx
 export default function Gallery() {
@@ -250,7 +252,6 @@ export default App
 #### 实现html循环遍历
 
 使用map来返回jsx片段
-
 
 ``` jsx
 export function mapRender() {
