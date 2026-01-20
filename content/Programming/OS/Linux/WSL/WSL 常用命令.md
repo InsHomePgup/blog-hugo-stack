@@ -15,6 +15,8 @@ categories:
 wsl --version
 ```
 
+![version](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20260120131940011.png)
+
 ### 列出已安装的发行版
 
 ```pwsh
