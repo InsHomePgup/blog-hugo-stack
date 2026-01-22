@@ -1,0 +1,305 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content='前沿 准备启动一个项目用来认真学习vue-router的特性。\n使用vite的vue-ts模板创建一个项目。\nhttps://vite.dev/guide/\n1 pnpm create vite vue-ts-router-app --template vue-ts https://router.vuejs.org/guide/\n根据Starter我们来看router的第一个特性\n两个html标签\nrouter-link和router-view\n一个是用来跳转\n一个是用来嵌套视图的显示\nrouter-link 渲染成a标签，作用就是用来跳转路由页面，会自动处理url和浏览器历史记录，可以不刷新页面。\nThis allows Vue Router to change the URL without reloading the page\n1 2 3 <router-link to="/about">关于我们</router-link> <!-- 渲染以后 --> <a href="/about">关于我们</a> 常用属性：to 如上所示，后面就是跟一个path\nreplace 默认是调用router.push()\n如果加上这个replace属性则是调用 router.replace()\nreplace可以简单理解为跳转到目标页面但是不添加历史记录\n1 <router-link to="/login" replace>登录</router-link> router-view 嵌套视图的标签\nrouter instance 路由实例 创建路由实例有三个函数，可以来看一下。\n🔧 三种路由模式对比 模式名 路由函数 URL 形式 适用场景 优点 缺点 HTML5模式 createWebHistory() /about 正常部署、有服务端支持的 SPA 项目 地址美观，支持 SEO（SSR） 需要服务端配置支持 fallback（如 nginx history 模式） Hash模式 createWebHashHistory() /#/about 静态部署，无后端支持 不依赖后端，兼容性最好 URL 有 #，不美观，SEO 差 内存模式 createMemoryHistory() 不显示在地址栏 测试环境、SSR、非浏览器环境 不依赖 URL，易于测试 不能使用浏览器导航，无法被书签或 URL 定位 主流的我们还是使用前两个，内存路由我的理解是SSR和Electron的时候使用。 三个路由模式的性能之间的插件是微乎其微的。\n'><title>router特性学习</title><link rel=canonical href=https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/vuerouter/router%E7%89%B9%E6%80%A7%E5%AD%A6%E4%B9%A0/><link rel=stylesheet href=/blog-hugo-stack/scss/style.min.0404a8679904374306ac0495fcdd674d492806bafbcf460bb18faf807634fbf1.css><meta property='og:title' content="router特性学习"><meta property='og:description' content='前沿 准备启动一个项目用来认真学习vue-router的特性。\n使用vite的vue-ts模板创建一个项目。\nhttps://vite.dev/guide/\n1 pnpm create vite vue-ts-router-app --template vue-ts https://router.vuejs.org/guide/\n根据Starter我们来看router的第一个特性\n两个html标签\nrouter-link和router-view\n一个是用来跳转\n一个是用来嵌套视图的显示\nrouter-link 渲染成a标签，作用就是用来跳转路由页面，会自动处理url和浏览器历史记录，可以不刷新页面。\nThis allows Vue Router to change the URL without reloading the page\n1 2 3 <router-link to="/about">关于我们</router-link> <!-- 渲染以后 --> <a href="/about">关于我们</a> 常用属性：to 如上所示，后面就是跟一个path\nreplace 默认是调用router.push()\n如果加上这个replace属性则是调用 router.replace()\nreplace可以简单理解为跳转到目标页面但是不添加历史记录\n1 <router-link to="/login" replace>登录</router-link> router-view 嵌套视图的标签\nrouter instance 路由实例 创建路由实例有三个函数，可以来看一下。\n🔧 三种路由模式对比 模式名 路由函数 URL 形式 适用场景 优点 缺点 HTML5模式 createWebHistory() /about 正常部署、有服务端支持的 SPA 项目 地址美观，支持 SEO（SSR） 需要服务端配置支持 fallback（如 nginx history 模式） Hash模式 createWebHashHistory() /#/about 静态部署，无后端支持 不依赖后端，兼容性最好 URL 有 #，不美观，SEO 差 内存模式 createMemoryHistory() 不显示在地址栏 测试环境、SSR、非浏览器环境 不依赖 URL，易于测试 不能使用浏览器导航，无法被书签或 URL 定位 主流的我们还是使用前两个，内存路由我的理解是SSR和Electron的时候使用。 三个路由模式的性能之间的插件是微乎其微的。\n'><meta property='og:url' content='https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/vuerouter/router%E7%89%B9%E6%80%A7%E5%AD%A6%E4%B9%A0/'><meta property='og:site_name' content="Abra's Blog"><meta property='og:type' content='article'><meta property='article:section' content='Programming'><meta property='article:published_time' content='2025-04-16T00:00:00+00:00'><meta property='article:modified_time' content='2025-04-16T00:00:00+00:00'><meta name=twitter:title content="router特性学习"><meta name=twitter:description content='前沿 准备启动一个项目用来认真学习vue-router的特性。\n使用vite的vue-ts模板创建一个项目。\nhttps://vite.dev/guide/\n1 pnpm create vite vue-ts-router-app --template vue-ts https://router.vuejs.org/guide/\n根据Starter我们来看router的第一个特性\n两个html标签\nrouter-link和router-view\n一个是用来跳转\n一个是用来嵌套视图的显示\nrouter-link 渲染成a标签，作用就是用来跳转路由页面，会自动处理url和浏览器历史记录，可以不刷新页面。\nThis allows Vue Router to change the URL without reloading the page\n1 2 3 <router-link to="/about">关于我们</router-link> <!-- 渲染以后 --> <a href="/about">关于我们</a> 常用属性：to 如上所示，后面就是跟一个path\nreplace 默认是调用router.push()\n如果加上这个replace属性则是调用 router.replace()\nreplace可以简单理解为跳转到目标页面但是不添加历史记录\n1 <router-link to="/login" replace>登录</router-link> router-view 嵌套视图的标签\nrouter instance 路由实例 创建路由实例有三个函数，可以来看一下。\n🔧 三种路由模式对比 模式名 路由函数 URL 形式 适用场景 优点 缺点 HTML5模式 createWebHistory() /about 正常部署、有服务端支持的 SPA 项目 地址美观，支持 SEO（SSR） 需要服务端配置支持 fallback（如 nginx history 模式） Hash模式 createWebHashHistory() /#/about 静态部署，无后端支持 不依赖后端，兼容性最好 URL 有 #，不美观，SEO 差 内存模式 createMemoryHistory() 不显示在地址栏 测试环境、SSR、非浏览器环境 不依赖 URL，易于测试 不能使用浏览器导航，无法被书签或 URL 定位 主流的我们还是使用前两个，内存路由我的理解是SSR和Electron的时候使用。 三个路由模式的性能之间的插件是微乎其微的。\n'><link rel="shortcut icon" href=/blog-hugo-stack/favicon.ico><link rel=stylesheet href=/blog-hugo-stack/scss/custom-animations.min.css><link rel=stylesheet href=/blog-hugo-stack/scss/about.min.css><style>:root{--article-font-family:"LXGW WenKai", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif}@font-face{font-family:lato;font-display:swap;src:none!important}</style><script>(function(){const e=localStorage.getItem("StackColorScheme"),t=window.matchMedia("(prefers-color-scheme: dark)").matches,n=e||(t?"dark":"light");n==="dark"&&(document.documentElement.setAttribute("data-scheme","dark"),document.documentElement.style.colorScheme="dark")})()</script><script src=/blog-hugo-stack/js/custom.js></script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/blog-hugo-stack/><div><img src=https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/CyberpunkAvatar.jpg width=300 height=300 class=site-logo alt=Avatar></div></a></figure><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span></li><div class=site-meta><h1 class=site-name><a href=/blog-hugo-stack>Abra's Blog</a></h1><h2 class=site-description>艰苦卓绝 力争上游</h2></div></header><ol class=menu-social><li><a href=/blog-hugo-stack/index.xml target=_blank title=RSS rel=me><svg class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg></a></li><li><a href=https://github.com/InsHomePgup/blog-hugo-stack target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/blog-hugo-stack/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span></a></li><li><a href=/blog-hugo-stack/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li><a href=/blog-hugo-stack/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li><a href=/blog-hugo-stack/links/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Links</span></a></li><li><a href=/blog-hugo-stack/about/><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-braces"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 4A2 2 0 005 6v3a2 3 0 01-2 3 2 3 0 012 3v3a2 2 0 002 2"/><path d="M17 4a2 2 0 012 2v3a2 3 0 002 3 2 3 0 00-2 3v3a2 2 0 01-2 2"/></svg>
+<span>About</span></a></li><li class=menu-bottom-section><ol class=menu></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ol><li><ol><li><a href=#前沿>前沿</a><ol><li><a href=#router-link>router-link</a></li><li><a href=#router-view>router-view</a></li></ol></li><li><a href=#router-instance-路由实例>router instance 路由实例</a></li><li><a href=#-三种路由模式对比>🔧 三种路由模式对比</a></li><li><a href=#在-maints的一个配置>在 main.ts的一个配置</a></li><li><a href=#两个hooks>两个hooks</a></li><li><a href=#嵌套路由>嵌套路由</a></li></ol></li></ol></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><div class=article-title-wrapper><h2 class=article-title><a href=/blog-hugo-stack/programming/frontend/vue/vuerouter/router%E7%89%B9%E6%80%A7%E5%AD%A6%E4%B9%A0/>router特性学习</a></h2></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published datetime=2025-04-16T00:00:00Z>Apr 16, 2025</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>3 minute read</time></div></footer></div></header><section class=article-content><h3 id=前沿>前沿</h3><p>准备启动一个项目用来认真学习vue-router的特性。</p><p>使用vite的vue-ts模板创建一个项目。</p><p><a class=link href=https://vite.dev/guide/ target=_blank rel=noopener>https://vite.dev/guide/</a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>pnpm create vite vue-ts-router-app --template vue-ts
+</span></span></code></pre></td></tr></table></div></div><p><a class=link href=https://router.vuejs.org/guide/ target=_blank rel=noopener>https://router.vuejs.org/guide/</a></p><p>根据Starter我们来看router的第一个特性</p><p>两个html标签</p><p>router-link和router-view</p><p>一个是用来跳转</p><p>一个是用来嵌套视图的显示</p><h4 id=router-link>router-link</h4><p>渲染成a标签，作用就是用来跳转路由页面，会自动处理url和浏览器历史记录，可以不刷新页面。</p><blockquote><p>This allows Vue Router to change the URL without reloading the page</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-vue data-lang=vue><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>router-link</span> <span class=na>to</span><span class=o>=</span><span class=s>&#34;/about&#34;</span><span class=p>&gt;</span><span class=nx>关于我们</span><span class=p>&lt;/</span><span class=nt>router-link</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=c>&lt;!--</span> <span class=nx>渲染以后</span> <span class=o>--&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>a</span> <span class=na>href</span><span class=o>=</span><span class=s>&#34;/about&#34;</span><span class=p>&gt;</span><span class=nx>关于我们</span><span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h5 id=常用属性to>常用属性：to</h5><p>如上所示，后面就是跟一个path</p><h5 id=replace>replace</h5><p>默认是调用router.push()</p><p>如果加上这个replace属性则是调用 router.replace()</p><p>replace可以简单理解为跳转到目标页面但是不添加历史记录</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-vue data-lang=vue><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>router-link</span> <span class=na>to</span><span class=o>=</span><span class=s>&#34;/login&#34;</span> <span class=na>replace</span><span class=p>&gt;</span><span class=nx>登录</span><span class=p>&lt;/</span><span class=nt>router-link</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=router-view>router-view</h4><p>嵌套视图的标签</p><h3 id=router-instance-路由实例>router instance 路由实例</h3><p>创建路由实例有三个函数，可以来看一下。</p><h3 id=-三种路由模式对比>🔧 三种路由模式对比</h3><div class=table-wrapper><table><thead><tr><th>模式名</th><th>路由函数</th><th>URL 形式</th><th>适用场景</th><th>优点</th><th>缺点</th></tr></thead><tbody><tr><td><strong>HTML5模式</strong></td><td><code>createWebHistory()</code></td><td><code>/about</code></td><td>正常部署、有服务端支持的 SPA 项目</td><td>地址美观，支持 SEO（SSR）</td><td>需要服务端配置支持 fallback（如 nginx history 模式）</td></tr><tr><td><strong>Hash模式</strong></td><td><code>createWebHashHistory()</code></td><td><code>/#/about</code></td><td>静态部署，无后端支持</td><td>不依赖后端，兼容性最好</td><td>URL 有 <code>#</code>，不美观，SEO 差</td></tr><tr><td><strong>内存模式</strong></td><td><code>createMemoryHistory()</code></td><td>不显示在地址栏</td><td>测试环境、SSR、非浏览器环境</td><td>不依赖 URL，易于测试</td><td>不能使用浏览器导航，无法被书签或 URL 定位</td></tr><tr><td>主流的我们还是使用前两个，内存路由我的理解是SSR和Electron的时候使用。</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div><p>三个路由模式的性能之间的插件是微乎其微的。</p><p>创建路由对象的example</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ts data-lang=ts><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>createRouter</span><span class=p>,</span> <span class=nx>createWebHashHistory</span><span class=p>}</span> <span class=kr>from</span> <span class=s1>&#39;vue-router&#39;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>HomeView</span> <span class=kr>from</span> <span class=s1>&#39;@/pages/home.vue&#39;</span>  
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>AboutView</span> <span class=kr>from</span> <span class=s1>&#39;@/pages/about.vue&#39;</span>  
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>UserView</span> <span class=kr>from</span> <span class=s1>&#39;@/pages/user.vue&#39;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>routes</span> <span class=o>=</span> <span class=p>[</span>  
+</span></span><span class=line><span class=cl>    <span class=p>{</span> <span class=nx>path</span><span class=o>:</span> <span class=s1>&#39;/&#39;</span><span class=p>,</span> <span class=nx>component</span>: <span class=kt>HomeView</span> <span class=p>},</span>  
+</span></span><span class=line><span class=cl>    <span class=p>{</span> <span class=nx>path</span><span class=o>:</span> <span class=s1>&#39;/about&#39;</span><span class=p>,</span> <span class=nx>component</span>: <span class=kt>AboutView</span> <span class=p>},</span>  
+</span></span><span class=line><span class=cl>    <span class=p>{</span> <span class=nx>path</span><span class=o>:</span> <span class=s1>&#39;/user&#39;</span><span class=p>,</span> <span class=nx>component</span>: <span class=kt>UserView</span> <span class=p>},</span>  
+</span></span><span class=line><span class=cl><span class=p>]</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>router</span> <span class=o>=</span> <span class=nx>createRouter</span><span class=p>({</span>  
+</span></span><span class=line><span class=cl>    <span class=nx>history</span>: <span class=kt>createWebHashHistory</span><span class=p>(),</span>  
+</span></span><span class=line><span class=cl>    <span class=nx>routes</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl><span class=p>})</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=nx>router</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=在-maints的一个配置>在 main.ts的一个配置</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ts data-lang=ts><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>createApp</span> <span class=p>}</span> <span class=kr>from</span> <span class=s1>&#39;vue&#39;</span>  
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=s1>&#39;./style.css&#39;</span>  
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>App</span> <span class=kr>from</span> <span class=s1>&#39;./App.vue&#39;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>router</span> <span class=kr>from</span> <span class=s1>&#39;@/router/index.ts&#39;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>app</span> <span class=o>=</span> <span class=nx>createApp</span><span class=p>(</span><span class=nx>App</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl><span class=nx>app</span><span class=p>.</span><span class=nx>use</span><span class=p>(</span><span class=nx>router</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl><span class=nx>app</span><span class=p>.</span><span class=nx>mount</span><span class=p>(</span><span class=s1>&#39;#app&#39;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=两个hooks>两个hooks</h3><p>useRoute和useRouter;</p><p>简单理解，一个用来获取参数，一个用来完成跳转路由。</p><p>useRouter：编程式路由导航</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ts data-lang=ts><span class=line><span class=cl><span class=kr>const</span> <span class=nx>router</span> <span class=o>=</span> <span class=nx>useRouter</span><span class=p>();</span>  
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>openPath</span><span class=p>(</span><span class=nx>path</span>:<span class=kt>string</span><span class=p>){</span>  
+</span></span><span class=line><span class=cl>    <span class=nx>router</span><span class=p>.</span><span class=nx>push</span><span class=p>({</span>  
+</span></span><span class=line><span class=cl>        <span class=nx>path</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl>        <span class=nx>query</span><span class=o>:</span><span class=p>{</span>  
+</span></span><span class=line><span class=cl>            <span class=nx>a</span>:<span class=kt>1</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl>            <span class=nx>b</span>:<span class=kt>2</span>  
+</span></span><span class=line><span class=cl>        <span class=p>}</span>  
+</span></span><span class=line><span class=cl>    <span class=p>})</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>useRoute获取路由跳转参数</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ts data-lang=ts><span class=line><span class=cl><span class=kr>const</span> <span class=nx>route</span> <span class=o>=</span> <span class=nx>useRoute</span><span class=p>();</span>  
+</span></span><span class=line><span class=cl><span class=nx>onMounted</span><span class=p>(()</span> <span class=o>=&gt;</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>route</span><span class=p>.</span><span class=nx>query</span><span class=p>);</span>  
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=嵌套路由>嵌套路由</h3><p>比较常见的我们前端的布局方式使用的就是Layout + router-view来完成页面。</p><p>为了实践嵌套路由的特性，我们这里来一个最简单的layout。</p><p>src/Layout/BaseLayout.vue</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-vue data-lang=vue><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>template</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;base-layout&#34;</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>header</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;header&#34;</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>h1</span><span class=p>&gt;</span><span class=nx>基础布局</span><span class=p>&lt;/</span><span class=nt>h1</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>nav</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;nav&#34;</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>RouterLink</span> <span class=na>to</span><span class=o>=</span><span class=s>&#34;/&#34;</span><span class=p>&gt;</span><span class=nx>首页</span><span class=p>&lt;/</span><span class=nt>RouterLink</span><span class=p>&gt;</span> <span class=o>|</span>  
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>RouterLink</span> <span class=na>to</span><span class=o>=</span><span class=s>&#34;/about&#34;</span><span class=p>&gt;</span><span class=nx>关于</span><span class=p>&lt;/</span><span class=nt>RouterLink</span><span class=p>&gt;</span> <span class=o>|</span>  
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>RouterLink</span> <span class=na>to</span><span class=o>=</span><span class=s>&#34;/user/1&#34;</span><span class=p>&gt;</span><span class=nx>用户</span><span class=p>&lt;/</span><span class=nt>RouterLink</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>      <span class=p>&lt;/</span><span class=nt>nav</span><span class=p>&gt;</span>    <span class=p>&lt;/</span><span class=nt>header</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>main</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;content&#34;</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>      <span class=c>&lt;!--</span> <span class=nx>这里是嵌套路由的出口</span> <span class=o>--&gt;</span>  
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>RouterView</span> <span class=p>/&gt;</span>  
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>main</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>footer</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;footer&#34;</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span><span class=err>©</span> <span class=mi>2025</span> <span class=nx>Vue</span> <span class=nx>Router</span> <span class=nx>示例</span><span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>footer</span><span class=p>&gt;</span>  <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;&lt;/</span><span class=nt>template</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>setup</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;ts&#34;</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl><span class=c1>// 无需额外逻辑  
+</span></span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>style</span> <span class=na>scoped</span><span class=p>&gt;</span>  
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nx>base</span><span class=o>-</span><span class=nx>layout</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>display</span><span class=o>:</span> <span class=nx>flex</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>flex</span><span class=o>-</span><span class=nx>direction</span><span class=o>:</span> <span class=nx>column</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>min</span><span class=o>-</span><span class=nx>height</span><span class=o>:</span> <span class=mi>100</span><span class=nx>vh</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nx>header</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>background</span><span class=o>-</span><span class=nx>color</span><span class=o>:</span> <span class=err>#</span><span class=nx>f5f5f5</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>padding</span><span class=o>:</span> <span class=mi>1</span><span class=nx>rem</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>text</span><span class=o>-</span><span class=nx>align</span><span class=o>:</span> <span class=nx>center</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nx>nav</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>margin</span><span class=o>-</span><span class=nx>top</span><span class=o>:</span> <span class=mi>1</span><span class=nx>rem</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nx>nav</span> <span class=nx>a</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>margin</span><span class=o>:</span> <span class=mi>0</span> <span class=mf>0.5</span><span class=nx>rem</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>color</span><span class=o>:</span> <span class=err>#</span><span class=mi>2</span><span class=nx>c3e50</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>text</span><span class=o>-</span><span class=nx>decoration</span><span class=o>:</span> <span class=nx>none</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nx>nav</span> <span class=nx>a</span><span class=p>.</span><span class=nx>router</span><span class=o>-</span><span class=nx>link</span><span class=o>-</span><span class=nx>active</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>color</span><span class=o>:</span> <span class=err>#</span><span class=mi>42</span><span class=nx>b983</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>font</span><span class=o>-</span><span class=nx>weight</span><span class=o>:</span> <span class=nx>bold</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nx>content</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>flex</span><span class=o>:</span> <span class=mi>1</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>padding</span><span class=o>:</span> <span class=mi>1</span><span class=nx>rem</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nx>footer</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>background</span><span class=o>-</span><span class=nx>color</span><span class=o>:</span> <span class=err>#</span><span class=nx>f5f5f5</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>padding</span><span class=o>:</span> <span class=mi>1</span><span class=nx>rem</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl>  <span class=nx>text</span><span class=o>-</span><span class=nx>align</span><span class=o>:</span> <span class=nx>center</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl><span class=p>}</span>  
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>style</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>多级嵌套路由的路由配置</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ts data-lang=ts><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>createRouter</span><span class=p>,</span> <span class=nx>createWebHashHistory</span><span class=p>}</span> <span class=kr>from</span> <span class=s1>&#39;vue-router&#39;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>HomeView</span> <span class=kr>from</span> <span class=s1>&#39;@/pages/home.vue&#39;</span>  
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>AboutView</span> <span class=kr>from</span> <span class=s1>&#39;@/pages/about.vue&#39;</span>  
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>UserView</span> <span class=kr>from</span> <span class=s1>&#39;@/pages/user.vue&#39;</span>  
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>BaseLayout</span> <span class=kr>from</span> <span class=s1>&#39;@/Layout/BaseLayout.vue&#39;</span>  
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>CardView</span> <span class=kr>from</span> <span class=s1>&#39;@/pages/About/Card.vue&#39;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>routes</span> <span class=o>=</span> <span class=p>[</span>  
+</span></span><span class=line><span class=cl>    <span class=p>{</span>   
+</span></span><span class=line><span class=cl>        <span class=nx>path</span><span class=o>:</span> <span class=s1>&#39;/&#39;</span><span class=p>,</span>   
+</span></span><span class=line><span class=cl>        <span class=nx>component</span>: <span class=kt>BaseLayout</span><span class=p>,</span>  <span class=c1>// 使用layout
+</span></span></span><span class=line><span class=cl>        <span class=nx>children</span><span class=o>:</span> <span class=p>[</span>    <span class=c1>// 第一级嵌套
+</span></span></span><span class=line><span class=cl>            <span class=p>{</span> <span class=nx>path</span><span class=o>:</span> <span class=s1>&#39;&#39;</span><span class=p>,</span> <span class=nx>component</span>: <span class=kt>HomeView</span> <span class=p>},</span>  
+</span></span><span class=line><span class=cl>            <span class=p>{</span>   
+</span></span><span class=line><span class=cl>                <span class=nx>path</span><span class=o>:</span> <span class=s1>&#39;about&#39;</span><span class=p>,</span>   
+</span></span><span class=line><span class=cl>                <span class=nx>component</span>: <span class=kt>AboutView</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl>                <span class=c1>// 添加嵌套路由
+</span></span></span><span class=line><span class=cl>                <span class=nx>children</span><span class=o>:</span> <span class=p>[</span>    <span class=c1>// 二级嵌套
+</span></span></span><span class=line><span class=cl>                    <span class=p>{</span>  
+</span></span><span class=line><span class=cl>                        <span class=nx>path</span><span class=o>:</span> <span class=s1>&#39;card&#39;</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl>                        <span class=nx>component</span>: <span class=kt>CardView</span>  
+</span></span><span class=line><span class=cl>                    <span class=p>}</span>  
+</span></span><span class=line><span class=cl>                <span class=p>]</span>  
+</span></span><span class=line><span class=cl>            <span class=p>},</span>  
+</span></span><span class=line><span class=cl>            <span class=p>{</span> <span class=nx>path</span><span class=o>:</span> <span class=s1>&#39;user/:id&#39;</span><span class=p>,</span> <span class=nx>component</span>: <span class=kt>UserView</span> <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=p>]</span>  
+</span></span><span class=line><span class=cl>    <span class=p>},</span>  
+</span></span><span class=line><span class=cl><span class=p>]</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>router</span> <span class=o>=</span> <span class=nx>createRouter</span><span class=p>({</span>  
+</span></span><span class=line><span class=cl>    <span class=nx>history</span>: <span class=kt>createWebHashHistory</span><span class=p>(),</span>  
+</span></span><span class=line><span class=cl>    <span class=nx>routes</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl><span class=p>})</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=nx>router</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div></section><footer class=article-footer><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><footer class=site-footer><section class=copyright>&copy;
+2020 -
+2026 Abra's Blog</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.33.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/blog-hugo-stack/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js defer></script><script></script></body></html>
