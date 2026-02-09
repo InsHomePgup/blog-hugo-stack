@@ -66,8 +66,3 @@ Material Sandy Beach
 ![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250709142834425.png)
 
 我的新宠主题
-
-#### 3. TONGYI Lingma
-
-![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250214104802335.png)
-辅助代码补全

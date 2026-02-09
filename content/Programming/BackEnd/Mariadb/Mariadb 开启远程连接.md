@@ -1,7 +1,0 @@
----
-title: Mariadb 开启远程连接
-date: 2024-12-01
-categories:
-  - backend
-  - mariadb
----
