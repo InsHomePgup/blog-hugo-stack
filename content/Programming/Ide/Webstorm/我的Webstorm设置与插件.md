@@ -35,7 +35,7 @@ vscode那边也有的代码片段功能。
 ![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250214103729151.png)
 #### 4. 使用powershell当做默认的终端。
 
-pwsh还是很好用的，如果能直接在ws就用pwsh就很舒服。
+pwsh做一些常用的日常命令还是很好用的，如果能直接在ws就用pwsh就很舒服。
 
 ![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250709142648652.png)
 
@@ -57,11 +57,11 @@ pwsh还是很好用的，如果能直接在ws就用pwsh就很舒服。
 编辑器主题修改。
 ![|0x0](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250214101923430.png)
 我这里用的是 :
-Material Sandy Beach 
+Material Sandy Beach
 ![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250214102855782.png)
 再设置第二颜色。
 
-最近用了Trae，感觉白色的这款也很好看。
+最近用了Trae，白色主题的这款也很好看。
 
 ![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250709142834425.png)
 
