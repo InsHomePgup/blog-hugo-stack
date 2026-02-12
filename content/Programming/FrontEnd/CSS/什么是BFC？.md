@@ -2,8 +2,12 @@
 title: 什么是BFC？
 date: 2026-02-12
 draft: true
-tags: ["CSS"]
-categories: ["CSS"]
+categories:
+  - frontend
+  - css
+tags:
+  - css
+  - transition
 ---
 
 什么是BFC？
