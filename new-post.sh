@@ -131,33 +131,29 @@ if [ -z "$title" ]; then
 fi
 
 # 输入标签（逗号分隔）
-read -p "标签 (逗号分隔，例如: 生活,工作): " tags_input
+read -p "标签 (逗号分隔，例如: 生活,工作，留空跳过): " tags_input
 if [ -n "$tags_input" ]; then
     IFS=',' read -ra tags_array <<< "$tags_input"
-    tags="["
+    tags="tags:\n"
     for tag in "${tags_array[@]}"; do
         tag=$(echo "$tag" | xargs)  # 去除空格
-        tags+="\"$tag\", "
+        tags+="  - $tag\n"
     done
-    tags="${tags%, }"  # 移除最后的逗号和空格
-    tags+="]"
 else
-    tags="[]"
+    tags=""
 fi
 
 # 输入分类标签（逗号分隔）
-read -p "分类标签 (逗号分隔，例如: 生活,职场): " categories_input
+read -p "分类标签 (逗号分隔，例如: 生活,职场，留空跳过): " categories_input
 if [ -n "$categories_input" ]; then
     IFS=',' read -ra categories_array <<< "$categories_input"
-    categories="["
+    categories="categories:\n"
     for cat in "${categories_array[@]}"; do
         cat=$(echo "$cat" | xargs)
-        categories+="\"$cat\", "
+        categories+="  - $cat\n"
     done
-    categories="${categories%, }"
-    categories+="]"
 else
-    categories="[]"
+    categories=""
 fi
 
 # 是否为草稿
@@ -188,18 +184,22 @@ if [ -f "$file_path" ]; then
 fi
 
 # 创建文件内容
-cat > "$file_path" << EOF
----
-title: $title
-date: $current_date
-draft: $draft
-tags: $tags
-categories: $categories
----
-
-<!-- 在这里开始写您的正文 -->
-
-EOF
+{
+    echo "---"
+    echo "title: $title"
+    echo "date: $current_date"
+    echo "draft: $draft"
+    if [ -n "$tags" ]; then
+        echo -e "$tags" | sed '/^$/d'
+    fi
+    if [ -n "$categories" ]; then
+        echo -e "$categories" | sed '/^$/d'
+    fi
+    echo "---"
+    echo ""
+    echo "<!-- 在这里开始写您的正文 -->"
+    echo ""
+} > "$file_path"
 
 # 完成提示
 echo ""
@@ -210,8 +210,12 @@ echo "文件位置: $file_path"
 echo "标题: $title"
 echo "日期: $current_date"
 echo "草稿: $draft"
-echo "标签: $tags"
-echo "分类: $categories"
+if [ -n "$tags" ]; then
+    echo -e "标签:\n$tags" | grep "  -"
+fi
+if [ -n "$categories" ]; then
+    echo -e "分类:\n$categories" | grep "  -"
+fi
 echo ""
 if [ "$root_section" = "Post" ]; then
     echo "📍 此文章将显示在博客首页"

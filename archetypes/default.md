@@ -3,8 +3,10 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 last-update: {{ .Date }}
 draft: true
-tags: []
-categories: []
+tags:
+  -
+categories:
+  -
 weight: 1
 ---
 
