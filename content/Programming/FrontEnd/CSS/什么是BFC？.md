@@ -48,6 +48,8 @@ display 还有很多其他属性值，不过我们常用的也就是block，inli
 
 html元素的一个理解就是元素在出生的时候就自带了一些css属性。
 
+html的根元素就是一个BFC
+
 比如我们亲爱的div和span对应的css属性就是display的block和inline。
 
 好的，回到BFC的讨论。
@@ -79,3 +81,11 @@ BFC有一些渲染规则
 第二条里面的margin折叠就是我们在布局过程中可能会遇到的问题比如在一个BFC中使用两个垂直的margin就会出现margin合并或者说折叠。解决的方案就是把两个block元素放在两个BFC当中。
 
 现代的这个css可以使用display:flow-root;去创建一个BFC；
+
+[代码示例](https://github.com/InsHomePgup/vue3-ts-api-demos/blob/main/src/pages/css/bfc-margin.vue)
+
+可以在这个示例中去查看，下载代码去运行这个项目去查看怎么创建BFC去解决margin的问题。
+
+所以BFC是什么，块级格式化上下文，这样太难记忆了。
+
+创建一个独立的渲染区域。这个就是BFC。
