@@ -1,61 +1,136 @@
 #!/bin/bash
 
 # 博客文章创建脚本
-# 使用方法: ./new-post.sh
+# 使用方法: ./new-post.sh [相对路径]
+# 示例: ./new-post.sh content/Post/Life/my-article.md
 
 set -e
 
 echo "=== 创建新博客文章 ==="
 echo ""
 
-# 1. 选择内容区域
-echo "选择内容区域:"
-echo "  1) Post        - 博客文章 (显示在首页)"
-echo "  2) Programming - 技术文档 (独立知识库)"
-read -p "请选择 (1/2, 默认: 1): " section_choice
+# 检查是否提供了路径参数
+if [ -n "$1" ]; then
+    # 快速模式：直接使用提供的路径
+    input_path="$1"
 
-case $section_choice in
-    2)
-        root_section="Programming"
-        section_desc="技术文档"
-        ;;
-    *)
+    # 移除可能的 content/ 前缀
+    input_path="${input_path#content/}"
+
+    # 移除可能的 .md 后缀
+    input_path="${input_path%.md}"
+
+    # 解析路径：Post/Life/work/my-article 或 Programming/Git/Commands/git-rebase
+    if [[ "$input_path" == Post/* ]]; then
         root_section="Post"
         section_desc="博客文章"
-        ;;
-esac
+        # 移除 Post/ 前缀
+        rest="${input_path#Post/}"
+    elif [[ "$input_path" == Programming/* ]]; then
+        root_section="Programming"
+        section_desc="技术文档"
+        # 移除 Programming/ 前缀
+        rest="${input_path#Programming/}"
+    else
+        echo "错误: 路径必须以 Post/ 或 Programming/ 开头"
+        echo "示例: ./new-post.sh Post/Life/my-article.md"
+        echo "     ./new-post.sh content/Programming/Git/git-rebase.md"
+        exit 1
+    fi
 
-echo "✓ 已选择: $section_desc ($root_section)"
-echo ""
+    # 提取文件名（最后一部分）
+    slug="${rest##*/}"
 
-# 2. 输入文章标题
+    # 提取分类（中间部分）
+    category="${rest%/*}"
+    if [ "$category" = "$slug" ]; then
+        # 没有分类，使用默认值
+        if [ "$root_section" = "Post" ]; then
+            category="README"
+        else
+            category="Other"
+        fi
+    fi
+
+    echo "✓ 快速模式"
+    echo "  区域: $section_desc ($root_section)"
+    echo "  分类: $category"
+    echo "  文件名: $slug"
+    echo ""
+
+else
+    # 交互模式
+    echo "选择创建模式:"
+    echo "  1) 交互模式 - 逐步输入信息"
+    echo "  2) 快速模式 - 直接输入完整路径"
+    read -p "请选择 (1/2, 默认: 1): " mode_choice
+    echo ""
+
+    if [ "$mode_choice" = "2" ]; then
+        # 快速模式：输入完整路径
+        echo "请输入完整路径（可从 IDE 复制）："
+        echo "  示例: Post/Life/work/my-article.md"
+        echo "       content/Programming/Git/Commands/git-rebase.md"
+        read -p "路径: " input_path
+
+        if [ -z "$input_path" ]; then
+            echo "错误: 路径不能为空"
+            exit 1
+        fi
+
+        # 递归调用自己，使用快速模式
+        exec "$0" "$input_path"
+    fi
+
+    # 交互模式：选择内容区域
+    echo "选择内容区域:"
+    echo "  1) Post        - 博客文章 (显示在首页)"
+    echo "  2) Programming - 技术文档 (独立知识库)"
+    read -p "请选择 (1/2, 默认: 1): " section_choice
+
+    case $section_choice in
+        2)
+            root_section="Programming"
+            section_desc="技术文档"
+            ;;
+        *)
+            root_section="Post"
+            section_desc="博客文章"
+            ;;
+    esac
+
+    echo "✓ 已选择: $section_desc ($root_section)"
+    echo ""
+
+    # 输入分类（目录）
+    if [ "$root_section" = "Post" ]; then
+        read -p "分类 (例如: Life/work, README): " category
+        if [ -z "$category" ]; then
+            category="README"
+        fi
+    else
+        read -p "分类 (例如: Git/Commands, FrontEnd/Vue, OS/Linux): " category
+        if [ -z "$category" ]; then
+            category="Other"
+        fi
+    fi
+
+    # 输入文件名（slug）
+    read -p "文件名 (不含 .md): " slug
+    if [ -z "$slug" ]; then
+        echo "错误: 文件名不能为空"
+        exit 1
+    fi
+fi
+
+# 输入文章标题
 read -p "文章标题: " title
 if [ -z "$title" ]; then
-    echo "错误: 标题不能为空"
-    exit 1
+    # 使用文件名作为标题
+    title="$slug"
 fi
 
-# 3. 输入分类（目录）
-if [ "$root_section" = "Post" ]; then
-    read -p "分类 (例如: Life/work, README): " category
-    if [ -z "$category" ]; then
-        category="README"
-    fi
-else
-    read -p "分类 (例如: Git/Commands, FrontEnd/Vue, OS/Linux): " category
-    if [ -z "$category" ]; then
-        category="Other"
-    fi
-fi
-
-# 4. 输入文件名（slug）
-read -p "文件名 (留空则使用标题的拼音/英文): " slug
-if [ -z "$slug" ]; then
-    # 使用标题作为文件名，移除空格
-    slug=$(echo "$title" | tr ' ' '-')
-fi
-
-# 5. 输入标签（逗号分隔）
+# 输入标签（逗号分隔）
 read -p "标签 (逗号分隔，例如: 生活,工作): " tags_input
 if [ -n "$tags_input" ]; then
     IFS=',' read -ra tags_array <<< "$tags_input"
@@ -70,7 +145,7 @@ else
     tags="[]"
 fi
 
-# 6. 输入分类标签（逗号分隔）
+# 输入分类标签（逗号分隔）
 read -p "分类标签 (逗号分隔，例如: 生活,职场): " categories_input
 if [ -n "$categories_input" ]; then
     IFS=',' read -ra categories_array <<< "$categories_input"
@@ -85,7 +160,7 @@ else
     categories="[]"
 fi
 
-# 7. 是否为草稿
+# 是否为草稿
 read -p "是否为草稿? (y/n, 默认: y): " is_draft
 if [ "$is_draft" = "n" ] || [ "$is_draft" = "N" ]; then
     draft="false"
@@ -93,17 +168,17 @@ else
     draft="true"
 fi
 
-# 8. 获取当前日期
+# 获取当前日期
 current_date=$(date +%Y-%m-%d)
 
-# 9. 创建文件路径
+# 创建文件路径
 file_path="content/${root_section}/${category}/${slug}.md"
 file_dir=$(dirname "$file_path")
 
-# 10. 创建目录（如果不存在）
+# 创建目录（如果不存在）
 mkdir -p "$file_dir"
 
-# 11. 检查文件是否已存在
+# 检查文件是否已存在
 if [ -f "$file_path" ]; then
     read -p "文件已存在，是否覆盖? (y/n): " overwrite
     if [ "$overwrite" != "y" ] && [ "$overwrite" != "Y" ]; then
@@ -112,7 +187,7 @@ if [ -f "$file_path" ]; then
     fi
 fi
 
-# 12. 创建文件内容
+# 创建文件内容
 cat > "$file_path" << EOF
 ---
 title: $title
@@ -126,7 +201,7 @@ categories: $categories
 
 EOF
 
-# 13. 完成提示
+# 完成提示
 echo ""
 echo "✓ 文章创建成功！"
 echo ""
