@@ -1,0 +1,244 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content='插槽 组件的灵活性很大一部分都来源于插槽（Slot），这大大提升了组件的可复用性和扩展性。它允许父组件在子组件的预留位置中插入任意内容。\n在React里，类似的功能是通过 props.children 实现的，可以直接将JSX片段作为属性传递。\n默认插槽 当子组件只定义一个匿名插槽时，父组件传递的所有内容都会被放置在这个插槽中。\n子组件 (ChildComponent.vue)\n1 2 3 4 5 6 <div class="default-slot"> <h3>子组件标题</h3> <slot> <p>如果父组件没有提供内容，我将作为后备内容显示。</p> </slot> </div> 父组件使用\n1 2 3 <ChildComponent> <p>这是从父组件传递过来的内容，它将替换掉子组件的后备内容。</p> </ChildComponent> 具名插槽 当我们需要在子组件的不同位置插入不同内容时，就需要使用具名插槽。通过为 slot 元素添加 name 属性，我们可以定义多个插槽。\n子组件 (LayoutComponent.vue)\n1 2 3 4 5 6 7 8 9 10 11 <div class="container"> <header> <slot name="header"></slot> </header> <main> <slot></slot> <!-- 这是一个默认插槽 --> </main> <footer> <slot name="footer"></slot> </footer> </div> 父组件使用 在父组件中，我们使用 v-slot 指令并带上插槽的名字来指定内容的目标插槽。v-slot 有一个简写形式 #。\n'><title>Vue3插槽的使用</title>
+<link rel=canonical href=https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/vue3/vue3%E6%8F%92%E6%A7%BD%E7%9A%84%E4%BD%BF%E7%94%A8/><link rel=stylesheet href=/blog-hugo-stack/scss/style.min.b62af526a6f904bea2da3a6ade3ef2acbc23b1c5c87bec51310dba1398e6ca6d.css><meta property='og:title' content="Vue3插槽的使用"><meta property='og:description' content='插槽 组件的灵活性很大一部分都来源于插槽（Slot），这大大提升了组件的可复用性和扩展性。它允许父组件在子组件的预留位置中插入任意内容。\n在React里，类似的功能是通过 props.children 实现的，可以直接将JSX片段作为属性传递。\n默认插槽 当子组件只定义一个匿名插槽时，父组件传递的所有内容都会被放置在这个插槽中。\n子组件 (ChildComponent.vue)\n1 2 3 4 5 6 <div class="default-slot"> <h3>子组件标题</h3> <slot> <p>如果父组件没有提供内容，我将作为后备内容显示。</p> </slot> </div> 父组件使用\n1 2 3 <ChildComponent> <p>这是从父组件传递过来的内容，它将替换掉子组件的后备内容。</p> </ChildComponent> 具名插槽 当我们需要在子组件的不同位置插入不同内容时，就需要使用具名插槽。通过为 slot 元素添加 name 属性，我们可以定义多个插槽。\n子组件 (LayoutComponent.vue)\n1 2 3 4 5 6 7 8 9 10 11 <div class="container"> <header> <slot name="header"></slot> </header> <main> <slot></slot> <!-- 这是一个默认插槽 --> </main> <footer> <slot name="footer"></slot> </footer> </div> 父组件使用 在父组件中，我们使用 v-slot 指令并带上插槽的名字来指定内容的目标插槽。v-slot 有一个简写形式 #。\n'><meta property='og:url' content='https://inshomepgup.github.io/blog-hugo-stack/programming/frontend/vue/vue3/vue3%E6%8F%92%E6%A7%BD%E7%9A%84%E4%BD%BF%E7%94%A8/'><meta property='og:site_name' content="Abra's Blog"><meta property='og:type' content='article'><meta property='article:section' content='Programming'><meta property='article:tag' content='Vue'><meta property='article:tag' content='Vue3'><meta property='article:tag' content='Slot'><meta property='article:published_time' content='2025-06-11T00:00:00+00:00'><meta property='article:modified_time' content='2025-06-11T00:00:00+00:00'><meta name=twitter:title content="Vue3插槽的使用"><meta name=twitter:description content='插槽 组件的灵活性很大一部分都来源于插槽（Slot），这大大提升了组件的可复用性和扩展性。它允许父组件在子组件的预留位置中插入任意内容。\n在React里，类似的功能是通过 props.children 实现的，可以直接将JSX片段作为属性传递。\n默认插槽 当子组件只定义一个匿名插槽时，父组件传递的所有内容都会被放置在这个插槽中。\n子组件 (ChildComponent.vue)\n1 2 3 4 5 6 <div class="default-slot"> <h3>子组件标题</h3> <slot> <p>如果父组件没有提供内容，我将作为后备内容显示。</p> </slot> </div> 父组件使用\n1 2 3 <ChildComponent> <p>这是从父组件传递过来的内容，它将替换掉子组件的后备内容。</p> </ChildComponent> 具名插槽 当我们需要在子组件的不同位置插入不同内容时，就需要使用具名插槽。通过为 slot 元素添加 name 属性，我们可以定义多个插槽。\n子组件 (LayoutComponent.vue)\n1 2 3 4 5 6 7 8 9 10 11 <div class="container"> <header> <slot name="header"></slot> </header> <main> <slot></slot> <!-- 这是一个默认插槽 --> </main> <footer> <slot name="footer"></slot> </footer> </div> 父组件使用 在父组件中，我们使用 v-slot 指令并带上插槽的名字来指定内容的目标插槽。v-slot 有一个简写形式 #。\n'><link rel="shortcut icon" href=/blog-hugo-stack/favicon.ico><link rel=stylesheet href=/blog-hugo-stack/scss/custom-animations.min.css><link rel=stylesheet href=/blog-hugo-stack/scss/about.min.css><style>:root{--article-font-family:"LXGW WenKai", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif}@font-face{font-family:lato;font-display:swap;src:none!important}</style><script>(function(){const e=localStorage.getItem("StackColorScheme"),t=window.matchMedia("(prefers-color-scheme: dark)").matches,n=e||(t?"dark":"light");n==="dark"&&(document.documentElement.setAttribute("data-scheme","dark"),document.documentElement.style.colorScheme="dark")})()</script><script src=/blog-hugo-stack/js/custom.js></script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/blog-hugo-stack/><div><img src=https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/CyberpunkAvatar.jpg width=300 height=300 class=site-logo alt=Avatar></div></a></figure><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span></li><div class=site-meta><h1 class=site-name><a href=/blog-hugo-stack>Abra's Blog</a></h1><h2 class=site-description>艰苦卓绝 力争上游</h2></div></header><ol class=menu-social><li><a href=/blog-hugo-stack/index.xml target=_blank title=RSS rel=me><svg class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg></a></li><li><a href=https://github.com/InsHomePgup/blog-hugo-stack target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/blog-hugo-stack/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span></a></li><li><a href=/blog-hugo-stack/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li><a href=/blog-hugo-stack/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li><a href=/blog-hugo-stack/links/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Links</span></a></li><li><a href=/blog-hugo-stack/about/><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-braces"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 4A2 2 0 005 6v3a2 3 0 01-2 3 2 3 0 012 3v3a2 2 0 002 2"/><path d="M17 4a2 2 0 012 2v3a2 3 0 002 3 2 3 0 00-2 3v3a2 2 0 01-2 2"/></svg>
+<span>About</span></a></li><li class=menu-bottom-section><ol class=menu></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#插槽>插槽</a><ol><li><a href=#默认插槽>默认插槽</a></li><li><a href=#具名插槽>具名插槽</a></li><li><a href=#作用域插槽>作用域插槽</a></li><li><a href=#动态插槽>动态插槽</a></li><li><a href=#列表作用域插槽>列表作用域插槽</a></li><li><a href=#条件渲染插槽>条件渲染插槽</a></li></ol></li></ol></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/blog-hugo-stack/categories/vue/ style=background-color:#c8efbe;color:#193d0f>Vue</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/blog-hugo-stack/programming/frontend/vue/vue3/vue3%E6%8F%92%E6%A7%BD%E7%9A%84%E4%BD%BF%E7%94%A8/>Vue3插槽的使用</a></h2></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published datetime=2025-06-11T00:00:00Z>Jun 11, 2025</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>2 minute read</time></div></footer></div></header><section class=article-content><h2 id=插槽>插槽</h2><p>组件的灵活性很大一部分都来源于插槽（Slot），这大大提升了组件的可复用性和扩展性。它允许父组件在子组件的预留位置中插入任意内容。</p><p>在React里，类似的功能是通过 <code>props.children</code> 实现的，可以直接将JSX片段作为属性传递。</p><h3 id=默认插槽>默认插槽</h3><p>当子组件只定义一个匿名插槽时，父组件传递的所有内容都会被放置在这个插槽中。</p><p><strong>子组件 (<code>ChildComponent.vue</code>)</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;default-slot&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>h3</span><span class=p>&gt;</span>子组件标题<span class=p>&lt;/</span><span class=nt>h3</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>slot</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>如果父组件没有提供内容，我将作为后备内容显示。<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>slot</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>父组件使用</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>ChildComponent</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>这是从父组件传递过来的内容，它将替换掉子组件的后备内容。<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>ChildComponent</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=具名插槽>具名插槽</h3><p>当我们需要在子组件的不同位置插入不同内容时，就需要使用具名插槽。通过为 <code>slot</code> 元素添加 <code>name</code> 属性，我们可以定义多个插槽。</p><p><strong>子组件 (<code>LayoutComponent.vue</code>)</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;container&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>header</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>slot</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;header&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>slot</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>header</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>main</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>slot</span><span class=p>&gt;&lt;/</span><span class=nt>slot</span><span class=p>&gt;</span> <span class=c>&lt;!-- 这是一个默认插槽 --&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>main</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>footer</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>slot</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;footer&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>slot</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>footer</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>父组件使用</strong>
+在父组件中，我们使用 <code>v-slot</code> 指令并带上插槽的名字来指定内容的目标插槽。<code>v-slot</code> 有一个简写形式 <code>#</code>。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>LayoutComponent</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=c>&lt;!-- 使用 v-slot:header --&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>template</span> <span class=na>v-slot:header</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>h1</span><span class=p>&gt;</span>网站标题<span class=p>&lt;/</span><span class=nt>h1</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>template</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c>&lt;!-- 默认插槽可以隐式使用，或用 #default --&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>template</span> <span class=err>#</span><span class=na>default</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>这里是主要内容。<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>template</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c>&lt;!-- 使用 #footer 简写 --&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>template</span> <span class=err>#</span><span class=na>footer</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>版权信息 © 2025<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>template</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>LayoutComponent</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=作用域插槽>作用域插槽</h3><p>有时候，让父组件在渲染插槽内容时能够访问子组件的数据会非常有用。这就是作用域插槽的用途。子组件可以像传递 <code>props</code> 一样，将数据绑定到 <code>slot</code> 元素上。</p><p><strong>子组件 (<code>UserProfile.vue</code>)</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=c>&lt;!-- 将 user 对象绑定到插槽上 --&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>slot</span> <span class=na>:user</span><span class=o>=</span><span class=s>&#34;userData&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>slot</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>setup</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>ref</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;vue&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>userData</span> <span class=o>=</span> <span class=nx>ref</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>  <span class=nx>name</span><span class=o>:</span> <span class=s1>&#39;John Doe&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>age</span><span class=o>:</span> <span class=mi>30</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>父组件使用</strong>
+父组件使用 <code>v-slot</code> 来接收子组件传递的 <code>props</code>。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>UserProfile</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=c>&lt;!-- &#34;slotProps&#34; 是一个自定义的名字，包含了所有从子组件传来的 props --&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>template</span> <span class=na>v-slot</span><span class=o>=</span><span class=s>&#34;slotProps&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>用户名: {{ slotProps.user.name }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>年龄: {{ slotProps.user.age }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>template</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>UserProfile</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!-- 也可以使用解构赋值，代码更简洁 --&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>UserProfile</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>template</span> <span class=err>#</span><span class=na>default</span><span class=o>=</span><span class=s>&#34;{ user }&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>用户名: {{ user.name }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>年龄: {{ user.age }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>template</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>UserProfile</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=动态插槽>动态插槽</h3><p>如果你需要根据一个变量来决定渲染哪个插槽，可以使用动态插槽名。</p><p><strong>父组件使用</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>LayoutComponent</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=c>&lt;!-- 插槽的名字由 aynamicSlotName 变量决定 --&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>template</span> <span class=na>v-slot:</span><span class=err>[</span><span class=na>dynamicSlotName</span><span class=err>]</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>这个内容会出现在 header 或 footer 中。<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>template</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>LayoutComponent</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>setup</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>ref</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;vue&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>dynamicSlotName</span> <span class=o>=</span> <span class=nx>ref</span><span class=p>(</span><span class=s1>&#39;header&#39;</span><span class=p>);</span> <span class=c1>// 可以是 &#39;header&#39; 或 &#39;footer&#39;
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=列表作用域插槽>列表作用域插槽</h3><p>作用域插槽最常见的用例之一是渲染列表。子组件负责遍历数据，而父组件通过作用域插槽来定义每一项的显示样式。</p><p><strong>子组件 (<code>ItemsList.vue</code>)</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>ul</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>li</span> <span class=na>v-for</span><span class=o>=</span><span class=s>&#34;item in items&#34;</span> <span class=na>:key</span><span class=o>=</span><span class=s>&#34;item.id&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- 将每一项 item 作为 prop 传给父组件 --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>slot</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;item&#34;</span> <span class=na>:item</span><span class=o>=</span><span class=s>&#34;item&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>slot</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>ul</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>setup</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=nx>defineProps</span><span class=p>([</span><span class=s1>&#39;items&#39;</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>父组件使用</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>ItemsList</span> <span class=na>:items</span><span class=o>=</span><span class=s>&#34;myItems&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>template</span> <span class=err>#</span><span class=na>item</span><span class=o>=</span><span class=s>&#34;{ item }&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;custom-item&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>span</span><span class=p>&gt;</span>ID: {{ item.id }}<span class=p>&lt;/</span><span class=nt>span</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>strong</span><span class=p>&gt;</span>{{ item.text }}<span class=p>&lt;/</span><span class=nt>strong</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>template</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>ItemsList</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>setup</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>ref</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;vue&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>myItems</span> <span class=o>=</span> <span class=nx>ref</span><span class=p>([</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span> <span class=nx>id</span><span class=o>:</span> <span class=mi>1</span><span class=p>,</span> <span class=nx>text</span><span class=o>:</span> <span class=s1>&#39;学习 Vue&#39;</span> <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span> <span class=nx>id</span><span class=o>:</span> <span class=mi>2</span><span class=p>,</span> <span class=nx>text</span><span class=o>:</span> <span class=s1>&#39;编写文档&#39;</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>]);</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=条件渲染插槽>条件渲染插槽</h3><p>你可以使用 <code>v-if</code> 或 <code>v-show</code> 指令来根据条件决定是否渲染某个插槽。</p><p><strong>父组件使用</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>LayoutComponent</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>template</span> <span class=na>v-if</span><span class=o>=</span><span class=s>&#34;showFooter&#34;</span> <span class=err>#</span><span class=na>footer</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>这个页脚是根据条件显示的。<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>template</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>LayoutComponent</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>setup</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>ref</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;vue&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>showFooter</span> <span class=o>=</span> <span class=nx>ref</span><span class=p>(</span><span class=kc>true</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>这为构建高度灵活和动态的组件布局提供了强大的能力。</p></section><footer class=article-footer><section class=article-tags><a href=/blog-hugo-stack/tags/vue/>Vue</a>
+<a href=/blog-hugo-stack/tags/vue3/>Vue3</a>
+<a href=/blog-hugo-stack/tags/slot/>Slot</a></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>Related content</h2><div class=related-content><div class="flex article-list--tile"><article><a href=/blog-hugo-stack/programming/frontend/vue/vue3/vue3-%E7%89%B9%E6%80%A7%E5%AD%A6%E4%B9%A0/><div class=article-details><h2 class=article-title>Vue3 特性学习</h2></div></a></article><article><a href=/blog-hugo-stack/programming/frontend/vue/render/vue%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/><div class=article-details><h2 class=article-title>Vue渲染机制</h2></div></a></article><article><a href=/blog-hugo-stack/programming/frontend/vue/vuerouter/hash%E8%B7%AF%E7%94%B1%E5%92%8Chistory%E8%B7%AF%E7%94%B1/><div class=article-details><h2 class=article-title>Hash路由和History路由</h2></div></a></article><article><a href=/blog-hugo-stack/programming/frontend/vue/vuerouter/%E5%8A%A8%E6%80%81router%E5%92%8C%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E5%AE%9E%E7%8E%B0/><div class=article-details><h2 class=article-title>动态Router和权限控制的实现</h2></div></a></article><article><a href=/blog-hugo-stack/programming/frontend/vue/pinia/pinia-plugin-persistedstate-2/pinia-plugin-persistedstate-2%E7%9A%84%E4%BD%BF%E7%94%A8/><div class=article-details><h2 class=article-title>pinia 插件 pinia-plugin-persistedstate-2的使用</h2></div></a></article></div></div></aside><footer class=site-footer><section class=copyright>&copy;
+2020 -
+2026 Abra's Blog</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.34.1>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/blog-hugo-stack/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js defer></script><script></script></body></html>
