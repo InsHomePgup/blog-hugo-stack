@@ -1,5 +1,5 @@
 ---
-title: "box-sizing"
+title: "box-sizing:border-box 和 content-box"
 date: 2024-12-01
 categories:
   - frontend
@@ -10,20 +10,20 @@ categories:
 ![|700x399](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250206133829365.png)
 
 这是一个盒模型。
-```css 
-*{  
-    margin: 0;  
-    padding: 0;  
-}  
-  
-.box1{  
-    box-sizing: content-box;  
-    /*box-sizing: border-box;*/  
-    width: 100px;  
-    height: 100px;  
-    background: deepskyblue;  
-    border:10px solid pink;  
-    padding: 10px;  
+```css
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.box1{
+    box-sizing: content-box;
+    /*box-sizing: border-box;*/
+    width: 100px;
+    height: 100px;
+    background: deepskyblue;
+    border:10px solid pink;
+    padding: 10px;
 }
 ```
 
@@ -34,6 +34,8 @@ box-sizing无关margin，margin的规则没有改变。
 content-box下，设置width代表的是：content区域独占这个宽度。
 
 ![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250206134844069.png)
+
+
 当前content自己使用width的100，然后padding的10px和border的10px都在外面。
 
 当前这个元素的实际的整体的宽度（所占用的宽度）就是：100 + 20 + 20；
@@ -58,3 +60,8 @@ borderbox：width =content width + padding width + border width。
 
 声明一个盒子是边框盒子的时候，宽度 = content + padding + border
 
+一个很简单的记忆方法就是
+
+content-box就是width去声明content的宽度
+
+border-box就是width去声明border内的全部盒子的宽度
