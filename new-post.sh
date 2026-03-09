@@ -20,21 +20,24 @@ if [ -n "$1" ]; then
     # 移除可能的 .md 后缀
     input_path="${input_path%.md}"
 
-    # 解析路径：Post/Life/work/my-article 或 Programming/Git/Commands/git-rebase
-    if [[ "$input_path" == Post/* ]]; then
-        root_section="Post"
+    # 解析路径：post/Life/work/my-article 或 programming/Git/Commands/git-rebase
+    # 统一转为小写进行匹配
+    input_path_lower=$(echo "$input_path" | tr '[:upper:]' '[:lower:]')
+
+    if [[ "$input_path_lower" == post/* ]]; then
+        root_section="post"
         section_desc="博客文章"
-        # 移除 Post/ 前缀
-        rest="${input_path#Post/}"
-    elif [[ "$input_path" == Programming/* ]]; then
-        root_section="Programming"
+        # 移除 post/ 前缀（忽略大小写）
+        rest="${input_path_lower#post/}"
+    elif [[ "$input_path_lower" == programming/* ]]; then
+        root_section="programming"
         section_desc="技术文档"
-        # 移除 Programming/ 前缀
-        rest="${input_path#Programming/}"
+        # 移除 programming/ 前缀（忽略大小写）
+        rest="${input_path_lower#programming/}"
     else
-        echo "错误: 路径必须以 Post/ 或 Programming/ 开头"
-        echo "示例: ./new-post.sh Post/Life/my-article.md"
-        echo "     ./new-post.sh content/Programming/Git/git-rebase.md"
+        echo "错误: 路径必须以 post/ 或 programming/ 开头"
+        echo "示例: ./new-post.sh post/Life/my-article.md"
+        echo "     ./new-post.sh content/programming/Git/git-rebase.md"
         exit 1
     fi
 
@@ -45,7 +48,7 @@ if [ -n "$1" ]; then
     category="${rest%/*}"
     if [ "$category" = "$slug" ]; then
         # 没有分类，使用默认值
-        if [ "$root_section" = "Post" ]; then
+        if [ "$root_section" = "post" ]; then
             category="README"
         else
             category="Other"
@@ -69,8 +72,8 @@ else
     if [ "$mode_choice" = "2" ]; then
         # 快速模式：输入完整路径
         echo "请输入完整路径（可从 IDE 复制）："
-        echo "  示例: Post/Life/work/my-article.md"
-        echo "       content/Programming/Git/Commands/git-rebase.md"
+        echo "  示例: post/Life/work/my-article.md"
+        echo "       content/programming/Git/Commands/git-rebase.md"
         read -p "路径: " input_path
 
         if [ -z "$input_path" ]; then
@@ -84,17 +87,17 @@ else
 
     # 交互模式：选择内容区域
     echo "选择内容区域:"
-    echo "  1) Post        - 博客文章 (显示在首页)"
-    echo "  2) Programming - 技术文档 (独立知识库)"
+    echo "  1) post        - 博客文章 (显示在首页)"
+    echo "  2) programming - 技术文档 (独立知识库)"
     read -p "请选择 (1/2, 默认: 1): " section_choice
 
     case $section_choice in
         2)
-            root_section="Programming"
+            root_section="programming"
             section_desc="技术文档"
             ;;
         *)
-            root_section="Post"
+            root_section="post"
             section_desc="博客文章"
             ;;
     esac
@@ -103,7 +106,7 @@ else
     echo ""
 
     # 输入分类（目录）
-    if [ "$root_section" = "Post" ]; then
+    if [ "$root_section" = "post" ]; then
         read -p "分类 (例如: Life/work, README): " category
         if [ -z "$category" ]; then
             category="README"
@@ -217,10 +220,10 @@ if [ -n "$categories" ]; then
     echo -e "分类:\n$categories" | grep "  -"
 fi
 echo ""
-if [ "$root_section" = "Post" ]; then
-    echo "📍 此文章将显示在博客首页"
+if [ "$root_section" = "post" ]; then
+    echo "此文章将显示在博客首页"
 else
-    echo "📚 此文章为技术文档，不会显示在首页"
+    echo "此文章为技术文档，不会显示在首页"
     echo "   访问路径: /programming/..."
 fi
 echo ""
