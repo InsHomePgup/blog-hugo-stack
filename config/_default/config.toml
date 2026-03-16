@@ -1,7 +1,7 @@
 # Change baseurl before deploy
 baseurl = "https://blog.inshomepgup.com/"
 languageCode = "en-us"
-title = "Abra's Blog"
+title = "Abraham's Blog"
 
 # 添加buildFuture配置，允许发布未来日期的文章
 buildFuture = true
