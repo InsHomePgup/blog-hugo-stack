@@ -45,3 +45,41 @@ pnpm run build:vue
 需要一段时间才能完成。
 
 打包以后的产物会在tdesign-vue-next 目录的dist目录下，接下去我们进入到这个目录，来完成一个link的注册。
+
+pnpm link --global 注册一个link到全局，这里用的是package.json 这里的name去创建的。
+
+我修改了项目里的name，改成了tdesign-vue-next-ins，代表这是我本地的项目。所以下面我安装注册这个link的时候，这个link的name是tdesign-vue-next-ins；
+
+```
+pnpm link --global  // 注册到全局的link
+
+// C:\Users\user\AppData\Local\pnpm\global\5:
+// + tdesign-vue-next-ins 1.18.5 <- ..\..\..\..\..\WebstormProjects\tdesign-vue-next-ins\packages\tdesign-vue-next
+
+
+
+```
+
+我这里是注册的link的name是tdesign-vue-next-ins
+!!! 这是重点。
+
+现在去B项目
+
+```
+pnpm link  tdesign-vue-next-ins  // 把刚刚的link链接到当前的项目
+```
+
+执行完这个以后;
+
+可以在package.json 看到
+
+```
+ "dependencies": {
+    "tdesign-vue-next-ins": "link:../../AppData/Local/pnpm/global/5/node_modules/tdesign-vue-next-ins",
+    "vue": "^3.5.30"
+  },
+```
+
+那么到这里就完成了本地安装。
+
+接下去我要实现对组件库里的源代码进行修改，来实现自己一些客制化的需求。
