@@ -1,0 +1,24 @@
+{{- $pages := slice -}}
+
+{{- if .IsHome -}}
+    {{- $pages = where .Site.RegularPages "Section" "in" .Site.Params.mainSections -}}
+    {{- $pages = where $pages "Params.hidden" "!=" true -}}
+    {{/* Include section pages marked as featured */}}
+    {{- $featuredSections := where .Site.Pages "Params.featured" true -}}
+    {{- $featuredSections = where $featuredSections "Kind" "section" -}}
+    {{- $pages = $pages | append $featuredSections -}}
+    {{- $pages = sort $pages "Date" "desc" -}}
+{{- else if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
+    {{- $subsections := .Sections -}}
+    {{- $pages = .Pages | complement $subsections -}}
+    {{- $pages = where $pages "Params.hidden" "!=" true -}}
+    {{- if eq (len $pages) 0 -}}
+        {{- $pages = $subsections -}}
+    {{- end -}}
+{{- end -}}
+
+{{- if or .IsHome (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
+    {{- $pages = .Paginate $pages -}}
+{{- end -}}
+
+{{ return $pages }}
