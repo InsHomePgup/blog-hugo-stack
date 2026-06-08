@@ -1,5 +1,6 @@
 ---
 title: Commit 的提交信息规范
+date: 2025-01-08
 ---
 - feat: 新增 feature
 - fix: 修复 bug

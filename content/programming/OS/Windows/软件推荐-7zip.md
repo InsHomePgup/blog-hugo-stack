@@ -1,5 +1,6 @@
 ---
 title: 软件推荐-7zip
+date: 2025-01-08
 tags:
   - windows
   - software

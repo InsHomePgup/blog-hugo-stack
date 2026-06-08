@@ -1,5 +1,6 @@
 ---
 title: ReturnType的使用
+date: 2025-04-07
 ---
 ```ts
 function add(a: number, b: number): number {

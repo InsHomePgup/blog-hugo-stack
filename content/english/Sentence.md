@@ -1,3 +1,9 @@
+---
+title: "英语句子练习"
+date: 2025-11-04
+draft: true
+---
+
 I’m working today, even though it’s Saturday. It’s bad — I want to find a job with two days off each week.
 
 
