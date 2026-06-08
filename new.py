@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import os
+import curses
 from datetime import date
 from prompt_toolkit import prompt
-from prompt_toolkit.shortcuts import radiolist_dialog
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
@@ -45,12 +45,51 @@ def ask(label):
         val = prompt(f"{label}: ").strip()
     return val
 
+def radiolist(title, text, values):
+    def _inner(stdscr):
+        curses.curs_set(0)
+        curses.start_color()
+        curses.use_default_colors()
+        curses.init_pair(1, curses.COLOR_BLACK, curses.COLOR_WHITE)
+
+        current = 0
+        selected = 0
+
+        while True:
+            stdscr.clear()
+            stdscr.addstr(1, 2, title)
+            stdscr.addstr(2, 2, text)
+
+            for i, (_, label) in enumerate(values):
+                marker = "(*)" if i == selected else "( )"
+                line = f"  {marker}  {label}"
+                if i == current:
+                    stdscr.attron(curses.color_pair(1))
+                    stdscr.addstr(4 + i, 0, line)
+                    stdscr.attroff(curses.color_pair(1))
+                else:
+                    stdscr.addstr(4 + i, 0, line)
+
+            stdscr.addstr(4 + len(values) + 1, 2, "↑/↓ 移动   Space 选中   Enter 确认   Esc 取消")
+            stdscr.refresh()
+
+            key = stdscr.getch()
+            if key == curses.KEY_UP:
+                current = (current - 1) % len(values)
+            elif key == curses.KEY_DOWN:
+                current = (current + 1) % len(values)
+            elif key == ord(' '):
+                selected = current
+            elif key in (ord('\n'), ord('\r'), curses.KEY_ENTER):
+                return values[selected][0]
+            elif key == 27:
+                return None
+
+    return curses.wrapper(_inner)
+
+
 def main():
-    module = radiolist_dialog(
-        title="新建文章",
-        text="选择模块：",
-        values=MODULES,
-    ).run()
+    module = radiolist("新建文章", "选择模块：", MODULES)
 
     if module is None:
         return
