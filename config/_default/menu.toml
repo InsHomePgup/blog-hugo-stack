@@ -9,6 +9,20 @@
         icon = "home"
 
 [[main]]
+    name = "阅读"
+    url = "/reading/"
+    weight = 15
+    [main.params]
+        icon = "book"
+
+[[main]]
+    name = "投资"
+    url = "/investing/"
+    weight = 16
+    [main.params]
+        icon = "trending-up"
+
+[[main]]
     name = "Search"
     url = "/search/"
     weight = 20

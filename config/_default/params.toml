@@ -1,5 +1,5 @@
 # Pages placed under these sections will be shown on homepage and archive page.
-mainSections = ["post"]
+mainSections = ["reading", "investing", "post"]
 # Output page's full content in RSS.
 rssFullContent = false
 favicon = "/blog-hugo-stack/favicon.ico"
