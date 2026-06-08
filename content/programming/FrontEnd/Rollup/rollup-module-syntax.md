@@ -1,5 +1,6 @@
 ---
 title: rollup more - ES Module Syntax ES6导入导出方法
+date: 2025-01-08
 tags:
   - ES6
   - rollup
