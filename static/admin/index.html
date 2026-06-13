@@ -6,26 +6,6 @@
   <title>Content Manager</title>
 </head>
 <body>
-  <script>
-    // 1. 监听所有 postMessage
-    window.addEventListener('message', function(e) {
-      console.log('[CMS Auth] postMessage received — origin:', e.origin, '| data:', e.data);
-    });
-
-    // 2. 拦截 window.open，记录弹窗打开时的 URL 和 opener 状态
-    var _originalOpen = window.open;
-    window.open = function(url, name, features) {
-      console.log('[CMS Auth] window.open called — url:', url);
-      var popup = _originalOpen.call(window, url, name, features);
-      console.log('[CMS Auth] popup opened — opener is null?', popup ? popup.opener === null : 'popup is null');
-      return popup;
-    };
-
-    // 3. 页面加载完成日志
-    window.addEventListener('load', function() {
-      console.log('[CMS Auth] page loaded — location:', location.href);
-    });
-  </script>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
