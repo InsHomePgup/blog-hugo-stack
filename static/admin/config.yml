@@ -13,7 +13,7 @@ locale: zh_Hans
 collections:
   - name: computer
     label: 计算机
-    folder: content/Post/Computer
+    folder: content/post/Computer
     create: true
     slug: "{{slug}}"
     fields:
@@ -28,7 +28,7 @@ collections:
 
   - name: frontend
     label: 前端
-    folder: content/Post/front-end
+    folder: content/post/front-end
     create: true
     slug: "{{slug}}"
     fields:
@@ -43,9 +43,11 @@ collections:
 
   - name: git
     label: Git
-    folder: content/Post/Git
+    folder: content/post/Git
     create: true
-    slug: "{{slug}}"
+    nested:
+      depth: 100
+      summary: "{{title}}"
     fields:
       - { label: 标题, name: title, widget: string }
       - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
@@ -58,9 +60,11 @@ collections:
 
   - name: life
     label: 生活
-    folder: content/Post/Life
+    folder: content/post/Life
     create: true
-    slug: "{{slug}}"
+    nested:
+      depth: 10
+      summary: "{{title}}"
     fields:
       - { label: 标题, name: title, widget: string }
       - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
@@ -73,7 +77,7 @@ collections:
 
   - name: readme
     label: 首页文章
-    folder: content/Post/README
+    folder: content/post/README
     create: true
     slug: "{{slug}}"
     fields:
@@ -84,4 +88,67 @@ collections:
       - { label: 权重, name: weight, widget: number, default: 1, required: false }
       - { label: 标签, name: tags, widget: list, required: false }
       - { label: 分类, name: categories, widget: list, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: programming
+    label: 编程
+    folder: content/programming
+    create: true
+    nested:
+      depth: 100
+      summary: "{{title}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: 最后更新, name: last-update, widget: datetime, format: "YYYY-MM-DD", required: false }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: 权重, name: weight, widget: number, default: 1, required: false }
+      - { label: 标签, name: tags, widget: list, required: false }
+      - { label: 分类, name: categories, widget: list, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: investing
+    label: 投资
+    folder: content/investing
+    create: true
+    nested:
+      depth: 10
+      summary: "{{title}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: 最后更新, name: last-update, widget: datetime, format: "YYYY-MM-DD", required: false }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: 权重, name: weight, widget: number, default: 1, required: false }
+      - { label: 标签, name: tags, widget: list, required: false }
+      - { label: 分类, name: categories, widget: list, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: reading
+    label: 阅读
+    folder: content/reading
+    create: true
+    nested:
+      depth: 10
+      summary: "{{title}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: 最后更新, name: last-update, widget: datetime, format: "YYYY-MM-DD", required: false }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: 权重, name: weight, widget: number, default: 1, required: false }
+      - { label: 标签, name: tags, widget: list, required: false }
+      - { label: 分类, name: categories, widget: list, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: draft
+    label: 草稿箱
+    folder: content/draft
+    create: true
+    nested:
+      depth: 10
+      summary: "{{title}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD", required: false }
       - { label: 正文, name: body, widget: markdown }
