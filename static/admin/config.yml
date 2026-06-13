@@ -2,9 +2,8 @@ backend:
   name: github
   repo: InsHomePgup/blog-hugo-stack
   branch: main
-  base_url: https://api.netlify.com
+  base_url: https://blog-cms-oauth-one.vercel.app
   auth_endpoint: auth
-  site_domain: frolicking-pavlova-8d314f.netlify.app
 
 media_folder: static/img
 public_folder: /img
