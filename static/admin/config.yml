@@ -2,8 +2,8 @@ backend:
   name: github
   repo: InsHomePgup/blog-hugo-stack
   branch: main
-  auth_type: pkce
-  app_id: Ov23lirj3oAaCJ1EqU7b
+  base_url: https://blog-cms-oauth-one.vercel.app
+  auth_endpoint: auth
 
 media_folder: static/img
 public_folder: /img
