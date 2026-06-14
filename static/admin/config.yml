@@ -141,6 +141,17 @@ collections:
       - { label: 分类, name: categories, widget: list, required: false }
       - { label: 正文, name: body, widget: markdown }
 
+  - name: english
+    label: 英语
+    folder: content/english
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: 正文, name: body, widget: markdown }
+
   - name: draft
     label: 草稿箱
     folder: content/draft
