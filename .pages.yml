@@ -1,0 +1,90 @@
+media:
+  input: static/img
+  output: /img
+
+content:
+  - name: post
+    label: 博客文章
+    type: collection
+    path: content/post
+    view:
+      fields: [title, date, draft]
+    fields:
+      - { name: title, label: 标题, type: string, required: true }
+      - { name: date, label: 发布日期, type: date }
+      - { name: last-update, label: 最后更新, type: date, required: false }
+      - { name: draft, label: 草稿, type: boolean, default: true }
+      - { name: weight, label: 权重, type: number, required: false }
+      - { name: tags, label: 标签, type: array }
+      - { name: categories, label: 分类, type: array }
+      - { name: body, label: 正文, type: rich-text }
+
+  - name: programming
+    label: 编程
+    type: collection
+    path: content/programming
+    view:
+      fields: [title, date, draft]
+    fields:
+      - { name: title, label: 标题, type: string, required: true }
+      - { name: date, label: 发布日期, type: date }
+      - { name: last-update, label: 最后更新, type: date, required: false }
+      - { name: draft, label: 草稿, type: boolean, default: true }
+      - { name: weight, label: 权重, type: number, required: false }
+      - { name: tags, label: 标签, type: array }
+      - { name: categories, label: 分类, type: array }
+      - { name: body, label: 正文, type: rich-text }
+
+  - name: investing
+    label: 投资
+    type: collection
+    path: content/investing
+    view:
+      fields: [title, date, draft]
+    fields:
+      - { name: title, label: 标题, type: string, required: true }
+      - { name: date, label: 发布日期, type: date }
+      - { name: last-update, label: 最后更新, type: date, required: false }
+      - { name: draft, label: 草稿, type: boolean, default: true }
+      - { name: weight, label: 权重, type: number, required: false }
+      - { name: tags, label: 标签, type: array }
+      - { name: categories, label: 分类, type: array }
+      - { name: body, label: 正文, type: rich-text }
+
+  - name: reading
+    label: 阅读
+    type: collection
+    path: content/reading
+    view:
+      fields: [title, date, draft]
+    fields:
+      - { name: title, label: 标题, type: string, required: true }
+      - { name: date, label: 发布日期, type: date }
+      - { name: last-update, label: 最后更新, type: date, required: false }
+      - { name: draft, label: 草稿, type: boolean, default: true }
+      - { name: tags, label: 标签, type: array }
+      - { name: categories, label: 分类, type: array }
+      - { name: body, label: 正文, type: rich-text }
+
+  - name: english
+    label: 英语
+    type: collection
+    path: content/english
+    view:
+      fields: [title, date, draft]
+    fields:
+      - { name: title, label: 标题, type: string, required: true }
+      - { name: date, label: 发布日期, type: date }
+      - { name: draft, label: 草稿, type: boolean, default: true }
+      - { name: body, label: 正文, type: rich-text }
+
+  - name: draft
+    label: 草稿箱
+    type: collection
+    path: content/draft
+    view:
+      fields: [title, date]
+    fields:
+      - { name: title, label: 标题, type: string, required: true }
+      - { name: date, label: 发布日期, type: date, required: false }
+      - { name: body, label: 正文, type: rich-text }
