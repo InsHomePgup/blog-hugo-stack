@@ -1,31 +1,32 @@
 <script setup lang="ts">
 import { useGithubApi } from '@/composables/useGithubApi'
+import { useUiStore } from '@/stores/ui'
+import { MessagePlugin } from 'tdesign-vue-next'
 import Vditor from 'vditor'
 import 'vditor/dist/index.css'
 
 const route = useRoute()
 const router = useRouter()
+const ui = useUiStore()
 const { readFile, writeFile } = useGithubApi()
 
 const filePath = computed(() => {
   const p = route.params as Record<string, string | string[]>
   return Array.isArray(p.path) ? p.path.join('/') : (p.path ?? '')
 })
+
 const sha = ref('')
 const saving = ref(false)
 const loading = ref(true)
-const message = ref('')
 
 let vditor: Vditor | null = null
 
-onMounted(async () => {
-  const { content, sha: fileSha } = await readFile(filePath.value)
-  sha.value = fileSha
-
+function initVditor(content: string) {
+  vditor?.destroy()
   vditor = new Vditor('vditor', {
     height: '100%',
     mode: 'ir',
-    theme: 'classic',
+    theme: ui.isDark ? 'dark' : 'classic',
     cache: { enable: false },
     toolbar: [
       'headings', 'bold', 'italic', 'strike', '|',
@@ -39,6 +40,25 @@ onMounted(async () => {
       loading.value = false
     },
   })
+}
+
+onMounted(async () => {
+  try {
+    const { content, sha: fileSha } = await readFile(filePath.value)
+    sha.value = fileSha
+    initVditor(content)
+  }
+  catch {
+    MessagePlugin.error('文件加载失败')
+    loading.value = false
+  }
+})
+
+watch(() => ui.isDark, async () => {
+  const content = vditor?.getValue() ?? ''
+  loading.value = true
+  await nextTick()
+  initVditor(content)
 })
 
 onUnmounted(() => {
@@ -54,8 +74,10 @@ async function save() {
     const content = vditor.getValue()
     const fileName = filePath.value.split('/').pop() ?? 'update'
     await writeFile(filePath.value, content, sha.value, `docs: update ${fileName}`)
-    message.value = '已保存'
-    setTimeout(() => message.value = '', 2000)
+    MessagePlugin.success('已保存')
+  }
+  catch {
+    MessagePlugin.error('保存失败')
   }
   finally {
     saving.value = false
@@ -71,27 +93,50 @@ useEventListener('keydown', (e: KeyboardEvent) => {
 </script>
 
 <template>
-  <div class="h-screen flex flex-col">
-    <header class="flex shrink-0 items-center justify-between border-b border-gray-200 px-4 py-2">
-      <div class="flex items-center gap-3">
-        <t-button theme="default" variant="text" size="small" @click="router.push('/')">
+  <div class="flex h-screen flex-col" style="background: var(--td-bg-color-page)">
+    <header
+      class="flex h-14 shrink-0 items-center justify-between px-4"
+      style="background: var(--td-bg-color-container); border-bottom: 1px solid var(--td-component-stroke)"
+    >
+      <div class="flex min-w-0 flex-1 items-center gap-2">
+        <t-button variant="text" shape="square" @click="router.push('/')">
           <template #icon>
-            <i class="i-ri-arrow-left-line" />
+            <i class="i-ri-arrow-left-line text-base" />
           </template>
-          返回
         </t-button>
-        <span class="max-w-xl truncate text-sm text-gray-500">{{ filePath }}</span>
+        <i class="i-ri-file-text-line shrink-0" style="color: var(--td-text-color-placeholder)" />
+        <span
+          class="truncate text-sm"
+          style="color: var(--td-text-color-secondary)"
+          :title="filePath"
+        >
+          {{ filePath }}
+        </span>
       </div>
-      <div class="flex items-center gap-3">
-        <span v-if="message" class="text-sm text-green-600">{{ message }}</span>
-        <t-button :loading="saving" theme="primary" size="small" @click="save">
+
+      <div class="ml-4 flex shrink-0 items-center gap-2">
+        <t-button variant="text" shape="square" @click="ui.isDark = !ui.isDark">
+          <template #icon>
+            <i class="text-base" :class="ui.isDark ? 'i-ri-sun-line' : 'i-ri-moon-line'" />
+          </template>
+        </t-button>
+        <t-button theme="primary" size="small" :loading="saving" @click="save">
+          <template #icon>
+            <i class="i-ri-save-line" />
+          </template>
           保存
         </t-button>
       </div>
     </header>
 
     <div class="relative flex-1 overflow-hidden">
-      <t-loading v-if="loading" class="absolute inset-0 flex items-center justify-center" />
+      <div
+        v-if="loading"
+        class="absolute inset-0 z-10 flex items-center justify-center"
+        style="background: var(--td-bg-color-page)"
+      >
+        <t-loading size="medium" />
+      </div>
       <div id="vditor" class="h-full" />
     </div>
   </div>

@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useAuthStore } from '@/stores/auth'
+import { useUiStore } from '@/stores/ui'
 
 const auth = useAuthStore()
+useUiStore()
 const router = useRouter()
 const route = useRoute()
 

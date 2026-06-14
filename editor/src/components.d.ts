@@ -15,6 +15,10 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     TAvatar: typeof import('tdesign-vue-next')['Avatar']
     TButton: typeof import('tdesign-vue-next')['Button']
+    TCard: typeof import('tdesign-vue-next')['Card']
+    TDrawer: typeof import('tdesign-vue-next')['Drawer']
     TLoading: typeof import('tdesign-vue-next')['Loading']
+    TMenu: typeof import('tdesign-vue-next')['Menu']
+    TMenuItem: typeof import('tdesign-vue-next')['MenuItem']
   }
 }
