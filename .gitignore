@@ -5,3 +5,4 @@ resources
 .idea/
 .obsidian/workspace.json
 content/.obsidian/workspace.json
+static/editor/
