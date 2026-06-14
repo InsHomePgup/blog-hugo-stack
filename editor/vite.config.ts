@@ -10,7 +10,7 @@ import { VueRouterAutoImports } from 'vue-router/unplugin'
 import VueRouter from 'vue-router/vite'
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/blog-hugo-stack/editor/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/editor/' : '/',
   build: {
     outDir: '../static/editor',
     emptyOutDir: true,
