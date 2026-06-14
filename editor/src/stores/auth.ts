@@ -25,15 +25,26 @@ export const useAuthStore = defineStore('auth', () => {
     const onMessage = async (event: MessageEvent) => {
       if (typeof event.data !== 'string')
         return
-      if (!event.data.startsWith('authorization:github:success:'))
-        return
 
-      const json = event.data.replace('authorization:github:success:', '')
-      const data = JSON.parse(json)
-      token.value = data.token
-      window.removeEventListener('message', onMessage)
-      popup.close()
-      await fetchUser()
+      // 代理先发 "authorizing:github"，需要回应以告知来源
+      if (event.data === 'authorizing:github') {
+        popup.postMessage(event.data, event.origin)
+        return
+      }
+
+      if (event.data.startsWith('authorization:github:success:')) {
+        const json = event.data.replace('authorization:github:success:', '')
+        const data = JSON.parse(json)
+        token.value = data.token
+        window.removeEventListener('message', onMessage)
+        popup.close()
+        await fetchUser()
+      }
+
+      if (event.data.startsWith('authorization:github:error:')) {
+        console.error('OAuth error:', event.data)
+        window.removeEventListener('message', onMessage)
+      }
     }
 
     window.addEventListener('message', onMessage)
