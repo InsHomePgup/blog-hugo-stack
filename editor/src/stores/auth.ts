@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 
 const OAUTH_BASE = 'https://blog-cms-oauth-one.vercel.app'
-const GITHUB_CLIENT_ID = 'Ov23lirj3oAaCJ1EqU7b'
 const REPO = 'InsHomePgup/blog-hugo-stack'
 const BRANCH = 'main'
 
@@ -12,35 +11,37 @@ export const useAuthStore = defineStore('auth', () => {
   const isLoggedIn = computed(() => !!token.value)
 
   function login() {
-    const params = new URLSearchParams({
-      client_id: GITHUB_CLIENT_ID,
-      scope: 'repo',
-      redirect_uri: `${OAUTH_BASE}/callback`,
-      state: btoa(JSON.stringify({ redirect: window.location.href })),
-    })
-    window.location.href = `https://github.com/login/oauth/authorize?${params}`
+    const popup = window.open(
+      `${OAUTH_BASE}/auth`,
+      'github-oauth',
+      'width=600,height=700,left=200,top=100',
+    )
+
+    if (!popup) {
+      alert('请允许浏览器弹出窗口后重试')
+      return
+    }
+
+    const onMessage = async (event: MessageEvent) => {
+      if (typeof event.data !== 'string')
+        return
+      if (!event.data.startsWith('authorization:github:success:'))
+        return
+
+      const json = event.data.replace('authorization:github:success:', '')
+      const data = JSON.parse(json)
+      token.value = data.token
+      window.removeEventListener('message', onMessage)
+      popup.close()
+      await fetchUser()
+    }
+
+    window.addEventListener('message', onMessage)
   }
 
   function logout() {
     token.value = null
     user.value = null
-  }
-
-  async function handleCallback() {
-    const params = new URLSearchParams(window.location.search)
-    const code = params.get('code')
-    if (!code)
-      return false
-
-    const res = await fetch(`${OAUTH_BASE}/auth?code=${code}`)
-    const data = await res.json()
-    if (data.token) {
-      token.value = data.token
-      window.history.replaceState({}, '', window.location.pathname)
-      await fetchUser()
-      return true
-    }
-    return false
   }
 
   async function fetchUser() {
@@ -52,7 +53,7 @@ export const useAuthStore = defineStore('auth', () => {
     user.value = await res.json()
   }
 
-  return { token, user, isLoggedIn, login, logout, handleCallback, fetchUser, REPO, BRANCH }
+  return { token, user, isLoggedIn, login, logout, fetchUser, REPO, BRANCH }
 }, {
   persist: { key: 'blog-editor-auth', pick: ['token', 'user'] },
 })

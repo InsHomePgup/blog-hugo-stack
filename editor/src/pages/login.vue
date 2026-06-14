@@ -2,15 +2,6 @@
 import { useAuthStore } from '@/stores/auth'
 
 const auth = useAuthStore()
-const router = useRouter()
-
-onMounted(async () => {
-  if (window.location.search.includes('code=')) {
-    const ok = await auth.handleCallback()
-    if (ok)
-      router.replace('/')
-  }
-})
 </script>
 
 <template>
