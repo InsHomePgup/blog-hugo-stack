@@ -14,6 +14,12 @@ export default defineConfig({
   build: {
     outDir: '../static/editor',
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        chunkFileNames: 'assets/[hash].js',
+        assetFileNames: 'assets/[hash][extname]',
+      },
+    },
   },
   resolve: {
     alias: {
