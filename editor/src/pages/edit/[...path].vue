@@ -52,7 +52,6 @@ onMounted(async () => {
   }
 })
 
-
 onUnmounted(() => {
   vditor?.destroy()
   vditor = null
@@ -85,46 +84,57 @@ useEventListener('keydown', (e: KeyboardEvent) => {
 </script>
 
 <template>
-  <div class="flex h-screen flex-col" style="background: var(--td-bg-color-page)">
-    <header
-      class="flex h-14 shrink-0 items-center justify-between px-4"
-      style="background: var(--td-bg-color-container); border-bottom: 1px solid var(--td-component-stroke)"
-    >
-      <div class="flex min-w-0 flex-1 items-center gap-2">
-        <t-button variant="text" shape="square" @click="router.push('/')">
-          <template #icon>
-            <i class="i-ri-arrow-left-line text-base" />
-          </template>
-        </t-button>
-        <i class="i-ri-file-text-line shrink-0" style="color: var(--td-text-color-placeholder)" />
-        <span
-          class="truncate text-sm"
-          style="color: var(--td-text-color-secondary)"
-          :title="filePath"
+  <div class="h-screen">
+    <t-layout style="height: 100%">
+      <t-header style="height: 56px; padding: 0; border-bottom: 1px solid var(--td-component-stroke)">
+        <div class="flex h-full items-center justify-between px-4">
+          <div class="flex min-w-0 flex-1 items-center gap-2">
+            <t-button variant="text" shape="square" @click="router.push('/')">
+              <template #icon>
+                <i class="i-ri-arrow-left-line text-base" />
+              </template>
+            </t-button>
+            <i class="i-ri-file-text-line shrink-0" style="color: var(--td-text-color-placeholder)" />
+            <span
+              class="truncate text-sm"
+              style="color: var(--td-text-color-secondary)"
+              :title="filePath"
+            >
+              {{ filePath }}
+            </span>
+          </div>
+          <div class="ml-4 flex shrink-0 items-center">
+            <t-button theme="primary" size="small" :loading="saving" @click="save">
+              <template #icon>
+                <i class="i-ri-save-line" />
+              </template>
+              保存
+            </t-button>
+          </div>
+        </div>
+      </t-header>
+
+      <t-content style="padding: 0; overflow: hidden; position: relative">
+        <div
+          v-if="loading"
+          class="absolute inset-0 z-10 flex items-center justify-center"
+          style="background: var(--td-bg-color-page)"
         >
-          {{ filePath }}
-        </span>
-      </div>
+          <t-loading size="medium" />
+        </div>
+        <div id="vditor" class="h-full" />
+      </t-content>
 
-      <div class="ml-4 flex shrink-0 items-center gap-2">
-        <t-button theme="primary" size="small" :loading="saving" @click="save">
-          <template #icon>
-            <i class="i-ri-save-line" />
-          </template>
-          保存
-        </t-button>
-      </div>
-    </header>
-
-    <div class="relative flex-1 overflow-hidden">
-      <div
-        v-if="loading"
-        class="absolute inset-0 z-10 flex items-center justify-center"
-        style="background: var(--td-bg-color-page)"
-      >
-        <t-loading size="medium" />
-      </div>
-      <div id="vditor" class="h-full" />
-    </div>
+      <t-footer style="height: 32px; padding: 0; border-top: 1px solid var(--td-component-stroke)">
+        <div class="flex h-full items-center justify-between px-4">
+          <span class="truncate text-xs" style="color: var(--td-text-color-placeholder)">
+            {{ filePath }}
+          </span>
+          <span class="ml-4 shrink-0 text-xs" style="color: var(--td-text-color-placeholder)">
+            Ctrl+S 保存
+          </span>
+        </div>
+      </t-footer>
+    </t-layout>
   </div>
 </template>
