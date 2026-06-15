@@ -1,26 +1,17 @@
 <script setup lang="ts">
 import type { GithubFile } from '@/composables/useGithubApi'
-import { useGithubApi } from '@/composables/useGithubApi'
 import { useAuthStore } from '@/stores/auth'
+import { CONTENT_DIRS, useFilesStore } from '@/stores/files'
 import { useUiStore } from '@/stores/ui'
 import { MessagePlugin } from 'tdesign-vue-next'
 
 const auth = useAuthStore()
 const ui = useUiStore()
-const { listFiles } = useGithubApi()
+const filesStore = useFilesStore()
 const router = useRouter()
 
 const { width } = useWindowSize()
 const isMobile = computed(() => width.value < 768)
-
-const CONTENT_DIRS = [
-  { name: '博客文章', path: 'content/post', icon: 'i-ri-article-line' },
-  { name: '编程', path: 'content/programming', icon: 'i-ri-code-box-line' },
-  { name: '投资', path: 'content/investing', icon: 'i-ri-funds-line' },
-  { name: '阅读', path: 'content/reading', icon: 'i-ri-book-2-line' },
-  { name: '英语', path: 'content/english', icon: 'i-ri-translate-2' },
-  { name: '草稿箱', path: 'content/draft', icon: 'i-ri-draft-line' },
-]
 
 const selectedDir = ref(CONTENT_DIRS[0].path)
 const files = ref<GithubFile[]>([])
@@ -29,16 +20,14 @@ const pathStack = ref<string[]>([])
 const loading = ref(false)
 
 async function loadFiles(path: string) {
+  if (filesStore.isCached(path)) {
+    files.value = filesStore.getDir(path)
+    return
+  }
   loading.value = true
   try {
-    const result = await listFiles(path)
-    files.value = result
-      .filter(f => f.type === 'dir' || f.name.endsWith('.md'))
-      .sort((a, b) => {
-        if (a.type !== b.type)
-          return a.type === 'dir' ? -1 : 1
-        return a.name.localeCompare(b.name, 'zh')
-      })
+    await filesStore.loadDir(path)
+    files.value = filesStore.getDir(path)
   }
   catch {
     MessagePlugin.error('加载失败，请检查网络连接')
@@ -63,16 +52,29 @@ function enterDir(file: GithubFile) {
   loadFiles(file.path)
 }
 
-function goBack() {
-  const prev = pathStack.value.pop()
-  if (prev) {
-    currentPath.value = prev
-    loadFiles(prev)
-  }
-}
 
 function openFile(file: GithubFile) {
   router.push(`/edit/${file.path}`)
+}
+
+const breadcrumbs = computed(() => {
+  const parts = currentPath.value.split('/')
+  return parts.map((label, index) => ({
+    label,
+    path: parts.slice(0, index + 1).join('/'),
+    isLast: index === parts.length - 1,
+  }))
+})
+
+function navigateToBreadcrumb(targetPath: string) {
+  const parts = targetPath.split('/')
+  const selectedDepth = selectedDir.value.split('/').length
+  const newStack: string[] = []
+  for (let i = selectedDepth; i < parts.length; i++)
+    newStack.push(parts.slice(0, i).join('/'))
+  pathStack.value = newStack
+  currentPath.value = targetPath
+  loadFiles(targetPath)
 }
 
 onMounted(() => loadFiles(currentPath.value))
@@ -139,19 +141,16 @@ onMounted(() => loadFiles(currentPath.value))
               class="flex h-10 shrink-0 items-center gap-2 px-4"
               style="border-bottom: 1px solid var(--td-component-stroke); background: var(--td-bg-color-container)"
             >
-              <t-button
-                v-if="pathStack.length"
-                variant="text"
-                size="small"
-                @click="goBack"
-              >
-                <template #icon>
-                  <i class="i-ri-arrow-left-line" />
-                </template>
-              </t-button>
-              <span class="truncate text-sm" style="color: var(--td-text-color-secondary)">
-                {{ currentPath }}
-              </span>
+              <t-breadcrumb class="min-w-0 flex-1">
+                <t-breadcrumb-item
+                  v-for="crumb in breadcrumbs"
+                  :key="crumb.path"
+                  :class="{ 'cursor-pointer': !crumb.isLast }"
+                  @click="!crumb.isLast && navigateToBreadcrumb(crumb.path)"
+                >
+                  {{ crumb.label }}
+                </t-breadcrumb-item>
+              </t-breadcrumb>
             </div>
             <div class="flex-1 overflow-y-auto">
               <div v-if="loading" class="flex h-48 items-center justify-center">
