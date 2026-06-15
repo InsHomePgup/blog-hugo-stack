@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { useGithubApi } from '@/composables/useGithubApi'
-import { useUiStore } from '@/stores/ui'
 import { MessagePlugin } from 'tdesign-vue-next'
 import Vditor from 'vditor'
 import 'vditor/dist/index.css'
 
 const route = useRoute()
 const router = useRouter()
-const ui = useUiStore()
 const { readFile, writeFile } = useGithubApi()
 
 const filePath = computed(() => {
@@ -26,7 +24,7 @@ function initVditor(content: string) {
   vditor = new Vditor('vditor', {
     height: '100%',
     mode: 'ir',
-    theme: ui.isDark ? 'dark' : 'classic',
+    theme: 'classic',
     cache: { enable: false },
     toolbar: [
       'headings', 'bold', 'italic', 'strike', '|',
@@ -54,12 +52,6 @@ onMounted(async () => {
   }
 })
 
-watch(() => ui.isDark, async () => {
-  const content = vditor?.getValue() ?? ''
-  loading.value = true
-  await nextTick()
-  initVditor(content)
-})
 
 onUnmounted(() => {
   vditor?.destroy()
@@ -115,11 +107,6 @@ useEventListener('keydown', (e: KeyboardEvent) => {
       </div>
 
       <div class="ml-4 flex shrink-0 items-center gap-2">
-        <t-button variant="text" shape="square" @click="ui.isDark = !ui.isDark">
-          <template #icon>
-            <i class="text-base" :class="ui.isDark ? 'i-ri-sun-line' : 'i-ri-moon-line'" />
-          </template>
-        </t-button>
         <t-button theme="primary" size="small" :loading="saving" @click="save">
           <template #icon>
             <i class="i-ri-save-line" />
