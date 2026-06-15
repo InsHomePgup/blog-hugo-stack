@@ -100,11 +100,6 @@ onMounted(() => loadFiles(currentPath.value))
       </div>
 
       <div class="flex items-center gap-1">
-        <t-button variant="text" shape="square" @click="ui.isDark = !ui.isDark">
-          <template #icon>
-            <i class="text-base" :class="ui.isDark ? 'i-ri-sun-line' : 'i-ri-moon-line'" />
-          </template>
-        </t-button>
         <t-avatar
           v-if="auth.user"
           :image="auth.user.avatar_url"
