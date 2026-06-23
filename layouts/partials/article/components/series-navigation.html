@@ -22,7 +22,7 @@
     {{ $seriesPages = sort $filteredPages "Params.series.0.index" "asc" }}
     
     <div class="article-series">
-        <!-- <h3>《{{ $seriesName }}》系列文章</h3>
+        <h3>《{{ $seriesName }}》系列文章</h3>
         <div class="series-list">
             <ol>
                 {{ range $seriesPages }}
@@ -32,7 +32,7 @@
                     </li>
                 {{ end }}
             </ol>
-        </div> -->
+        </div>
         
         <div class="series-pagination">
             {{ $prevPage := false }}
