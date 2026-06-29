@@ -59,6 +59,42 @@ a.link:hover{
 }
 
 
+/* 投资文章免责声明 */
+.investment-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin: 2rem 1.5rem 2rem 1.5rem;
+    padding: 1rem 1.4rem;
+    border-radius: 8px;
+    border-left: 4px solid #f59e0b;
+    background-color: rgba(245, 158, 11, 0.07);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.7;
+    color: var(--body-text-color);
+}
+
+.investment-disclaimer .disclaimer-icon {
+    font-size: 1.1rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+    color: #f59e0b;
+}
+
+.investment-disclaimer .disclaimer-text strong {
+    color: #d97706;
+}
+
+[data-scheme="dark"] .investment-disclaimer {
+    background-color: rgba(245, 158, 11, 0.1);
+    border-left-color: #d97706;
+}
+
+[data-scheme="dark"] .investment-disclaimer .disclaimer-icon {
+    color: #d97706;
+}
+
 /* 系列导航样式 */
 .series-pagination {
     margin-top: 2.5rem;
