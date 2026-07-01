@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abraham's Blog</title><link>https://blog.inshomepgup.com/</link><description/><language>en-us</language><lastBuildDate>Fri, 14 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.inshomepgup.com/post/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Git(0)---代码时光机---AB-Git-Guide</title><link>https://blog.inshomepgup.com/p/git0---%E4%BB%A3%E7%A0%81%E6%97%B6%E5%85%89%E6%9C%BA---ab-git-guide/</link><pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/p/git0---%E4%BB%A3%E7%A0%81%E6%97%B6%E5%85%89%E6%9C%BA---ab-git-guide/</guid><description>&lt;h3 id="前言">前言
+&lt;/h3>&lt;p>&lt;a class="link" href="https://git-scm.com/" target="_blank" rel="noopener"
+>Git 官网&lt;/a>&lt;/p>
+&lt;p>Git是非常重要的工具，可惜我大概编码两三年的时候才会基本的使用。&lt;/p>
+&lt;p>如果一开始我就能使用Git而放弃文件夹复制，zip压缩这种模式的代码保存的话，能大大提高我的编码学习效率。&lt;/p>
+&lt;p>随着深入的使用我想写一些贴合实际开发的git使用方法，来帮助编程新手可以用Git来管理自己的Project。&lt;/p>
+&lt;p>从init开始到能在github clone代码以及提交PR(Pull Request)。&lt;/p>
+&lt;p>什么是clone和PR？那不重要，一切都是从新开始的。后面这些概念会非常简单。&lt;/p>
+&lt;p>首先我们需要的是扎实的git cli （命令行）的基本功。&lt;/p>
+&lt;p>任何概念都在操作实践中学习，不需要太多的文字。&lt;/p>
+&lt;p>从重复的git操作和实践当中去理解。&lt;/p>
+&lt;p>add commit branch tag switch remote push pull checkout reset stash &amp;hellip;&amp;hellip;&lt;/p>
+&lt;p>Let&amp;rsquo;s go.&lt;/p></description><category>git</category><category>git</category></item><item><title>Git(1)---仓库-Repo</title><link>https://blog.inshomepgup.com/p/git1---%E4%BB%93%E5%BA%93-repo/</link><pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/p/git1---%E4%BB%93%E5%BA%93-repo/</guid><description>&lt;p>本次Git教程将在windows 下实践。&lt;/p>
+&lt;p>其实也不需要太多有关操作系统的操作。&lt;/p>
+&lt;p>Git 命令行的操作是全平台统一的。&lt;/p>
+&lt;h2 id="前沿-一些概念">前沿-一些概念
+&lt;/h2>&lt;h3 id="git-bash">Git Bash
+&lt;/h3>&lt;p>我们所有的操作都在这里完成。&lt;/p>
+&lt;h3 id="explorer">Explorer
+&lt;/h3>&lt;p>Windows资源管理器。&lt;/p>
+&lt;h3 id="git-repository">Git Repository
+&lt;/h3>&lt;p>Git Repo&lt;/p>
+&lt;p>git 仓库，所有的 git 命令都在这里面完成。&lt;/p>
+&lt;p>git 仓库一般就是一个文件夹，进行 git init 初始化以后。&lt;/p>
+&lt;p>项目目录下会生成一个 .git 文件夹。&lt;/p>
+&lt;p>那么这个文件夹便是一个 git 仓库。&lt;/p>
+&lt;h2 id="操作区">操作区
+&lt;/h2>&lt;h3 id="创建一个仓库">创建一个仓库
+&lt;/h3>&lt;p>到你喜欢的目录下面新建文件夹。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216213139449.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>进入文件夹&lt;/p>
+&lt;p>打开右键菜单后点击 Open Git Bash here&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216221044191.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>或者就是右键 + 键盘 s&lt;/p>
+&lt;p>这个就是 windows 下 git bash 的主界面了，所有的 cli 都在这里完成。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216221118051.png"
+loading="lazy"
+>&lt;/p>
+&lt;h3 id="important-查看仓库状态">Important 查看仓库状态
+&lt;/h3>&lt;p>查看一下当前的 git 状态。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">git status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这个命令可以看到当前git 仓库的状态。&lt;/p>
+&lt;p>可以随意使用，没有任何需要注意的。&lt;/p>
+&lt;p>早期我建议随时查看仓库的状态并且读取输出信息。&lt;/p>
+&lt;p>status包含很多我们需要关注的信息，所以最好多多查看。&lt;/p>
+&lt;p>初始化一个 git 仓库，git 仓库目前就是一个文件夹。&lt;/p></description><category>git</category><category>git</category></item><item><title>Git(2)--文件追踪与提交-add-commit</title><link>https://blog.inshomepgup.com/p/git2--%E6%96%87%E4%BB%B6%E8%BF%BD%E8%B8%AA%E4%B8%8E%E6%8F%90%E4%BA%A4-add-commit/</link><pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/p/git2--%E6%96%87%E4%BB%B6%E8%BF%BD%E8%B8%AA%E4%B8%8E%E6%8F%90%E4%BA%A4-add-commit/</guid><description>&lt;h2 id="前沿">前沿
+&lt;/h2>&lt;p>status + add + commit 是单机版git 最重要的三个命令。&lt;/p>
+&lt;p>在前面一节 Repo 当中，我们已经创建了一个 git仓库。&lt;/p>
+&lt;p>接下去我们让 git 来追踪我们的文件。&lt;/p>
+&lt;h2 id="操作区">操作区
+&lt;/h2>&lt;p>在目录下新建一个 abc.txt 文件模拟我们的代码文件。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216223437670.png"
+loading="lazy"
+alt="|597x282"
+>&lt;/p>
+&lt;p>在 bash 中使用 git status&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">git status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216223557755.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>当前分支：main&lt;/p>
+&lt;p>没有历史 commit&lt;/p>
+&lt;p>未追踪的文件
+abc.txt&lt;/p>
+&lt;h3 id="文件追踪">文件追踪
+&lt;/h3>&lt;p>没有可以提交的文件但是有未添加到追踪的文件（使用 git add 去添加）&lt;/p>
+&lt;p>执行 add + commit 的丝滑小连招。&lt;/p>
+&lt;p>添加文件追踪的方式 git add&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 单文件添加 &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add &lt;span class="o">[&lt;/span>文件名&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 添加当前目录下所有没有被追踪的文件 . = 当前目录 .. = 上级目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="提交我的修改---也就是项目的时间节点">提交我的修改 - 也就是项目的时间节点
+&lt;/h3>&lt;p>添加时间节点的方式 : git commit&lt;/p></description><category>git</category><category>git</category></item><item><title>Git(3)--远程仓库与推送--remote + push</title><link>https://blog.inshomepgup.com/p/git3--%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E6%8E%A8%E9%80%81--remote--push/</link><pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/p/git3--%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E6%8E%A8%E9%80%81--remote--push/</guid><description>&lt;h3 id="前沿">前沿
+&lt;/h3>&lt;p>remote, 远程&lt;/p>
+&lt;p>之前 add、commit，都是单机操作&lt;/p>
+&lt;p>如果一个人一个设备，多人协作的话，我们需要一个远程仓库，作为我们的数据交换&lt;/p>
+&lt;p>远程仓库其实也是一个 git 仓库，它是在服务器上，也和我们本地的仓库有一点儿不一样的地方&lt;/p>
+&lt;p>这里用 github平台来创建远程仓库&lt;/p>
+&lt;p>还有很多常见的类似的平台,gitee,gitea,gitlab&amp;hellip;&lt;/p>
+&lt;p>首先参照&lt;a class="link" href="../../config/03" >这篇&lt;/a>去创建一个 ssh key 连接github&lt;/p>
+&lt;p>在github创建一个空的仓库&lt;/p>
+&lt;p>复制 ssh的仓库地址&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># 查看git状态
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git status
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 添加远程仓库，origin仓库名称
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git remote add origin [仓库地址]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 查看所有仓库信息
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git remote -v
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push -u origin main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这又是一套丝滑小连招，连接远程仓库并且推送代码&lt;/p></description><category>git</category><category>git</category></item><item><title>Git(4)---还原---reset 从暂存区和 commit 还原</title><link>https://blog.inshomepgup.com/p/git4---%E8%BF%98%E5%8E%9F---reset-%E4%BB%8E%E6%9A%82%E5%AD%98%E5%8C%BA%E5%92%8C-commit-%E8%BF%98%E5%8E%9F/</link><pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/p/git4---%E8%BF%98%E5%8E%9F---reset-%E4%BB%8E%E6%9A%82%E5%AD%98%E5%8C%BA%E5%92%8C-commit-%E8%BF%98%E5%8E%9F/</guid><description>&lt;p>之前我们一直都在将代码添加到我们的仓库&lt;/p>
+&lt;p>丝滑小连招 add - commit - push&lt;/p>
+&lt;p>那么程序的 CURD 来说，光有 create 也是不合理的&lt;/p>
+&lt;p>Git - 还原&lt;/p>
+&lt;p>还原的场景&lt;/p>
+&lt;p>从暂存区还原&lt;/p>
+&lt;p>从本地 commit 还原&lt;/p>
+&lt;p>还原远程仓库到指定 commit&lt;/p>
+&lt;p>编辑 abc.txt&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 添加abc.txt到暂存区&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add abc.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 把abc.txt恢复到工作区&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git restore --staged abc.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 把abc从以追踪的状态撤回到未追踪的状态&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git rm abc.txt --cached
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 软回退，代码还会回到工作区&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git reset HEAD^ --soft
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 硬回退，丢弃commit的代码&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git reset HEAD^ --hard
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>HEAD^ = 当前的最近的一次commit&lt;/p>
+&lt;p>HEAD^^ = 当前的最近的第二次commit&lt;/p></description><category>git</category><category>git</category></item></channel></rss>

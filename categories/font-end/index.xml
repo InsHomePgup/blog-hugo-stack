@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abraham's Blog</title><link>https://blog.inshomepgup.com/</link><description/><language>en-us</language><lastBuildDate>Sat, 26 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.inshomepgup.com/categories/font-end/index.xml" rel="self" type="application/rss+xml"/><item><title>项目组织-用husky+lint-stage来规范代码提交</title><link>https://blog.inshomepgup.com/programming/frontend/lint/git-hooks/%E9%A1%B9%E7%9B%AE%E7%BB%84%E7%BB%87-%E7%94%A8husky+lint-staged%E6%9D%A5%E8%A7%84%E8%8C%83%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A4/</link><pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/frontend/lint/git-hooks/%E9%A1%B9%E7%9B%AE%E7%BB%84%E7%BB%87-%E7%94%A8husky+lint-staged%E6%9D%A5%E8%A7%84%E8%8C%83%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A4/</guid><description>&lt;h3 id="规范提交的代码">规范提交的代码
+&lt;/h3>&lt;p>直接看成品的配置的demo&lt;/p>
+&lt;p>请查看我的模板 &lt;a class="link" href="git@github.com:InsHomePgup/vue3-ts.git" >vue3-ts&lt;/a>&lt;/p>
+&lt;p>我们这里实现一下用husky + lint-staged来管理代码提交&lt;/p>
+&lt;p>simple-git-hooks可以使用pre-commit的钩子，这里我们用更主流的husky实现一次。&lt;/p>
+&lt;p>husky相比simple-git-hooks，功能更强，一个钩子可以执行多条命令。&lt;/p>
+&lt;p>社区支持更好，使用的人更多。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250426141719854.png"
+loading="lazy"
+>&lt;/p>
+&lt;h3 id="安装依赖">安装依赖
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">pnpm add -D husky lint-staged
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="添加配置">添加配置
+&lt;/h3>&lt;p>在 &lt;strong>package.json&lt;/strong> 添加配置&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;scripts&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;prepare&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;husky&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这是在每次安装依赖以后初始化husky的git hooks&lt;/p>
+&lt;p>prepare是npm lifecycle script 生命周期脚本，在执行pnpm install的时候触发，常用来初始化一些东西&lt;/p>
+&lt;p>我们这里用它来初始化husky&lt;/p>
+&lt;h4 id="添加husky配置">添加husky配置
+&lt;/h4>&lt;p>创建文件 .husky/pre-commit&lt;br>
+添加以下内容&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">npx lint-staged
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="头次安装需要初始化husky">头次安装需要初始化husky
+&lt;/h4>&lt;blockquote>
+&lt;p>husky 9 的版本移除了husky install这里使用init 完成初始化&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">npx husky init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>在2025年04/26的这个节点，husky的最新版本执行init会重置pre-commit内的脚本。已反馈github issue&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="添加lint-staged的配置">添加lint-staged的配置
+&lt;/h4>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;#34;lint-staged&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;**/*.{js,ts,vue,json,css,scss,md,less}&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;eslint --fix&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>对stage的什么类型的文件进行什么样的脚本&lt;/p></description><category>font-end</category><category>husky</category><category>lint-staged</category><category>Eslint</category></item><item><title>用simple-git-hooks + lint-staged来整理代码</title><link>https://blog.inshomepgup.com/programming/frontend/lint/git-hooks/%E9%A1%B9%E7%9B%AE%E7%BB%84%E7%BB%87-%E7%94%A8simple-git-hooks-+-lint-staged%E6%9D%A5%E6%95%B4%E7%90%86%E4%BB%A3%E7%A0%81/</link><pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/frontend/lint/git-hooks/%E9%A1%B9%E7%9B%AE%E7%BB%84%E7%BB%87-%E7%94%A8simple-git-hooks-+-lint-staged%E6%9D%A5%E6%95%B4%E7%90%86%E4%BB%A3%E7%A0%81/</guid><description>&lt;p>&lt;img src="https://avatars.githubusercontent.com/u/142687600?s=48&amp;amp;v=4"
+loading="lazy"
+alt="Owner avatar"
+> &lt;strong>&lt;a class="link" href="https://github.com/lint-staged/lint-staged" target="_blank" rel="noopener"
+>lint-staged&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://avatars.githubusercontent.com/u/33755274?s=48&amp;amp;v=4"
+loading="lazy"
+alt="Owner avatar"
+> &lt;strong>&lt;a class="link" href="https://github.com/toplenboren/simple-git-hooks" target="_blank" rel="noopener"
+>simple-git-hooks&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>两个项目&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 安装两个包到项目&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pnpm add lint-staged simple-git-hooks
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>package.json 添加如下配置。
+这个配置就是设置在commit之前的hook执行内容。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;#34;simple-git-hooks&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;pre-commit&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;npx lint-staged&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>&lt;span class="err">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;#34;lint-staged&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;*&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;eslint . --fix&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 执行如下命令初始化hooks&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">npx simple-git-hooks
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>得到信息：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[INFO] Successfully set the pre-commit with command: npx lint-staged
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[INFO] Successfully set all git hooks
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>后续的 提交的时候都会执行eslint . &amp;ndash;fix了&lt;/p></description><category>font-end</category><category>simple-git-hooks</category><category>lint-staged</category><category>Eslint</category></item></channel></rss>
