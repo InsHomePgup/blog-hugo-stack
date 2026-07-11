@@ -5,7 +5,6 @@ last-update: 2026-05-18
 weight: 400
 draft: true
 ---
-
 win11 专业版和其他版本还是太臃肿了。对系统资源的占用是高。
 
 刚出win11的时候的各种bug惨不忍睹，在长期更新和AI加持下，现在的win11也不是不能用了。
@@ -29,6 +28,7 @@ LTSC没有store也没有winget，思路是
 store 安装完成以后
 
 通过win + R去运行以下命令直达正确的winget的包。
+
 ```text
 ms-windows-store://pdp/?ProductId=9nblggh4nns1
 ```
@@ -38,3 +38,5 @@ ms-windows-store://pdp/?ProductId=9nblggh4nns1
 通过scoop去安装编码相关工具。
 
 用winget去安装软件。
+
+接下去配置好uniget，可以用这个来更新应用程序，不过这个也有一些应用无法通过uniget快速更新，常用的应用优先在应用本身内部去更新。
