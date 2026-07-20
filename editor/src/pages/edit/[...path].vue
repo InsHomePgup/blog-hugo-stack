@@ -2,6 +2,7 @@
 import type { FrontmatterFields } from '@/composables/useFrontmatter'
 import { useGithubApi } from '@/composables/useGithubApi'
 import { parseMarkdown, serializeMarkdown } from '@/composables/useFrontmatter'
+import { useImageUpload } from '@/composables/useImageUpload'
 import { MessagePlugin } from 'tdesign-vue-next'
 import Vditor from 'vditor'
 import 'vditor/dist/index.css'
@@ -9,6 +10,7 @@ import 'vditor/dist/index.css'
 const route = useRoute()
 const router = useRouter()
 const { readFile, writeFile } = useGithubApi()
+const { uploadImage } = useImageUpload()
 
 const filePath = computed(() => {
   const p = route.params as Record<string, string | string[]>
@@ -34,6 +36,21 @@ const hasFrontmatter = ref(false)
 
 let vditor: Vditor | null = null
 
+async function handleImageUpload(files: File[]): Promise<string | null> {
+  try {
+    const lines: string[] = []
+    for (const file of files) {
+      const url = await uploadImage(file)
+      lines.push(`![](${url})`)
+    }
+    vditor?.insertValue(`${lines.join('\n')}\n`, true)
+    return null
+  }
+  catch (e) {
+    return e instanceof Error ? e.message : String(e)
+  }
+}
+
 function initVditor(content: string) {
   vditor?.destroy()
   vditor = new Vditor('vditor', {
@@ -44,10 +61,15 @@ function initVditor(content: string) {
     toolbar: [
       'headings', 'bold', 'italic', 'strike', '|',
       'line', 'quote', 'list', 'ordered-list', 'check', '|',
-      'code', 'inline-code', 'link', 'table', '|',
+      'code', 'inline-code', 'link', 'table', 'upload', '|',
       'undo', 'redo', '|',
-      'fullscreen', 'preview',
+      'edit-mode', 'fullscreen', 'preview', 'outline',
     ],
+    upload: {
+      accept: 'image/*',
+      multiple: true,
+      handler: handleImageUpload as unknown as (files: File[]) => string | null | Promise<string> | Promise<null>,
+    },
     after() {
       vditor!.setValue(content)
       loading.value = false
