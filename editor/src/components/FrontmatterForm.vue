@@ -8,6 +8,13 @@ const listFields = [
   { key: 'tags', label: '标签' },
   { key: 'categories', label: '分类' },
 ] as const
+
+const weight = computed({
+  get: () => fields.value.weight ?? undefined,
+  set: (val: number | undefined) => {
+    fields.value.weight = val ?? null
+  },
+})
 </script>
 
 <template>
@@ -20,7 +27,7 @@ const listFields = [
         <t-date-picker v-model="fields.date" mode="date" value-type="YYYY-MM-DD" clearable />
       </t-form-item>
       <t-form-item label="权重">
-        <t-input-number v-model="fields.weight" :min="0" clearable />
+        <t-input-number v-model="weight" :min="0" clearable />
       </t-form-item>
       <t-form-item label="草稿">
         <t-switch v-model="fields.draft" />
