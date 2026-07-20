@@ -18,6 +18,7 @@ const filePath = computed(() => {
 const sha = ref('')
 const saving = ref(false)
 const loading = ref(true)
+const frontmatterFormRef = ref<{ validate: () => Promise<boolean> } | null>(null)
 
 const fields = ref<FrontmatterFields>({
   title: '',
@@ -62,6 +63,8 @@ onMounted(async () => {
     fields.value = parsed.fields
     extraRaw.value = parsed.extraRaw
     hasFrontmatter.value = parsed.hasFrontmatter
+    if (!parsed.hasFrontmatter)
+      fields.value.date = dayjs().format('YYYY-MM-DD')
     if (parsed.parseError)
       MessagePlugin.warning('frontmatter 解析失败，已原样保留在"其他字段"中')
     initVditor(parsed.body)
@@ -79,6 +82,9 @@ onUnmounted(() => {
 
 async function save() {
   if (!vditor || saving.value)
+    return
+  const valid = await frontmatterFormRef.value?.validate()
+  if (!valid)
     return
   saving.value = true
   try {
@@ -144,7 +150,7 @@ useEventListener('keydown', (e: KeyboardEvent) => {
         v-if="!loading"
         style="border-bottom: 1px solid var(--td-component-stroke); padding: 12px 16px; background: var(--td-bg-color-container)"
       >
-        <FrontmatterForm v-model:fields="fields" v-model:extra-raw="extraRaw" />
+        <FrontmatterForm ref="frontmatterFormRef" v-model:fields="fields" v-model:extra-raw="extraRaw" />
       </div>
 
       <t-content style="padding: 0; overflow: hidden; position: relative">
