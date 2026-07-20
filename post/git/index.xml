@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abraham's Blog</title><link>https://blog.inshomepgup.com/</link><description/><language>en-us</language><lastBuildDate>Fri, 14 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.inshomepgup.com/post/git/index.xml" rel="self" type="application/rss+xml"/><item><title>windows 安装 git 的推荐设置</title><link>https://blog.inshomepgup.com/p/windows-%E5%AE%89%E8%A3%85-git-%E7%9A%84%E6%8E%A8%E8%8D%90%E8%AE%BE%E7%BD%AE/</link><pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/p/windows-%E5%AE%89%E8%A3%85-git-%E7%9A%84%E6%8E%A8%E8%8D%90%E8%AE%BE%E7%BD%AE/</guid><description>&lt;p>我截图界面的就是推荐关闭或者打开的配置项目&lt;/p>
+&lt;p>我没截图的设置直接默认 next 下一步就好。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216215939152.png"
+loading="lazy"
+alt="|601x457"
+>&lt;/p>
+&lt;p>取消勾选 GUI&lt;/p>
+&lt;p>把 bash 的 profile 添加到 windows 的 terminal&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216220020348.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>这里默认 VIM 就好&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216220109619.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>这里推荐使用 main 作为默认的主分支名称&lt;/p>
+&lt;p>安装完成以后。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216220446247.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>调整字体，使用 Consolas + 你喜欢的字体大小。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250216220926616.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>怎么样，这个字体还是舒服的吧哈哈哈&lt;/p></description></item><item><title>Flow</title><link>https://blog.inshomepgup.com/p/flow/</link><pubDate>Thu, 09 May 2024 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/p/flow/</guid><description>&lt;p>我的git 工作流。
+git 是版本控制系统 VCS (Version Control System)。&lt;/p></description><category>git</category><category>flow</category><category>git</category><category>flow</category></item><item><title>git gui推荐 - sublime merge</title><link>https://blog.inshomepgup.com/p/git-gui%E6%8E%A8%E8%8D%90-sublime-merge/</link><pubDate>Thu, 09 May 2024 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/p/git-gui%E6%8E%A8%E8%8D%90-sublime-merge/</guid><description>&lt;p>最早的时候写前端使用的是sublime text。现在这家的另外一个产品，git gui ，sublime merge也是挺好用的，看了一下许可证要$99，还是白嫖吧哈哈哈。&lt;/p>
+&lt;h2 id="add-commit-push">add commit push
+&lt;/h2>&lt;p>可以很方便的add 和commit,右上角push + pull
+&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/sublime.png"
+loading="lazy"
+>&lt;/p>
+&lt;h2 id="branch-remote-tags">branch remote tags
+&lt;/h2>&lt;p>直接查看分支，其他分支可以控制显示和隐藏。
+还可以管理多远程仓库，直接右键管理tag&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/branch.png"
+loading="lazy"
+>&lt;/p>
+&lt;h2 id="commit">commit
+&lt;/h2>&lt;p>快速查看commit和每次的变动的文件等等
+这里还能看到commit相关的tag，还能看到合并路径，不过我现在的操作太简单，就是一条直线所以也没有这些。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/Snipaste_2024-06-08_17-28-59.png"
+loading="lazy"
+>&lt;/p>
+&lt;h2 id="一个非常好用的功能---filehistory">一个非常好用的功能 - FileHistory
+&lt;/h2>&lt;p>我在Mac端，快捷键 Command + P 打开控制台，输入File直接可以看到FileHistory的选项。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/blog-reco/main/imgs/FileHistoryCmd.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>输入文件名以后就可以直接看到有关这个文件的所有Commit和改动了，这个真的是太香了，用来调试一些奇奇怪怪的bug的时候可以看到是因为什么改动引起的。&lt;/p>
+&lt;h2 id="比较两个commit的改动">比较两个commit的改动
+&lt;/h2>&lt;p>直接Ctrl / Command在Commits的面板里点击两个commit就能查看了。这个也是非常香了。&lt;/p>
+&lt;h2 id="查看执行的具体代码">查看执行的具体代码
+&lt;/h2>&lt;p>菜单里 Tools-show console&lt;/p>
+&lt;h2 id="务必认真学习的cli以及git运行逻辑">务必认真学习的CLI以及Git运行逻辑
+&lt;/h2>&lt;p>GUI主要也就是在diff code，查看commit，简化一些cli的操作比较有用。是在对git以及git命令有一定深度了解以后才能使用的选项。毕竟如果都不知道这些操作背后是在运行什么，也会出现一些不可预料的代码事故。
+另外一个角度来说，git的cli是全端通用的，而GUI客户端也只是在一些有gui的操作系统上使用。
+真正学好Git来加强自己的代码调试是非常有用的。&lt;/p></description><category>git</category><category>git</category><category>software</category></item></channel></rss>

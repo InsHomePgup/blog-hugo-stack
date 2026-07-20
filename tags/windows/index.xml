@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abraham's Blog</title><link>https://blog.inshomepgup.com/</link><description/><language>en-us</language><lastBuildDate>Fri, 17 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.inshomepgup.com/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>WIndows下的亮度调节软件-Twinkle Tray</title><link>https://blog.inshomepgup.com/programming/os/windows/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90-twinkle-tray-%E4%BA%AE%E5%BA%A6%E8%B0%83%E8%8A%82/</link><pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/os/windows/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90-twinkle-tray-%E4%BA%AE%E5%BA%A6%E8%B0%83%E8%8A%82/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/xanderfrangos/twinkle-tray" target="_blank" rel="noopener"
+>github地址&lt;/a>&lt;/p>
+&lt;p>下载release以后安装。&lt;/p>
+&lt;p>体验是非常好的，开箱即用。UI也是高度适配windows11&lt;/p>
+&lt;h3 id="settings">settings
+&lt;/h3>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250117172246266.png"
+loading="lazy"
+>&lt;/p></description><category>windows</category><category>software</category><category>software</category><category>windows</category></item><item><title>软件推荐-7zip</title><link>https://blog.inshomepgup.com/programming/os/windows/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90-7zip/</link><pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/os/windows/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90-7zip/</guid><description>&lt;p>官网： &lt;a class="link" href="https://www.7-zip.org/" target="_blank" rel="noopener"
+>https://www.7-zip.org/&lt;/a>&lt;/p>
+&lt;p>windows下我必装的解压和压缩软件。&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/Pasted%20image%2020250117173621.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>默认安装位置下。
+C:\Program Files\7-Zip&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250117174026844.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250117174131351.png"
+loading="lazy"
+>&lt;/p>
+&lt;h3 id="我的配置">我的配置
+&lt;/h3>&lt;h4 id="使用7zip打开zip压缩包">使用7zip打开zip压缩包
+&lt;/h4>&lt;p>设置7zip作为压缩包的默认打开方式。&lt;/p>
+&lt;h3 id="常用功能">常用功能
+&lt;/h3>&lt;h4 id="加密压缩文件">加密压缩文件
+&lt;/h4>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/Pasted%20image%2020250117173802.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/Pasted%20image%2020250117173821.png"
+loading="lazy"
+>&lt;/p>
+&lt;h4 id="解压到当前目录或者解压到一个文件夹内">解压到当前目录或者解压到一个文件夹内
+&lt;/h4>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/Pasted%20image%2020250117174233.png"
+loading="lazy"
+>&lt;/p></description><category>windows</category><category>windows</category><category>software</category></item><item><title>NVM 在 Windows 端的使用（Nodejs 环境配置）</title><link>https://blog.inshomepgup.com/programming/language/nodejs/nvm/nvm-%E5%9C%A8windows%E7%AB%AF%E7%9A%84%E4%BD%BF%E7%94%A8nodejs%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/language/nodejs/nvm/nvm-%E5%9C%A8windows%E7%AB%AF%E7%9A%84%E4%BD%BF%E7%94%A8nodejs%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid><description>&lt;p>记录一下我的日常
+从官网下载nodejs 并安装&lt;/p>
+&lt;p>&lt;a class="link" href="https://nodejs.org/en" target="_blank" rel="noopener"
+>nodejs&lt;/a>&lt;/p>
+&lt;p>下载nvm 并安装&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="noopener"
+>nvm&lt;/a>&lt;/p>
+&lt;p>配置nvm的node源和npm源&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 腾讯&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nvm npm_mirror http://mirrors.cloud.tencent.com/npm/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nvm node_mirror https://mirrors.cloud.tencent.com/nodejs-release/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 阿里&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nvm npm_mirror https://npmmirror.com/mirrors/npm/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nvm node_mirror https://npmmirror.com/mirrors/node/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 顺便设置一下腾讯的npm源&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">npm config &lt;span class="nb">set&lt;/span> registry http://mirrors.cloud.tencent.com/npm/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description><category>backend</category><category>nodejs</category><category>nvm</category><category>nodejs</category><category>windows</category></item></channel></rss>

@@ -1,0 +1,18 @@
+#!/bin/bash
+# WebStorm launcher for WSL
+# Uses Gateway backend (native Linux binary) if active, falls back to Windows WebStorm
+
+ACTIVE_DIR="/home/user/.cache/JetBrains/RemoteDev/active"
+
+if [ -d "$ACTIVE_DIR" ]; then
+  for f in "$ACTIVE_DIR"/*; do
+    if [ -f "$f" ]; then
+      IDE_PATH=$(grep -o '"idePath" *: *"[^"]*"' "$f" 2>/dev/null | head -1 | sed 's/.*": *"\(.*\)"/\1/')
+      if [ -n "$IDE_PATH" ] && [ -x "$IDE_PATH/bin/webstorm" ]; then
+        exec "$IDE_PATH/bin/webstorm" "$@"
+      fi
+    fi
+  done
+fi
+
+exec "/mnt/c/Users/user/AppData/Local/Programs/WebStorm/bin/webstorm64.exe" "$@"
