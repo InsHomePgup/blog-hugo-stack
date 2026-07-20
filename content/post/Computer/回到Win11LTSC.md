@@ -39,3 +39,6 @@ ms-windows-store://pdp/?ProductId=9nblggh4nns1
 用winget去安装软件。
 
 接下去配置好uniget，可以用这个来更新应用程序，不过这个也有一些应用无法通过uniget快速更新，常用的应用优先在应用本身内部去更新。
+
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20260719220643015.png)
+![](https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20260719220644688.png)
