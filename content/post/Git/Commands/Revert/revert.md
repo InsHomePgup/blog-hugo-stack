@@ -1,6 +1,10 @@
 ---
 title: revert
 date: 2025-03-22
+weight: 10
+series:
+  - name: Git 命令
+    index: 10
 ---
 使用revert来回退某一次commit的代码
 

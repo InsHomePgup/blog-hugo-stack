@@ -7,7 +7,7 @@ tags:
   - git
 weight: 4
 series:
-  - name: git
+  - name: Git 教程
     index: 4
 ---
 ### 前沿

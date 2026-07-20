@@ -7,7 +7,7 @@ tags:
   - git
 weight: 6
 series:
-  - name: git
+  - name: Git 教程
     index: 6
 ---
 

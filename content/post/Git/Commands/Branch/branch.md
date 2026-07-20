@@ -6,6 +6,10 @@ tags:
 categories:
   - git
 sticky: 1
+weight: 3
+series:
+  - name: Git 命令
+    index: 3
 ---
 Git Branch 
 ##### 创建与切换分支

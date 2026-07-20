@@ -7,7 +7,7 @@ tags:
   - git
 weight: 2
 series:
-  - name: git
+  - name: Git 教程
     index: 2
 ---
 本次Git教程将在windows 下实践。

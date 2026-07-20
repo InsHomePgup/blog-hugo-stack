@@ -3,6 +3,10 @@ title: "README"
 date: 2024-12-01
 categories:
   - git
+weight: 1
+series:
+  - name: Git 技巧
+    index: 1
 ---
 
 ## 实用Git技能合集

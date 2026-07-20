@@ -1,6 +1,11 @@
 ---
 title: reset,适合本地的soft & hard回退
 date: 2025-03-22
+draft: true
+weight: 9
+series:
+  - name: Git 命令
+    index: 9
 ---
 
 

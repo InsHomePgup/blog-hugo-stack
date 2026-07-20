@@ -3,6 +3,10 @@ title: Git版本自动化，changeLog自动化
 date: 2025-04-25
 categories:
   - git
+weight: 9
+series:
+  - name: Git 技巧
+    index: 9
 ---
 
 ## 发版困难的问题

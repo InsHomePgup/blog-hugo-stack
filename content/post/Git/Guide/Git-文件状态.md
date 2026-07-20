@@ -3,6 +3,10 @@ title: "Git-文件状态"
 date: 2024-12-01
 categories:
   - git
+weight: 9
+series:
+  - name: Git 教程
+    index: 9
 ---
 
 在 Git 中，文件的状态主要包括以下几种：

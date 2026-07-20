@@ -1,6 +1,7 @@
 ---
 title: "npm 01"
 date: 2024-12-01
+draft: true
 categories:
   - programming
   - nodejs

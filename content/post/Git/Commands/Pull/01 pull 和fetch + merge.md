@@ -3,6 +3,10 @@ title: "pull 和fetch + merge"
 date: 2024-12-01
 categories:
   - git
+weight: 7
+series:
+  - name: Git 命令
+    index: 7
 ---
 
 pull，拉取，用来同步本地仓库和远程仓库。

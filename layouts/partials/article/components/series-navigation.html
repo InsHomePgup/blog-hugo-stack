@@ -3,7 +3,7 @@
     {{ $seriesName := $series.name }}
     {{ $seriesIndex := $series.index }}
     
-    {{ $seriesPages := where .Site.RegularPages "Params.series" "ne" nil }}
+    {{ $seriesPages := where .CurrentSection.RegularPages "Params.series" "ne" nil }}
     {{ $seen := dict }}
     {{ $filteredPages := slice }}
     {{ range $seriesPages }}
@@ -20,7 +20,7 @@
         {{ end }}
     {{ end }}
     {{ $seriesPages = sort $filteredPages "Params.series.0.index" "asc" }}
-    
+
     <div class="article-series">
         <h3>《{{ $seriesName }}》系列文章</h3>
         <div class="series-list">

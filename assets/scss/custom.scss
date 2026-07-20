@@ -251,6 +251,31 @@ a.link:hover{
     align-items: center;
 }
 
+/* 子系列卡片改为纵向排列（Git 等栏目页；不影响 Archives 页自己的卡片样式） */
+body:not(.template-archives) .subsection-list {
+    overflow-x: visible;
+    margin-left: 0;
+
+    .article-list--tile {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 8px 0 24px 0;
+
+        article {
+            width: 100%;
+            height: auto;
+            margin-right: 0;
+            margin-bottom: 16px;
+            flex-shrink: 0;
+
+            .article-details {
+                padding: 16px 20px;
+            }
+        }
+    }
+}
+
 /* --- Categories Background Images in Archives Page --- */
 /* Archives 页面 Categories 背景图样式 */
 .template-archives .subsection-list .article-list--tile article {

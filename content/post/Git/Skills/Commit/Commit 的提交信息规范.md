@@ -1,6 +1,12 @@
 ---
 title: Commit 的提交信息规范
 date: 2025-01-08
+categories:
+  - git
+weight: 7
+series:
+  - name: Git 技巧
+    index: 7
 ---
 - feat: 新增 feature
 - fix: 修复 bug
