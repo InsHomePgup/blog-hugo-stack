@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import type { FrontmatterFields } from '@/composables/useFrontmatter'
 import { useGithubApi } from '@/composables/useGithubApi'
+import { parseMarkdown, serializeMarkdown } from '@/composables/useFrontmatter'
 import { MessagePlugin } from 'tdesign-vue-next'
 import Vditor from 'vditor'
 import 'vditor/dist/index.css'
@@ -16,6 +18,18 @@ const filePath = computed(() => {
 const sha = ref('')
 const saving = ref(false)
 const loading = ref(true)
+
+const fields = ref<FrontmatterFields>({
+  title: '',
+  date: '',
+  draft: false,
+  weight: null,
+  description: '',
+  tags: [],
+  categories: [],
+})
+const extraRaw = ref('')
+const hasFrontmatter = ref(false)
 
 let vditor: Vditor | null = null
 
@@ -44,7 +58,13 @@ onMounted(async () => {
   try {
     const { content, sha: fileSha } = await readFile(filePath.value)
     sha.value = fileSha
-    initVditor(content)
+    const parsed = parseMarkdown(content)
+    fields.value = parsed.fields
+    extraRaw.value = parsed.extraRaw
+    hasFrontmatter.value = parsed.hasFrontmatter
+    if (parsed.parseError)
+      MessagePlugin.warning('frontmatter 解析失败，已原样保留在"其他字段"中')
+    initVditor(parsed.body)
   }
   catch {
     MessagePlugin.error('文件加载失败')
@@ -62,7 +82,13 @@ async function save() {
     return
   saving.value = true
   try {
-    const content = vditor.getValue()
+    const body = vditor.getValue()
+    const { content, error } = serializeMarkdown(fields.value, extraRaw.value, body, hasFrontmatter.value)
+    if (error) {
+      MessagePlugin.error(`其他字段 YAML 格式错误：${error}`)
+      saving.value = false
+      return
+    }
     const fileName = filePath.value.split('/').pop() ?? 'update'
     await writeFile(filePath.value, content, sha.value, `docs: update ${fileName}`)
     MessagePlugin.success('已保存')
@@ -113,6 +139,13 @@ useEventListener('keydown', (e: KeyboardEvent) => {
           </div>
         </div>
       </t-header>
+
+      <div
+        v-if="!loading"
+        style="border-bottom: 1px solid var(--td-component-stroke); padding: 12px 16px; background: var(--td-bg-color-container)"
+      >
+        <FrontmatterForm v-model:fields="fields" v-model:extra-raw="extraRaw" />
+      </div>
 
       <t-content style="padding: 0; overflow: hidden; position: relative">
         <div

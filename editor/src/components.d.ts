@@ -11,6 +11,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    FrontmatterForm: typeof import('./components/FrontmatterForm.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TAside: typeof import('tdesign-vue-next')['Aside']
@@ -19,13 +20,23 @@ declare module 'vue' {
     TBreadcrumbItem: typeof import('tdesign-vue-next')['BreadcrumbItem']
     TButton: typeof import('tdesign-vue-next')['Button']
     TCard: typeof import('tdesign-vue-next')['Card']
+    TCollapse: typeof import('tdesign-vue-next')['Collapse']
+    TCollapsePanel: typeof import('tdesign-vue-next')['CollapsePanel']
     TContent: typeof import('tdesign-vue-next')['Content']
+    TDatePicker: typeof import('tdesign-vue-next')['DatePicker']
     TDrawer: typeof import('tdesign-vue-next')['Drawer']
     TFooter: typeof import('tdesign-vue-next')['Footer']
+    TForm: typeof import('tdesign-vue-next')['Form']
+    TFormItem: typeof import('tdesign-vue-next')['FormItem']
     THeader: typeof import('tdesign-vue-next')['Header']
+    TInput: typeof import('tdesign-vue-next')['Input']
+    TInputNumber: typeof import('tdesign-vue-next')['InputNumber']
     TLayout: typeof import('tdesign-vue-next')['Layout']
     TLoading: typeof import('tdesign-vue-next')['Loading']
     TMenu: typeof import('tdesign-vue-next')['Menu']
     TMenuItem: typeof import('tdesign-vue-next')['MenuItem']
+    TSwitch: typeof import('tdesign-vue-next')['Switch']
+    TTagInput: typeof import('tdesign-vue-next')['TagInput']
+    TTextarea: typeof import('tdesign-vue-next')['Textarea']
   }
 }
