@@ -23,6 +23,13 @@
         icon = "trending-up"
 
 [[main]]
+    name = "健康"
+    url = "/post/life/health-system/"
+    weight = 17
+    [main.params]
+        icon = "heart"
+
+[[main]]
     name = "Search"
     url = "/search/"
     weight = 20

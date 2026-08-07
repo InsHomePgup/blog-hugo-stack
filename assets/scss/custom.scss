@@ -96,6 +96,23 @@ a.link:hover{
 }
 
 /* 系列导航样式 */
+.series-breadcrumb {
+    margin-top: 2.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.series-breadcrumb a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.series-breadcrumb-sep {
+    margin: 0 0.4rem;
+}
+
 .series-pagination {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;

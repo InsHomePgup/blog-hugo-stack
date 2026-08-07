@@ -2,7 +2,16 @@
     {{ $series := index .Params.series 0 }}
     {{ $seriesName := $series.name }}
     {{ $seriesIndex := $series.index }}
-    
+
+    {{ $parentSection := .CurrentSection.Parent }}
+    {{ if and $parentSection (not $parentSection.IsHome) $parentSection.Title (ne $parentSection.Title $seriesName) }}
+        <div class="series-breadcrumb">
+            <a href="{{ $parentSection.RelPermalink }}">{{ $parentSection.Title }}</a>
+            <span class="series-breadcrumb-sep">&rsaquo;</span>
+            <span>{{ $seriesName }}</span>
+        </div>
+    {{ end }}
+
     {{ $seriesPages := where .CurrentSection.RegularPages "Params.series" "ne" nil }}
     {{ $seen := dict }}
     {{ $filteredPages := slice }}
