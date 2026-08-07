@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abraham's Blog</title><link>https://blog.inshomepgup.com/</link><description/><language>en-us</language><lastBuildDate>Wed, 01 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.inshomepgup.com/index.xml" rel="self" type="application/rss+xml"/><item><title>组件声明和jsx</title><link>https://blog.inshomepgup.com/programming/frontend/react/react01jsx%E8%AF%AD%E6%B3%95%E7%BB%84%E4%BB%B6%E5%A3%B0%E6%98%8E/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/frontend/react/react01jsx%E8%AF%AD%E6%B3%95%E7%BB%84%E4%BB%B6%E5%A3%B0%E6%98%8E/</guid><description>&lt;h2 id="react-学习">React 学习
+&lt;/h2>&lt;h3 id="快速创建一个项目">快速创建一个项目
+&lt;/h3>&lt;p>首先用 vite + react 启动一个 react-ts 项目：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">pnpm create vite &lt;span class="o">[&lt;/span>项目名称&lt;span class="o">]&lt;/span> --template react-ts
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pnpm create vite react-starter --template react-ts
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="添加一些依赖">添加一些依赖
+&lt;/h4>&lt;p>看自己的喜欢添加一些依赖：&lt;/p>
+&lt;ul>
+&lt;li>unocss&lt;/li>
+&lt;li>antfu eslint&lt;/li>
+&lt;li>lodash-es&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250106164408392.png"
+loading="lazy"
+alt="项目结构|325x332"
+>&lt;/p>
+&lt;p>删除多余的内容，仅保留 App.tsx 和 main.tsx&lt;/p>
+&lt;h2 id="组件">组件
+&lt;/h2>&lt;h3 id="组件声明">组件声明
+&lt;/h3>&lt;h4 id="jsx-必须有一个根节点">JSX 必须有一个根节点
+&lt;/h4>&lt;p>可以是 &lt;code>&amp;lt;&amp;gt;&amp;lt;/&amp;gt;&lt;/code>，这是一个 &lt;a class="link" href="https://react.dev/reference/react/Fragment" target="_blank" rel="noopener"
+>Fragment&lt;/a>&lt;/p>
+&lt;h4 id="所有-html-标签必须结束">所有 HTML 标签必须结束
+&lt;/h4>&lt;p>不管是单标签还是双标签都必须结束：&lt;/p>
+&lt;blockquote>
+&lt;p>JSX requires tags to be explicitly closed: self-closing tags like &lt;code>&amp;lt;img&amp;gt;&lt;/code> must become &lt;code>&amp;lt;img /&amp;gt;&lt;/code>, and wrapping tags like &lt;code>&amp;lt;li&amp;gt;oranges&lt;/code> must be written as &lt;code>&amp;lt;li&amp;gt;oranges&amp;lt;/li&amp;gt;&lt;/code>.&lt;/p></description><category>frontend</category><category>react</category><category>react</category><category>tsx</category></item><item><title>探索组件</title><link>https://blog.inshomepgup.com/programming/frontend/react/react02-2/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/frontend/react/react02-2/</guid><description>&lt;p>从实用性角度出发，暂时不学习class创建组件的方式了。&lt;/p>
+&lt;p>直接入手function 创建组件。&lt;/p>
+&lt;h3 id="prop的一些使用">prop的一些使用
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;span class="lnt">62
+&lt;/span>&lt;span class="lnt">63
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-tsx" data-lang="tsx">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 一个props对象，从里面拿组件参数
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">ACard&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">props&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="nx">title&lt;/span>:&lt;span class="kt">string&lt;/span>&lt;span class="p">}){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">className&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;card&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>&lt;span class="nx">props&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">title&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 解构
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">ACard&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="nx">title&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="nx">title&lt;/span>:&lt;span class="kt">string&lt;/span>&lt;span class="p">}){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">className&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;card&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>&lt;span class="nx">title&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 默认值
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">ACard&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="nx">title&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;title&amp;#39;&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="nx">title&lt;/span>:&lt;span class="kt">string&lt;/span>&lt;span class="p">}){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">className&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;card&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>&lt;span class="nx">title&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 父组件传递给子组件
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">Test&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="nx">title&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="nx">title&lt;/span>:&lt;span class="kt">string&lt;/span>&lt;span class="p">}){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;{&lt;/span>&lt;span class="nx">title&lt;/span>&lt;span class="p">}&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">BCard&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="nx">props&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="nx">props&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="nx">title&lt;/span>:&lt;span class="kt">string&lt;/span>&lt;span class="p">}}){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">Test&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="na">...props&lt;/span>&lt;span class="p">}&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">Test&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 传递jsx片段
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">Test&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="nx">content&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="nx">content&lt;/span>:&lt;span class="kt">React.ReactNode&lt;/span>&lt;span class="p">}){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;{&lt;/span>&lt;span class="nx">content&lt;/span>&lt;span class="p">}&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">CCard&lt;/span>&lt;span class="p">(){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">content&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="mi">123&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">Test&lt;/span> &lt;span class="na">content&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="nx">content&lt;/span>&lt;span class="p">}&lt;/span> &lt;span class="p">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="条件渲染">条件渲染
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-tsx" data-lang="tsx">&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">ListItem&lt;/span>&lt;span class="p">({&lt;/span> &lt;span class="nx">title&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">isPacked&lt;/span> &lt;span class="p">}&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">title&lt;/span>: &lt;span class="kt">string&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">isPacked&lt;/span>: &lt;span class="kt">boolean&lt;/span> &lt;span class="p">})&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">isPacked&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">li&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="nx">packed&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">li&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">li&lt;/span>&lt;span class="p">&amp;gt;{&lt;/span>&lt;span class="nx">title&lt;/span>&lt;span class="p">}&amp;lt;/&lt;/span>&lt;span class="nt">li&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">conditionRender() {&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">ul&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">ListItem&lt;/span> &lt;span class="na">isPacked&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="p">}&lt;/span> &lt;span class="na">title&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;hello&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">ListItem&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">ListItem&lt;/span> &lt;span class="na">isPacked&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="p">}&lt;/span> &lt;span class="na">title&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;hello&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">ListItem&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">ul&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>返回null = 不渲染&lt;/p></description><category>frontend</category><category>react</category></item><item><title>你好，欢迎光临寒舍</title><link>https://blog.inshomepgup.com/p/%E4%BD%A0%E5%A5%BD%E6%AC%A2%E8%BF%8E%E5%85%89%E4%B8%B4%E5%AF%92%E8%88%8D/</link><pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/p/%E4%BD%A0%E5%A5%BD%E6%AC%A2%E8%BF%8E%E5%85%89%E4%B8%B4%E5%AF%92%E8%88%8D/</guid><description>&lt;p>一个AI探索者。&lt;/p>
+&lt;p>平常心面对每一天。&lt;/p>
+&lt;p>知行合一与integrity&lt;/p>
+&lt;p>正在学习、使用和关注的：&lt;/p>
+&lt;p>OS: Windows | macOS | Debian&lt;/p>
+&lt;p>Web:HTML | CSS | JavaScript | TypeScript | SCSS | LESS | UnoCSS | TailwindCSS | PostCSS | Vue | React | Leaflet | Mapbox | Uni-app | Echarts&lt;/p>
+&lt;p>Backend: TypeORM | Midway | Node | Redis | MySQL/Mariadb | PostgreSQL&lt;/p>
+&lt;p>Biographies:Abraham Lincoln | Steve Jobs | Elon Musk | Warren Buffett | Charlie Munger | 段永平 | Dale Carnegie&lt;/p></description></item><item><title>组件的使用</title><link>https://blog.inshomepgup.com/programming/frontend/react/react02-1/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/frontend/react/react02-1/</guid><description>&lt;h2 id="组件">组件
+&lt;/h2>&lt;p>React 的组件&lt;/p>
+&lt;p>区分react组件和普通html元素的方式就是&lt;/p>
+&lt;p>react组件的首字母大写&lt;/p>
+&lt;h3 id="创建组件">创建组件
+&lt;/h3>&lt;blockquote>
+&lt;p>函数组件&lt;/p>
+&lt;/blockquote>
+&lt;p>根入口组件 App&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-tsx" data-lang="tsx">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">function&lt;/span> &lt;span class="nx">App() {&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="k">default&lt;/span> &lt;span class="nx">App&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>类组件&lt;/p>
+&lt;/blockquote>
+&lt;p>暂时跳过&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-tsx" data-lang="tsx">&lt;span class="line">&lt;span class="cl">&lt;span class="cm">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> 1. 组件名称首字母大写 区分组件和普通元素
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> 2. 继承Component
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> 3. 实现render函数
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> 4.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">**/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">import&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="nx">Component&lt;/span>&lt;span class="p">}&lt;/span> &lt;span class="kr">from&lt;/span> &lt;span class="s2">&amp;#34;react&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">class&lt;/span> &lt;span class="nx">About&lt;/span> &lt;span class="kr">extends&lt;/span> &lt;span class="nx">Component&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">any&lt;/span>&lt;span class="err">,&lt;/span> &lt;span class="na">any&lt;/span>&lt;span class="p">&amp;gt;{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">render() {&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="nx">About&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="k">default&lt;/span> &lt;span class="nx">About&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-tsx" data-lang="tsx">&lt;span class="line">&lt;span class="cl">&lt;span class="cm">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> 组件取消根元素的一种实现。
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">**/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">import&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="nx">Component&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">Fragment&lt;/span>&lt;span class="p">}&lt;/span> &lt;span class="kr">from&lt;/span> &lt;span class="s2">&amp;#34;react&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">class&lt;/span> &lt;span class="nx">About&lt;/span> &lt;span class="kr">extends&lt;/span> &lt;span class="nx">Component&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">any&lt;/span>&lt;span class="err">,&lt;/span> &lt;span class="na">any&lt;/span>&lt;span class="p">&amp;gt;{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">render() {&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">Fragment&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="nx">About&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">Fragment&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="k">default&lt;/span> &lt;span class="nx">About&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="组件接收数据-props的使用">组件接收数据 props的使用
+&lt;/h3>&lt;blockquote>
+&lt;p>简单值传递&lt;/p></description><category>frontend</category><category>react</category><category>react</category></item><item><title>华硕灵耀14 2025锐龙版</title><link>https://blog.inshomepgup.com/p/%E5%8D%8E%E7%A1%95%E7%81%B5%E8%80%8014-2025%E9%94%90%E9%BE%99%E7%89%88/</link><pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/p/%E5%8D%8E%E7%A1%95%E7%81%B5%E8%80%8014-2025%E9%94%90%E9%BE%99%E7%89%88/</guid><description>&lt;p>&lt;a class="link" href="https://www.asus.com.cn/laptops/for-home/zenbook/asus-zenbook-14-um3406ka/" target="_blank" rel="noopener"
+>本子的官网asus-zenbook-14-um3406ka&lt;/a>&lt;/p>
+&lt;h3 id="源起">源起
+&lt;/h3>&lt;p>年后，国补，百亿补贴，5099的一个笔电。图它的OLED高色域屏幕 + 32 + 1T，没有数字键盘，直接下单！&lt;/p>
+&lt;p>AI7 350 的CPU；32+1T的配置（当前是2026年，内存和硬盘价格爆炸的一年） 板载32G + 1TB的；&lt;/p>
+&lt;p>到货的时候，太兴奋，遂前往顺丰快递站自取，常有自取件，轻车熟路。&lt;/p>
+&lt;p>国补产品，要到手以后开机，我想自己拆的，快递小哥没给我机会，还帮我撕了贴膜，大可不必好吧。人和人对数码产品的情感并不相通。所以很遗憾，这个笔电的第一次接触不是我，同时小哥也有点暴力。刚取出来还没电，开不了机，直接被他放在一个粗糙的桌子上，给我接了电源。&lt;/p>
+&lt;p>到这里我感觉我虽然买的是新的，体验是二手的。&lt;/p>
+&lt;p>我本来只是想他帮我用美工刀切开那个透明胶那块，没想到他手速如此之快。&lt;/p>
+&lt;p>问题不大，我必会好好照料你。我的新笔电。&lt;/p>
+&lt;p>正常开机，小哥拍了照。&lt;/p>
+&lt;p>回家，上系统。&lt;/p>
+&lt;p>开机，联网，自动更新？？？？？？？&lt;/p>
+&lt;p>WTF，什么垃圾笔记本，我想如果我买的是Macbook，这一步我已经进系统可以开始把玩了，这个B，给我来一手强制更新？忍一忍，进系统就好了，先去收拾一下厨房。&lt;/p>
+&lt;p>超级巨大的一个更新，进系统。&lt;/p>
+&lt;p>思考一下，应该领一下正版的office 再去重装，笔电的原版系统大家都知道的，那就是一个妙龄少女穿了衣服，其实皮肤上全是纹身。&lt;/p>
+&lt;p>用最快速度，登录MS的账号，领了Office，进到官网，确认到账,2024的Office家庭中文版。&lt;/p>
+&lt;p>准备开始重装。&lt;/p>
+&lt;p>这时候有两个选择，一个是Win11 Pro,一个是Win11 LTSC。 多年来我都是Win10 LTSC的用户，完全没有任何不适。&lt;/p>
+&lt;p>不过Win10的UI放在当前有点老了，前阵子用了一下Win11，好像也没那么多毛病了，新笔电，全新的平台，也不是我那个10900K那个年代的事儿了，上Win11!!!&lt;/p>
+&lt;p>LTSC要自己装商店。懒，让我看看Win11 Pro怎么个事（当时还没查这个B CPU原来性能那么弱，感觉强的CPU怎么的也给上个Pro一点的系统吧）&lt;/p>
+&lt;p>Rufus + 新鲜热乎的Win11 Pro 中文版 iso，U盘启动，一气呵成。&lt;/p>
+&lt;p>（这里忘记有没有其他BIOS设置了，win11的保护比较多）&lt;/p>
+&lt;p>进系统以后？这么臃肿，这都啥跟啥啊。（伏笔，这个B，一点后台不开内存要用7G，差点想给它扬了，装Ubuntu）
+（后记，还是扬了，内存占用太高了，顶不住，还是Win11 LTSC吧）&lt;/p>
+&lt;p>算了，先体验一下新系统，反正随时能重装，玩吗，尽兴最重要。&lt;/p>
+&lt;p>很好，没有网卡驱动，这直接上不了网。&lt;/p>
+&lt;p>c to 扩展坞，接网线，很好，还是没有反应。&lt;/p>
+&lt;p>台式机，启动！&lt;/p>
+&lt;p>下载驱动到U盘！&lt;/p>
+&lt;p>U盘插入笔记本，安装驱动！点亮，成功联网。&lt;/p>
+&lt;p>刚刚顺手把其他驱动也下载了。&lt;/p>
+&lt;p>安装-重启-安装-重启。&lt;/p>
+&lt;p>此时距离给这个笔记本插上电开机已经过去了四五小时有余。主要是刚开机时候的那个强制更新win11用了很久。&lt;/p>
+&lt;p>装软件。Chrome、NeatDownloadManager（NDM）、QQ、微信、Steam&amp;hellip;.. （后面更新一个软件清单）&lt;/p>
+&lt;p>改注册表，把右键菜单回退。&lt;/p>
+&lt;p>这个B系统预装有点太多了吧，微软这是国产了吗。&lt;/p>
+&lt;p>至此，从中午到夜晚，这个本子能用了，简单测试了一下，唉，真弱鸡啊，算辽算辽。&lt;/p>
+&lt;p>这么轻薄，这么高色域的高级屏幕，忍了忍了。&lt;/p>
+&lt;hr>
+&lt;p>电源测试。&lt;/p>
+&lt;p>进行了一次合盖子电源测试，中午充完电合上盖子。&lt;/p>
+&lt;p>第二天晚上开盖，电量还有99%，挺好。看来M系列的Mac确实给windows阵营这边造成了巨大伤害。&lt;/p>
+&lt;p>这里的核心是我检查了1.合盖以后的usb供电被我确认是关闭的。 2. 我后台没有运行任何国产软件，国产软件大家都知道的，用户有啥它用啥。白天100%的电，合盖4小时直接清空电量。内存硬盘更是乱用。&lt;/p></description></item></channel></rss>

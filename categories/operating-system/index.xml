@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abraham's Blog</title><link>https://blog.inshomepgup.com/</link><description/><language>en-us</language><lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.inshomepgup.com/categories/operating-system/index.xml" rel="self" type="application/rss+xml"/><item><title>find</title><link>https://blog.inshomepgup.com/programming/os/linux/command/find/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/os/linux/command/find/</guid><description>&lt;p>查找文件&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">$ find . -name &amp;#39;abc.txt&amp;#39;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250113172621450.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>搜索，可能是虚拟机，没那么快。&lt;/p></description><category>operating-system</category><category>linux</category></item><item><title>QRScan</title><link>https://blog.inshomepgup.com/programming/os/windows/qrscan/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/os/windows/qrscan/</guid><description>&lt;p>二维码识别&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/1357310795/QrCodeScanner" target="_blank" rel="noopener"
+>https://github.com/1357310795/QrCodeScanner&lt;/a>&lt;/p></description><category>operating-system</category><category>windows</category></item><item><title>SCP的使用</title><link>https://blog.inshomepgup.com/programming/os/linux/command/scp%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/os/linux/command/scp%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>&lt;p>scp ./abc.txt &lt;a class="link" href="mailto:root@196.168.1.1" >root@196.168.1.1&lt;/a>:~/&lt;/p></description><category>operating-system</category><category>linux</category></item><item><title>SSH Key 连接</title><link>https://blog.inshomepgup.com/programming/os/linux/software/ssh/ssh-key-%E8%BF%9E%E6%8E%A5/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/os/linux/software/ssh/ssh-key-%E8%BF%9E%E6%8E%A5/</guid><description>&lt;p>[root@host .ssh]$ chmod 600 authorized_keys
+[root@host .ssh]$ chmod 700 ~/.ssh&lt;/p>
+&lt;p>配置两个权限&lt;/p>
+&lt;p>authorized_keys 文件里面加入pub key&lt;/p>
+&lt;p>/etc/ssh/sshd_config
+配置&lt;/p>
+&lt;p>RSAAuthentication yes
+PubkeyAuthentication yes&lt;/p>
+&lt;p>重启sshd&lt;/p>
+&lt;p>systemctl restart sshd&lt;/p>
+&lt;h1 id="使用ssh命令--密钥去连接ssh">使用ssh命令 + 密钥去连接ssh
+&lt;/h1></description><category>operating-system</category><category>linux</category></item><item><title>tar</title><link>https://blog.inshomepgup.com/programming/os/linux/command/tar/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/os/linux/command/tar/</guid><description>&lt;p>打包&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">tar -c -f target.tar file1 file2 file3
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">tar -c -f target.tar abc.txt def.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>提取到test目录下&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">tar -x -f target.tar -C test/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://raw.githubusercontent.com/InsHomePgup/pic_go_img/main/blog/20250113173204670.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>非常好用。&lt;/p>
+&lt;h3 id="使用压缩算法">使用压缩算法
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">tar -cz -f target.tar.gz abc.txt def.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>c:创建
+x:解压缩 搭配 -C 指定输出目录&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"> tar -xz -f target.tar.gz -C test/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;a class="link" href="https://juejin.cn/post/6904971490010398733" target="_blank" rel="noopener"
+>tar的使用（掘金）&lt;/a>&lt;/p></description><category>operating-system</category><category>linux</category></item></channel></rss>

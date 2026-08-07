@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abraham's Blog</title><link>https://blog.inshomepgup.com/</link><description/><language>en-us</language><lastBuildDate>Mon, 20 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.inshomepgup.com/tags/release/index.xml" rel="self" type="application/rss+xml"/><item><title>发布一个NPM包</title><link>https://blog.inshomepgup.com/programming/frontend/npm/%E5%8F%91%E5%B8%83%E4%B8%80%E4%B8%AAnpm%E5%8C%85/</link><pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/frontend/npm/%E5%8F%91%E5%B8%83%E4%B8%80%E4%B8%AAnpm%E5%8C%85/</guid><description>&lt;h3 id="前沿">前沿
+&lt;/h3>&lt;p>一个前端项目clone以后的标准流程是：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">pnpm install
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pnpm run [dev]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>一个项目想安装一个工具的时候&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">pnpm install [utils]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pnpm add [utils]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>平时一直在使用，但是不知道npm的包是怎么在工作的。&lt;/p>
+&lt;p>所以。&lt;/p>
+&lt;p>我想发布一个npm包，然后引入到自己的项目里！&lt;/p>
+&lt;h3 id="准备项目">准备项目
+&lt;/h3>&lt;p>首先，准备项目代码。&lt;/p>
+&lt;p>发布一个简单的npm包，只需包含一个函数。&lt;/p>
+&lt;p>引入以后可以调用就算成功。&lt;/p>
+&lt;h4 id="packagejson-配置发布的包信息">package.json 配置发布的包信息
+&lt;/h4>&lt;p>那么不管是什么包，首先要了解的就是package.json 文件。&lt;/p>
+&lt;p>因为发包的配置都是从这里读取的。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;a-text-npm-package&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">// 包的名称
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;version&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;1.0.0&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">// 包的版本
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>对于发布npm包来说，这个文件最重要的两个属性，name+version，这是必须的。&lt;/p>
+&lt;ul>
+&lt;li>version: 在npm包发布的作用当中是，指定当前的版本。&lt;/li>
+&lt;li>name: 你发布到npm包的唯一名称。&lt;/li>
+&lt;/ul>
+&lt;p>剩下几个比较重要的属性&lt;/p>
+&lt;ul>
+&lt;li>files: ts build以后到dist，这里files填&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;#34;files&amp;#34;: [
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;dist&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">],
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>意思是npm publish 只上传dist目录的内容。
+默认不添加这个属性的话会上传整个目录。
+所以这项设置还是很重要的，毕竟依赖包里安装没编译的源码也没必要。&lt;/p>
+&lt;ul>
+&lt;li>main&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;#34;main&amp;#34;: &amp;#34;./dist/index.js&amp;#34;,
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>types&lt;/li>
+&lt;/ul>
+&lt;p>指定dts文件&lt;/p></description><category>npm</category><category>npm</category><category>publish</category><category>release</category></item></channel></rss>

@@ -1,0 +1,165 @@
+backend:
+  name: github
+  repo: InsHomePgup/blog-hugo-stack
+  branch: main
+  base_url: https://blog-cms-oauth-one.vercel.app
+  auth_endpoint: auth
+
+media_folder: static/img
+public_folder: /img
+
+locale: zh_Hans
+
+collections:
+  - name: computer
+    label: 计算机
+    folder: content/post/Computer
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: 最后更新, name: last-update, widget: datetime, format: "YYYY-MM-DD", required: false }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: 权重, name: weight, widget: number, default: 1, required: false }
+      - { label: 标签, name: tags, widget: list, required: false }
+      - { label: 分类, name: categories, widget: list, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: frontend
+    label: 前端
+    folder: content/post/front-end
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: 最后更新, name: last-update, widget: datetime, format: "YYYY-MM-DD", required: false }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: 权重, name: weight, widget: number, default: 1, required: false }
+      - { label: 标签, name: tags, widget: list, required: false }
+      - { label: 分类, name: categories, widget: list, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: git
+    label: Git
+    folder: content/post/Git
+    create: true
+    nested:
+      depth: 100
+      summary: "{{title}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: 最后更新, name: last-update, widget: datetime, format: "YYYY-MM-DD", required: false }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: 权重, name: weight, widget: number, default: 1, required: false }
+      - { label: 标签, name: tags, widget: list, required: false }
+      - { label: 分类, name: categories, widget: list, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: life
+    label: 生活
+    folder: content/post/Life
+    create: true
+    nested:
+      depth: 10
+      summary: "{{title}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: 最后更新, name: last-update, widget: datetime, format: "YYYY-MM-DD", required: false }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: 权重, name: weight, widget: number, default: 1, required: false }
+      - { label: 标签, name: tags, widget: list, required: false }
+      - { label: 分类, name: categories, widget: list, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: readme
+    label: 首页文章
+    folder: content/post/README
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: 最后更新, name: last-update, widget: datetime, format: "YYYY-MM-DD", required: false }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: 权重, name: weight, widget: number, default: 1, required: false }
+      - { label: 标签, name: tags, widget: list, required: false }
+      - { label: 分类, name: categories, widget: list, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: programming
+    label: 编程
+    folder: content/programming
+    create: true
+    nested:
+      depth: 100
+      summary: "{{title}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: 最后更新, name: last-update, widget: datetime, format: "YYYY-MM-DD", required: false }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: 权重, name: weight, widget: number, default: 1, required: false }
+      - { label: 标签, name: tags, widget: list, required: false }
+      - { label: 分类, name: categories, widget: list, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: investing
+    label: 投资
+    folder: content/investing
+    create: true
+    nested:
+      depth: 10
+      summary: "{{title}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: 最后更新, name: last-update, widget: datetime, format: "YYYY-MM-DD", required: false }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: 权重, name: weight, widget: number, default: 1, required: false }
+      - { label: 标签, name: tags, widget: list, required: false }
+      - { label: 分类, name: categories, widget: list, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: reading
+    label: 阅读
+    folder: content/reading
+    create: true
+    nested:
+      depth: 10
+      summary: "{{title}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: 最后更新, name: last-update, widget: datetime, format: "YYYY-MM-DD", required: false }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: 权重, name: weight, widget: number, default: 1, required: false }
+      - { label: 标签, name: tags, widget: list, required: false }
+      - { label: 分类, name: categories, widget: list, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: english
+    label: 英语
+    folder: content/english
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: draft
+    label: 草稿箱
+    folder: content/draft
+    create: true
+    nested:
+      depth: 10
+      summary: "{{title}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD", required: false }
+      - { label: 正文, name: body, widget: markdown }

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abraham's Blog</title><link>https://blog.inshomepgup.com/</link><description/><language>en-us</language><lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.inshomepgup.com/categories/development-tools/index.xml" rel="self" type="application/rss+xml"/><item><title>快捷键</title><link>https://blog.inshomepgup.com/programming/ide/webstorm/%E5%BF%AB%E6%8D%B7%E9%94%AE/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.inshomepgup.com/programming/ide/webstorm/%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid><description>&lt;p>选中当前光标所在的代码块，要多按几次。&lt;/p>
+&lt;p>Ctrl + W&lt;/p>
+&lt;p>查看当前所在变量含义(鼠标悬浮一样的)&lt;/p>
+&lt;p>Ctrl + Q&lt;/p></description><category>development-tools</category></item></channel></rss>
